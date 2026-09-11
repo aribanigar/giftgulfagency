@@ -31,28 +31,33 @@ export const sections: Section[] = [
     name: "Printing",
     code: "PRT-01",
     icon: Printer,
-    short: "Large-format printing, stickers, screen printing and banners.",
+    short: "Large-format printing, stickers, magazines and books, screen printing and banners.",
     description:
-      "Large-format and digital printing, custom stickers and decals, screen-printed T-shirts and merchandise, and flags and banners. All of it is produced in-house for retail, events and promotions across the UAE and Qatar.",
+      "Large-format and digital printing, custom stickers and decals, magazine and book printing, screen-printed T-shirts and merchandise, and flags and banners. All of it is produced in-house for retail, publishing, events and promotions across the UAE and Qatar.",
     definition:
-      "Printing covers the large-format, digital and specialty print work a brand needs to show up physically. That includes banners, stickers, decals, screen-printed merchandise, flags and vehicle graphics, produced to hold up outdoors in Gulf conditions.",
+      "Printing covers the large-format, digital and specialty print work a brand or publisher needs, from outdoor banners and stickers to magazine and book runs. That includes banners, stickers, decals, magazines, books, screen-printed merchandise, flags and vehicle graphics, produced in-house rather than outsourced.",
     quickFacts: [
-      { label: "Typical output", value: "Banners, stickers, decals, T-shirts, flags, vehicle graphics" },
-      { label: "Materials", value: "Vinyl, PVC, foil, fabric, canvas" },
+      { label: "Typical output", value: "Banners, stickers, decals, magazines, books, T-shirts, flags" },
+      { label: "Materials", value: "Vinyl, PVC, foil, fabric, canvas, book & magazine stock" },
       { label: "Built for", value: "Outdoor UAE and Qatar heat and UV exposure" },
-      { label: "Order sizes", value: "Single banners to bulk merchandise runs" },
+      { label: "Order sizes", value: "Single banners to bulk merchandise and print runs" },
     ],
     regionalNote:
       "Gulf summers push surface temperatures well past 45°C on outdoor prints, stickers and banners from Sharjah's industrial zones to Doha's corniche, so materials and finishes are chosen to hold up to that heat and UV load, not just to look right on day one.",
     capabilities: [
       "Large-format & digital printing",
       "Custom stickers & decals (vinyl, PVC, foil)",
+      "Magazine & book printing",
       "Screen printing & custom T-shirts",
       "Flags, banners & feather flags",
       "Vehicle branding decals",
       "Bulk & small-batch runs",
     ],
     faqs: [
+      {
+        q: "Do you print magazines and books?",
+        a: "Yes. Magazine and book printing runs in-house alongside large-format and specialty print work, from single proof copies to full circulation and print runs.",
+      },
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
         a: "Yes. From large-format banners and stickers to screen-printed T-shirts and event merchandise, everything is produced in-house rather than farmed out to different shops.",
@@ -177,41 +182,51 @@ export const sections: Section[] = [
     name: "Packaging",
     code: "PKG-04",
     icon: Package,
-    short: "Custom packaging that carries the brand off the shelf.",
+    short: "Branded takeaway boxes, cups, hardboard boxes and carry bags for restaurants.",
     description:
-      "Retail and corporate packaging, including boxes, sleeves, inserts and bags, designed and printed to match the rest of a brand's visual identity, for businesses across the UAE and Qatar.",
+      "Custom food packaging for restaurants, cafes and cloud kitchens — takeaway boxes, hot and cold cups, hardboard boxes and kraft carry bags, printed with a brand's logo and colours and produced to hold up to Gulf delivery conditions.",
     definition:
-      "Packaging covers the custom boxes, sleeves, inserts and bags that carry a brand's identity from the shelf to the customer, designed and printed to match the rest of a brand's visual identity.",
+      "Restaurant packaging covers the takeaway boxes, cups, hardboard boxes and carry bags a food business hands a customer with every order. Gifts Gulf Advertising designs and prints all of it in-house, so a restaurant's packaging looks as consistent as its signage and menu.",
     quickFacts: [
-      { label: "Typical output", value: "Custom boxes, sleeves, inserts, branded bags" },
-      { label: "Materials", value: "Recycled and biodegradable stock available" },
-      { label: "Order sizes", value: "Small retail-ready runs to bulk production" },
-      { label: "Service", value: "Structural design through to print" },
+      { label: "Typical output", value: "Takeaway boxes, hot/cold cups, hardboard boxes, kraft carry bags" },
+      { label: "Materials", value: "Food-grade kraft, corrugated hardboard, grease-resistant lining" },
+      { label: "Built for", value: "Restaurants, cafes, cloud kitchens & delivery-app volume" },
+      { label: "Order sizes", value: "Sample runs to bulk kitchen supply" },
     ],
     regionalNote:
-      "Retail packaging for a Dubai flagship, an Abu Dhabi boutique, or a Doha concept store all needs to survive the same handling and shipping conditions across the region, so structural design accounts for that before the print run starts.",
+      "Delivery apps drive a large share of restaurant orders across Dubai, Abu Dhabi, Sharjah and Doha, so packaging spends longer in transit and more time closed up with hot food than it would for dine-in service. Boxes and carry bags are specified with grease-resistant liners and sturdy handles with that in mind, not just printed to look right on the counter.",
     capabilities: [
-      "Custom box & sleeve design",
-      "Retail-ready packaging",
-      "Branded bags & inserts",
-      "Small and bulk print runs",
+      "Custom-printed takeaway boxes",
+      "Branded hot & cold cups",
+      "Hardboard boxes for bulk orders",
+      "Kraft & paper carry bags",
+      "Grease-resistant, food-safe stock",
+      "Sample runs before bulk production",
     ],
     faqs: [
       {
-        q: "Can packaging match branding used on signage and gifts?",
-        a: "Yes. Since production runs through the same team, packaging can be kept visually consistent with a brand's signage, stickers and gifting.",
+        q: "Do you make custom packaging for restaurants and cafes?",
+        a: "Yes. Takeaway boxes, hot and cold cups, hardboard boxes and carry bags are all designed and printed in-house specifically for restaurants, cafes and cloud kitchens across the UAE and Qatar.",
       },
       {
-        q: "Do you offer eco-friendly packaging materials?",
-        a: "Recycled and biodegradable stock options are available. Specify sustainability requirements when requesting a quote.",
+        q: "Can you print a restaurant's logo on takeaway boxes and cups?",
+        a: "Yes. Boxes, cups, hardboard boxes and carry bags can all carry a restaurant's logo, colours and menu branding, kept consistent with its signage and other print work.",
       },
       {
-        q: "Can packaging be designed to protect products during shipping?",
-        a: "Yes. Structural design accounts for handling and shipping conditions, not just the printed graphics.",
+        q: "Is your restaurant packaging food-safe and grease-resistant?",
+        a: "Yes. Materials are food-grade kraft and corrugated hardboard with grease-resistant lining, specified for hot food that spends time in delivery-app transit as well as dine-in service.",
       },
       {
-        q: "Do you offer packaging samples before a full production run?",
-        a: "Sample or prototype runs can be arranged before committing to bulk production. Mention this when requesting a quote.",
+        q: "What's the minimum order for branded takeaway boxes or carry bags?",
+        a: "Both sample runs and bulk kitchen-supply orders are handled. Share the item, quantity and timeline when requesting a quote.",
+      },
+      {
+        q: "Do you supply hardboard boxes for bulk food orders?",
+        a: "Yes. Hardboard boxes are available for bulk orders, catering and larger food deliveries, alongside standard takeaway boxes and carry bags.",
+      },
+      {
+        q: "Can packaging match a restaurant's existing brand colours?",
+        a: "Yes. Boxes, cups, hardboard boxes and carry bags are colour-matched against a restaurant's existing branding or Pantone references, produced by the same team that handles signage and print.",
       },
     ],
   },
@@ -335,7 +350,7 @@ export const markets = ["Dubai", "Abu Dhabi", "Sharjah", "Doha"];
 export const siteFaqs: Faq[] = [
   {
     q: "What services does Gifts Gulf Advertising offer?",
-    a: "Gifts Gulf Advertising covers printing (large-format, stickers, screen printing, flags), signages, events and exhibitions, packaging, gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
+    a: "Gifts Gulf Advertising covers printing (large-format, stickers, magazines, books, screen printing, flags), signages, events and exhibitions, restaurant packaging (takeaway boxes, cups, hardboard boxes, carry bags), gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
   },
   {
     q: "Does Gifts Gulf Advertising serve clients in both the UAE and Qatar?",

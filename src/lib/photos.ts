@@ -38,7 +38,7 @@ export const sectionPhotos: Record<string, string> = {
   printing: wide("stickers-labels"),
   signages: wide("signage"),
   "events-exhibitions": wide("events-exhibitions"),
-  packaging: wide("packaging-gifts"),
+  packaging: wide("packaging-boxes"),
   "gift-items": wide("gift-items"),
   "social-media": wide("social-media"),
 };

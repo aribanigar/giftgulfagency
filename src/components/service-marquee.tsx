@@ -1,15 +1,10 @@
 import { sections } from "@/lib/site-data";
 
-function Row({ reverse = false }: { reverse?: boolean }) {
+function Row() {
   const items = [...sections, ...sections];
   return (
     <div className="group overflow-hidden">
-      <div
-        className={
-          "animate-marquee flex w-max gap-3 group-hover:[animation-play-state:paused] " +
-          (reverse ? "[animation-direction:reverse]" : "")
-        }
-      >
+      <div className="animate-marquee flex w-max gap-3 group-hover:[animation-play-state:paused]">
         {items.map((service, i) => {
           const Icon = service.icon;
           return (
@@ -34,9 +29,8 @@ export function ServiceMarquee() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgb(22_163_74_/_0.12),_transparent_65%)]"
       />
-      <div className="mask-fade-x relative flex flex-col gap-3">
+      <div className="mask-fade-x relative">
         <Row />
-        <Row reverse />
       </div>
     </div>
   );
