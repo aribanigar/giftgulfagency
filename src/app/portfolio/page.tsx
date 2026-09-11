@@ -40,9 +40,6 @@ export default function PortfolioPage() {
                     <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-green-200/50 blur-2xl" />
                     <div className="absolute -bottom-12 -left-8 h-28 w-28 rounded-full bg-zinc-300/40 blur-2xl" />
                   </div>
-                  <span className="absolute left-3 top-3 rounded-[var(--radius-sm)] border border-zinc-200 bg-white/90 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-600 backdrop-blur">
-                    Code: {section.code}
-                  </span>
                   <span className="absolute bottom-3 right-3 rounded-[var(--radius-sm)] bg-green-600 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-white">
                     {section.name}
                   </span>
@@ -60,16 +57,9 @@ export default function PortfolioPage() {
                       {section.short}
                     </p>
                   </div>
-                  <dl className="mt-4 flex items-center justify-between border-t border-zinc-100 pt-3 font-mono text-[11px] uppercase tracking-wide text-zinc-400">
-                    <div className="flex items-center gap-1.5">
-                      <dt>Code</dt>
-                      <dd className="text-zinc-600">{section.code}</dd>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <dt>Status</dt>
-                      <dd className="text-zinc-600">Pending</dd>
-                    </div>
-                  </dl>
+                  <p className="mt-4 border-t border-zinc-100 pt-3 font-mono text-[11px] uppercase tracking-wide text-zinc-400">
+                    Photography pending
+                  </p>
                 </div>
               </div>
             );

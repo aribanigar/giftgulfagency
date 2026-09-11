@@ -64,10 +64,7 @@ export default function AboutPage() {
               href={`/${s.slug}`}
               className="rounded-[var(--radius-lg)] border border-zinc-200 p-4 transition-colors hover:border-green-600"
             >
-              <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">
-                {s.code}
-              </span>
-              <h3 className="mt-1 font-heading text-base font-semibold text-zinc-900">
+              <h3 className="font-heading text-base font-semibold text-zinc-900">
                 {s.name}
               </h3>
             </Link>

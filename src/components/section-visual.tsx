@@ -1,12 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
-export function SectionVisual({
-  icon: Icon,
-  code,
-}: {
-  icon: LucideIcon;
-  code: string;
-}) {
+export function SectionVisual({ icon: Icon }: { icon: LucideIcon }) {
   return (
     <div className="relative aspect-[21/9] overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-gradient-to-br from-green-50 via-white to-zinc-50">
       <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -25,10 +19,6 @@ export function SectionVisual({
           <Icon className="h-11 w-11 text-white sm:h-12 sm:w-12" strokeWidth={1.6} />
         </div>
       </div>
-
-      <span className="absolute bottom-3 right-4 font-mono text-[10px] uppercase tracking-wider text-zinc-400">
-        {code}
-      </span>
     </div>
   );
 }

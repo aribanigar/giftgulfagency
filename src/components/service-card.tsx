@@ -10,13 +10,8 @@ export function ServiceCard({ service }: { service: Section }) {
       className="group flex flex-col justify-between rounded-[var(--radius-xl)] border border-zinc-200 bg-white p-6 transition-colors hover:border-green-600"
     >
       <div>
-        <div className="flex items-center justify-between">
-          <div className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
-            <Icon className="h-5 w-5" strokeWidth={1.75} />
-          </div>
-          <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">
-            {service.code}
-          </span>
+        <div className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
+          <Icon className="h-5 w-5" strokeWidth={1.75} />
         </div>
         <h3 className="mt-5 font-heading text-lg font-semibold text-zinc-900">
           {service.name}

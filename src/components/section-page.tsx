@@ -38,10 +38,7 @@ export function SectionPage({ section }: { section: Section }) {
               <Icon className="h-7 w-7" strokeWidth={1.75} />
             </div>
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-zinc-400">
-                {section.code}
-              </span>
-              <h1 className="mt-2 max-w-2xl font-heading text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+              <h1 className="max-w-2xl font-heading text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
                 {section.name} in the UAE &amp; Qatar
               </h1>
             </div>
@@ -60,7 +57,7 @@ export function SectionPage({ section }: { section: Section }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <SectionVisual icon={Icon} code={section.code} />
+        <SectionVisual icon={Icon} />
 
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           What&apos;s included
@@ -117,10 +114,7 @@ export function SectionPage({ section }: { section: Section }) {
               href={`/${s.slug}`}
               className="group rounded-[var(--radius-lg)] border border-zinc-200 p-5 transition-colors hover:border-green-600"
             >
-              <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">
-                {s.code}
-              </span>
-              <h3 className="mt-2 font-heading text-base font-semibold text-zinc-900">
+              <h3 className="font-heading text-base font-semibold text-zinc-900">
                 {s.name}
               </h3>
               <p className="mt-1 text-sm text-zinc-600">{s.short}</p>
