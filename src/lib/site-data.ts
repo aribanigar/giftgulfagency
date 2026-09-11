@@ -288,28 +288,41 @@ export const sections: Section[] = [
     icon: Share2,
     short: "Content, campaigns, and the website and search behind them.",
     description:
-      "Social media strategy, content production, and paid campaign management across the platforms UAE and Qatar audiences actually use, backed by the website and search engine work that turns followers into leads.",
+      "Social media strategy, in-house content production, paid campaign management, community management and influencer coordination across the platforms UAE and Qatar audiences actually use, backed by social commerce setup and the website and search engine work that turns followers into leads.",
     definition:
-      "Social media covers content planning, production and paid campaign management across the platforms UAE and Qatar audiences use, backed by website and search engine work that turns followers into leads.",
+      "Social media covers everything from content strategy and in-house photography or video production to paid advertising, community management and influencer coordination, plus social commerce integration and the website and SEO work that turns an engaged following into actual enquiries.",
     quickFacts: [
-      { label: "Typical output", value: "Content calendars, paid campaigns, community management, reports" },
-      { label: "Platforms", value: "Instagram, Facebook, TikTok, LinkedIn, Snapchat" },
-      { label: "Paired with", value: "Website design and SEO support" },
-      { label: "Reporting", value: "Regular performance reporting included" },
+      { label: "Typical output", value: "Content calendars, Reels & UGC, paid campaigns, monthly reports" },
+      { label: "Platforms", value: "Instagram, TikTok, Facebook, LinkedIn, Snapchat" },
+      { label: "Paired with", value: "Website design, SEO and social commerce setup" },
+      { label: "Reporting", value: "Monthly performance reporting against agreed KPIs" },
     ],
     regionalNote:
       "Retail and F&B brands in Dubai and Abu Dhabi live on Instagram and TikTok. Doha's market leans more heavily on WhatsApp and Snapchat alongside them. Content and paid strategy is built around where each city's audience actually spends time, not a one size template.",
     capabilities: [
-      "Content planning & production",
-      "Paid social campaigns",
-      "Community management",
-      "Performance reporting",
+      "Social media strategy & content pillars",
+      "In-house photography, video & Reels production",
+      "Graphic design & bilingual copywriting",
+      "Paid social advertising (Meta & TikTok Ads)",
+      "Community management & review monitoring",
+      "Influencer sourcing & UGC coordination",
+      "Social commerce setup (Instagram & TikTok Shop)",
+      "Monthly analytics & performance reporting",
+      "Ramadan & National Day campaign planning",
       "Website design & SEO support",
     ],
     faqs: [
       {
         q: "Which social platforms do you manage?",
         a: "We plan and manage content and paid campaigns across Instagram, Facebook, TikTok, LinkedIn and Snapchat, choosing the mix based on where a brand's UAE or Qatar audience is most active.",
+      },
+      {
+        q: "Do you produce content in-house or only manage existing material?",
+        a: "Content is produced in-house, photography, video and Reels, graphic design and copywriting, rather than relying only on a client's existing assets, so posting frequency and quality don't depend on what's supplied from elsewhere.",
+      },
+      {
+        q: "Do you run paid social advertising, or only organic content?",
+        a: "Both. Paid campaigns on Meta and TikTok Ads run alongside organic content for brands that need a specific result, like store visits during a promotion or leads for a launch, on top of ongoing content and community management.",
       },
       {
         q: "Do you also build websites and handle SEO, or only social media?",
@@ -321,7 +334,7 @@ export const sections: Section[] = [
       },
       {
         q: "How is success measured for a social media campaign?",
-        a: "Performance reporting covers reach, engagement and conversion metrics relevant to the campaign's goal, agreed at the start of the brief.",
+        a: "Monthly reporting covers reach, engagement rate and conversion metrics relevant to the campaign's goal, such as enquiries or store visits, agreed at the start of the brief rather than judged on follower count alone.",
       },
       {
         q: "Do you write captions in both English and Arabic?",

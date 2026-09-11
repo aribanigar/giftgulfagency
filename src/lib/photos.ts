@@ -20,14 +20,14 @@ function cld(id: string, transform: string) {
 }
 
 /** Wide 16:9 crop, capped at 1200px — small contexts (portfolio cards). */
-function wide(id: string) {
+export function wide(id: string) {
   return (
     cld(id, "c_fill,g_auto,ar_16:9,w_1200,q_auto,f_auto") ?? `/photos/${id}.jpg`
   );
 }
 
 /** Wide 16:9 crop, capped at 1920px, with a chosen gravity — full-bleed heroes. */
-function heroPhoto(id: string, gravity: "auto" | "south" | "center" = "auto") {
+export function heroPhoto(id: string, gravity: "auto" | "south" | "center" = "auto") {
   return (
     cld(id, `c_fill,g_${gravity},ar_16:9,w_1920,q_auto,f_auto`) ??
     `/photos/${id}.jpg`
@@ -111,3 +111,23 @@ export const homeHeroGallery: string[] = [
   heroPhoto("fabrication", "auto"),
   heroPhoto("signage-install", "auto"),
 ];
+
+/**
+ * Blog post cover photo ids, one per article — raw Cloudinary public_ids,
+ * not pre-cropped, so a post page can request the hero (16:9 wide) crop
+ * and the index card can request the smaller (16:9 capped) crop from the
+ * same source image.
+ */
+export const blogPhotoIds: Record<string, string> = {
+  "indoor-signage-guide": "signage-wayfinding",
+  "outdoor-signage-guide": "signage-install",
+  "vinyl-stickers-guide": "stickers-labels",
+  "banner-printing-guide": "printing-digital",
+  "acrylic-box-packaging": "blog-acrylic-box",
+  "leather-gift-boxes": "blog-leather-box",
+  "corporate-gift-items-guide": "gift-pens",
+  "social-media-management-guide": "social-media",
+  "website-software-development": "blog-web-development",
+  "seo-services-guide": "blog-seo-services",
+  "exhibition-stand-guide": "events-exhibitions",
+};

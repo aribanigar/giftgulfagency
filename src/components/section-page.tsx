@@ -1,5 +1,33 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  Award,
+  ArrowRight,
+  BarChart3,
+  Boxes,
+  Calendar,
+  Check,
+  Coffee,
+  Compass,
+  Gift,
+  Handshake,
+  ImagePlay,
+  Layers,
+  Lightbulb,
+  MapPin,
+  MessageCircle,
+  Package,
+  Palette,
+  PenTool,
+  Presentation,
+  Printer,
+  Search,
+  ShoppingBag,
+  Sparkles,
+  Target,
+  Truck,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SectionVisual } from "@/components/section-visual";
@@ -8,6 +36,52 @@ import { sections, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { sectionHeroGalleries } from "@/lib/photos";
+
+const capabilityIconRules: [RegExp, LucideIcon][] = [
+  // Specific multi-word phrases first, so a generic word (like "design" or
+  // "bulk") appearing inside a more specific phrase elsewhere in the list
+  // can't steal the match before the specific rule gets a chance to run.
+  [/website|\bseo\b/i, Search],
+  [/exhibition|kiosk|\bstand\b/i, Presentation],
+  [/wayfinding/i, Compass],
+  [/laser-cut|acrylic lettering/i, Sparkles],
+  [/led|illuminated/i, Lightbulb],
+  [/award|trophies/i, Award],
+  [/storefront|retail branding/i, ShoppingBag],
+  [/signboard|signage/i, MapPin],
+  [/carry bag|kraft/i, ShoppingBag],
+  [/corporate orders|partner/i, Handshake],
+  [/hamper|gift set/i, Gift],
+  [/personalisation|personalization/i, PenTool],
+  [/sample/i, Sparkles],
+  [/hardboard|bulk/i, Boxes],
+  [/uv printing|dtf|printing/i, Printer],
+  [/sticker|decal/i, Layers],
+  [/vehicle/i, Truck],
+  [/cup/i, Coffee],
+  [/box/i, Package],
+  [/production support/i, Truck],
+  [/trade show|activation/i, Users],
+  [/strategy|pillar/i, Lightbulb],
+  [/photography|video|reels/i, ImagePlay],
+  [/paid|advertising|\bads\b/i, Target],
+  [/community|review/i, MessageCircle],
+  [/influencer|ugc/i, Users],
+  [/commerce|shop/i, ShoppingBag],
+  [/analytics|reporting/i, BarChart3],
+  [/ramadan|national day|campaign planning/i, Calendar],
+  [/backdrop/i, Palette],
+  // Generic catch-alls last: "design" and "branding" appear inside many
+  // more specific phrases above, so this only fires when nothing else did.
+  [/graphic|copywriting|design|branding/i, Palette],
+];
+
+function capabilityIcon(text: string): LucideIcon {
+  for (const [pattern, icon] of capabilityIconRules) {
+    if (pattern.test(text)) return icon;
+  }
+  return Check;
+}
 
 export function SectionPage({ section }: { section: Section }) {
   const Icon = section.icon;
@@ -82,16 +156,21 @@ export function SectionPage({ section }: { section: Section }) {
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           What&apos;s included
         </h2>
-        <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {section.capabilities.map((c) => (
-            <li
-              key={c}
-              className="flex items-start gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 text-sm text-zinc-700"
-            >
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-              {c}
-            </li>
-          ))}
+        <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {section.capabilities.map((c) => {
+            const CapIcon = capabilityIcon(c);
+            return (
+              <li
+                key={c}
+                className="flex items-start gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 text-sm text-zinc-700 transition-colors hover:border-green-600"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
+                  <CapIcon className="h-4 w-4" strokeWidth={1.75} />
+                </span>
+                <span className="pt-1">{c}</span>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="mt-6 rounded-[var(--radius-lg)] border border-green-200 bg-green-50 p-5 text-sm leading-relaxed text-zinc-700">
