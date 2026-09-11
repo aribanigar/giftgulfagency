@@ -3,12 +3,28 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { ContactForm } from "./contact-form";
 import { siteConfig } from "@/lib/site-config";
 import { getSettings } from "@/lib/settings";
+import { heroPhoto } from "@/lib/photos";
+
+const contactTitle = "Contact Gifts Gulf Advertising | Printing in UAE & Qatar";
+const contactDescription =
+  "Get in touch with Gifts Gulf Advertising for printing, signages, events & exhibitions, packaging, gift items and social media across Dubai, Abu Dhabi, Sharjah and Doha.";
 
 export const metadata: Metadata = {
-  title: "Contact Gifts Gulf Advertising | Printing in UAE & Qatar",
-  description:
-    "Get in touch with Gifts Gulf Advertising for printing, signages, events & exhibitions, packaging, gift items and social media across Dubai, Abu Dhabi, Sharjah and Doha.",
+  title: contactTitle,
+  description: contactDescription,
   alternates: { canonical: `${siteConfig.url}/contact` },
+  openGraph: {
+    title: contactTitle,
+    description: contactDescription,
+    url: `${siteConfig.url}/contact`,
+    images: [{ url: heroPhoto("hero-skyline", "south"), width: 1920, height: 1080, alt: contactTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: contactTitle,
+    description: contactDescription,
+    images: [heroPhoto("hero-skyline", "south")],
+  },
 };
 
 export default async function ContactPage() {

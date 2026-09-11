@@ -26,7 +26,7 @@ import { Reveal } from "@/components/reveal";
 import { getSettings } from "@/lib/settings";
 import { parseVideoUrl } from "@/lib/video";
 import { sectors, markets, siteFaqs, navLinks, sections } from "@/lib/site-data";
-import { organizationSchema, faqPageSchema } from "@/lib/schema";
+import { faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos, homeHeroGallery, sectionHeroGalleries } from "@/lib/photos";
 
@@ -91,7 +91,6 @@ export default async function Home() {
 
   return (
     <div>
-      <JsonLd data={organizationSchema()} />
       <JsonLd data={faqPageSchema(siteFaqs)} />
 
       {/* Hero */}

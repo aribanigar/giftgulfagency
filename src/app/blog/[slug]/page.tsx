@@ -25,6 +25,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
+  const image = heroPhoto(blogPhotoIds[post.photoId]);
   return {
     title: `${post.title} | Gifts Gulf Advertising`,
     description: post.metaDescription,
@@ -34,6 +35,14 @@ export async function generateMetadata({
       description: post.metaDescription,
       url: `${siteConfig.url}/blog/${post.slug}`,
       type: "article",
+      publishedTime: post.publishedAt,
+      images: [{ url: image, width: 1920, height: 1080, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.metaDescription,
+      images: [image],
     },
   };
 }

@@ -1,6 +1,7 @@
 import { siteConfig } from "@/lib/site-config";
 import type { Faq, Section } from "@/lib/site-data";
 import type { BlogPost } from "@/lib/blog-data";
+import type { SiteSettings } from "@/lib/settings";
 
 function areaServed() {
   return [
@@ -9,15 +10,31 @@ function areaServed() {
   ];
 }
 
-export function organizationSchema() {
+/**
+ * Site-wide identity markup, rendered once in the root layout. Uses
+ * AdvertisingAgency (a LocalBusiness subtype) rather than bare
+ * Organization so local/map-pack and AI-answer surfaces can identify this
+ * as a physical, area-served business rather than a generic brand entity.
+ * Only surfaces contact details already published on the site (footer) —
+ * never fabricates an address, hours or price range that aren't real.
+ */
+export function organizationSchema(settings?: SiteSettings) {
+  const socials = settings
+    ? Object.values(settings.socialLinks).filter(Boolean)
+    : [];
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "AdvertisingAgency",
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
+    logo: `${siteConfig.url}/favicon.ico`,
     description: siteConfig.description,
     areaServed: areaServed(),
+    ...(settings?.contactEmail ? { email: settings.contactEmail } : {}),
+    ...(settings?.contactPhone ? { telephone: settings.contactPhone } : {}),
+    ...(settings?.address ? { address: settings.address } : {}),
+    ...(socials.length > 0 ? { sameAs: socials } : {}),
   };
 }
 

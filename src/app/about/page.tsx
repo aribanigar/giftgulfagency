@@ -9,11 +9,26 @@ import { markets, sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos, sectionHeroGalleries } from "@/lib/photos";
 
+const aboutTitle = "About Gifts Gulf Advertising | Printing, Signage & Events Partner";
+const aboutDescription =
+  "Gifts Gulf Advertising builds printing, signage, event & exhibition stands, packaging and gift items for businesses across the UAE and Qatar, one brief, one team, one delivery.";
+
 export const metadata: Metadata = {
-  title: "About Gifts Gulf Advertising | Printing, Signage & Events Partner",
-  description:
-    "Gifts Gulf Advertising builds printing, signage, event & exhibition stands, packaging and gift items for businesses across the UAE and Qatar, one brief, one team, one delivery.",
+  title: aboutTitle,
+  description: aboutDescription,
   alternates: { canonical: `${siteConfig.url}/about` },
+  openGraph: {
+    title: aboutTitle,
+    description: aboutDescription,
+    url: `${siteConfig.url}/about`,
+    images: [{ url: sectionHeroGalleries.signages[0], width: 1920, height: 1080, alt: aboutTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: aboutTitle,
+    description: aboutDescription,
+    images: [sectionHeroGalleries.signages[0]],
+  },
 };
 
 const aboutHeroGallery = [

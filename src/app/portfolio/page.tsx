@@ -2,14 +2,29 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
-import { sectionPhotos } from "@/lib/photos";
+import { sectionPhotos, heroPhoto } from "@/lib/photos";
 import { Reveal } from "@/components/reveal";
 
+const portfolioTitle = "Portfolio | Gifts Gulf Advertising";
+const portfolioDescription =
+  "Work across printing, signages, events and exhibitions, packaging, gift items and social media for clients in the UAE and Qatar.";
+
 export const metadata: Metadata = {
-  title: "Portfolio | Gifts Gulf Advertising",
-  description:
-    "Work across printing, signages, events and exhibitions, packaging, gift items and social media for clients in the UAE and Qatar.",
+  title: portfolioTitle,
+  description: portfolioDescription,
   alternates: { canonical: `${siteConfig.url}/portfolio` },
+  openGraph: {
+    title: portfolioTitle,
+    description: portfolioDescription,
+    url: `${siteConfig.url}/portfolio`,
+    images: [{ url: heroPhoto("events-exhibitions"), width: 1920, height: 1080, alt: portfolioTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: portfolioTitle,
+    description: portfolioDescription,
+    images: [heroPhoto("events-exhibitions")],
+  },
 };
 
 export default function PortfolioPage() {

@@ -3,15 +3,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
-import { blogPhotoIds, wide } from "@/lib/photos";
+import { blogPhotoIds, heroPhoto, wide } from "@/lib/photos";
 import { siteConfig } from "@/lib/site-config";
 import { Reveal } from "@/components/reveal";
 
+const blogTitle = "Blog | Signage, Printing, Packaging & Digital Guides | Gifts Gulf Advertising";
+const blogDescription =
+  "Practical, factual guides on signage, printing, packaging, corporate gifting, social media, websites and SEO for businesses in the UAE and Qatar.";
+
 export const metadata: Metadata = {
-  title: "Blog | Signage, Printing, Packaging & Digital Guides | Gifts Gulf Advertising",
-  description:
-    "Practical, factual guides on signage, printing, packaging, corporate gifting, social media, websites and SEO for businesses in the UAE and Qatar.",
+  title: blogTitle,
+  description: blogDescription,
   alternates: { canonical: `${siteConfig.url}/blog` },
+  openGraph: {
+    title: blogTitle,
+    description: blogDescription,
+    url: `${siteConfig.url}/blog`,
+    images: [{ url: heroPhoto("signage-install"), width: 1920, height: 1080, alt: blogTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: blogTitle,
+    description: blogDescription,
+    images: [heroPhoto("signage-install")],
+  },
 };
 
 const categoryStyles: Record<string, string> = {
