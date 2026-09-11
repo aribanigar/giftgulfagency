@@ -43,6 +43,21 @@ export const sectionPhotos: Record<string, string> = {
   "social-media": wide("social-media"),
 };
 
+/**
+ * Multiple product shots for sections where one photo undersells the range
+ * of what's produced — SectionVisual rotates through these instead of
+ * showing a single static image. Sections without an entry here just fall
+ * back to their single sectionPhotos image.
+ */
+export const sectionGalleries: Record<string, string[]> = {
+  packaging: [
+    wide("packaging-boxes"),
+    wide("packaging-cups"),
+    wide("packaging-hardboard"),
+    wide("packaging-carrybag"),
+  ],
+};
+
 export const featurePhotos = {
   heroSkyline: heroPhoto("hero-skyline", "south"),
   sheikhZayedRoad: heroPhoto("sheikh-zayed-road", "auto"),

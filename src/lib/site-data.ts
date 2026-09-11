@@ -182,21 +182,21 @@ export const sections: Section[] = [
     name: "Packaging",
     code: "PKG-04",
     icon: Package,
-    short: "Branded takeaway boxes, cups, hardboard boxes and carry bags for restaurants.",
+    short: "Custom boxes, cups, hardboard boxes and carry bags, designed and printed in-house.",
     description:
-      "Custom food packaging for restaurants, cafes and cloud kitchens — takeaway boxes, hot and cold cups, hardboard boxes and kraft carry bags, printed with a brand's logo and colours and produced to hold up to Gulf delivery conditions.",
+      "Custom packaging — takeaway and retail boxes, hot and cold cups, hardboard boxes and kraft carry bags — designed and printed in-house with a brand's logo and colours, and specified to hold up to Gulf handling, shipping and delivery conditions.",
     definition:
-      "Restaurant packaging covers the takeaway boxes, cups, hardboard boxes and carry bags a food business hands a customer with every order. Gifts Gulf Advertising designs and prints all of it in-house, so a restaurant's packaging looks as consistent as its signage and menu.",
+      "Packaging covers the boxes, cups, hardboard boxes and carry bags a brand hands a customer at the point of sale or delivery. Gifts Gulf Advertising designs and prints all of it in-house, so packaging stays as consistent as a brand's signage and other print work.",
     quickFacts: [
-      { label: "Typical output", value: "Takeaway boxes, hot/cold cups, hardboard boxes, kraft carry bags" },
+      { label: "Typical output", value: "Takeaway & retail boxes, hot/cold cups, hardboard boxes, carry bags" },
       { label: "Materials", value: "Food-grade kraft, corrugated hardboard, grease-resistant lining" },
-      { label: "Built for", value: "Restaurants, cafes, cloud kitchens & delivery-app volume" },
-      { label: "Order sizes", value: "Sample runs to bulk kitchen supply" },
+      { label: "Suited to", value: "Retail, F&B and delivery-driven businesses" },
+      { label: "Order sizes", value: "Sample runs to bulk production" },
     ],
     regionalNote:
-      "Delivery apps drive a large share of restaurant orders across Dubai, Abu Dhabi, Sharjah and Doha, so packaging spends longer in transit and more time closed up with hot food than it would for dine-in service. Boxes and carry bags are specified with grease-resistant liners and sturdy handles with that in mind, not just printed to look right on the counter.",
+      "Delivery apps and online ordering drive a large share of retail and food orders across Dubai, Abu Dhabi, Sharjah and Doha, so packaging spends longer in transit and handling than it would for a straight over-the-counter sale. Boxes and carry bags are specified with sturdy handles, and food-facing items with grease-resistant lining, with that in mind, not just printed to look right on the shelf.",
     capabilities: [
-      "Custom-printed takeaway boxes",
+      "Custom-printed takeaway & retail boxes",
       "Branded hot & cold cups",
       "Hardboard boxes for bulk orders",
       "Kraft & paper carry bags",
@@ -205,28 +205,28 @@ export const sections: Section[] = [
     ],
     faqs: [
       {
-        q: "Do you make custom packaging for restaurants and cafes?",
-        a: "Yes. Takeaway boxes, hot and cold cups, hardboard boxes and carry bags are all designed and printed in-house specifically for restaurants, cafes and cloud kitchens across the UAE and Qatar.",
+        q: "Do you make custom boxes, cups and carry bags for businesses?",
+        a: "Yes. Takeaway and retail boxes, hot and cold cups, hardboard boxes and carry bags are all designed and printed in-house for retail, F&B and delivery-driven businesses across the UAE and Qatar.",
       },
       {
-        q: "Can you print a restaurant's logo on takeaway boxes and cups?",
-        a: "Yes. Boxes, cups, hardboard boxes and carry bags can all carry a restaurant's logo, colours and menu branding, kept consistent with its signage and other print work.",
+        q: "Can you print a brand's logo on packaging boxes, cups and bags?",
+        a: "Yes. Boxes, cups, hardboard boxes and carry bags can all carry a brand's logo, colours and messaging, kept consistent with its signage and other print work.",
       },
       {
-        q: "Is your restaurant packaging food-safe and grease-resistant?",
-        a: "Yes. Materials are food-grade kraft and corrugated hardboard with grease-resistant lining, specified for hot food that spends time in delivery-app transit as well as dine-in service.",
+        q: "Is your food packaging food-safe and grease-resistant?",
+        a: "Yes. Food-facing items use food-grade kraft and corrugated hardboard with grease-resistant lining, specified for items that spend time in delivery transit as well as counter service.",
       },
       {
-        q: "What's the minimum order for branded takeaway boxes or carry bags?",
-        a: "Both sample runs and bulk kitchen-supply orders are handled. Share the item, quantity and timeline when requesting a quote.",
+        q: "What's the minimum order for branded boxes or carry bags?",
+        a: "Both sample runs and bulk production orders are handled. Share the item, quantity and timeline when requesting a quote.",
       },
       {
-        q: "Do you supply hardboard boxes for bulk food orders?",
-        a: "Yes. Hardboard boxes are available for bulk orders, catering and larger food deliveries, alongside standard takeaway boxes and carry bags.",
+        q: "Do you supply hardboard boxes for bulk orders?",
+        a: "Yes. Hardboard boxes are available for bulk orders and larger deliveries, alongside standard takeaway boxes and carry bags.",
       },
       {
-        q: "Can packaging match a restaurant's existing brand colours?",
-        a: "Yes. Boxes, cups, hardboard boxes and carry bags are colour-matched against a restaurant's existing branding or Pantone references, produced by the same team that handles signage and print.",
+        q: "Can packaging match a brand's existing colours?",
+        a: "Yes. Boxes, cups, hardboard boxes and carry bags are colour-matched against existing branding or Pantone references, produced by the same team that handles signage and print.",
       },
     ],
   },
@@ -350,7 +350,7 @@ export const markets = ["Dubai", "Abu Dhabi", "Sharjah", "Doha"];
 export const siteFaqs: Faq[] = [
   {
     q: "What services does Gifts Gulf Advertising offer?",
-    a: "Gifts Gulf Advertising covers printing (large-format, stickers, magazines, books, screen printing, flags), signages, events and exhibitions, restaurant packaging (takeaway boxes, cups, hardboard boxes, carry bags), gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
+    a: "Gifts Gulf Advertising covers printing (large-format, stickers, magazines, books, screen printing, flags), signages, events and exhibitions, packaging (boxes, cups, hardboard boxes, carry bags), gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
   },
   {
     q: "Does Gifts Gulf Advertising serve clients in both the UAE and Qatar?",

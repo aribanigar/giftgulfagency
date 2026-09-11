@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { sections, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { sectionPhotos, sectionGalleries } from "@/lib/photos";
 
 export function SectionPage({ section }: { section: Section }) {
   const Icon = section.icon;
@@ -76,7 +77,13 @@ export function SectionPage({ section }: { section: Section }) {
         </dl>
 
         <div className="mt-10">
-          <SectionVisual slug={section.slug} icon={Icon} />
+          <SectionVisual
+            photos={sectionGalleries[section.slug] ?? [sectionPhotos[section.slug]]}
+          >
+            <div className="absolute bottom-5 left-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-700 shadow-lg shadow-green-900/25 sm:h-20 sm:w-20">
+              <Icon className="h-8 w-8 text-white sm:h-9 sm:w-9" strokeWidth={1.6} />
+            </div>
+          </SectionVisual>
         </div>
 
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
