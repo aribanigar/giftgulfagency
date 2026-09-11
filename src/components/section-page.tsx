@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { sections, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
-import { sectionPhotos, sectionGalleries } from "@/lib/photos";
+import { sectionHeroGalleries } from "@/lib/photos";
 
 export function SectionPage({ section }: { section: Section }) {
   const Icon = section.icon;
@@ -24,27 +24,30 @@ export function SectionPage({ section }: { section: Section }) {
         ])}
       />
 
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-500">
-            <Link href="/" className="hover:text-green-700">
+      <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-zinc-950">
+        <SectionVisual photos={sectionHeroGalleries[section.slug] ?? []} />
+        <div className="section-hero-shade absolute inset-0" />
+
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16">
+          <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-300">
+            <Link href="/" className="hover:text-green-400">
               Home
             </Link>
-            <span className="mx-2">/</span>
-            <span className="text-zinc-700">{section.name}</span>
+            <span className="mx-2 text-zinc-500">/</span>
+            <span className="text-white">{section.name}</span>
           </nav>
 
           <div className="mt-6 flex items-start gap-5">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-lg)] bg-green-50 text-green-700">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-lg)] border border-white/20 bg-white/10 text-white backdrop-blur-sm">
               <Icon className="h-7 w-7" strokeWidth={1.75} />
             </div>
             <div>
-              <h1 className="max-w-2xl font-heading text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+              <h1 className="max-w-2xl font-heading text-3xl font-bold tracking-tight text-white sm:text-5xl">
                 {section.name} in the UAE &amp; Qatar
               </h1>
             </div>
           </div>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
             {section.description}
           </p>
           <div className="mt-8">
@@ -75,16 +78,6 @@ export function SectionPage({ section }: { section: Section }) {
             </div>
           ))}
         </dl>
-
-        <div className="mt-10">
-          <SectionVisual
-            photos={sectionGalleries[section.slug] ?? [sectionPhotos[section.slug]]}
-          >
-            <div className="absolute bottom-5 left-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-700 shadow-lg shadow-green-900/25 sm:h-20 sm:w-20">
-              <Icon className="h-8 w-8 text-white sm:h-9 sm:w-9" strokeWidth={1.6} />
-            </div>
-          </SectionVisual>
-        </div>
 
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           What&apos;s included

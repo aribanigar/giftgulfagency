@@ -1,23 +1,17 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const ROTATE_MS = 4500;
 
 /**
- * A single photo, or — when given more than one — an auto-rotating
- * crossfade carousel (pauses on hover, dots allow jumping to any slide).
- * `children` renders the icon badge — passed in from the server so this
- * client component never has to receive a component reference as a prop.
+ * Full-bleed background for a section page's hero — a single photo, or,
+ * when given more than one, an auto-rotating crossfade carousel (pauses
+ * on hover, dots let you jump to any slide). Fills its positioned parent;
+ * the parent controls the section's height and overlays its own content.
  */
-export function SectionVisual({
-  photos,
-  children,
-}: {
-  photos: string[];
-  children?: ReactNode;
-}) {
+export function SectionVisual({ photos }: { photos: string[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const multi = photos.length > 1;
@@ -32,7 +26,7 @@ export function SectionVisual({
 
   return (
     <div
-      className="relative aspect-[21/9] overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-zinc-900"
+      className="absolute inset-0"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -42,7 +36,7 @@ export function SectionVisual({
           src={photo}
           alt=""
           fill
-          sizes="(min-width: 1024px) 900px, 100vw"
+          sizes="100vw"
           priority={i === 0}
           className={
             "ken-burns object-cover object-center transition-opacity duration-1000 ease-in-out " +
@@ -50,12 +44,9 @@ export function SectionVisual({
           }
         />
       ))}
-      <div className="photo-shade absolute inset-0" />
-
-      {children}
 
       {multi ? (
-        <div className="absolute bottom-5 right-5 flex gap-2">
+        <div className="absolute right-4 top-6 z-10 flex gap-2 sm:right-6">
           {photos.map((_, i) => (
             <button
               key={i}

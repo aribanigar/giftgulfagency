@@ -257,3 +257,17 @@
     ),
     linear-gradient(90deg, rgb(17 17 17 / 0.75) 0%, transparent 60%);
 }
+
+/* Lighter than .hero-shade — for section-page heroes, where the rotating
+   photo underneath varies a lot in brightness and a heavy scrim would
+   crush the darker ones to near-black. Stays mostly clear through the
+   middle of the photo; only darkens toward the bottom where text sits. */
+.section-hero-shade {
+  background: linear-gradient(
+    180deg,
+    rgb(17 17 17 / 0.1) 0%,
+    rgb(17 17 17 / 0.05) 35%,
+    rgb(17 17 17 / 0.4) 68%,
+    rgb(17 17 17 / 0.85) 100%
+  );
+}

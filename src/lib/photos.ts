@@ -19,7 +19,7 @@ function cld(id: string, transform: string) {
   return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transform}/gifts-gulf/${id}`;
 }
 
-/** Wide 16:9 crop, capped at 1200px — section bands and portfolio cards. */
+/** Wide 16:9 crop, capped at 1200px — small contexts (portfolio cards). */
 function wide(id: string) {
   return (
     cld(id, "c_fill,g_auto,ar_16:9,w_1200,q_auto,f_auto") ?? `/photos/${id}.jpg`
@@ -34,6 +34,7 @@ function heroPhoto(id: string, gravity: "auto" | "south" | "center" = "auto") {
   );
 }
 
+/** Small thumbnails — the portfolio grid, one per section. */
 export const sectionPhotos: Record<string, string> = {
   printing: wide("stickers-labels"),
   signages: wide("signage"),
@@ -44,17 +45,51 @@ export const sectionPhotos: Record<string, string> = {
 };
 
 /**
- * Multiple product shots for sections where one photo undersells the range
- * of what's produced — SectionVisual rotates through these instead of
- * showing a single static image. Sections without an entry here just fall
- * back to their single sectionPhotos image.
+ * Each section page's full-bleed hero, at the top of the page — five real
+ * product/work shots per section, auto-rotating.
  */
-export const sectionGalleries: Record<string, string[]> = {
+export const sectionHeroGalleries: Record<string, string[]> = {
+  printing: [
+    heroPhoto("stickers-labels"),
+    heroPhoto("printing-press"),
+    heroPhoto("printing-magazine"),
+    heroPhoto("printing-screen"),
+    heroPhoto("printing-vinyl"),
+  ],
+  signages: [
+    heroPhoto("signage-wayfinding"),
+    heroPhoto("signage-acrylic"),
+    heroPhoto("signage"),
+    heroPhoto("signage-illuminated"),
+    heroPhoto("signage-led"),
+  ],
+  "events-exhibitions": [
+    heroPhoto("events-exhibitions"),
+    heroPhoto("events-backdrop"),
+    heroPhoto("events-truss"),
+    heroPhoto("events-stand"),
+    heroPhoto("events-hall"),
+  ],
   packaging: [
-    wide("packaging-boxes"),
-    wide("packaging-cups"),
-    wide("packaging-hardboard"),
-    wide("packaging-carrybag"),
+    heroPhoto("packaging-boxes"),
+    heroPhoto("packaging-cups"),
+    heroPhoto("packaging-hardboard"),
+    heroPhoto("packaging-carrybag"),
+    heroPhoto("packaging-set"),
+  ],
+  "gift-items": [
+    heroPhoto("gift-pens"),
+    heroPhoto("gift-bottles"),
+    heroPhoto("gift-hamper"),
+    heroPhoto("gift-items"),
+    heroPhoto("gift-mugs"),
+  ],
+  "social-media": [
+    heroPhoto("social-media"),
+    heroPhoto("social-flatlay"),
+    heroPhoto("social-ringlight"),
+    heroPhoto("social-analytics"),
+    heroPhoto("social-studio"),
   ],
 };
 
