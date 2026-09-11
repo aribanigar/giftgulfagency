@@ -29,10 +29,7 @@ export default function AboutPage() {
     <div>
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
-            About Gifts Gulf
-          </span>
-          <h1 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
             A media &amp; advertising partner, built around one roof.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">

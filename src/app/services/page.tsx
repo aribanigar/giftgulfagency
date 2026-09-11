@@ -53,10 +53,7 @@ export default function ServicesPage() {
     <div>
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
-            Services
-          </span>
-          <h1 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
             Every brand touchpoint, one partner.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-zinc-600">
@@ -68,9 +65,9 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
+        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           Brand Production
-        </span>
+        </h2>
         <div className="mt-8">
           {servicesByPillar.production.map((service) => (
             <ServiceRow key={service.slug} service={service} />
@@ -79,9 +76,9 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto max-w-6xl border-t border-zinc-200 px-4 py-16 sm:px-6 sm:py-20">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
+        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           Digital Growth
-        </span>
+        </h2>
         <div className="mt-8">
           {servicesByPillar.digital.map((service) => (
             <ServiceRow key={service.slug} service={service} />

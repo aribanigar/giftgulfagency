@@ -34,10 +34,7 @@ export default function Home() {
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
-              Media &amp; Advertising
-            </span>
-            <h1 className="mt-6 font-heading text-4xl font-bold leading-[1.08] tracking-tight text-zinc-900 sm:text-6xl">
+            <h1 className="font-heading text-4xl font-bold leading-[1.08] tracking-tight text-zinc-900 sm:text-6xl">
               Every brand touchpoint.
               <br />
               One partner.
@@ -95,14 +92,9 @@ export default function Home() {
       {/* Services */}
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="flex flex-col gap-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
-              Brand Production
-            </span>
-            <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-              Everything a brand shows up as, made in-house
-            </h2>
-          </div>
+          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+            Everything a brand shows up as, made in-house
+          </h2>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {servicesByPillar.production.map((service) => (
               <ServiceCard key={service.slug} service={service} />
@@ -138,14 +130,9 @@ export default function Home() {
       {/* Digital growth */}
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="flex flex-col gap-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-green-700">
-              Digital Growth
-            </span>
-            <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-              Keep the momentum going online
-            </h2>
-          </div>
+          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+            Keep the momentum going online
+          </h2>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {servicesByPillar.digital.map((service) => (
               <ServiceCard key={service.slug} service={service} />
@@ -157,10 +144,7 @@ export default function Home() {
       {/* Sectors */}
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-            Working across
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
             {sectors.map((sector) => (
               <span
                 key={sector}
