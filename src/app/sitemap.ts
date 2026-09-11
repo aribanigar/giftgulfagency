@@ -4,7 +4,15 @@ import { blogPosts } from "@/lib/blog-data";
 import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/portfolio", "/about", "/contact", "/blog"].map(
+  const staticRoutes = [
+    "",
+    "/portfolio",
+    "/about",
+    "/contact",
+    "/blog",
+    "/privacy",
+    "/terms",
+  ].map(
     (path) => ({
       url: `${siteConfig.url}${path}`,
       lastModified: new Date(),

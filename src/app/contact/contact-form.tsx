@@ -1,18 +1,19 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
 import { Button } from "@/components/ui/button";
 import { sections } from "@/lib/site-data";
+import { submitContactAction, type ContactResult } from "./actions";
+
+const initialState: ContactResult | null = null;
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, formAction, pending] = useActionState(
+    submitContactAction,
+    initialState,
+  );
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSubmitted(true);
-  }
-
-  if (submitted) {
+  if (state?.ok) {
     return (
       <div className="rounded-[var(--radius-xl)] border border-green-200 bg-green-50 p-8 text-center">
         <h3 className="font-heading text-lg font-semibold text-zinc-900">
@@ -26,7 +27,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form action={formAction} className="flex flex-col gap-5">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-sm font-medium text-zinc-800">
@@ -89,8 +90,12 @@ export function ContactForm() {
         />
       </div>
 
-      <Button type="submit" size="lg" className="self-start">
-        Send Message
+      {state && !state.ok ? (
+        <p className="text-sm text-red-600">{state.error}</p>
+      ) : null}
+
+      <Button type="submit" size="lg" className="self-start" disabled={pending}>
+        {pending ? "Sending…" : "Send Message"}
       </Button>
     </form>
   );

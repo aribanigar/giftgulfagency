@@ -46,7 +46,7 @@ export function SectionVisual({ photos }: { photos: string[] }) {
       ))}
 
       {multi ? (
-        <div className="absolute right-4 top-6 z-10 flex gap-2 sm:right-6">
+        <div className="absolute right-1 top-2 z-10 flex sm:right-3">
           {photos.map((_, i) => (
             <button
               key={i}
@@ -54,11 +54,18 @@ export function SectionVisual({ photos }: { photos: string[] }) {
               aria-label={`Show photo ${i + 1} of ${photos.length}`}
               aria-current={i === index}
               onClick={() => setIndex(i)}
-              className={
-                "h-2 w-2 rounded-full transition-colors " +
-                (i === index ? "bg-white" : "bg-white/40 hover:bg-white/70")
-              }
-            />
+              className="group flex h-11 w-11 items-center justify-center"
+            >
+              <span
+                aria-hidden
+                className={
+                  "block h-2 w-2 rounded-full transition-colors " +
+                  (i === index
+                    ? "bg-white"
+                    : "bg-white/40 group-hover:bg-white/70")
+                }
+              />
+            </button>
           ))}
         </div>
       ) : null}
