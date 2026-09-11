@@ -76,7 +76,7 @@ export function SectionPage({ section }: { section: Section }) {
         </dl>
 
         <div className="mt-10">
-          <SectionVisual icon={Icon} />
+          <SectionVisual slug={section.slug} icon={Icon} />
         </div>
 
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">

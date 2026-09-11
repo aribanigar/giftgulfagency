@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,11 +9,13 @@ import { VendorComparison } from "@/components/vendor-comparison";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { VideoEmbed } from "@/components/video-embed";
 import { JsonLd } from "@/components/json-ld";
+import { Reveal } from "@/components/reveal";
 import { getSettings } from "@/lib/settings";
 import { parseVideoUrl } from "@/lib/video";
 import { sections, sectors, markets, siteFaqs } from "@/lib/site-data";
 import { organizationSchema, faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
+import { featurePhotos } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title:
@@ -55,35 +58,48 @@ export default async function Home() {
       <JsonLd data={faqPageSchema(siteFaqs)} />
 
       {/* Hero */}
-      <section className="bg-dot-grid relative overflow-hidden border-b border-zinc-200 bg-white">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-green-100 opacity-60 blur-3xl"
+      <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-zinc-950">
+        <Image
+          src={featurePhotos.heroSkyline}
+          alt="Dubai skyline at dusk, Sheikh Zayed Road interchange lit gold below the Burj Khalifa"
+          fill
+          priority
+          sizes="100vw"
+          className="ken-burns object-cover object-bottom opacity-95"
         />
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-          <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl font-bold leading-[1.06] tracking-tight text-balance text-zinc-900 sm:text-6xl">
-              Every brand touchpoint.
-              <br />
-              <span className="text-green-600">One partner</span>, across
-              the UAE &amp; Qatar.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600">
-              Gifts Gulf Advertising covers printing, signages, events &amp;
-              exhibitions, packaging and gift items, plus the social media,
-              website and SEO work that keeps a brand visible, for
-              businesses in Dubai, Abu Dhabi, Sharjah and Doha.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Get a Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="#services">Explore Services</Link>
-              </Button>
-            </div>
+        <div className="hero-shade absolute inset-0" />
+
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">
+          <div className="mb-6 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-green-400">
+            <span className="h-1.5 w-1.5 bg-green-400" />
+            UAE &amp; Qatar &middot; Advertising &amp; Signage
+          </div>
+          <h1 className="max-w-3xl text-balance font-heading text-4xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-6xl">
+            Every brand touchpoint.
+            <br />
+            <span className="text-green-400">One partner</span>, across
+            the UAE &amp; Qatar.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
+            Gifts Gulf Advertising covers printing, signages, events &amp;
+            exhibitions, packaging and gift items, plus the social media,
+            website and SEO work that keeps a brand visible, for
+            businesses in Dubai, Abu Dhabi, Sharjah and Doha.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Get a Quote <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white/30 bg-white/5 text-white backdrop-blur-sm hover:bg-white/15 hover:text-white"
+            >
+              <Link href="#services">Explore Services</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -131,8 +147,10 @@ export default async function Home() {
             place.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {sections.map((section) => (
-              <ServiceCard key={section.slug} service={section} />
+            {sections.map((section, i) => (
+              <Reveal key={section.slug} delay={i * 80}>
+                <ServiceCard service={section} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -246,22 +264,32 @@ export default async function Home() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 sm:py-24">
-          <h2 className="font-heading text-3xl font-bold text-zinc-900 sm:text-4xl">
-            Let&apos;s build your next brand moment.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-zinc-600">
-            Signage, an exhibition stand, a new website, or all of it.
-            Wherever you are between Dubai and Doha, tell us what you need.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Get a Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+      <section className="relative overflow-hidden bg-zinc-950">
+        <Image
+          src={featurePhotos.sheikhZayedRoad}
+          alt="Sheikh Zayed Road towers with light trails at dusk"
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-40"
+        />
+        <div className="photo-shade-strong absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-28">
+          <Reveal>
+            <h2 className="font-heading text-3xl font-extrabold text-white sm:text-4xl">
+              Let&apos;s build your next brand moment.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-zinc-300">
+              Signage, an exhibition stand, a new website, or all of it.
+              Wherever you are between Dubai and Doha, tell us what you need.
+            </p>
+            <div className="mt-8">
+              <Button asChild size="lg">
+                <Link href="/contact">
+                  Get a Quote <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>
