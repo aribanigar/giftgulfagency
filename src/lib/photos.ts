@@ -1,9 +1,11 @@
 /**
  * Placeholder photography. Served from Cloudinary (CLOUDINARY_CLOUD_NAME env
- * var) when configured — f_auto/q_auto lets Cloudinary pick the best format
- * and quality per browser, so Vercel's Image Optimization API isn't needed.
- * Falls back to the local copies in public/photos/ if Cloudinary isn't
- * configured (e.g. a fresh checkout before env vars are set).
+ * var) when configured — cropped and capped server-side to the size each
+ * component actually needs (the source uploads are 2000-2400px, often
+ * portrait, so shipping them uncropped made every photo slow to load),
+ * with f_auto/q_auto letting Cloudinary pick the best format/quality per
+ * browser. Falls back to the local copies in public/photos/ if Cloudinary
+ * isn't configured (e.g. a fresh checkout before env vars are set).
  *
  * Sourced from Unsplash (free license, no attribution required) — swap for
  * real project photography once available; see README "Known placeholders".
@@ -12,27 +14,38 @@
  */
 const CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
 
-function cld(id: string) {
+function cld(id: string, transform: string) {
   if (!CLOUD_NAME) return null;
-  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto/gifts-gulf/${id}`;
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transform}/gifts-gulf/${id}`;
 }
 
-function photo(id: string) {
-  return cld(id) ?? `/photos/${id}.jpg`;
+/** Wide 16:9 crop, capped at 1200px — section bands and portfolio cards. */
+function wide(id: string) {
+  return (
+    cld(id, "c_fill,g_auto,ar_16:9,w_1200,q_auto,f_auto") ?? `/photos/${id}.jpg`
+  );
+}
+
+/** Wide 16:9 crop, capped at 1920px, with a chosen gravity — full-bleed heroes. */
+function heroPhoto(id: string, gravity: "auto" | "south" | "center" = "auto") {
+  return (
+    cld(id, `c_fill,g_${gravity},ar_16:9,w_1920,q_auto,f_auto`) ??
+    `/photos/${id}.jpg`
+  );
 }
 
 export const sectionPhotos: Record<string, string> = {
-  printing: photo("stickers-labels"),
-  signages: photo("signage"),
-  "events-exhibitions": photo("events-exhibitions"),
-  packaging: photo("packaging-gifts"),
-  "gift-items": photo("gift-items"),
-  "social-media": photo("social-media"),
+  printing: wide("stickers-labels"),
+  signages: wide("signage"),
+  "events-exhibitions": wide("events-exhibitions"),
+  packaging: wide("packaging-gifts"),
+  "gift-items": wide("gift-items"),
+  "social-media": wide("social-media"),
 };
 
 export const featurePhotos = {
-  heroSkyline: photo("hero-skyline"),
-  sheikhZayedRoad: photo("sheikh-zayed-road"),
-  fabrication: photo("fabrication"),
-  fabricationDetail: photo("fabrication-detail"),
+  heroSkyline: heroPhoto("hero-skyline", "south"),
+  sheikhZayedRoad: heroPhoto("sheikh-zayed-road", "auto"),
+  fabrication: heroPhoto("fabrication", "auto"),
+  fabricationDetail: wide("fabrication-detail"),
 };

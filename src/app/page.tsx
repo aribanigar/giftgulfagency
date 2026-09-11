@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceMarquee } from "@/components/service-marquee";
-import { ServiceCard } from "@/components/service-card";
+import { SectionIndex } from "@/components/section-index";
 import { VendorComparison } from "@/components/vendor-comparison";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { VideoEmbed } from "@/components/video-embed";
@@ -12,7 +12,7 @@ import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/reveal";
 import { getSettings } from "@/lib/settings";
 import { parseVideoUrl } from "@/lib/video";
-import { sections, sectors, markets, siteFaqs } from "@/lib/site-data";
+import { sectors, markets, siteFaqs } from "@/lib/site-data";
 import { organizationSchema, faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos } from "@/lib/photos";
@@ -137,24 +137,7 @@ export default async function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="scroll-mt-20 border-b border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Six sections, one partner
-          </h2>
-          <p className="mt-3 max-w-2xl text-zinc-600">
-            Everything a brand needs to look right and be found, in one
-            place.
-          </p>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {sections.map((section, i) => (
-              <Reveal key={section.slug} delay={i * 80}>
-                <ServiceCard service={section} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SectionIndex />
 
       {/* Vendor comparison */}
       <section className="border-b border-zinc-200 bg-zinc-50">
