@@ -184,7 +184,7 @@ export const sections: Section[] = [
     icon: Package,
     short: "Custom boxes, cups, hardboard boxes and carry bags, designed and printed in-house.",
     description:
-      "Custom packaging — takeaway and retail boxes, hot and cold cups, hardboard boxes and kraft carry bags — designed and printed in-house with a brand's logo and colours, and specified to hold up to Gulf handling, shipping and delivery conditions.",
+      "Custom packaging: takeaway and retail boxes, hot and cold cups, hardboard boxes and kraft carry bags, designed and printed in-house with a brand's logo and colours, and specified to hold up to Gulf handling, shipping and delivery conditions.",
     definition:
       "Packaging covers the boxes, cups, hardboard boxes and carry bags a brand hands a customer at the point of sale or delivery. Gifts Gulf Advertising designs and prints all of it in-house, so packaging stays as consistent as a brand's signage and other print work.",
     quickFacts: [

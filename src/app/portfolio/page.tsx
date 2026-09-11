@@ -31,7 +31,7 @@ export default function PortfolioPage() {
           <p className="mt-5 max-w-xl text-lg text-zinc-300">
             This page is set up to hold real project photography and case
             studies from across the UAE and Qatar, organised by service.
-            The images below are stock placeholders — swap for actual
+            The images below are stock placeholders. Swap them for actual
             completed work.
           </p>
         </div>
