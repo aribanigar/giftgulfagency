@@ -13,6 +13,7 @@ import {
 export type Service = {
   slug: string;
   name: string;
+  code: string;
   pillar: "production" | "digital";
   icon: LucideIcon;
   short: string;
@@ -24,6 +25,7 @@ export const services: Service[] = [
   {
     slug: "signage",
     name: "Signage",
+    code: "SIG-01",
     pillar: "production",
     icon: Signpost,
     short: "Indoor & outdoor signage that gets a brand noticed.",
@@ -39,6 +41,7 @@ export const services: Service[] = [
   {
     slug: "stickers-labels",
     name: "Stickers & Labels",
+    code: "STK-02",
     pillar: "production",
     icon: Sticker,
     short: "Custom stickers, decals, and product labels, any material.",
@@ -54,6 +57,7 @@ export const services: Service[] = [
   {
     slug: "packaging",
     name: "Packaging",
+    code: "PKG-03",
     pillar: "production",
     icon: Package,
     short: "Custom packaging that carries the brand off the shelf.",
@@ -69,6 +73,7 @@ export const services: Service[] = [
   {
     slug: "corporate-gifts",
     name: "Corporate Gifts",
+    code: "GFT-04",
     pillar: "production",
     icon: Gift,
     short: "Branded gifts for clients, staff, and events.",
@@ -84,6 +89,7 @@ export const services: Service[] = [
   {
     slug: "events-exhibitions",
     name: "Events & Exhibitions",
+    code: "EVT-05",
     pillar: "production",
     icon: Presentation,
     short: "Exhibition stands and event branding, start to finish.",
@@ -99,6 +105,7 @@ export const services: Service[] = [
   {
     slug: "fit-outs",
     name: "Fit-Outs",
+    code: "FIT-06",
     pillar: "production",
     icon: Hammer,
     short: "Retail and commercial interior fit-outs.",
@@ -114,6 +121,7 @@ export const services: Service[] = [
   {
     slug: "social-media",
     name: "Social Media",
+    code: "SOC-07",
     pillar: "digital",
     icon: Share2,
     short: "Content and campaigns that build a following.",
@@ -129,6 +137,7 @@ export const services: Service[] = [
   {
     slug: "web-software",
     name: "Website & Software",
+    code: "WEB-08",
     pillar: "digital",
     icon: Code2,
     short: "Websites and custom software, built to grow with the business.",

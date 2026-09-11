@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "Work across signage, print, events, fit-outs, social and web.",
 };
 
+const pillarLabel = {
+  production: "Brand Production",
+  digital: "Digital Growth",
+} as const;
+
 export default function PortfolioPage() {
   return (
     <div>
@@ -23,24 +28,61 @@ export default function PortfolioPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.slug}
-                className="flex aspect-[4/3] flex-col justify-between rounded-[var(--radius-xl)] border border-dashed border-zinc-300 bg-zinc-50 p-6"
+                className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-colors hover:border-green-600"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)] bg-white text-green-700 ring-1 ring-zinc-200">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                <div
+                  className="relative flex aspect-[16/10] items-center justify-center bg-zinc-100"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(135deg, transparent, transparent 10px, rgb(0 0 0 / 0.03) 10px, rgb(0 0 0 / 0.03) 11px)",
+                  }}
+                >
+                  <span className="absolute left-3 top-3 rounded-[var(--radius-sm)] border border-zinc-200 bg-white/90 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-600 backdrop-blur">
+                    Code: {service.code}
+                  </span>
+                  <span
+                    className={
+                      "absolute bottom-3 right-3 rounded-[var(--radius-sm)] px-2 py-1 font-mono text-[10px] uppercase tracking-wider " +
+                      (service.pillar === "production"
+                        ? "bg-green-600 text-white"
+                        : "bg-zinc-900 text-white")
+                    }
+                  >
+                    {pillarLabel[service.pillar]}
+                  </span>
+                  <Icon
+                    className="h-9 w-9 text-zinc-300"
+                    strokeWidth={1.5}
+                  />
                 </div>
-                <div>
-                  <h3 className="font-heading text-base font-semibold text-zinc-900">
-                    {service.name}
-                  </h3>
-                  <p className="mt-1 text-xs text-zinc-500">
-                    Project photography coming soon
-                  </p>
+
+                <div className="flex flex-1 flex-col justify-between p-5">
+                  <div>
+                    <h3 className="font-heading text-base font-semibold text-zinc-900">
+                      {service.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-zinc-600">
+                      {service.short}
+                    </p>
+                  </div>
+                  <dl className="mt-4 flex items-center justify-between border-t border-zinc-100 pt-3 font-mono text-[11px] uppercase tracking-wide text-zinc-400">
+                    <div className="flex items-center gap-1.5">
+                      <dt>Pillar</dt>
+                      <dd className="text-zinc-600">
+                        {pillarLabel[service.pillar]}
+                      </dd>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <dt>Status</dt>
+                      <dd className="text-zinc-600">Pending</dd>
+                    </div>
+                  </dl>
                 </div>
               </div>
             );
