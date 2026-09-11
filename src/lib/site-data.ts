@@ -31,36 +31,44 @@ export const sections: Section[] = [
     name: "Printing",
     code: "PRT-01",
     icon: Printer,
-    short: "Large-format printing, stickers, magazines and books, screen printing and banners.",
+    short: "UV and DTF printing, large-format, stickers, magazines and books, banners.",
     description:
-      "Large-format and digital printing, custom stickers and decals, magazine and book printing, screen-printed T-shirts and merchandise, and flags and banners. All of it is produced in-house for retail, publishing, events and promotions across the UAE and Qatar.",
+      "UV printing for rigid items and promotional products, DTF printing for full-colour apparel, plus large-format and digital printing, custom stickers and decals, magazine and book printing, and flags and banners. All of it is produced in-house for retail, publishing, events and promotions across the UAE and Qatar.",
     definition:
-      "Printing covers the large-format, digital and specialty print work a brand or publisher needs, from outdoor banners and stickers to magazine and book runs. That includes banners, stickers, decals, magazines, books, screen-printed merchandise, flags and vehicle graphics, produced in-house rather than outsourced.",
+      "Printing covers the UV, DTF, large-format and digital print work a brand or publisher needs. UV printing cures ink directly onto rigid items and promotional products; DTF (direct-to-film) printing transfers full-colour designs onto apparel without the set-up cost of screen printing. Alongside those, banners, stickers, decals, magazines, books and vehicle graphics are all produced in-house rather than outsourced.",
     quickFacts: [
-      { label: "Typical output", value: "Banners, stickers, decals, magazines, books, T-shirts, flags" },
-      { label: "Materials", value: "Vinyl, PVC, foil, fabric, canvas, book & magazine stock" },
+      { label: "Typical output", value: "UV-printed items, DTF apparel, banners, stickers, magazines, books" },
+      { label: "Methods", value: "UV printing, DTF transfer, large-format digital, screen printing" },
       { label: "Built for", value: "Outdoor UAE and Qatar heat and UV exposure" },
-      { label: "Order sizes", value: "Single banners to bulk merchandise and print runs" },
+      { label: "Order sizes", value: "Single items to bulk merchandise and print runs" },
     ],
     regionalNote:
       "Gulf summers push surface temperatures well past 45°C on outdoor prints, stickers and banners from Sharjah's industrial zones to Doha's corniche, so materials and finishes are chosen to hold up to that heat and UV load, not just to look right on day one.",
     capabilities: [
+      "UV printing on rigid & promotional items",
+      "DTF printing for full-colour apparel",
       "Large-format & digital printing",
       "Custom stickers & decals (vinyl, PVC, foil)",
       "Magazine & book printing",
-      "Screen printing & custom T-shirts",
       "Flags, banners & feather flags",
       "Vehicle branding decals",
-      "Bulk & small-batch runs",
     ],
     faqs: [
       {
+        q: "Do you offer UV printing?",
+        a: "Yes. UV printing cures ink directly onto rigid items and promotional products with a UV light as it prints, giving a durable, scratch-resistant finish without a separate curing step.",
+      },
+      {
+        q: "What is DTF printing and do you offer it?",
+        a: "Yes. DTF (direct-to-film) printing transfers a full-colour design onto a special film, then heat-presses it onto apparel. It handles detailed, multi-colour designs on small to medium runs without the set-up cost of screen printing.",
+      },
+      {
         q: "Do you print magazines and books?",
-        a: "Yes. Magazine and book printing runs in-house alongside large-format and specialty print work, from single proof copies to full circulation and print runs.",
+        a: "Yes. Magazine and book printing runs in-house alongside UV, DTF and large-format print work, from single proof copies to full circulation and print runs.",
       },
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
-        a: "Yes. From large-format banners and stickers to screen-printed T-shirts and event merchandise, everything is produced in-house rather than farmed out to different shops.",
+        a: "Yes. From large-format banners and stickers to DTF-printed apparel and event merchandise, everything is produced in-house rather than farmed out to different shops.",
       },
       {
         q: "Are your prints and stickers durable enough for UAE and Qatar outdoor conditions?",
@@ -69,10 +77,6 @@ export const sections: Section[] = [
       {
         q: "Can flags, banners or stickers be produced for a same-week event?",
         a: "Turnaround depends on quantity and finish. Share your event date when you request a quote and we'll confirm what's achievable.",
-      },
-      {
-        q: "What is the difference between large-format and digital printing?",
-        a: "Large-format printing covers oversized outputs like banners and vehicle wraps. Digital printing covers smaller-run, print-on-demand jobs like stickers and flyers. Both are handled in-house, so a single order can mix the two.",
       },
       {
         q: "Can printing be matched to an existing brand's colours?",
@@ -350,7 +354,7 @@ export const markets = ["Dubai", "Abu Dhabi", "Sharjah", "Doha"];
 export const siteFaqs: Faq[] = [
   {
     q: "What services does Gifts Gulf Advertising offer?",
-    a: "Gifts Gulf Advertising covers printing (large-format, stickers, magazines, books, screen printing, flags), signages, events and exhibitions, packaging (boxes, cups, hardboard boxes, carry bags), gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
+    a: "Gifts Gulf Advertising covers printing (UV, DTF, large-format, stickers, magazines, books, flags), signages, events and exhibitions, packaging (boxes, cups, hardboard boxes, carry bags), gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
   },
   {
     q: "Does Gifts Gulf Advertising serve clients in both the UAE and Qatar?",

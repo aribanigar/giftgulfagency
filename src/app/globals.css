@@ -265,9 +265,18 @@
 .section-hero-shade {
   background: linear-gradient(
     180deg,
-    rgb(17 17 17 / 0.1) 0%,
-    rgb(17 17 17 / 0.05) 35%,
-    rgb(17 17 17 / 0.4) 68%,
-    rgb(17 17 17 / 0.85) 100%
+    rgb(17 17 17 / 0.15) 0%,
+    rgb(17 17 17 / 0.1) 35%,
+    rgb(17 17 17 / 0.5) 68%,
+    rgb(17 17 17 / 0.92) 100%
   );
+}
+
+/* Guarantees text legibility over a photo regardless of how bright or busy
+   it is — the overlay gradient alone can't cover every case in a rotating
+   carousel, so hero copy always gets this too. */
+.hero-text-shadow {
+  text-shadow:
+    0 2px 16px rgb(0 0 0 / 0.6),
+    0 1px 4px rgb(0 0 0 / 0.5);
 }

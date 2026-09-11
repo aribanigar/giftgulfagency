@@ -24,7 +24,7 @@ export default function PortfolioPage() {
           className="object-cover object-center opacity-30"
         />
         <div className="photo-shade-strong absolute inset-0" />
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="hero-text-shadow relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <h1 className="max-w-2xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             Work, by category.
           </h1>

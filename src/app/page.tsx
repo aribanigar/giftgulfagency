@@ -69,7 +69,7 @@ export default async function Home() {
         />
         <div className="hero-shade absolute inset-0" />
 
-        <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">
+        <div className="hero-text-shadow relative mx-auto w-full max-w-6xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">
           <div className="mb-6 flex items-center gap-2 font-mono text-xs tracking-[0.25em] text-green-400">
             <span className="h-1.5 w-1.5 bg-green-400" />
             UAE &amp; Qatar &middot; Advertising &amp; Signage
@@ -256,7 +256,7 @@ export default async function Home() {
           className="object-cover object-center opacity-40"
         />
         <div className="photo-shade-strong absolute inset-0" />
-        <div className="relative mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-28">
+        <div className="hero-text-shadow relative mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-28">
           <Reveal>
             <h2 className="font-heading text-3xl font-extrabold text-white sm:text-4xl">
               Let&apos;s build your next brand moment.

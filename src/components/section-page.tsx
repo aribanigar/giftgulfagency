@@ -28,7 +28,7 @@ export function SectionPage({ section }: { section: Section }) {
         <SectionVisual photos={sectionHeroGalleries[section.slug] ?? []} />
         <div className="section-hero-shade absolute inset-0" />
 
-        <div className="relative mx-auto w-full max-w-6xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16">
+        <div className="hero-text-shadow relative mx-auto w-full max-w-6xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16">
           <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-300">
             <Link href="/" className="hover:text-green-400">
               Home

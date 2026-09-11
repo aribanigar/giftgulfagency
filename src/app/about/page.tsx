@@ -40,8 +40,8 @@ export default function AboutPage() {
             An advertising &amp; printing partner, built around one roof.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">
-            Gifts Gulf Advertising brings together printing, from large-format
-            work to stickers, screen printing and banners, with signages, events
+            Gifts Gulf Advertising brings together printing, from UV and DTF
+            work to large-format, stickers and banners, with signages, events
             &amp; exhibitions, packaging, and gift items, plus the social
             media, website and SEO work that keeps a brand visible. One
             brief, one point of contact, work that stays consistent across
