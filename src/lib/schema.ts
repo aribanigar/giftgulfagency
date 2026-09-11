@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/site-config";
 import type { Faq, Section } from "@/lib/site-data";
+import type { BlogPost } from "@/lib/blog-data";
 
 function areaServed() {
   return [
@@ -49,6 +50,28 @@ export function serviceSchema(section: Section) {
     },
     areaServed: areaServed(),
     url: `${siteConfig.url}/${section.slug}`,
+  };
+}
+
+export function articleSchema(post: BlogPost) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.metaDescription,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
   };
 }
 

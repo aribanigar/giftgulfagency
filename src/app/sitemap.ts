@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { sections } from "@/lib/site-data";
+import { blogPosts } from "@/lib/blog-data";
 import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/portfolio", "/about", "/contact"].map(
+  const staticRoutes = ["", "/portfolio", "/about", "/contact", "/blog"].map(
     (path) => ({
       url: `${siteConfig.url}${path}`,
       lastModified: new Date(),
@@ -15,5 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...sectionRoutes];
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${siteConfig.url}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+  }));
+
+  return [...staticRoutes, ...sectionRoutes, ...blogRoutes];
 }
