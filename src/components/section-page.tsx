@@ -57,7 +57,27 @@ export function SectionPage({ section }: { section: Section }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <SectionVisual icon={Icon} />
+        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+          What is {section.name.toLowerCase()}?
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600">
+          {section.definition}
+        </p>
+
+        <dl className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-lg)] border border-zinc-200 bg-zinc-200 sm:grid-cols-2">
+          {section.quickFacts.map((fact) => (
+            <div key={fact.label} className="bg-white p-4">
+              <dt className="font-mono text-[11px] uppercase tracking-wide text-zinc-400">
+                {fact.label}
+              </dt>
+              <dd className="mt-1 text-sm text-zinc-800">{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <div className="mt-10">
+          <SectionVisual icon={Icon} />
+        </div>
 
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           What&apos;s included
