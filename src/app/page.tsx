@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  CalendarDays,
+  Globe2,
+  Handshake,
+  HeartPulse,
+  Landmark,
+  Layers,
+  MapPin,
+  ShoppingBag,
+  UtensilsCrossed,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceMarquee } from "@/components/service-marquee";
 import { SectionIndex, type SectionIndexRow } from "@/components/section-index";
@@ -39,6 +51,15 @@ export const metadata: Metadata = {
   description:
     "Printing, signages, events & exhibitions, packaging, gift items and social media, one partner across Dubai, Abu Dhabi, Sharjah and Doha.",
   alternates: { canonical: siteConfig.url },
+};
+
+const sectorIcons: Record<string, typeof ShoppingBag> = {
+  Retail: ShoppingBag,
+  Hospitality: UtensilsCrossed,
+  Corporate: Building2,
+  Events: CalendarDays,
+  Government: Landmark,
+  Healthcare: HeartPulse,
 };
 
 const processSteps = [
@@ -165,62 +186,67 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Stat bar */}
-      <section className="border-b border-zinc-200 bg-zinc-900">
-        <div className="mx-auto grid max-w-6xl grid-cols-3 gap-8 px-4 py-14 sm:px-6">
-          <div>
-            <div className="font-heading text-4xl font-bold text-white">6</div>
-            <p className="mt-2 text-sm text-zinc-400">
-              Sections under one roof.
-            </p>
+      {/* Coverage: stats, markets & sectors */}
+      <section className="border-b border-zinc-800 bg-zinc-950">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              { icon: Layers, value: "6", label: "Sections under one roof." },
+              { icon: Globe2, value: "2", label: "Markets: the UAE and Qatar." },
+              { icon: Handshake, value: "1", label: "Partner to brief, instead of several vendors." },
+            ].map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={stat.label}
+                  className="rounded-[var(--radius-xl)] border border-zinc-800 bg-zinc-900/60 p-6"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-lg)] bg-green-500/10 text-green-400">
+                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                  </div>
+                  <div className="mt-5 font-heading text-4xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
+                </div>
+              );
+            })}
           </div>
-          <div>
-            <div className="font-heading text-4xl font-bold text-white">2</div>
-            <p className="mt-2 text-sm text-zinc-400">
-              Markets: the UAE and Qatar.
-            </p>
-          </div>
-          <div>
-            <div className="font-heading text-4xl font-bold text-white">1</div>
-            <p className="mt-2 text-sm text-zinc-400">
-              Partner to brief, instead of several vendors.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Markets & sectors */}
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-4 rounded-[var(--radius-xl)] border border-zinc-800 bg-zinc-900/60 p-6 sm:grid-cols-2 sm:p-8">
             <div>
-              <p className="text-xs font-semibold tracking-wider text-zinc-500">
+              <p className="font-mono text-xs tracking-[0.2em] text-green-400">
                 Where we work
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-2.5">
                 {markets.map((city) => (
                   <span
                     key={city}
-                    className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700"
+                    className="flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-sm font-medium text-zinc-300"
                   >
+                    <MapPin className="h-3.5 w-3.5 text-green-400" strokeWidth={2} />
                     {city}
                   </span>
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-wider text-zinc-500">
+              <p className="font-mono text-xs tracking-[0.2em] text-green-400">
                 Who we work with
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {sectors.map((sector) => (
-                  <span
-                    key={sector}
-                    className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700"
-                  >
-                    {sector}
-                  </span>
-                ))}
+              <div className="mt-4 flex flex-wrap gap-2.5">
+                {sectors.map((sector) => {
+                  const Icon = sectorIcons[sector] ?? Building2;
+                  return (
+                    <span
+                      key={sector}
+                      className="flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-sm font-medium text-zinc-300"
+                    >
+                      <Icon className="h-3.5 w-3.5 text-green-400" strokeWidth={2} />
+                      {sector}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>

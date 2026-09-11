@@ -357,6 +357,22 @@ export const siteFaqs: Faq[] = [
     a: "Gifts Gulf Advertising covers printing (UV, DTF, large-format, stickers, magazines, books, flags), signages, events and exhibitions, packaging (boxes, cups, hardboard boxes, carry bags), gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
   },
   {
+    q: "What types of printing does Gifts Gulf Advertising offer?",
+    a: "UV printing, which cures ink directly onto rigid surfaces like acrylic, PVC, wood, metal and glass for a scratch-resistant finish; DTF (direct-to-film) printing for full-colour, detailed designs on apparel without screen-printing set-up costs; screen printing for bulk uniform and T-shirt runs in solid spot colours; large-format digital printing for banners, mesh banners, roll-up standees and backlit media; and offset and digital printing for magazines, books and stationery. Sticker, label and flag printing run alongside all of it in-house.",
+  },
+  {
+    q: "What's the difference between UV printing and DTF printing?",
+    a: "UV printing cures ink directly onto a rigid item, such as a pen, plaque, acrylic panel or phone case, as it prints, giving a durable, scratch-resistant finish suited to hard surfaces. DTF printing transfers a full-colour design onto film first, then heat-presses it onto fabric, making it the better fit for apparel, uniforms and soft-goods branding. Gifts Gulf Advertising runs both, and recommends whichever suits the item and order size.",
+  },
+  {
+    q: "What types of signage do you produce?",
+    a: "Illuminated signage (LED-lit acrylic letters, backlit lightboxes and neon-style LED strip signs), non-illuminated flat-cut acrylic and ACP (aluminium composite panel) signs, 3D channel letters for storefront branding, monument and pylon signs for building entrances and compounds, indoor wayfinding and directional signage, engraved plaques, and window, glass and vehicle graphics. Every type is designed, fabricated and installed in-house.",
+  },
+  {
+    q: "What kinds of large-format stickers and vinyl graphics are available?",
+    a: "Printed vinyl stickers and decals in full colour, laminated for outdoor durability; die-cut stickers custom-shaped to a logo or design; static cling window stickers that use no adhesive; one-way vision perforated window film, visible as a graphic from outside while staying see-through from inside; floor graphics with anti-slip laminate for retail and mall use; large-format wall decals and murals; and vehicle wrap vinyl for fleet and car branding.",
+  },
+  {
     q: "Does Gifts Gulf Advertising serve clients in both the UAE and Qatar?",
     a: "Yes. Gifts Gulf Advertising works with businesses across the UAE (Dubai, Abu Dhabi, Sharjah) and Qatar (Doha).",
   },
@@ -367,10 +383,6 @@ export const siteFaqs: Faq[] = [
   {
     q: "What's the difference between Gifts Gulf Advertising and a single-service printer, signage company or digital agency?",
     a: "Most printers, signage companies and digital agencies in the UAE and Qatar specialise in one thing. Gifts Gulf Advertising runs all of it, printing, signage, events, packaging, gifting and social media, all under one brief, one point of contact, and one consistent brand across every touchpoint.",
-  },
-  {
-    q: "Do I need to hire separate companies for signage, printing and marketing?",
-    a: "No. That's the problem Gifts Gulf Advertising is built to remove. Instead of briefing a signage company, a separate printer, and a digital agency, all of it runs through one team.",
   },
   {
     q: "Does Gifts Gulf Advertising handle both small orders and large corporate contracts?",
