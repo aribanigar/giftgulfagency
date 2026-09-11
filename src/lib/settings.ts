@@ -43,7 +43,7 @@ const SETTINGS_KEY = "gifts-gulf:site-settings";
 const SETTINGS_TAG = "site-settings";
 
 // Vercel's Redis/Upstash marketplace integration can inject either naming
-// convention depending on when it was connected — support both.
+// convention depending on when it was connected. Support both.
 function redisEnv() {
   const url =
     process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
@@ -83,7 +83,7 @@ export async function updateSettings(
   const redis = getRedis();
   if (!redis) {
     throw new Error(
-      "Settings store isn't connected yet — add a Redis (Upstash) integration in the Vercel dashboard first.",
+      "Settings store isn't connected yet. Add a Redis (Upstash) integration in the Vercel dashboard first.",
     );
   }
   const current = await getSettings();

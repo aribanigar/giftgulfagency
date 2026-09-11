@@ -42,7 +42,7 @@ export async function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-[30ch] text-sm text-zinc-600">
-              Every brand touchpoint, one partner — printing, signages,
+              Every brand touchpoint, one partner. Printing, signages,
               events and gifting, across the UAE and Qatar.
             </p>
             <p className="mt-4 text-xs text-zinc-500">

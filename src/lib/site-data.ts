@@ -30,9 +30,9 @@ export const sections: Section[] = [
     icon: Printer,
     short: "Large-format printing, stickers, screen printing and banners.",
     description:
-      "Large-format and digital printing, custom stickers and decals, screen-printed T-shirts and merchandise, and flags and banners — produced in-house for retail, events and promotions across the UAE and Qatar.",
+      "Large-format and digital printing, custom stickers and decals, screen-printed T-shirts and merchandise, and flags and banners. All of it is produced in-house for retail, events and promotions across the UAE and Qatar.",
     regionalNote:
-      "Gulf summers push surface temperatures well past 45°C on outdoor prints, stickers and banners from Sharjah's industrial zones to Doha's corniche — materials and finishes are chosen to hold up to that heat and UV load, not just to look right on day one.",
+      "Gulf summers push surface temperatures well past 45°C on outdoor prints, stickers and banners from Sharjah's industrial zones to Doha's corniche, so materials and finishes are chosen to hold up to that heat and UV load, not just to look right on day one.",
     capabilities: [
       "Large-format & digital printing",
       "Custom stickers & decals (vinyl, PVC, foil)",
@@ -44,7 +44,7 @@ export const sections: Section[] = [
     faqs: [
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
-        a: "Yes — from large-format banners and stickers to screen-printed T-shirts and event merchandise, all produced in-house rather than farmed out to different shops.",
+        a: "Yes. From large-format banners and stickers to screen-printed T-shirts and event merchandise, everything is produced in-house rather than farmed out to different shops.",
       },
       {
         q: "Are your prints and stickers durable enough for UAE and Qatar outdoor conditions?",
@@ -52,7 +52,7 @@ export const sections: Section[] = [
       },
       {
         q: "Can flags, banners or stickers be produced for a same-week event?",
-        a: "Turnaround depends on quantity and finish — share your event date when you request a quote and we'll confirm what's achievable.",
+        a: "Turnaround depends on quantity and finish. Share your event date when you request a quote and we'll confirm what's achievable.",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const sections: Section[] = [
     icon: Signpost,
     short: "Indoor & outdoor signage that gets a storefront noticed.",
     description:
-      "3D and LED signboards, illuminated and non-illuminated boards, wayfinding systems, and laser-cut acrylic lettering and displays — designed, fabricated and installed for retail, F&B and corporate premises across the UAE and Qatar.",
+      "3D and LED signboards, illuminated and non-illuminated boards, wayfinding systems, and laser-cut acrylic lettering and displays, designed, fabricated and installed for retail, F&B and corporate premises across the UAE and Qatar.",
     regionalNote:
       "Signboard approvals run through different authorities depending on the emirate, or through Qatar's municipalities, and mall landlords add their own sign-off process on top. Design and fabrication account for the relevant approval route from the start, whether the install is a Dubai mall unit, an Abu Dhabi corniche-facing shopfront, or a Doha retail strip.",
     capabilities: [
@@ -77,7 +77,7 @@ export const sections: Section[] = [
     faqs: [
       {
         q: "Do you handle signboard installation as well as design?",
-        a: "Yes — signboards are designed, fabricated and installed as one project, so there's a single point of contact from concept to the board going up.",
+        a: "Yes. Signboards are designed, fabricated and installed as one project, so there's a single point of contact from concept to the board going up.",
       },
       {
         q: "Can you match signage to municipality or mall approval requirements?",
@@ -96,9 +96,9 @@ export const sections: Section[] = [
     icon: Presentation,
     short: "Exhibition stands, event branding and kiosks, start to finish.",
     description:
-      "Exhibition booth design and build, event branding, backdrops, and custom kiosks for malls, events and pop-ups — produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
+      "Exhibition booth design and build, event branding, backdrops, and custom kiosks for malls, events and pop-ups, produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
     regionalNote:
-      "Exhibition and conference activity runs on a busy calendar across Dubai World Trade Centre, Abu Dhabi's ADNEC, and Doha's DECC and QNCC — booth and kiosk builds are planned around that calendar so a stand is ready before the doors open, wherever the show is.",
+      "Exhibition and conference activity runs on a busy calendar across Dubai World Trade Centre, Abu Dhabi's ADNEC, and Doha's DECC and QNCC, so booth and kiosk builds are planned around that calendar and a stand is ready before the doors open, wherever the show is.",
     capabilities: [
       "Exhibition stand design & build",
       "Event branding & backdrops",
@@ -109,15 +109,15 @@ export const sections: Section[] = [
     faqs: [
       {
         q: "Do you build exhibition stands for venues in both the UAE and Qatar?",
-        a: "Yes — exhibition and event work is delivered across major UAE venues and Qatar's exhibition and conference calendar.",
+        a: "Yes. Exhibition and event work is delivered across major UAE venues and Qatar's exhibition and conference calendar.",
       },
       {
         q: "Do you design and build mall kiosks, or only exhibition stands?",
-        a: "Both — the same team builds standalone kiosks for malls and pop-up activations alongside full exhibition stands.",
+        a: "Both. The same team builds standalone kiosks for malls and pop-up activations alongside full exhibition stands.",
       },
       {
         q: "Can you handle a booth build with a short lead time before a trade show?",
-        a: "Lead time depends on stand size and complexity — share the show dates and stand brief and we'll confirm what's achievable.",
+        a: "Lead time depends on stand size and complexity. Share the show dates and stand brief and we'll confirm what's achievable.",
       },
     ],
   },
@@ -128,9 +128,9 @@ export const sections: Section[] = [
     icon: Package,
     short: "Custom packaging that carries the brand off the shelf.",
     description:
-      "Retail and corporate packaging — boxes, sleeves, inserts and bags — designed and printed to match the rest of a brand's visual identity, for businesses across the UAE and Qatar.",
+      "Retail and corporate packaging, including boxes, sleeves, inserts and bags, designed and printed to match the rest of a brand's visual identity, for businesses across the UAE and Qatar.",
     regionalNote:
-      "Retail packaging for a Dubai flagship, an Abu Dhabi boutique, or a Doha concept store all needs to survive the same handling and shipping conditions across the region — structural design accounts for that before the print run starts.",
+      "Retail packaging for a Dubai flagship, an Abu Dhabi boutique, or a Doha concept store all needs to survive the same handling and shipping conditions across the region, so structural design accounts for that before the print run starts.",
     capabilities: [
       "Custom box & sleeve design",
       "Retail-ready packaging",
@@ -140,11 +140,11 @@ export const sections: Section[] = [
     faqs: [
       {
         q: "Can packaging match branding used on signage and gifts?",
-        a: "Yes — since production runs through the same team, packaging can be kept visually consistent with a brand's signage, stickers and gifting.",
+        a: "Yes. Since production runs through the same team, packaging can be kept visually consistent with a brand's signage, stickers and gifting.",
       },
       {
         q: "Do you offer eco-friendly packaging materials?",
-        a: "Recycled and biodegradable stock options are available — specify sustainability requirements when requesting a quote.",
+        a: "Recycled and biodegradable stock options are available. Specify sustainability requirements when requesting a quote.",
       },
     ],
   },
@@ -155,9 +155,9 @@ export const sections: Section[] = [
     icon: Gift,
     short: "UV-printed and personalised branding on corporate gift items.",
     description:
-      "Direct UV printing onto gift items — pens, bottles, tech accessories, awards and hampers — plus curated corporate gifting for client relationships, staff recognition and event giveaways, across the UAE and Qatar.",
+      "Direct UV printing onto gift items, including pens, bottles, tech accessories, awards and hampers, plus curated corporate gifting for client relationships, staff recognition and event giveaways, across the UAE and Qatar.",
     regionalNote:
-      "Corporate gifting spikes around UAE National Day and Qatar National Day, plus year-end and Ramadan gifting across both markets — UV printing and gift sourcing are planned with those peak periods in mind.",
+      "Corporate gifting spikes around UAE National Day and Qatar National Day, plus year-end and Ramadan gifting across both markets, so UV printing and gift sourcing are planned with those peak periods in mind.",
     capabilities: [
       "UV printing on gift items",
       "Custom branding & personalisation",
@@ -167,15 +167,15 @@ export const sections: Section[] = [
     faqs: [
       {
         q: "What items can you UV print on for corporate gifts?",
-        a: "UV printing works on most hard surfaces — pens, bottles, tech accessories, acrylic and wood items — so branding can be applied directly rather than via a sticker.",
+        a: "UV printing works on most hard surfaces, including pens, bottles, tech accessories, acrylic and wood items, so branding can be applied directly rather than via a sticker.",
       },
       {
         q: "Do you help source the gift items, or only print on items we supply?",
-        a: "Both — we can source and curate gift items to a brief, or print and personalise items a client already has.",
+        a: "Both. We can source and curate gift items to a brief, or print and personalise items a client already has.",
       },
       {
         q: "What's the difference between UV printing and screen printing for merchandise?",
-        a: "UV printing suits smaller runs on hard items like pens, bottles and plaques; screen printing suits bulk runs on fabric like T-shirts. We offer both and can advise which fits a given order.",
+        a: "UV printing suits smaller runs on hard items like pens, bottles and plaques. Screen printing suits bulk runs on fabric like T-shirts. We offer both and can advise which fits a given order.",
       },
     ],
   },
@@ -186,9 +186,9 @@ export const sections: Section[] = [
     icon: Share2,
     short: "Content, campaigns, and the website and search behind them.",
     description:
-      "Social media strategy, content production, and paid campaign management across the platforms UAE and Qatar audiences actually use — backed by the website and search-engine work that turns followers into leads.",
+      "Social media strategy, content production, and paid campaign management across the platforms UAE and Qatar audiences actually use, backed by the website and search engine work that turns followers into leads.",
     regionalNote:
-      "Retail and F&B brands in Dubai and Abu Dhabi live on Instagram and TikTok; Doha's market leans more heavily on WhatsApp and Snapchat alongside them. Content and paid strategy is built around where each city's audience actually spends time, not a one-size template.",
+      "Retail and F&B brands in Dubai and Abu Dhabi live on Instagram and TikTok. Doha's market leans more heavily on WhatsApp and Snapchat alongside them. Content and paid strategy is built around where each city's audience actually spends time, not a one size template.",
     capabilities: [
       "Content planning & production",
       "Paid social campaigns",
@@ -203,11 +203,11 @@ export const sections: Section[] = [
       },
       {
         q: "Do you also build websites and handle SEO, or only social media?",
-        a: "Both — website development and search-engine optimisation run alongside social media, so the platform, the site and search visibility are planned as one system rather than separate projects.",
+        a: "Both. Website development and search engine optimisation run alongside social media, so the platform, the site and search visibility are planned as one system rather than separate projects.",
       },
       {
         q: "Can social media work alongside signage and print campaigns?",
-        a: "Yes — because production and digital sit under one roof, a single campaign, like a store opening, exhibition, or product launch, can be planned across signage, print and social from the same brief.",
+        a: "Yes. Because production and digital sit under one roof, a single campaign, like a store opening, exhibition, or product launch, can be planned across signage, print and social from the same brief.",
       },
     ],
   },
@@ -236,27 +236,27 @@ export const markets = ["Dubai", "Abu Dhabi", "Sharjah", "Doha"];
 export const siteFaqs: Faq[] = [
   {
     q: "What services does Gifts Gulf Advertising offer?",
-    a: "Gifts Gulf Advertising covers printing (large-format, stickers, screen printing, flags), signages, events and exhibitions, packaging, gift items, and social media — plus the website and SEO work behind it — delivered across the UAE and Qatar.",
+    a: "Gifts Gulf Advertising covers printing (large-format, stickers, screen printing, flags), signages, events and exhibitions, packaging, gift items, and social media, plus the website and SEO work behind it, delivered across the UAE and Qatar.",
   },
   {
     q: "Does Gifts Gulf Advertising serve clients in both the UAE and Qatar?",
-    a: "Yes — Gifts Gulf Advertising works with businesses across the UAE (Dubai, Abu Dhabi, Sharjah) and Qatar (Doha).",
+    a: "Yes. Gifts Gulf Advertising works with businesses across the UAE (Dubai, Abu Dhabi, Sharjah) and Qatar (Doha).",
   },
   {
     q: "Can one project include both physical branding and digital marketing?",
-    a: "Yes — that's the core of how Gifts Gulf Advertising works. A single brief can cover a shop's signage and printing alongside its website and social media, instead of splitting the work across separate vendors.",
+    a: "Yes. That's the core of how Gifts Gulf Advertising works. A single brief can cover a shop's signage and printing alongside its website and social media, instead of splitting the work across separate vendors.",
   },
   {
     q: "What's the difference between Gifts Gulf Advertising and a single-service printer, signage company or digital agency?",
-    a: "Most printers, signage companies and digital agencies in the UAE and Qatar specialise in one thing. Gifts Gulf Advertising runs all of it — printing, signage, events, packaging, gifting and social media — under one brief, one point of contact, and one consistent brand across every touchpoint.",
+    a: "Most printers, signage companies and digital agencies in the UAE and Qatar specialise in one thing. Gifts Gulf Advertising runs all of it, printing, signage, events, packaging, gifting and social media, all under one brief, one point of contact, and one consistent brand across every touchpoint.",
   },
   {
     q: "Do I need to hire separate companies for signage, printing and marketing?",
-    a: "No — that's the problem Gifts Gulf Advertising is built to remove. Instead of briefing a signage company, a separate printer, and a digital agency, all of it runs through one team.",
+    a: "No. That's the problem Gifts Gulf Advertising is built to remove. Instead of briefing a signage company, a separate printer, and a digital agency, all of it runs through one team.",
   },
   {
     q: "Does Gifts Gulf Advertising handle both small orders and large corporate contracts?",
-    a: "Yes — from single sign installs and small merchandise runs to multi-service corporate and exhibition contracts.",
+    a: "Yes. From single sign installs and small merchandise runs to multi-service corporate and exhibition contracts.",
   },
   {
     q: "How do I get a quote from Gifts Gulf Advertising?",

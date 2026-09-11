@@ -19,7 +19,7 @@ export async function loginAction(
     return {
       ok: false,
       error:
-        "ADMIN_PASSWORD isn't set for this project yet — add it in Vercel's Environment Variables first.",
+        "ADMIN_PASSWORD isn't set for this project yet. Add it in Vercel's Environment Variables first.",
     };
   }
   const password = String(formData.get("password") ?? "");

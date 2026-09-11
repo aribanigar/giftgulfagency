@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title:
     "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising",
   description:
-    "Printing, signages, events & exhibitions, packaging, gift items and social media — one partner across Dubai, Abu Dhabi, Sharjah and Doha.",
+    "Printing, signages, events & exhibitions, packaging, gift items and social media, one partner across Dubai, Abu Dhabi, Sharjah and Doha.",
   alternates: { canonical: siteConfig.url },
 };
 
@@ -26,7 +26,7 @@ const processSteps = [
   {
     n: "01",
     title: "Brief",
-    text: "We start with the brand, the market — UAE or Qatar — and the outcome you need, not a generic questionnaire.",
+    text: "We start with the brand, the market, whether UAE or Qatar, and the outcome you need, not a generic questionnaire.",
   },
   {
     n: "02",
@@ -70,8 +70,8 @@ export default async function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600">
               Gifts Gulf Advertising covers printing, signages, events &amp;
-              exhibitions, packaging and gift items — plus the social media,
-              website and SEO work that keeps a brand visible — for
+              exhibitions, packaging and gift items, plus the social media,
+              website and SEO work that keeps a brand visible, for
               businesses in Dubai, Abu Dhabi, Sharjah and Doha.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -167,7 +167,7 @@ export default async function Home() {
           <div>
             <div className="font-heading text-4xl font-bold text-white">2</div>
             <p className="mt-2 text-sm text-zinc-400">
-              Markets — the UAE and Qatar.
+              Markets: the UAE and Qatar.
             </p>
           </div>
           <div>
@@ -252,8 +252,8 @@ export default async function Home() {
             Let&apos;s build your next brand moment.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-zinc-600">
-            Signage, an exhibition stand, a new website, or all of it —
-            wherever you are between Dubai and Doha, tell us what you need.
+            Signage, an exhibition stand, a new website, or all of it.
+            Wherever you are between Dubai and Doha, tell us what you need.
           </p>
           <div className="mt-8">
             <Button asChild size="lg">

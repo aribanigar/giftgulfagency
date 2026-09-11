@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq-accordion";
+import { SectionVisual } from "@/components/section-visual";
 import { JsonLd } from "@/components/json-ld";
 import { sections, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
@@ -59,18 +60,7 @@ export function SectionPage({ section }: { section: Section }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div
-          className="relative flex aspect-[21/9] items-center justify-center overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-zinc-50"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(135deg, transparent, transparent 12px, rgb(0 0 0 / 0.03) 12px, rgb(0 0 0 / 0.03) 13px)",
-          }}
-        >
-          <Icon className="h-16 w-16 text-zinc-300" strokeWidth={1.25} />
-          <span className="absolute bottom-3 right-4 font-mono text-[10px] uppercase tracking-wider text-zinc-400">
-            Project photography coming soon
-          </span>
-        </div>
+        <SectionVisual icon={Icon} code={section.code} />
 
         <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           What&apos;s included
@@ -145,8 +135,8 @@ export function SectionPage({ section }: { section: Section }) {
             Ready to brief {section.name.toLowerCase()}?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-zinc-600">
-            Tell us the scope and timeline — Dubai, Abu Dhabi, Sharjah or
-            Doha — and we&apos;ll follow up with next steps.
+            Tell us the scope and timeline in Dubai, Abu Dhabi, Sharjah or
+            Doha, and we&apos;ll follow up with next steps.
           </p>
           <div className="mt-7">
             <Button asChild size="lg">

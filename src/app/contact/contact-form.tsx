@@ -16,7 +16,7 @@ export function ContactForm() {
     return (
       <div className="rounded-[var(--radius-xl)] border border-green-200 bg-green-50 p-8 text-center">
         <h3 className="font-heading text-lg font-semibold text-zinc-900">
-          Thanks — we&apos;ve got your message.
+          Thanks. We&apos;ve got your message.
         </h3>
         <p className="mt-2 text-sm text-zinc-600">
           We&apos;ll get back to you shortly.

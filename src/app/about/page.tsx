@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "One partner, not a chain of vendors",
-    text: "Printing, signage, events and gifting sit alongside social media, website and SEO work — briefed once and delivered as one project.",
+    text: "Printing, signage, events and gifting sit alongside social media, website and SEO work, briefed once and delivered as one project.",
   },
   {
     title: "Production-first thinking",
@@ -27,7 +27,7 @@ const values = [
   },
   {
     title: "Built for the UAE & Qatar",
-    text: "Every section — from signage approvals to local search — is planned around how business actually gets done in Dubai, Abu Dhabi, Sharjah and Doha.",
+    text: "Every section, from signage approvals to local search, is planned around how business actually gets done in Dubai, Abu Dhabi, Sharjah and Doha.",
   },
 ];
 
@@ -40,8 +40,8 @@ export default function AboutPage() {
             An advertising &amp; printing partner, built around one roof.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">
-            Gifts Gulf Advertising brings together printing — large-format,
-            stickers, screen printing and banners — with signages, events
+            Gifts Gulf Advertising brings together printing, from large-format
+            work to stickers, screen printing and banners, with signages, events
             &amp; exhibitions, packaging, and gift items, plus the social
             media, website and SEO work that keeps a brand visible. One
             brief, one point of contact, work that stays consistent across

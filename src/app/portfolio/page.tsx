@@ -34,20 +34,21 @@ export default function PortfolioPage() {
                 key={section.slug}
                 className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-colors hover:border-green-600"
               >
-                <div
-                  className="relative flex aspect-[16/10] items-center justify-center bg-zinc-100"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(135deg, transparent, transparent 10px, rgb(0 0 0 / 0.03) 10px, rgb(0 0 0 / 0.03) 11px)",
-                  }}
-                >
+                <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-zinc-50">
+                  <div aria-hidden className="pointer-events-none absolute inset-0">
+                    <div className="bg-dot-grid absolute inset-0 opacity-30" />
+                    <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-green-200/50 blur-2xl" />
+                    <div className="absolute -bottom-12 -left-8 h-28 w-28 rounded-full bg-zinc-300/40 blur-2xl" />
+                  </div>
                   <span className="absolute left-3 top-3 rounded-[var(--radius-sm)] border border-zinc-200 bg-white/90 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-600 backdrop-blur">
                     Code: {section.code}
                   </span>
                   <span className="absolute bottom-3 right-3 rounded-[var(--radius-sm)] bg-green-600 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-white">
                     {section.name}
                   </span>
-                  <Icon className="h-9 w-9 text-zinc-300" strokeWidth={1.5} />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-700 shadow-md shadow-green-900/20">
+                    <Icon className="h-7 w-7 text-white" strokeWidth={1.6} />
+                  </div>
                 </div>
 
                 <div className="flex flex-1 flex-col justify-between p-5">

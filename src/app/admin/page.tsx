@@ -26,7 +26,7 @@ export default async function AdminPage() {
 
       {!isSettingsStoreConfigured() ? (
         <div className="mt-6 rounded-[var(--radius-md)] border border-dashed border-amber-300 bg-amber-50 p-4 text-sm text-amber-800">
-          No Redis store connected yet — changes made here won&apos;t
+          No Redis store connected yet. Changes made here won&apos;t
           persist until a Redis (Upstash) integration is added to this
           project in the Vercel dashboard. The site works fine with the
           defaults in the meantime.
@@ -35,7 +35,7 @@ export default async function AdminPage() {
 
       {!isAdminConfigured() ? (
         <div className="mt-6 rounded-[var(--radius-md)] border border-dashed border-red-300 bg-red-50 p-4 text-sm text-red-700">
-          ADMIN_PASSWORD isn&apos;t set for this project — add it under
+          ADMIN_PASSWORD isn&apos;t set for this project. Add it under
           Vercel &rarr; Settings &rarr; Environment Variables to enable
           admin access.
         </div>
