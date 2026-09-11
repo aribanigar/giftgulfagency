@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceMarquee } from "@/components/service-marquee";
-import { SectionIndex } from "@/components/section-index";
+import { SectionIndex, type SectionIndexRow } from "@/components/section-index";
 import { VendorComparison } from "@/components/vendor-comparison";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { VideoEmbed } from "@/components/video-embed";
@@ -12,10 +12,25 @@ import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/reveal";
 import { getSettings } from "@/lib/settings";
 import { parseVideoUrl } from "@/lib/video";
-import { sectors, markets, siteFaqs } from "@/lib/site-data";
+import { sectors, markets, siteFaqs, navLinks, sections } from "@/lib/site-data";
 import { organizationSchema, faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
-import { featurePhotos } from "@/lib/photos";
+import { featurePhotos, sectionHeroGalleries } from "@/lib/photos";
+
+const indexCaptions: Record<string, string> = {
+  "/about": "Who we are, and how the work actually gets done.",
+};
+
+const sectionIndexRows: SectionIndexRow[] = navLinks.map((link) => {
+  const slug = link.href.replace("/", "");
+  const section = sections.find((s) => s.slug === slug);
+  return {
+    href: link.href,
+    label: link.label,
+    caption: indexCaptions[link.href] ?? section?.short ?? "",
+    photo: sectionHeroGalleries[slug]?.[0] ?? featurePhotos.fabrication,
+  };
+});
 
 export const metadata: Metadata = {
   title:
@@ -137,7 +152,7 @@ export default async function Home() {
       </section>
 
       {/* Services */}
-      <SectionIndex />
+      <SectionIndex rows={sectionIndexRows} />
 
       {/* Vendor comparison */}
       <section className="border-b border-zinc-200 bg-zinc-50">
