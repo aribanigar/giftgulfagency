@@ -45,12 +45,27 @@ const sectionIndexRows: SectionIndexRow[] = navLinks.map((link) => {
   };
 });
 
+const homeTitle =
+  "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising";
+const homeDescription =
+  "Printing, signages, events & exhibitions, packaging, gift items and social media, one partner across Dubai, Abu Dhabi, Sharjah and Doha.";
+
 export const metadata: Metadata = {
-  title:
-    "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising",
-  description:
-    "Printing, signages, events & exhibitions, packaging, gift items and social media, one partner across Dubai, Abu Dhabi, Sharjah and Doha.",
+  title: homeTitle,
+  description: homeDescription,
   alternates: { canonical: siteConfig.url },
+  openGraph: {
+    title: homeTitle,
+    description: homeDescription,
+    url: siteConfig.url,
+    images: [{ url: homeHeroGallery[0], width: 1920, height: 1080, alt: homeTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription,
+    images: [homeHeroGallery[0]],
+  },
 };
 
 const sectorIcons: Record<string, typeof ShoppingBag> = {

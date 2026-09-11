@@ -67,7 +67,7 @@ export default function PortfolioPage() {
                   {photo ? (
                     <Image
                       src={photo}
-                      alt=""
+                      alt={`${section.name} work in the UAE and Qatar`}
                       fill
                       sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"

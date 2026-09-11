@@ -6,7 +6,7 @@ export const siteConfig = {
   // once a custom domain is assigned to this deployment.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://giftsgulfagency.vercel.app",
   description:
-    "Gifts Gulf Advertising is a media and advertising partner across the UAE and Qatar, covering printing, signages, events & exhibitions, packaging, gift items, and social media, plus the website and SEO work behind it.",
+    "Printing, signage, events & exhibitions, packaging, gift items and social media, one advertising partner across Dubai, Abu Dhabi, Sharjah and Doha.",
   areaServed: ["United Arab Emirates", "Qatar"],
   cities: ["Dubai", "Abu Dhabi", "Sharjah", "Doha"],
 };

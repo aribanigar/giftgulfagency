@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     slug: "indoor-signage-guide",
     title: "Indoor signage: a guide to the types, materials and where each one belongs",
     metaDescription:
-      "Every major type of indoor signage explained: reception signs, wayfinding, directory boards, dimensional letters and window film, with materials suited to offices, retail and healthcare in the UAE and Qatar.",
+      "Indoor signage explained: reception signs, wayfinding, dimensional letters and window film, and which materials suit offices, retail and healthcare.",
     category: "Signage",
     excerpt:
       "Reception signs, wayfinding, directory boards, dimensional letters and window film, and which material fits which room.",
@@ -122,7 +122,7 @@ export const blogPosts: BlogPost[] = [
     slug: "outdoor-signage-guide",
     title: "Outdoor signage in the UAE and Qatar: what actually survives the heat",
     metaDescription:
-      "A practical guide to outdoor signage types, illuminated and non-illuminated, and the materials that hold up to Gulf heat, humidity and UV exposure without fading, warping or yellowing.",
+      "A guide to outdoor signage types and the materials that hold up to Gulf heat, humidity and UV exposure without fading, warping or yellowing.",
     category: "Signage",
     excerpt:
       "Channel letters, monument signs, ACP panels and which materials actually hold up to Gulf summers without fading or warping.",
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     slug: "vinyl-stickers-guide",
     title: "Vinyl stickers and large-format graphics: a buyer's guide",
     metaDescription:
-      "Die-cut stickers, printed decals, one-way vision window film, floor graphics and vehicle wrap vinyl explained: materials, lamination and which type fits which surface.",
+      "Die-cut stickers, one-way vision film, floor graphics and vehicle wrap vinyl explained: materials, lamination and which type fits which surface.",
     category: "Printing",
     excerpt:
       "Die-cut, one-way vision, floor graphics and vehicle wrap vinyl, and the material choices that decide how long each one lasts.",
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     slug: "banner-printing-guide",
     title: "Banner printing: materials, finishes and when to use which",
     metaDescription:
-      "PVC flex, mesh, backlit and fabric banners compared, plus finishing options like eyelets and pole pockets, and how to choose the right banner for an outdoor event, storefront or exhibition stand.",
+      "PVC flex, mesh, backlit and fabric banners compared, plus finishing options, and how to choose the right banner for an event or storefront.",
     category: "Printing",
     excerpt:
       "PVC flex, mesh banners for wind load, backlit media and fabric, and the finishing details that decide how a banner actually holds up.",
@@ -385,7 +385,7 @@ export const blogPosts: BlogPost[] = [
     slug: "acrylic-box-packaging",
     title: "Acrylic packaging: when a clear box sells the product harder than a printed one",
     metaDescription:
-      "Clear and frosted acrylic packaging explained: materials, thickness, UV printing on acrylic, and when a display-quality acrylic box outperforms standard printed packaging.",
+      "Clear and frosted acrylic packaging explained: materials, thickness and UV printing, and when it outperforms standard printed packaging.",
     category: "Packaging",
     excerpt:
       "Clear vs frosted acrylic, thickness, and why a display-quality box can outsell printed packaging for the right product.",
@@ -459,7 +459,7 @@ export const blogPosts: BlogPost[] = [
     slug: "leather-gift-boxes",
     title: "Leather gift boxes: what separates a premium unboxing from a generic one",
     metaDescription:
-      "Genuine leather vs PU leatherette gift boxes, embossing and foil stamping, and how construction quality decides whether a corporate gift box feels premium or generic.",
+      "Genuine leather vs PU leatherette gift boxes, embossing and foil stamping, and what makes a corporate gift box feel premium.",
     category: "Gift Items",
     excerpt:
       "Genuine leather vs PU leatherette, embossing vs foil stamping, and the construction details that decide how premium a box feels.",
@@ -541,7 +541,7 @@ export const blogPosts: BlogPost[] = [
     slug: "corporate-gift-items-guide",
     title: "Corporate gift items in the UAE and Qatar: a practical guide",
     metaDescription:
-      "A guide to corporate gift item categories, UV printing and personalisation methods, and how to plan gifting around Ramadan, Eid, National Day and client onboarding in the UAE and Qatar.",
+      "A guide to corporate gift categories, UV printing and personalisation, and planning gifting around Ramadan, Eid and National Day.",
     category: "Gift Items",
     excerpt:
       "Categories, personalisation methods, and how seasonal gifting around Ramadan, Eid and National Day actually gets planned.",
@@ -624,7 +624,7 @@ export const blogPosts: BlogPost[] = [
     slug: "social-media-management-guide",
     title: "Social media management for UAE and Qatar businesses",
     metaDescription:
-      "How to choose social platforms, build a regional content calendar, and measure results for social media management in the UAE and Qatar market, including Ramadan and National Day content planning.",
+      "How to choose social platforms, build a regional content calendar, and measure results for social media in the UAE and Qatar.",
     category: "Social Media",
     excerpt:
       "Platform choice, content pillars, and how a regional content calendar around Ramadan and National Day actually gets built.",
@@ -708,7 +708,7 @@ export const blogPosts: BlogPost[] = [
     slug: "website-software-development",
     title: "Website and software development: what a business actually needs",
     metaDescription:
-      "A practical guide to business websites, e-commerce, booking systems and custom software, covering bilingual Arabic-English sites, performance and how development should connect to SEO from day one.",
+      "A guide to business websites, e-commerce, booking systems and custom software, covering bilingual sites and SEO from day one.",
     category: "Digital",
     excerpt:
       "Marketing sites, e-commerce, booking systems and custom software, and why SEO has to be planned in from the start, not bolted on after launch.",
@@ -800,7 +800,7 @@ export const blogPosts: BlogPost[] = [
     slug: "seo-services-guide",
     title: "SEO services: what actually moves local search rankings",
     metaDescription:
-      "Local SEO, technical SEO, on-page optimisation and AEO (answer engine optimisation) explained, with a focus on what actually drives Google Business Profile and \"near me\" rankings in the UAE and Qatar.",
+      "Local SEO, technical SEO, on-page and AEO explained, with a focus on Google Business Profile and \"near me\" rankings in the UAE and Qatar.",
     category: "Digital",
     excerpt:
       "Local SEO, technical fixes, content and AEO, and why Google Business Profile matters more than most businesses realise.",
@@ -884,7 +884,7 @@ export const blogPosts: BlogPost[] = [
     slug: "exhibition-stand-guide",
     title: "Exhibition stand design: a practical guide for the Gulf's trade show calendar",
     metaDescription:
-      "Booth types, layout principles and logistics for exhibition stands in the UAE and Qatar, covering Dubai World Trade Centre, ADNEC, Sharjah Expo Centre and Doha's exhibition venues.",
+      "Booth types, layout and logistics for exhibition stands in the UAE and Qatar, covering DWTC, ADNEC, Sharjah Expo and Doha's venues.",
     category: "Events",
     excerpt:
       "Booth types, layout principles that actually drive foot traffic, and what changes when the show is at DWTC, ADNEC or in Doha.",
@@ -974,7 +974,7 @@ export const blogPosts: BlogPost[] = [
     slug: "uv-printing-explained",
     title: "UV printing explained: how it works and when to use it",
     metaDescription:
-      "How UV printing actually cures ink onto rigid surfaces, what it can print on, and when it's the right choice over DTF, screen printing or standard digital printing.",
+      "How UV printing cures ink onto rigid surfaces, what it can print on, and when it beats DTF or standard digital printing.",
     category: "Printing",
     excerpt:
       "How the curing process actually works, what materials it suits, and when a different method is the better fit.",
@@ -1040,7 +1040,7 @@ export const blogPosts: BlogPost[] = [
     slug: "dtf-vs-screen-vs-sublimation",
     title: "DTF vs screen printing vs sublimation: which apparel printing method fits your order",
     metaDescription:
-      "A comparison of DTF, screen printing and sublimation for apparel: how each method works, what it costs at different order sizes, and which fabric types each one suits.",
+      "DTF, screen printing and sublimation for apparel compared: how each works, what it costs, and which fabric types each suits.",
     category: "Printing",
     excerpt:
       "How each method works, what it costs at different order sizes, and which one fits your fabric and design.",
@@ -1106,7 +1106,7 @@ export const blogPosts: BlogPost[] = [
     slug: "large-format-printing-guide",
     title: "Large-format printing: what it covers and when a business needs it",
     metaDescription:
-      "What counts as large-format printing, the materials used for banners, wraps and exhibition graphics, and how file resolution and viewing distance affect large-format artwork.",
+      "What counts as large-format printing, the materials used for banners and exhibition graphics, and how file resolution works.",
     category: "Printing",
     excerpt:
       "What counts as large-format, the materials used, and why file resolution works differently at this scale.",
@@ -1178,7 +1178,7 @@ export const blogPosts: BlogPost[] = [
     slug: "flag-printing-guide",
     title: "Flag printing: feather flags, teardrop flags and National Day flags",
     metaDescription:
-      "A guide to feather flags, teardrop flags, flag bases and printed national flags and bunting for UAE and Qatar National Day, including material and printing considerations.",
+      "A guide to feather flags, teardrop flags, flag bases and printed National Day flags and bunting for the UAE and Qatar.",
     category: "Printing",
     excerpt:
       "Feather and teardrop flags, base options, and the seasonal spike around UAE and Qatar National Day.",
@@ -1244,7 +1244,7 @@ export const blogPosts: BlogPost[] = [
     slug: "channel-letters-guide",
     title: "Channel letters: types, materials and what drives the cost",
     metaDescription:
-      "Front-lit, halo-lit and non-illuminated channel letters explained, how they're constructed, and the factors, from letter height to typeface, that actually drive channel letter pricing.",
+      "Front-lit, halo-lit and non-illuminated channel letters explained, and the factors that actually drive their pricing.",
     category: "Signage",
     excerpt:
       "Front-lit vs halo-lit construction, and the factors, beyond letter count, that actually drive the price.",
@@ -1311,7 +1311,7 @@ export const blogPosts: BlogPost[] = [
     slug: "led-vs-neon-signage",
     title: "LED vs neon signage: which fits your storefront",
     metaDescription:
-      "The real difference between traditional glass neon, flexible LED neon and standard LED signage modules, with guidance on which suits retail, hospitality and storefront branding.",
+      "The real difference between glass neon, flexible LED neon and standard LED signage, and which suits your storefront.",
     category: "Signage",
     excerpt:
       "Glass neon vs LED neon flex vs standard LED modules, and which one actually fits your storefront.",
@@ -1375,7 +1375,7 @@ export const blogPosts: BlogPost[] = [
     slug: "shop-signage-approvals-uae",
     title: "Shop signage approvals in the UAE: what actually needs sign-off",
     metaDescription:
-      "How municipality, landlord and free zone approvals work for storefront signage in the UAE, and why submitting artwork for approval before fabrication avoids costly rework.",
+      "How municipality, landlord and free zone approvals work for storefront signage in the UAE, and why to submit artwork early.",
     category: "Signage",
     excerpt:
       "Municipality, landlord and free zone approvals explained, and why submitting artwork before fabrication saves money.",
@@ -1439,7 +1439,7 @@ export const blogPosts: BlogPost[] = [
     slug: "vehicle-branding-fleet-graphics",
     title: "Vehicle branding and fleet graphics: a practical guide",
     metaDescription:
-      "Partial wraps, full wraps and cut vinyl decals compared for vehicle branding, plus how to keep a growing delivery or service fleet visually consistent across every vehicle.",
+      "Partial wraps, full wraps and cut vinyl decals compared, plus how to keep a growing delivery fleet visually consistent.",
     category: "Signage",
     excerpt:
       "Partial wraps vs full wraps vs cut decals, and how to keep a growing fleet visually consistent.",
@@ -1503,7 +1503,7 @@ export const blogPosts: BlogPost[] = [
     slug: "product-launch-event-planning",
     title: "Planning a product launch event: the branding checklist",
     metaDescription:
-      "A branding checklist for product launch events: venue signage, stage and backdrop design, printed collateral and launch-specific takeaways that keep the product top of mind afterward.",
+      "A branding checklist for product launches: venue signage, stage backdrops, printed collateral and launch-specific takeaways.",
     category: "Events",
     excerpt:
       "Venue signage, stage backdrops, printed collateral and takeaways that keep the product in mind afterward.",
@@ -1567,7 +1567,7 @@ export const blogPosts: BlogPost[] = [
     slug: "trade-show-checklist",
     title: "Trade show checklist: what to prepare before, during and after",
     metaDescription:
-      "A practical trade show checklist covering pre-show preparation, on-the-day lead capture, and post-show follow-up, plus the most common mistakes that reduce a stand's return on investment.",
+      "A trade show checklist covering pre-show prep, on-the-day lead capture, post-show follow-up, and common stand mistakes.",
     category: "Events",
     excerpt:
       "Pre-show prep, on-the-day lead capture, and post-show follow-up, plus the mistakes that quietly waste a stand.",
@@ -1639,7 +1639,7 @@ export const blogPosts: BlogPost[] = [
     slug: "event-backdrop-step-and-repeat-guide",
     title: "Event backdrops and step-and-repeat banners: a design and production guide",
     metaDescription:
-      "Step-and-repeat banners vs full-design event backdrops explained, including material and structure choices and design considerations for photo backdrops that hold up in coverage.",
+      "Step-and-repeat banners vs full-design backdrops, plus material and design choices for photo backdrops that hold up.",
     category: "Events",
     excerpt:
       "Step-and-repeat vs full-design backdrops, and the design details that hold up once the photos start.",
@@ -1703,7 +1703,7 @@ export const blogPosts: BlogPost[] = [
     slug: "food-packaging-guide-uae-qatar",
     title: "Food packaging for F&B businesses in the UAE and Qatar",
     metaDescription:
-      "A guide to food-safe packaging formats, materials and delivery-specific considerations for restaurants, cafes and delivery-driven F&B businesses in the UAE and Qatar.",
+      "A guide to food-safe packaging formats and materials for restaurants, cafes and delivery-driven F&B in the UAE and Qatar.",
     category: "Packaging",
     excerpt:
       "Food-safe formats and materials, and the delivery-specific details that matter more than in dine-in service.",
@@ -1771,7 +1771,7 @@ export const blogPosts: BlogPost[] = [
     slug: "retail-packaging-unboxing-guide",
     title: "Retail packaging and the unboxing experience: what actually matters",
     metaDescription:
-      "How structural packaging, interior presentation and branding consistency shape a retail unboxing experience, and when premium packaging is worth the added cost.",
+      "How structural packaging, interior presentation and branding shape a retail unboxing, and when premium packaging pays off.",
     category: "Packaging",
     excerpt:
       "Structural packaging, interior presentation and when premium packaging is actually worth the added cost.",
@@ -1835,7 +1835,7 @@ export const blogPosts: BlogPost[] = [
     slug: "eco-friendly-packaging-guide",
     title: "Eco-friendly packaging options for retail and F&B businesses",
     metaDescription:
-      "Kraft and recycled paperboard, compostable food containers, and practical ways to reduce packaging material, compared for retail and F&B businesses looking for sustainable options.",
+      "Kraft board, compostable food containers, and practical ways to reduce packaging material for retail and F&B businesses.",
     category: "Packaging",
     excerpt:
       "Kraft, recycled board and compostable containers compared, and the simplest way to cut material use.",
@@ -1899,7 +1899,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ecommerce-packaging-guide",
     title: "Custom packaging for e-commerce businesses: what to plan for",
     metaDescription:
-      "Shipping durability, branded exteriors, sizing for shipping cost and return-friendly design explained for e-commerce businesses building custom packaging in the UAE and Qatar.",
+      "Shipping durability, branded exteriors, sizing for cost and return-friendly design for e-commerce packaging in the UAE and Qatar.",
     category: "Packaging",
     excerpt:
       "Shipping durability, branded exteriors, and why box sizing affects courier cost more than the material does.",
@@ -1963,7 +1963,7 @@ export const blogPosts: BlogPost[] = [
     slug: "eid-corporate-gifting-guide",
     title: "Eid corporate gifting: a practical guide for UAE and Qatar businesses",
     metaDescription:
-      "How to plan Eid corporate gifting in the UAE and Qatar, including timing, popular gift categories, presentation, and the difference between client and employee gifting.",
+      "How to plan Eid corporate gifting in the UAE and Qatar: timing, popular gifts, presentation and client vs employee gifting.",
     category: "Gift Items",
     excerpt:
       "Timing, popular categories, and why client gifts and employee gifts are usually worth planning separately.",
@@ -2030,7 +2030,7 @@ export const blogPosts: BlogPost[] = [
     slug: "national-day-gift-guide",
     title: "UAE and Qatar National Day gifts: ideas and planning timeline",
     metaDescription:
-      "National Day corporate gift ideas for the UAE and Qatar, national colour and design considerations, and a planning timeline for the compressed December gifting calendar.",
+      "National Day corporate gift ideas for the UAE and Qatar, colour and design considerations, and a December planning timeline.",
     category: "Gift Items",
     excerpt:
       "Popular categories, national colour palettes, and a timeline for the compressed December gifting calendar.",
@@ -2094,7 +2094,7 @@ export const blogPosts: BlogPost[] = [
     slug: "employee-onboarding-kit-guide",
     title: "Employee onboarding kits: what to include and how to brand them",
     metaDescription:
-      "What to include in a branded employee onboarding kit, how presentation and packaging affect a new hire's first impression, and how to scale kits across budgets and seniority levels.",
+      "What to include in a branded onboarding kit, how presentation affects first impressions, and scaling kits by budget.",
     category: "Gift Items",
     excerpt:
       "What to include, why presentation matters, and how to scale a kit across budgets and seniority levels.",
@@ -2158,7 +2158,7 @@ export const blogPosts: BlogPost[] = [
     slug: "promotional-merchandise-guide",
     title: "Promotional merchandise: what to hand out at events and trade shows",
     metaDescription:
-      "What makes promotional merchandise actually get kept and used, how to allocate a merchandise budget across tiers, and where a logo should sit on an item for the most exposure.",
+      "What makes promotional merchandise actually get kept, how to allocate a budget across tiers, and where a logo should sit.",
     category: "Gift Items",
     excerpt:
       "What makes merchandise get kept, how to allocate a budget across tiers, and where a logo should actually go.",
@@ -2222,7 +2222,7 @@ export const blogPosts: BlogPost[] = [
     slug: "instagram-marketing-guide-uae-qatar",
     title: "Instagram marketing for UAE and Qatar businesses: a practical guide",
     metaDescription:
-      "How to use Reels, Stories, hashtags, location tags and Instagram Shopping effectively for retail, F&B and lifestyle brands marketing to audiences in the UAE and Qatar.",
+      "How to use Reels, Stories, hashtags and Instagram Shopping for retail, F&B and lifestyle brands in the UAE and Qatar.",
     category: "Social Media",
     excerpt:
       "Reels, Stories, location tags and Instagram Shopping, and how to actually use each one for growth.",
@@ -2286,7 +2286,7 @@ export const blogPosts: BlogPost[] = [
     slug: "google-business-profile-optimization",
     title: "Google Business Profile optimisation: the local SEO lever most businesses underuse",
     metaDescription:
-      "How to optimise Google Business Profile for local search visibility: accurate business information, photos and posts, review management, and the mistakes that quietly suppress ranking.",
+      "How to optimise Google Business Profile: accurate information, photos, posts, reviews, and mistakes that suppress ranking.",
     category: "Digital",
     excerpt:
       "Accurate information, photos, posts and reviews, and the mistakes that quietly suppress local ranking.",
@@ -2350,7 +2350,7 @@ export const blogPosts: BlogPost[] = [
     slug: "social-media-content-calendar-guide",
     title: "Building a social media content calendar that actually gets used",
     metaDescription:
-      "How to build a social media content calendar around content pillars and the regional Ramadan and National Day calendar, plus how batching content production keeps it sustainable.",
+      "How to build a content calendar around content pillars and the Ramadan and National Day calendar, and why batching helps.",
     category: "Social Media",
     excerpt:
       "Content pillars, the regional calendar, and why batching production is what actually keeps a calendar alive.",
@@ -2414,7 +2414,7 @@ export const blogPosts: BlogPost[] = [
     slug: "local-seo-multi-location-guide",
     title: "Local SEO for multi-location businesses across the UAE and Qatar",
     metaDescription:
-      "How multi-location businesses in the UAE and Qatar should structure location pages, Google Business Profiles and NAP consistency to rank in each city's local search results.",
+      "How multi-location UAE and Qatar businesses should structure location pages, Google profiles and NAP consistency.",
     category: "Digital",
     excerpt:
       "Location pages, one Google Business Profile per site, and why NAP consistency matters more than it sounds.",
@@ -2478,7 +2478,7 @@ export const blogPosts: BlogPost[] = [
     slug: "retail-store-opening-checklist",
     title: "Opening a retail store: the branding and signage checklist",
     metaDescription:
-      "A branding checklist for opening a retail store in the UAE or Qatar: exterior signage approvals, interior wayfinding, packaging readiness and launch announcement timing.",
+      "A branding checklist for opening a retail store: signage approvals, interior wayfinding, packaging and launch timing.",
     category: "Signage",
     excerpt:
       "Exterior signage approvals, interior wayfinding, packaging readiness, and what usually gets forgotten.",
@@ -2542,7 +2542,7 @@ export const blogPosts: BlogPost[] = [
     slug: "restaurant-branding-guide",
     title: "Restaurant and cafe branding: signage, packaging and social media working together",
     metaDescription:
-      "How storefront signage, printed menus, takeaway packaging and social media content work together as one consistent brand for restaurants and cafes in the UAE and Qatar.",
+      "How storefront signage, menus, takeaway packaging and social content work as one consistent brand for restaurants and cafes.",
     category: "Packaging",
     excerpt:
       "Storefront signage, menus, takeaway packaging and social content, and why they need to feel like one brand.",

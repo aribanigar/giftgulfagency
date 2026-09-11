@@ -18,6 +18,9 @@ export type Section = {
   icon: LucideIcon;
   short: string;
   description: string;
+  /** Short, search-result-length summary — kept separate from the longer,
+   * narrative `description` used as on-page hero copy. */
+  metaDescription: string;
   definition: string;
   quickFacts: QuickFact[];
   regionalNote: string;
@@ -34,6 +37,8 @@ export const sections: Section[] = [
     short: "UV, DTF, screen, offset, digital and large-format printing, on everything from banners to corporate gifts.",
     description:
       "UV printing for rigid items and corporate gifts, DTF and screen printing for apparel, offset and digital printing for magazines and books, and large-format printing for banners, vinyl graphics, canvas prints and flags. All of it produced in-house for retail, publishing, events and corporate gifting across the UAE and Qatar.",
+    metaDescription:
+      "UV, DTF, screen, offset and large-format printing for banners, apparel, packaging and gifts, produced in-house across the UAE and Qatar.",
     definition:
       "Printing covers every method a brand, publisher or event needs. UV printing cures ink directly onto rigid items and corporate gifts; DTF and screen printing put full-colour or bulk designs onto apparel; offset and digital printing run magazines, books and stationery; and large-format digital printing produces banners, vinyl graphics, canvas prints and flags. Stickers, decals and vehicle graphics are produced alongside all of it, in-house rather than outsourced.",
     quickFacts: [
@@ -106,6 +111,8 @@ export const sections: Section[] = [
     short: "Indoor & outdoor signage that gets a storefront noticed.",
     description:
       "3D and LED signboards, illuminated and non-illuminated boards, wayfinding systems, and laser-cut acrylic lettering and displays, designed, fabricated and installed for retail, F&B and corporate premises across the UAE and Qatar.",
+    metaDescription:
+      "Illuminated and non-illuminated signage, channel letters and wayfinding, designed, fabricated and installed across the UAE and Qatar.",
     definition:
       "Signage is the physical signboard, wayfinding and display work that identifies a business. That includes illuminated and non-illuminated boards, 3D and LED lettering, and acrylic displays, fabricated and installed on site.",
     quickFacts: [
@@ -155,6 +162,8 @@ export const sections: Section[] = [
     short: "Exhibition stands, event branding and kiosks, start to finish.",
     description:
       "Exhibition booth design and build, event branding, backdrops, and custom kiosks for malls, events and pop-ups, produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
+    metaDescription:
+      "Exhibition stand design and build, event branding and kiosks for trade shows and activations across the UAE and Qatar.",
     definition:
       "Events and exhibitions covers the design, build and installation of exhibition stands, event branding, backdrops and custom kiosks for conferences, trade shows, malls and activations.",
     quickFacts: [
@@ -203,6 +212,8 @@ export const sections: Section[] = [
     short: "Custom boxes, cups, hardboard boxes and carry bags, designed and printed in-house.",
     description:
       "Custom packaging: takeaway and retail boxes, hot and cold cups, hardboard boxes and kraft carry bags, designed and printed in-house with a brand's logo and colours, and specified to hold up to Gulf handling, shipping and delivery conditions.",
+    metaDescription:
+      "Custom-printed boxes, cups, hardboard packaging and carry bags for retail and F&B businesses across the UAE and Qatar.",
     definition:
       "Packaging covers the boxes, cups, hardboard boxes and carry bags a brand hands a customer at the point of sale or delivery. Gifts Gulf Advertising designs and prints all of it in-house, so packaging stays as consistent as a brand's signage and other print work.",
     quickFacts: [
@@ -256,6 +267,8 @@ export const sections: Section[] = [
     short: "UV-printed and personalised branding on corporate gift items.",
     description:
       "Direct UV printing onto gift items, including pens, bottles, tech accessories, awards and hampers, plus curated corporate gifting for client relationships, staff recognition and event giveaways, across the UAE and Qatar.",
+    metaDescription:
+      "UV-printed and personalised corporate gift items, from desk accessories to hampers, for businesses across the UAE and Qatar.",
     definition:
       "Gift items covers UV-printed and personalised branding on corporate gifts such as pens, bottles and tech accessories, plus curated gifting for client relationships, staff recognition and event giveaways.",
     quickFacts: [
@@ -303,6 +316,8 @@ export const sections: Section[] = [
     short: "Content, campaigns, and the website and search behind them.",
     description:
       "Social media strategy, in-house content production, paid campaign management, community management and influencer coordination across the platforms UAE and Qatar audiences actually use, backed by social commerce setup and the website and search engine work that turns followers into leads.",
+    metaDescription:
+      "Social media strategy, content production, paid campaigns and website/SEO support for businesses across the UAE and Qatar.",
     definition:
       "Social media covers everything from content strategy and in-house photography or video production to paid advertising, community management and influencer coordination, plus social commerce integration and the website and SEO work that turns an engaged following into actual enquiries.",
     quickFacts: [

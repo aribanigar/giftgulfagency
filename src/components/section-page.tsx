@@ -245,22 +245,23 @@ export function SectionPage({ section }: { section: Section }) {
 }
 
 export function sectionMetadata(section: Section) {
-  const title = `${section.name} Company in Dubai, Abu Dhabi & Doha | Gifts Gulf Advertising`;
+  const title = `${section.name} Company in Dubai & Qatar | Gifts Gulf Advertising`;
+  const description = section.metaDescription;
   const image = sectionHeroGalleries[section.slug]?.[0];
   return {
     title,
-    description: section.description,
+    description,
     alternates: { canonical: `${siteConfig.url}/${section.slug}` },
     openGraph: {
       title,
-      description: section.description,
+      description,
       url: `${siteConfig.url}/${section.slug}`,
       images: image ? [{ url: image, width: 1920, height: 1080, alt: title }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: section.description,
+      description,
       images: image ? [image] : undefined,
     },
   };
