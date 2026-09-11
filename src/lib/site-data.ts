@@ -31,44 +31,58 @@ export const sections: Section[] = [
     name: "Printing",
     code: "PRT-01",
     icon: Printer,
-    short: "UV and DTF printing, large-format, stickers, magazines and books, banners.",
+    short: "UV, DTF, screen, offset, digital and large-format printing, on everything from banners to corporate gifts.",
     description:
-      "UV printing for rigid items and promotional products, DTF printing for full-colour apparel, plus large-format and digital printing, custom stickers and decals, magazine and book printing, and flags and banners. All of it is produced in-house for retail, publishing, events and promotions across the UAE and Qatar.",
+      "UV printing for rigid items and corporate gifts, DTF and screen printing for apparel, offset and digital printing for magazines and books, and large-format printing for banners, vinyl graphics, canvas prints and flags. All of it produced in-house for retail, publishing, events and corporate gifting across the UAE and Qatar.",
     definition:
-      "Printing covers the UV, DTF, large-format and digital print work a brand or publisher needs. UV printing cures ink directly onto rigid items and promotional products; DTF (direct-to-film) printing transfers full-colour designs onto apparel without the set-up cost of screen printing. Alongside those, banners, stickers, decals, magazines, books and vehicle graphics are all produced in-house rather than outsourced.",
+      "Printing covers every method a brand, publisher or event needs. UV printing cures ink directly onto rigid items and corporate gifts; DTF and screen printing put full-colour or bulk designs onto apparel; offset and digital printing run magazines, books and stationery; and large-format digital printing produces banners, vinyl graphics, canvas prints and flags. Stickers, decals and vehicle graphics are produced alongside all of it, in-house rather than outsourced.",
     quickFacts: [
-      { label: "Typical output", value: "UV-printed items, DTF apparel, banners, stickers, magazines, books" },
-      { label: "Methods", value: "UV printing, DTF transfer, large-format digital, screen printing" },
+      { label: "Typical output", value: "UV & DTF apparel, banners, vinyl, canvas, magazines, corporate gifts" },
+      { label: "Methods", value: "UV, DTF, screen, offset, digital & large-format printing" },
       { label: "Built for", value: "Outdoor UAE and Qatar heat and UV exposure" },
       { label: "Order sizes", value: "Single items to bulk merchandise and print runs" },
     ],
     regionalNote:
       "Gulf summers push surface temperatures well past 45°C on outdoor prints, stickers and banners from Sharjah's industrial zones to Doha's corniche, so materials and finishes are chosen to hold up to that heat and UV load, not just to look right on day one.",
     capabilities: [
-      "UV printing on rigid & promotional items",
+      "UV printing on rigid items & corporate gifts",
       "DTF printing for full-colour apparel",
-      "Large-format & digital printing",
-      "Custom stickers & decals (vinyl, PVC, foil)",
-      "Magazine & book printing",
-      "Flags, banners & feather flags",
+      "Screen printing for bulk apparel & merchandise",
+      "Offset & digital printing for magazines and books",
+      "Large-format digital printing for banners & panels",
+      "Vinyl printing & cut decals",
+      "Canvas printing for photo & display prints",
+      "Flags, feather flags & bunting",
       "Vehicle branding decals",
     ],
     faqs: [
       {
         q: "Do you offer UV printing?",
-        a: "Yes. UV printing cures ink directly onto rigid items and promotional products with a UV light as it prints, giving a durable, scratch-resistant finish without a separate curing step.",
+        a: "Yes. UV printing cures ink directly onto rigid items, promotional products and corporate gifts with a UV light as it prints, giving a durable, scratch-resistant finish without a separate curing step.",
       },
       {
         q: "What is DTF printing and do you offer it?",
         a: "Yes. DTF (direct-to-film) printing transfers a full-colour design onto a special film, then heat-presses it onto apparel. It handles detailed, multi-colour designs on small to medium runs without the set-up cost of screen printing.",
       },
       {
-        q: "Do you print magazines and books?",
-        a: "Yes. Magazine and book printing runs in-house alongside UV, DTF and large-format print work, from single proof copies to full circulation and print runs.",
+        q: "Do you offer screen printing for bulk apparel orders?",
+        a: "Yes. Screen printing runs alongside DTF for apparel work, and is generally the more cost-effective method for large, uniform runs with a limited number of colours, such as branded staff uniforms or event T-shirts.",
+      },
+      {
+        q: "Do you offer offset printing for magazines and books?",
+        a: "Yes. Offset and digital printing run in-house for magazines, books and stationery, from single proof copies to full circulation and print runs, alongside the UV, DTF and large-format print work.",
+      },
+      {
+        q: "Can you print on canvas?",
+        a: "Yes. Canvas printing is available for photo prints, display pieces and branded wall art, produced on the same large-format equipment used for banners and vinyl graphics.",
       },
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
-        a: "Yes. From large-format banners and stickers to DTF-printed apparel and event merchandise, everything is produced in-house rather than farmed out to different shops.",
+        a: "Yes. From large-format banners, vinyl and canvas to DTF-printed apparel and UV-printed corporate gifts, everything is produced in-house rather than farmed out to different shops.",
+      },
+      {
+        q: "Can you print branding directly onto corporate gift items?",
+        a: "Yes. UV printing applies full-colour branding directly onto pens, bottles, tech accessories and other corporate gift items, without needing a separate sticker or label.",
       },
       {
         q: "Are your prints and stickers durable enough for UAE and Qatar outdoor conditions?",

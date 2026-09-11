@@ -54,7 +54,7 @@ const capabilityIconRules: [RegExp, LucideIcon][] = [
   [/hamper|gift set/i, Gift],
   [/personalisation|personalization/i, PenTool],
   [/sample/i, Sparkles],
-  [/hardboard|bulk/i, Boxes],
+  [/hardboard/i, Boxes],
   [/uv printing|dtf|printing/i, Printer],
   [/sticker|decal/i, Layers],
   [/vehicle/i, Truck],
