@@ -16,7 +16,7 @@ export function Header() {
           <span className="font-heading text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl">
             Gifts Gulf
           </span>
-          <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.2em] text-green-700 sm:text-xs">
+          <span className="mt-0.5 text-[10px] font-medium tracking-[0.2em] text-green-700 sm:text-xs">
             Media &amp; Advertising
           </span>
         </Link>

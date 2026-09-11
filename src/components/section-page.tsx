@@ -67,7 +67,7 @@ export function SectionPage({ section }: { section: Section }) {
         <dl className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-lg)] border border-zinc-200 bg-zinc-200 sm:grid-cols-2">
           {section.quickFacts.map((fact) => (
             <div key={fact.label} className="bg-white p-4">
-              <dt className="font-mono text-[11px] uppercase tracking-wide text-zinc-400">
+              <dt className="font-mono text-[11px] tracking-wide text-zinc-400">
                 {fact.label}
               </dt>
               <dd className="mt-1 text-sm text-zinc-800">{fact.value}</dd>

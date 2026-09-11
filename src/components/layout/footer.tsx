@@ -37,7 +37,7 @@ export async function Footer() {
               <span className="font-heading text-xl font-bold tracking-tight text-zinc-900">
                 Gifts Gulf
               </span>
-              <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.2em] text-green-700">
+              <span className="mt-0.5 text-[10px] font-medium tracking-[0.2em] text-green-700">
                 Media &amp; Advertising
               </span>
             </Link>

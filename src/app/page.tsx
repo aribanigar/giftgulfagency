@@ -70,7 +70,7 @@ export default async function Home() {
         <div className="hero-shade absolute inset-0" />
 
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">
-          <div className="mb-6 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-green-400">
+          <div className="mb-6 flex items-center gap-2 font-mono text-xs tracking-[0.25em] text-green-400">
             <span className="h-1.5 w-1.5 bg-green-400" />
             UAE &amp; Qatar &middot; Advertising &amp; Signage
           </div>
@@ -202,7 +202,7 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <p className="text-xs font-semibold tracking-wider text-zinc-500">
                 Where we work
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
@@ -217,7 +217,7 @@ export default async function Home() {
               </div>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <p className="text-xs font-semibold tracking-wider text-zinc-500">
                 Who we work with
               </p>
               <div className="mt-4 flex flex-wrap gap-3">

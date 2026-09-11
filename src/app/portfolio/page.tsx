@@ -59,7 +59,7 @@ export default function PortfolioPage() {
                     />
                   ) : null}
                   <div className="photo-shade absolute inset-0" />
-                  <span className="absolute bottom-3 right-3 bg-green-600 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-white">
+                  <span className="absolute bottom-3 right-3 bg-green-600 px-2 py-1 font-mono text-[10px] tracking-wider text-white">
                     {section.name}
                   </span>
                   <div className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center border border-white/25 bg-white/10 text-white backdrop-blur-sm">
@@ -76,7 +76,7 @@ export default function PortfolioPage() {
                       {section.short}
                     </p>
                   </div>
-                  <p className="mt-4 border-t border-zinc-100 pt-3 font-mono text-[11px] uppercase tracking-wide text-zinc-400">
+                  <p className="mt-4 border-t border-zinc-100 pt-3 font-mono text-[11px] tracking-wide text-zinc-400">
                     Photography pending
                   </p>
                 </div>
