@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,9 +22,32 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Gifts Gulf Media & Advertising",
-  description:
-    "Signage, print, packaging, corporate gifts, events, fit-outs, and digital growth — every brand touchpoint, one partner.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Gifts Gulf | Advertising, Signage & Printing in UAE & Qatar",
+    template: "%s",
+  },
+  description: siteConfig.description,
+  keywords: [
+    "advertising agency UAE",
+    "advertising agency Qatar",
+    "signage company Dubai",
+    "large format printing Dubai",
+    "signboards Abu Dhabi",
+    "exhibition stand builder Qatar",
+    "corporate gifts UAE",
+    "shop fit-out Dubai",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    title: "Gifts Gulf | Advertising, Signage & Printing in UAE & Qatar",
+    description: siteConfig.description,
+    url: siteConfig.url,
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

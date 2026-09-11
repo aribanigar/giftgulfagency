@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ContactForm } from "./contact-form";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Contact | Gifts Gulf Media & Advertising",
-  description: "Get in touch with Gifts Gulf for signage, print, events, fit-outs, and digital work.",
+  title: "Contact Gifts Gulf | Advertising & Printing in UAE & Qatar",
+  description:
+    "Get in touch with Gifts Gulf for websites, SEO, social media, signage, printing, fit-outs, exhibitions, and branded merchandise across Dubai, Abu Dhabi, Sharjah and Doha.",
+  alternates: { canonical: `${siteConfig.url}/contact` },
 };
 
 export default function ContactPage() {
@@ -45,7 +48,7 @@ export default function ContactPage() {
               </a>
               <div className="flex items-start gap-3 text-sm text-zinc-700">
                 <MapPin className="mt-0.5 h-5 w-5 text-green-600" />
-                Doha, Qatar
+                Dubai, UAE &amp; Doha, Qatar
               </div>
             </div>
             <p className="mt-8 rounded-[var(--radius-md)] border border-dashed border-zinc-300 bg-zinc-50 p-4 text-xs leading-relaxed text-zinc-500">

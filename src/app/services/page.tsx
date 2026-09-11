@@ -1,92 +1,69 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { servicesByPillar } from "@/lib/site-data";
+import { ServiceCard } from "@/components/service-card";
+import { JsonLd } from "@/components/json-ld";
+import { pillars, pillarOrder, servicesByPillar } from "@/lib/site-data";
+import { siteConfig } from "@/lib/site-config";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Services | Gifts Gulf Media & Advertising",
+  title: "Advertising, Signage & Printing Services in UAE & Qatar | Gifts Gulf",
   description:
-    "Signage, stickers, packaging, corporate gifts, events, fit-outs, social media, and website & software — every brand touchpoint, one partner.",
+    "Website development, SEO and social media alongside signage, large-format printing, interior fit-outs, exhibition booths, screen printing and UV-printed gifts — across Dubai, Abu Dhabi, Sharjah and Doha.",
+  alternates: { canonical: `${siteConfig.url}/services` },
 };
-
-function ServiceRow({
-  service,
-}: {
-  service: (typeof servicesByPillar.production)[number];
-}) {
-  const Icon = service.icon;
-  return (
-    <div
-      id={service.slug}
-      className="scroll-mt-24 border-b border-zinc-200 py-12 first:pt-0 last:border-b-0"
-    >
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
-        <div className="flex items-start gap-4 lg:flex-col lg:gap-5">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
-            <Icon className="h-6 w-6" strokeWidth={1.75} />
-          </div>
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900">
-            {service.name}
-          </h2>
-        </div>
-        <div>
-          <p className="max-w-2xl text-base leading-relaxed text-zinc-600">
-            {service.description}
-          </p>
-          <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {service.capabilities.map((c) => (
-              <li key={c} className="flex items-start gap-2 text-sm text-zinc-700">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-                {c}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function ServicesPage() {
   return (
     <div>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: siteConfig.url },
+          { name: "Services", url: `${siteConfig.url}/services` },
+        ])}
+      />
+
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
-            Every brand touchpoint, one partner.
+            Every brand touchpoint, across the UAE &amp; Qatar.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-zinc-600">
-            Eight services across two pillars — brand production and digital
-            growth — so nothing about how a business looks or is found online
-            waits on a different vendor.
+            Twelve services across four pillars — digital growth, signage &amp;
+            large format, interiors &amp; experiences, and print &amp;
+            personalisation — so nothing about how a business looks, is
+            found, or is remembered waits on a different vendor.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          Brand Production
-        </h2>
-        <div className="mt-8">
-          {servicesByPillar.production.map((service) => (
-            <ServiceRow key={service.slug} service={service} />
-          ))}
-        </div>
-      </section>
+      {pillarOrder.map((pillar) => (
+        <section
+          key={pillar}
+          id={pillar}
+          className="scroll-mt-20 border-b border-zinc-200 px-4 py-16 last:border-b-0 sm:px-6 sm:py-20"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+              <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+                {pillars[pillar].label}
+              </h2>
+              <p className="text-sm font-medium text-zinc-500">
+                {pillars[pillar].tagline}
+              </p>
+            </div>
+            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {servicesByPillar[pillar].map((service) => (
+                <ServiceCard key={service.slug} service={service} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
 
-      <section className="mx-auto max-w-6xl border-t border-zinc-200 px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          Digital Growth
-        </h2>
-        <div className="mt-8">
-          {servicesByPillar.digital.map((service) => (
-            <ServiceRow key={service.slug} service={service} />
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-zinc-200 bg-zinc-50">
+      <section className="bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
           <h2 className="font-heading text-2xl font-bold text-zinc-900 sm:text-3xl">
             Not sure which service you need?

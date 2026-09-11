@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { services } from "@/lib/site-data";
+import { services, pillars } from "@/lib/site-data";
+import { siteConfig } from "@/lib/site-config";
+import type { Pillar } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Portfolio | Gifts Gulf Media & Advertising",
-  description: "Work across signage, print, events, fit-outs, social and web.",
+  description:
+    "Work across digital, signage, fit-outs, exhibitions and print for clients in the UAE and Qatar.",
+  alternates: { canonical: `${siteConfig.url}/portfolio` },
 };
 
-const pillarLabel = {
-  production: "Brand Production",
-  digital: "Digital Growth",
-} as const;
+const pillarStyle: Record<Pillar, string> = {
+  digital: "bg-green-600 text-white",
+  signage: "bg-zinc-900 text-white",
+  spaces: "bg-zinc-700 text-white",
+  print: "border border-zinc-300 bg-white text-zinc-700",
+};
 
 export default function PortfolioPage() {
   return (
@@ -21,8 +27,8 @@ export default function PortfolioPage() {
           </h1>
           <p className="mt-5 max-w-xl text-lg text-zinc-600">
             This page is set up to hold real project photography and case
-            studies, organised by service. Swap the placeholders below for
-            actual completed work.
+            studies from across the UAE and Qatar, organised by service.
+            Swap the placeholders below for actual completed work.
           </p>
         </div>
       </section>
@@ -49,17 +55,12 @@ export default function PortfolioPage() {
                   <span
                     className={
                       "absolute bottom-3 right-3 rounded-[var(--radius-sm)] px-2 py-1 font-mono text-[10px] uppercase tracking-wider " +
-                      (service.pillar === "production"
-                        ? "bg-green-600 text-white"
-                        : "bg-zinc-900 text-white")
+                      pillarStyle[service.pillar]
                     }
                   >
-                    {pillarLabel[service.pillar]}
+                    {pillars[service.pillar].label}
                   </span>
-                  <Icon
-                    className="h-9 w-9 text-zinc-300"
-                    strokeWidth={1.5}
-                  />
+                  <Icon className="h-9 w-9 text-zinc-300" strokeWidth={1.5} />
                 </div>
 
                 <div className="flex flex-1 flex-col justify-between p-5">
@@ -75,7 +76,7 @@ export default function PortfolioPage() {
                     <div className="flex items-center gap-1.5">
                       <dt>Pillar</dt>
                       <dd className="text-zinc-600">
-                        {pillarLabel[service.pillar]}
+                        {pillars[service.pillar].label}
                       </dd>
                     </div>
                     <div className="flex items-center gap-1.5">

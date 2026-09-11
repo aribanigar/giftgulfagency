@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { servicesByPillar } from "@/lib/site-data";
+import { pillars, pillarOrder, servicesByPillar, markets } from "@/lib/site-data";
 
 const companyLinks = [
   { href: "/about", label: "About Us" },
@@ -13,8 +13,8 @@ export function Footer() {
   return (
     <footer className="border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex flex-col leading-none">
               <span className="font-heading text-xl font-bold tracking-tight text-zinc-900">
                 Gifts Gulf
@@ -23,47 +23,34 @@ export function Footer() {
                 Media &amp; Advertising
               </span>
             </Link>
-            <p className="mt-4 max-w-[26ch] text-sm text-zinc-600">
-              Every brand touchpoint, one partner — from signage and print to
-              social and software.
+            <p className="mt-4 max-w-[30ch] text-sm text-zinc-600">
+              Every brand touchpoint, one partner — digital, signage, print
+              and spaces, across the UAE and Qatar.
+            </p>
+            <p className="mt-4 text-xs text-zinc-500">
+              {markets.join(" · ")}
             </p>
           </div>
 
-          <div>
-            <h3 className="font-heading text-sm font-semibold text-zinc-900">
-              Brand Production
-            </h3>
-            <ul className="mt-4 flex flex-col gap-3">
-              {servicesByPillar.production.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/services#${s.slug}`}
-                    className="text-sm text-zinc-600 hover:text-green-700"
-                  >
-                    {s.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-heading text-sm font-semibold text-zinc-900">
-              Digital Growth
-            </h3>
-            <ul className="mt-4 flex flex-col gap-3">
-              {servicesByPillar.digital.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/services#${s.slug}`}
-                    className="text-sm text-zinc-600 hover:text-green-700"
-                  >
-                    {s.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {pillarOrder.map((pillar) => (
+            <div key={pillar}>
+              <h3 className="font-heading text-sm font-semibold text-zinc-900">
+                {pillars[pillar].label}
+              </h3>
+              <ul className="mt-4 flex flex-col gap-3">
+                {servicesByPillar[pillar].map((s) => (
+                  <li key={s.slug}>
+                    <Link
+                      href={`/services/${s.slug}`}
+                      className="text-sm text-zinc-600 hover:text-green-700"
+                    >
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <div>
             <h3 className="font-heading text-sm font-semibold text-zinc-900">
