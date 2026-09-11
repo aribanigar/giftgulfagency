@@ -2,15 +2,19 @@ import type { Metadata } from "next";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ContactForm } from "./contact-form";
 import { siteConfig } from "@/lib/site-config";
+import { getSettings } from "@/lib/settings";
 
 export const metadata: Metadata = {
-  title: "Contact Gifts Gulf | Advertising & Printing in UAE & Qatar",
+  title: "Contact Gifts Gulf Advertising | Printing in UAE & Qatar",
   description:
-    "Get in touch with Gifts Gulf for websites, SEO, social media, signage, printing, fit-outs, exhibitions, and branded merchandise across Dubai, Abu Dhabi, Sharjah and Doha.",
+    "Get in touch with Gifts Gulf Advertising for printing, signages, events & exhibitions, packaging, gift items and social media across Dubai, Abu Dhabi, Sharjah and Doha.",
   alternates: { canonical: `${siteConfig.url}/contact` },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSettings();
+  const telHref = `tel:${settings.contactPhone.replace(/[^\d+]/g, "")}`;
+
   return (
     <div>
       <section className="border-b border-zinc-200 bg-zinc-50">
@@ -33,28 +37,24 @@ export default function ContactPage() {
             </h2>
             <div className="mt-6 flex flex-col gap-5">
               <a
-                href="mailto:hello@giftsgulf.com"
+                href={`mailto:${settings.contactEmail}`}
                 className="flex items-start gap-3 text-sm text-zinc-700 hover:text-green-700"
               >
                 <Mail className="mt-0.5 h-5 w-5 text-green-600" />
-                hello@giftsgulf.com
+                {settings.contactEmail}
               </a>
               <a
-                href="tel:+9740000000"
+                href={telHref}
                 className="flex items-start gap-3 text-sm text-zinc-700 hover:text-green-700"
               >
                 <Phone className="mt-0.5 h-5 w-5 text-green-600" />
-                +974 0000 0000
+                {settings.contactPhone}
               </a>
               <div className="flex items-start gap-3 text-sm text-zinc-700">
                 <MapPin className="mt-0.5 h-5 w-5 text-green-600" />
-                Dubai, UAE &amp; Doha, Qatar
+                {settings.address}
               </div>
             </div>
-            <p className="mt-8 rounded-[var(--radius-md)] border border-dashed border-zinc-300 bg-zinc-50 p-4 text-xs leading-relaxed text-zinc-500">
-              Placeholder contact details — replace with the real email,
-              phone number and address before this goes live.
-            </p>
           </div>
 
           <div>

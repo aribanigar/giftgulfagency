@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import type { Service } from "@/lib/site-data";
+import type { Section } from "@/lib/site-data";
 
-export function ServiceCard({ service }: { service: Service }) {
+export function ServiceCard({ service }: { service: Section }) {
   const Icon = service.icon;
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={`/${service.slug}`}
       className="group flex flex-col justify-between rounded-[var(--radius-xl)] border border-zinc-200 bg-white p-6 transition-colors hover:border-green-600"
     >
       <div>

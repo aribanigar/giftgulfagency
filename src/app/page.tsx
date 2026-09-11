@@ -1,18 +1,26 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceMarquee } from "@/components/service-marquee";
+import { ServiceCard } from "@/components/service-card";
+import { VendorComparison } from "@/components/vendor-comparison";
 import { FaqAccordion } from "@/components/faq-accordion";
+import { VideoEmbed } from "@/components/video-embed";
 import { JsonLd } from "@/components/json-ld";
-import {
-  pillars,
-  pillarOrder,
-  servicesByPillar,
-  sectors,
-  markets,
-  siteFaqs,
-} from "@/lib/site-data";
+import { getSettings } from "@/lib/settings";
+import { parseVideoUrl } from "@/lib/video";
+import { sections, sectors, markets, siteFaqs } from "@/lib/site-data";
 import { organizationSchema, faqPageSchema } from "@/lib/schema";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title:
+    "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising",
+  description:
+    "Printing, signages, events & exhibitions, packaging, gift items and social media — one partner across Dubai, Abu Dhabi, Sharjah and Doha.",
+  alternates: { canonical: siteConfig.url },
+};
 
 const processSteps = [
   {
@@ -28,16 +36,19 @@ const processSteps = [
   {
     n: "03",
     title: "Produce",
-    text: "Signage, print, fit-out and digital work happens under one roof, so nothing waits on a third party.",
+    text: "Printing, signage, events and digital work happens under one roof, so nothing waits on a third party.",
   },
   {
     n: "04",
     title: "Launch & Grow",
-    text: "Install, go live, then keep momentum with SEO, social and the rest of the digital side of the business.",
+    text: "Install, go live, then keep momentum with social media, SEO and the rest of the digital side of the business.",
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const settings = await getSettings();
+  const hasVideo = parseVideoUrl(settings.featuredVideo.url) !== null;
+
   return (
     <div>
       <JsonLd data={organizationSchema()} />
@@ -58,11 +69,10 @@ export default function Home() {
               the UAE &amp; Qatar.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600">
-              Gifts Gulf plans and builds the full brand journey — websites,
-              SEO and social media on one side; signage, large-format
-              printing, fit-outs, exhibition booths and branded merchandise
-              on the other — for businesses in Dubai, Abu Dhabi, Sharjah and
-              Doha.
+              Gifts Gulf Advertising covers printing, signages, events &amp;
+              exhibitions, packaging and gift items — plus the social media,
+              website and SEO work that keeps a brand visible — for
+              businesses in Dubai, Abu Dhabi, Sharjah and Doha.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
@@ -71,7 +81,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/services">Explore Services</Link>
+                <Link href="#services">Explore Services</Link>
               </Button>
             </div>
           </div>
@@ -110,68 +120,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pillars */}
-      <section className="border-b border-zinc-200 bg-white">
+      {/* Services */}
+      <section id="services" className="scroll-mt-20 border-b border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Twelve services, four pillars
+            Six sections, one partner
           </h2>
-          <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2">
-            {pillarOrder.map((pillar) => (
-              <div
-                key={pillar}
-                className="flex flex-col justify-between rounded-[var(--radius-xl)] border border-zinc-200 p-6 sm:p-7"
-              >
-                <div>
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-heading text-xl font-semibold text-zinc-900">
-                      {pillars[pillar].label}
-                    </h3>
-                    <span className="font-mono text-xs text-zinc-400">
-                      {String(servicesByPillar[pillar].length).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <p className="mt-1.5 text-sm text-zinc-600">
-                    {pillars[pillar].tagline}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {servicesByPillar[pillar].map((s) => (
-                      <Link
-                        key={s.slug}
-                        href={`/services/${s.slug}`}
-                        className="rounded-full border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-700 transition-colors hover:border-green-600 hover:text-green-700"
-                      >
-                        {s.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                <Link
-                  href={`/services#${pillar}`}
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-green-700"
-                >
-                  Explore {pillars[pillar].label}
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </div>
+          <p className="mt-3 max-w-2xl text-zinc-600">
+            Everything a brand needs to look right and be found, in one
+            place.
+          </p>
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {sections.map((section) => (
+              <ServiceCard key={section.slug} service={section} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vendor comparison */}
+      <section className="border-b border-zinc-200 bg-zinc-50">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+            One partner instead of five vendors
+          </h2>
+          <p className="mt-3 max-w-2xl text-zinc-600">
+            Most signage companies, printers, fit-out contractors and
+            digital agencies across the UAE and Qatar specialise in one
+            thing. Gifts Gulf Advertising doesn&apos;t.
+          </p>
+          <div className="mt-10">
+            <VendorComparison />
           </div>
         </div>
       </section>
 
       {/* Stat bar */}
       <section className="border-b border-zinc-200 bg-zinc-900">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 py-14 sm:px-6 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-3 gap-8 px-4 py-14 sm:px-6">
           <div>
-            <div className="font-heading text-4xl font-bold text-white">12</div>
+            <div className="font-heading text-4xl font-bold text-white">6</div>
             <p className="mt-2 text-sm text-zinc-400">
-              Services under one roof.
-            </p>
-          </div>
-          <div>
-            <div className="font-heading text-4xl font-bold text-white">4</div>
-            <p className="mt-2 text-sm text-zinc-400">
-              Pillars — digital, signage, spaces, print.
+              Sections under one roof.
             </p>
           </div>
           <div>
@@ -226,6 +216,22 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {hasVideo ? (
+        <section className="border-b border-zinc-200 bg-white">
+          <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
+            <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+              {settings.featuredVideo.title}
+            </h2>
+            <div className="mt-8">
+              <VideoEmbed
+                url={settings.featuredVideo.url}
+                title={settings.featuredVideo.title}
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* FAQ (AEO) */}
       <section className="bg-white">

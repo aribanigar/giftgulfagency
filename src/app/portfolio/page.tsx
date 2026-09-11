@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
-import { services, pillars } from "@/lib/site-data";
+import { sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
-import type { Pillar } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Gifts Gulf Media & Advertising",
+  title: "Portfolio | Gifts Gulf Advertising",
   description:
-    "Work across digital, signage, fit-outs, exhibitions and print for clients in the UAE and Qatar.",
+    "Work across printing, signages, events and exhibitions, packaging, gift items and social media for clients in the UAE and Qatar.",
   alternates: { canonical: `${siteConfig.url}/portfolio` },
-};
-
-const pillarStyle: Record<Pillar, string> = {
-  digital: "bg-green-600 text-white",
-  signage: "bg-zinc-900 text-white",
-  spaces: "bg-zinc-700 text-white",
-  print: "border border-zinc-300 bg-white text-zinc-700",
 };
 
 export default function PortfolioPage() {
@@ -35,11 +27,11 @@ export default function PortfolioPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
+          {sections.map((section) => {
+            const Icon = section.icon;
             return (
               <div
-                key={service.slug}
+                key={section.slug}
                 className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-colors hover:border-green-600"
               >
                 <div
@@ -50,15 +42,10 @@ export default function PortfolioPage() {
                   }}
                 >
                   <span className="absolute left-3 top-3 rounded-[var(--radius-sm)] border border-zinc-200 bg-white/90 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-600 backdrop-blur">
-                    Code: {service.code}
+                    Code: {section.code}
                   </span>
-                  <span
-                    className={
-                      "absolute bottom-3 right-3 rounded-[var(--radius-sm)] px-2 py-1 font-mono text-[10px] uppercase tracking-wider " +
-                      pillarStyle[service.pillar]
-                    }
-                  >
-                    {pillars[service.pillar].label}
+                  <span className="absolute bottom-3 right-3 rounded-[var(--radius-sm)] bg-green-600 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-white">
+                    {section.name}
                   </span>
                   <Icon className="h-9 w-9 text-zinc-300" strokeWidth={1.5} />
                 </div>
@@ -66,18 +53,16 @@ export default function PortfolioPage() {
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
                     <h3 className="font-heading text-base font-semibold text-zinc-900">
-                      {service.name}
+                      {section.name}
                     </h3>
                     <p className="mt-1 text-sm text-zinc-600">
-                      {service.short}
+                      {section.short}
                     </p>
                   </div>
                   <dl className="mt-4 flex items-center justify-between border-t border-zinc-100 pt-3 font-mono text-[11px] uppercase tracking-wide text-zinc-400">
                     <div className="flex items-center gap-1.5">
-                      <dt>Pillar</dt>
-                      <dd className="text-zinc-600">
-                        {pillars[service.pillar].label}
-                      </dd>
+                      <dt>Code</dt>
+                      <dd className="text-zinc-600">{section.code}</dd>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <dt>Status</dt>

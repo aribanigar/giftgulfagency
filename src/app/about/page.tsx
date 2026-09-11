@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { markets } from "@/lib/site-data";
+import { markets, sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "About Gifts Gulf | Advertising & Printing Partner in UAE & Qatar",
+  title: "About Gifts Gulf Advertising | Printing Partner in UAE & Qatar",
   description:
-    "Gifts Gulf is a media and advertising partner across the UAE and Qatar, covering digital growth, signage and large format, interiors and experiences, and print and personalisation under one roof.",
+    "Gifts Gulf Advertising is a media and advertising partner across the UAE and Qatar, covering printing, signages, events & exhibitions, packaging, gift items and social media under one roof.",
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
 const values = [
   {
     title: "One partner, not a chain of vendors",
-    text: "Websites, SEO and social sit alongside signage, print, fit-outs and exhibitions — briefed once and delivered as one project.",
+    text: "Printing, signage, events and gifting sit alongside social media, website and SEO work — briefed once and delivered as one project.",
   },
   {
     title: "Production-first thinking",
@@ -27,7 +27,7 @@ const values = [
   },
   {
     title: "Built for the UAE & Qatar",
-    text: "Every service — from signboard approvals to local search — is planned around how business actually gets done in Dubai, Abu Dhabi, Sharjah and Doha.",
+    text: "Every section — from signage approvals to local search — is planned around how business actually gets done in Dubai, Abu Dhabi, Sharjah and Doha.",
   },
 ];
 
@@ -40,14 +40,12 @@ export default function AboutPage() {
             An advertising &amp; printing partner, built around one roof.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">
-            Gifts Gulf brings together digital growth — websites, SEO and
-            social media — with large-format printing and branding —
-            signboards, stickers, flags and acrylic — plus interior
-            fit-outs, kiosks and exhibition booths, and print
-            personalisation — screen printing, T-shirts, UV-printed gifts
-            and packaging. One brief, one point of contact, work that stays
-            consistent across every surface it touches, across the UAE and
-            Qatar.
+            Gifts Gulf Advertising brings together printing — large-format,
+            stickers, screen printing and banners — with signages, events
+            &amp; exhibitions, packaging, and gift items, plus the social
+            media, website and SEO work that keeps a brand visible. One
+            brief, one point of contact, work that stays consistent across
+            every surface it touches, across the UAE and Qatar.
           </p>
           <p className="mt-4 text-sm font-medium text-zinc-500">
             {markets.join(" · ")}
@@ -57,23 +55,47 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          How we think about the work
+          What we do
         </h2>
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v) => (
-            <div key={v.title}>
-              <h3 className="font-heading text-lg font-semibold text-zinc-900">
-                {v.title}
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {sections.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/${s.slug}`}
+              className="rounded-[var(--radius-lg)] border border-zinc-200 p-4 transition-colors hover:border-green-600"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">
+                {s.code}
+              </span>
+              <h3 className="mt-1 font-heading text-base font-semibold text-zinc-900">
+                {s.name}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                {v.text}
-              </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
 
       <section className="border-t border-zinc-200 bg-zinc-50">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+            How we think about the work
+          </h2>
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((v) => (
+              <div key={v.title}>
+                <h3 className="font-heading text-lg font-semibold text-zinc-900">
+                  {v.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+                  {v.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
           <h2 className="font-heading text-2xl font-bold text-zinc-900 sm:text-3xl">
             Want to see what we can build together?

@@ -1,22 +1,42 @@
-import { services } from "@/lib/site-data";
+import { sections } from "@/lib/site-data";
+
+function Row({ reverse = false }: { reverse?: boolean }) {
+  const items = [...sections, ...sections];
+  return (
+    <div className="group overflow-hidden">
+      <div
+        className={
+          "animate-marquee flex w-max gap-3 group-hover:[animation-play-state:paused] " +
+          (reverse ? "[animation-direction:reverse]" : "")
+        }
+      >
+        {items.map((service, i) => {
+          const Icon = service.icon;
+          return (
+            <span
+              key={`${service.slug}-${i}`}
+              className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 font-mono text-xs uppercase tracking-wider text-zinc-300 transition-colors hover:border-green-500/60 hover:text-white"
+            >
+              <Icon className="h-3.5 w-3.5 text-green-500" strokeWidth={2} />
+              {service.name}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export function ServiceMarquee() {
-  const items = [...services, ...services];
-
   return (
-    <div className="mask-fade-x overflow-hidden border-y border-zinc-200 bg-zinc-900 py-4">
-      <div className="animate-marquee flex w-max gap-8">
-        {items.map((service, i) => (
-          <span
-            key={`${service.slug}-${i}`}
-            className="flex items-center gap-3 whitespace-nowrap font-mono text-sm uppercase tracking-wider text-zinc-400"
-          >
-            {service.name}
-            <span className="text-green-500" aria-hidden>
-              ✦
-            </span>
-          </span>
-        ))}
+    <div className="relative overflow-hidden border-y border-white/10 bg-zinc-950 py-6">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgb(22_163_74_/_0.12),_transparent_65%)]"
+      />
+      <div className="mask-fade-x relative flex flex-col gap-3">
+        <Row />
+        <Row reverse />
       </div>
     </div>
   );

@@ -1,5 +1,12 @@
 import { siteConfig } from "@/lib/site-config";
-import type { Faq, Service } from "@/lib/site-data";
+import type { Faq, Section } from "@/lib/site-data";
+
+function areaServed() {
+  return [
+    ...siteConfig.areaServed.map((name) => ({ "@type": "Country", name })),
+    ...siteConfig.cities.map((name) => ({ "@type": "City", name })),
+  ];
+}
 
 export function organizationSchema() {
   return {
@@ -9,10 +16,7 @@ export function organizationSchema() {
     legalName: siteConfig.legalName,
     url: siteConfig.url,
     description: siteConfig.description,
-    areaServed: siteConfig.areaServed.map((name) => ({
-      "@type": "Country",
-      name,
-    })),
+    areaServed: areaServed(),
   };
 }
 
@@ -31,23 +35,20 @@ export function faqPageSchema(faqs: Faq[]) {
   };
 }
 
-export function serviceSchema(service: Service) {
+export function serviceSchema(section: Section) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: service.name,
-    name: service.name,
-    description: service.description,
+    serviceType: section.name,
+    name: section.name,
+    description: section.description,
     provider: {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    areaServed: siteConfig.areaServed.map((name) => ({
-      "@type": "Country",
-      name,
-    })),
-    url: `${siteConfig.url}/services/${service.slug}`,
+    areaServed: areaServed(),
+    url: `${siteConfig.url}/${section.slug}`,
   };
 }
 

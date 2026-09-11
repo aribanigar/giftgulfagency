@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-import { services } from "@/lib/site-data";
+import { sections } from "@/lib/site-data";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -67,7 +67,7 @@ export function ContactForm() {
           <option value="" disabled>
             Select a service
           </option>
-          {services.map((s) => (
+          {sections.map((s) => (
             <option key={s.slug} value={s.slug}>
               {s.name}
             </option>
