@@ -36,8 +36,8 @@ function heroPhoto(id: string, gravity: "auto" | "south" | "center" = "auto") {
 
 /** Small thumbnails — the portfolio grid, one per section. */
 export const sectionPhotos: Record<string, string> = {
-  printing: wide("stickers-labels"),
-  signages: wide("signage"),
+  printing: wide("printing-digital"),
+  signages: wide("signage-install"),
   "events-exhibitions": wide("events-exhibitions"),
   packaging: wide("packaging-boxes"),
   "gift-items": wide("gift-items"),
@@ -50,16 +50,16 @@ export const sectionPhotos: Record<string, string> = {
  */
 export const sectionHeroGalleries: Record<string, string[]> = {
   printing: [
-    heroPhoto("stickers-labels"),
     heroPhoto("printing-digital"),
+    heroPhoto("stickers-labels"),
     heroPhoto("printing-magazine"),
     heroPhoto("printing-uvcase"),
     heroPhoto("printing-vinyl"),
   ],
   signages: [
+    heroPhoto("signage-install"),
     heroPhoto("signage-wayfinding"),
     heroPhoto("signage-acrylic"),
-    heroPhoto("signage"),
     heroPhoto("signage-illuminated"),
     heroPhoto("signage-led"),
   ],
@@ -99,3 +99,15 @@ export const featurePhotos = {
   fabrication: heroPhoto("fabrication", "auto"),
   fabricationDetail: wide("fabrication-detail"),
 };
+
+/**
+ * Homepage hero — real, market-accurate shots on rotation: the Dubai
+ * skyline, Sheikh Zayed Road, the fabrication floor where the work gets
+ * made, and a real illuminated sign, not staged or generic renders.
+ */
+export const homeHeroGallery: string[] = [
+  heroPhoto("hero-skyline", "south"),
+  heroPhoto("sheikh-zayed-road", "auto"),
+  heroPhoto("fabrication", "auto"),
+  heroPhoto("signage-install", "auto"),
+];

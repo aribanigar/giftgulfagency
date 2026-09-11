@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceMarquee } from "@/components/service-marquee";
 import { SectionIndex, type SectionIndexRow } from "@/components/section-index";
+import { SectionVisual } from "@/components/section-visual";
 import { VendorComparison } from "@/components/vendor-comparison";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { VideoEmbed } from "@/components/video-embed";
@@ -15,7 +16,7 @@ import { parseVideoUrl } from "@/lib/video";
 import { sectors, markets, siteFaqs, navLinks, sections } from "@/lib/site-data";
 import { organizationSchema, faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
-import { featurePhotos, sectionHeroGalleries } from "@/lib/photos";
+import { featurePhotos, homeHeroGallery, sectionHeroGalleries } from "@/lib/photos";
 
 const indexCaptions: Record<string, string> = {
   "/about": "Who we are, and how the work actually gets done.",
@@ -74,14 +75,7 @@ export default async function Home() {
 
       {/* Hero */}
       <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-zinc-950">
-        <Image
-          src={featurePhotos.heroSkyline}
-          alt="Dubai skyline at dusk, Sheikh Zayed Road interchange lit gold below the Burj Khalifa"
-          fill
-          priority
-          sizes="100vw"
-          className="ken-burns object-cover object-bottom opacity-95"
-        />
+        <SectionVisual photos={homeHeroGallery} />
         <div className="hero-shade absolute inset-0" />
 
         <div className="hero-text-shadow relative mx-auto w-full max-w-6xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">

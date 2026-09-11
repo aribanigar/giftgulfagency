@@ -40,7 +40,7 @@ export function SectionIndex({ rows }: { rows: SectionIndexRow[] }) {
           Everywhere a brand shows up
         </p>
 
-        <div className="mt-8 grid gap-x-12 lg:grid-cols-[1fr_320px]">
+        <div className="mt-8 grid gap-x-16 lg:grid-cols-[1fr_460px]">
           <div className="border-t border-zinc-800">
             {rows.map((row, i) => {
               const isActive = active === i;
@@ -53,7 +53,7 @@ export function SectionIndex({ rows }: { rows: SectionIndexRow[] }) {
                 >
                   <Link
                     href={row.href}
-                    className="relative flex items-center justify-between gap-4 py-6 outline-none sm:py-8"
+                    className="relative flex items-center gap-4 py-5 outline-none sm:gap-6 sm:py-6"
                   >
                     <span
                       aria-hidden
@@ -62,29 +62,39 @@ export function SectionIndex({ rows }: { rows: SectionIndexRow[] }) {
                         (isActive ? "scale-y-100" : "")
                       }
                     />
-                    <div className="flex items-baseline gap-4 sm:gap-8">
-                      <span
-                        className={
-                          "font-mono text-sm transition-colors duration-300 " +
-                          (isActive ? "text-green-400" : "text-zinc-600")
-                        }
-                      >
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span
-                        className={
-                          "font-heading text-[clamp(2rem,7vw,4.75rem)] font-extrabold leading-[1.02] tracking-tight transition-all duration-300 " +
-                          (isActive
-                            ? "translate-x-2 text-green-400"
-                            : "text-white")
-                        }
-                      >
-                        {row.label}
-                      </span>
-                    </div>
                     <span
                       className={
-                        "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300 sm:h-14 sm:w-14 " +
+                        "font-mono text-xs transition-colors duration-300 " +
+                        (isActive ? "text-green-400" : "text-zinc-600")
+                      }
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[var(--radius-md)] border border-zinc-800 lg:hidden">
+                      <Image
+                        src={row.photo}
+                        alt=""
+                        fill
+                        sizes="56px"
+                        className="object-cover object-center"
+                      />
+                    </div>
+
+                    <span
+                      className={
+                        "flex-1 font-heading text-[clamp(1.5rem,4.5vw,2.5rem)] font-extrabold leading-[1.05] tracking-tight transition-all duration-300 " +
+                        (isActive
+                          ? "translate-x-2 text-green-400"
+                          : "text-white")
+                      }
+                    >
+                      {row.label}
+                    </span>
+
+                    <span
+                      className={
+                        "hidden shrink-0 items-center justify-center rounded-full border transition-all duration-300 sm:flex sm:h-12 sm:w-12 " +
                         (isActive
                           ? "rotate-45 border-green-400 bg-green-400 text-zinc-950"
                           : "border-zinc-700 text-zinc-500")
@@ -100,28 +110,36 @@ export function SectionIndex({ rows }: { rows: SectionIndexRow[] }) {
 
           <div className="relative hidden lg:block">
             <div className="sticky top-24">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-xl)] border border-zinc-800 bg-zinc-900">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-zinc-800 bg-zinc-900 shadow-[0_30px_80px_-30px_rgb(0_0_0_/_0.7)]">
                 {rows.map((row, i) => (
                   <Image
                     key={row.href}
                     src={row.photo}
                     alt=""
                     fill
-                    sizes="320px"
+                    sizes="460px"
                     priority={active === i}
                     className={
-                      "object-cover object-center transition-opacity duration-500 ease-in-out " +
+                      "ken-burns object-cover object-center transition-opacity duration-500 ease-in-out " +
                       (active === i ? "opacity-100" : "opacity-0")
                     }
                   />
                 ))}
                 <div className="photo-shade absolute inset-0" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="font-heading text-lg font-bold text-white">
+
+                <div className="absolute inset-x-0 top-0 flex items-center justify-between p-6">
+                  <span className="font-mono text-xs tracking-[0.2em] text-white/70">
+                    {String(active + 1).padStart(2, "0")} / {String(rows.length).padStart(2, "0")}
+                  </span>
+                  <span className="h-2 w-2 rounded-full bg-green-400" />
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="font-heading text-2xl font-bold text-white">
                     {rows[active].label}
                   </p>
                   {rows[active].caption ? (
-                    <p className="mt-1 text-sm text-zinc-300">
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
                       {rows[active].caption}
                     </p>
                   ) : null}
