@@ -35,10 +35,10 @@ export async function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex flex-col leading-none">
               <span className="font-heading text-xl font-bold tracking-tight text-zinc-900">
-                Gifts Gulf Advertising
+                Gifts Gulf
               </span>
               <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.2em] text-green-700">
-                UAE &amp; Qatar
+                Media &amp; Advertising
               </span>
             </Link>
             <p className="mt-4 max-w-[30ch] text-sm text-zinc-600">

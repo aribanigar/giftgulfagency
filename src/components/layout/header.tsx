@@ -14,10 +14,10 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6">
         <Link href="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
           <span className="font-heading text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl">
-            Gifts Gulf Advertising
+            Gifts Gulf
           </span>
           <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.2em] text-green-700 sm:text-xs">
-            UAE &amp; Qatar
+            Media &amp; Advertising
           </span>
         </Link>
 
