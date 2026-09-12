@@ -58,8 +58,8 @@ export const sectionHeroGalleries: Record<string, string[]> = {
   ],
   signages: [
     heroPhoto("signage-install"),
+    heroPhoto("signage-3dletters"),
     heroPhoto("signage-wayfinding"),
-    heroPhoto("signage-acrylic"),
     heroPhoto("signage-illuminated"),
     heroPhoto("signage-led"),
   ],
