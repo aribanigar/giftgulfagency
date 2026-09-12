@@ -5,6 +5,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
+  TikTokIcon,
   YoutubeIcon,
   XIcon,
 } from "@/components/social-icons";
@@ -21,13 +22,20 @@ export async function Footer() {
   const settings = await getSettings();
   const telHref = `tel:${settings.contactPhone.replace(/[^\d+]/g, "")}`;
 
-  const socials = [
+  // Facebook, Instagram, LinkedIn & TikTok always show as brand touchpoints,
+  // even before a URL is connected in admin settings; YouTube and X only
+  // appear once a link is actually set.
+  const alwaysShownSocials = [
     { url: settings.socialLinks.facebook, label: "Facebook", Icon: FacebookIcon },
     { url: settings.socialLinks.instagram, label: "Instagram", Icon: InstagramIcon },
     { url: settings.socialLinks.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
+    { url: settings.socialLinks.tiktok, label: "TikTok", Icon: TikTokIcon },
+  ];
+  const optionalSocials = [
     { url: settings.socialLinks.youtube, label: "YouTube", Icon: YoutubeIcon },
     { url: settings.socialLinks.x, label: "X", Icon: XIcon },
   ].filter((s) => s.url);
+  const socials = [...alwaysShownSocials, ...optionalSocials];
 
   return (
     <footer className="border-t border-zinc-200 bg-zinc-50">
@@ -59,18 +67,28 @@ export async function Footer() {
             </div>
             {socials.length > 0 ? (
               <div className="mt-5 flex gap-3">
-                {socials.map(({ url, label, Icon }) => (
-                  <a
-                    key={label}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-zinc-600 transition-colors hover:border-green-600 hover:text-green-700"
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                ))}
+                {socials.map(({ url, label, Icon }) =>
+                  url ? (
+                    <a
+                      key={label}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-zinc-600 transition-colors hover:border-green-600 hover:text-green-700"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  ) : (
+                    <span
+                      key={label}
+                      aria-label={`${label} (coming soon)`}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-300"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </span>
+                  ),
+                )}
               </div>
             ) : null}
           </div>

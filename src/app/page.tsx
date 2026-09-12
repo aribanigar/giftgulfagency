@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { ServiceMarquee } from "@/components/service-marquee";
 import { SectionIndex, type SectionIndexRow } from "@/components/section-index";
 import { SectionVisual } from "@/components/section-visual";
-import { VendorComparison } from "@/components/vendor-comparison";
+import { ServiceBenefits } from "@/components/vendor-comparison";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { VideoEmbed } from "@/components/video-embed";
 import { JsonLd } from "@/components/json-ld";
@@ -193,19 +193,20 @@ export default async function Home() {
       {/* Services */}
       <SectionIndex rows={sectionIndexRows} />
 
-      {/* Vendor comparison */}
+      {/* Integrated service benefits */}
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            One partner instead of five vendors
+            Everything under one roof
           </h2>
           <p className="mt-3 max-w-2xl text-zinc-600">
-            Most signage companies, printers, fit-out contractors and
-            digital agencies across the UAE and Qatar specialise in one
-            thing. Gifts Gulf Advertising doesn&apos;t.
+            Printing, signage, events, packaging, gifting and social media
+            all run through the same team, so a brand&apos;s colours,
+            timelines and messaging stay consistent across every
+            touchpoint.
           </p>
           <div className="mt-10">
-            <VendorComparison />
+            <ServiceBenefits />
           </div>
         </div>
       </section>
@@ -217,7 +218,7 @@ export default async function Home() {
             {[
               { icon: Layers, value: "6", label: "Sections under one roof." },
               { icon: Globe2, value: "2", label: "Markets: the UAE and Qatar." },
-              { icon: Handshake, value: "1", label: "Partner to brief, instead of several vendors." },
+              { icon: Handshake, value: "1", label: "Team, brief and point of contact." },
             ].map((stat) => {
               const Icon = stat.icon;
               return (

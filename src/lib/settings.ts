@@ -5,6 +5,7 @@ export type SocialLinks = {
   facebook: string;
   instagram: string;
   linkedin: string;
+  tiktok: string;
   youtube: string;
   x: string;
 };
@@ -30,6 +31,7 @@ export const defaultSettings: SiteSettings = {
     facebook: "",
     instagram: "",
     linkedin: "",
+    tiktok: "",
     youtube: "",
     x: "",
   },

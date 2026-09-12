@@ -48,6 +48,7 @@ export async function updateSettingsAction(
       facebook: field("socialFacebook"),
       instagram: field("socialInstagram"),
       linkedin: field("socialLinkedin"),
+      tiktok: field("socialTiktok"),
       youtube: field("socialYoutube"),
       x: field("socialX"),
     },

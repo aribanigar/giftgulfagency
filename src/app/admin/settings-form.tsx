@@ -95,6 +95,13 @@ export function SettingsForm({ settings }: { settings: SiteSettings }) {
             defaultValue={settings.socialLinks.linkedin}
           />
           <Field
+            id="socialTiktok"
+            label="TikTok URL"
+            type="url"
+            placeholder="https://tiktok.com/@..."
+            defaultValue={settings.socialLinks.tiktok}
+          />
+          <Field
             id="socialYoutube"
             label="YouTube URL"
             type="url"

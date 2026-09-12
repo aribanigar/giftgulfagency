@@ -71,7 +71,7 @@ export const sections: Section[] = [
       },
       {
         q: "Does your printing work connect to signage, exhibitions, packaging and gift items?",
-        a: "Yes. Large-format digital printing produces the graphics used across our Signages and Events & Exhibitions and event management work, and the same UV and offset capacity brands our Packaging and Gift Items work, so a project can move between sections without switching vendors.",
+        a: "Yes. Large-format digital printing produces the graphics used across our Signages and Events & Exhibitions and event management work, and the same UV and offset capacity brands our Packaging and Gift Items work, so a project can move between sections and stay with the same team throughout.",
       },
       {
         q: "Do you offer UV printing?",
@@ -91,7 +91,7 @@ export const sections: Section[] = [
       },
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
-        a: "Yes. From large-format banners, vinyl and canvas to DTF-printed apparel and UV-printed corporate gifts, everything is produced by the same team rather than farmed out to different shops.",
+        a: "Yes. From large-format banners, vinyl and canvas to DTF-printed apparel and UV-printed corporate gifts, everything is produced by the same team.",
       },
       {
         q: "Can you print branding directly onto corporate gift items?",
@@ -432,11 +432,11 @@ export const siteFaqs: Faq[] = [
   },
   {
     q: "Can one project include both physical branding and digital marketing?",
-    a: "Yes. That's the core of how Gifts Gulf Advertising works. A single brief can cover a shop's signage and printing alongside its website and social media, instead of splitting the work across separate vendors.",
+    a: "Yes. That's the core of how Gifts Gulf Advertising works. A single brief can cover a shop's signage and printing alongside its website and social media.",
   },
   {
-    q: "What's the difference between Gifts Gulf Advertising and a single-service printer, signage company or digital agency?",
-    a: "Most printers, signage companies and digital agencies in the UAE and Qatar specialise in one thing. Gifts Gulf Advertising runs all of it, printing, signage, events, packaging, gifting and social media, all under one brief, one point of contact, and one consistent brand across every touchpoint.",
+    q: "What services does Gifts Gulf Advertising handle under one brief?",
+    a: "Printing, signage, events, packaging, gifting and social media, all under one brief, one point of contact, and one consistent brand across every touchpoint.",
   },
   {
     q: "Does Gifts Gulf Advertising handle both small orders and large corporate contracts?",

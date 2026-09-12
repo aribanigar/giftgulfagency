@@ -42,7 +42,7 @@ const aboutHeroGallery = [
 const values = [
   {
     icon: Handshake,
-    title: "One partner, not a chain of vendors",
+    title: "One team, every service",
     text: "Printing, signage, events and gifting sit alongside social media, website and SEO work, briefed once and delivered as one project.",
   },
   {
@@ -53,7 +53,7 @@ const values = [
   {
     icon: Globe,
     title: "Physical and digital, together",
-    text: "A brand's storefront, its exhibition booth, and its search rankings are treated as the same problem, not separate projects with separate invoices.",
+    text: "A brand's storefront, its exhibition booth, and its search rankings are treated as one connected project, briefed and delivered together.",
   },
   {
     icon: ShieldCheck,
@@ -83,7 +83,7 @@ export default function AboutPage() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
             Printing, signage, event and exhibition stands, packaging and
             gift items, produced by one team and delivered across the UAE and
-            Qatar, so nothing gets lost briefing five different vendors.
+            Qatar, from a single brief.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">

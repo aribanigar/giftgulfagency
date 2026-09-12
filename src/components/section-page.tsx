@@ -181,12 +181,12 @@ export function SectionPage({ section }: { section: Section }) {
 
         <div className="mt-6 rounded-[var(--radius-lg)] border border-green-200 bg-green-50 p-5 text-sm leading-relaxed text-zinc-700">
           <span className="font-semibold text-green-800">
-            Not just a single-service specialist.
+            Pairs with everything else a brand needs.
           </span>{" "}
-          Most printers, signage companies and digital agencies in the UAE
-          and Qatar only do one thing. Gifts Gulf Advertising pairs{" "}
-          {section.name.toLowerCase()} with the other five sections a brand
-          needs under the same brief, so nothing gets lost between vendors.
+          Gifts Gulf Advertising pairs {section.name.toLowerCase()} with the
+          other five sections a brand needs under the same brief, printing,
+          signage, events, packaging, gifting and social media, all handled
+          by one team.
         </div>
 
         <h3 className="mt-12 font-heading text-lg font-semibold text-zinc-900">
