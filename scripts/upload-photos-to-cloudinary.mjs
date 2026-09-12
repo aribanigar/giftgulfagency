@@ -41,6 +41,7 @@ for (const file of files) {
   const result = await cloudinary.uploader.upload(path.join(photosDir, file), {
     public_id: publicId,
     overwrite: true,
+    invalidate: true,
   });
   console.log(`✓ ${file} -> ${result.public_id} (${result.width}x${result.height})`);
 }
