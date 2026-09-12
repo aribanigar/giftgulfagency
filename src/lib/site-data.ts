@@ -34,33 +34,45 @@ export const sections: Section[] = [
     name: "Printing",
     code: "PRT-01",
     icon: Printer,
-    short: "UV, DTF, screen, offset, digital and large-format printing, on everything from banners to corporate gifts.",
+    short: "Large-format digital and offset printing at the core, feeding signage, exhibitions, packaging and gift items.",
     description:
-      "UV printing for rigid items and corporate gifts, DTF and screen printing for apparel, offset and digital printing for magazines and books, and large-format printing for banners, vinyl graphics, canvas prints and flags. All of it produced in-house for retail, publishing, events and corporate gifting across the UAE and Qatar.",
+      "Large-format digital printing for banners, vinyl graphics and exhibition panels, and offset printing for magazines, books and high-volume runs, sit at the centre of what we produce, the same in-house capacity that feeds signage faces, exhibition stand graphics, printed packaging and branded gift items. UV, DTF and screen printing round out the rest, for corporate gifts and apparel, all produced across the UAE and Qatar.",
     metaDescription:
-      "UV, DTF, screen, offset and large-format printing for banners, apparel, packaging and gifts, produced in-house across the UAE and Qatar.",
+      "Large-format digital and offset printing at the core, feeding signage, exhibitions, packaging and gifts, produced in-house across the UAE and Qatar.",
     definition:
-      "Printing covers every method a brand, publisher or event needs. UV printing cures ink directly onto rigid items and corporate gifts; DTF and screen printing put full-colour or bulk designs onto apparel; offset and digital printing run magazines, books and stationery; and large-format digital printing produces banners, vinyl graphics, canvas prints and flags. Stickers, decals and vehicle graphics are produced alongside all of it, in-house rather than outsourced.",
+      "Printing centres on two workhorse methods: large-format digital printing, which produces the banners, vinyl graphics and exhibition panels used across our Signage and Events & Exhibitions work, and offset printing, which runs magazines, books and high-volume stationery. UV printing adds direct branding onto rigid items and corporate gifts, and DTF and screen printing cover apparel. Because one production floor handles all of it, a signage face, an exhibition graphic, a packaging run and a printed gift item can be matched and produced together rather than sourced from separate print shops.",
     quickFacts: [
-      { label: "Typical output", value: "UV & DTF apparel, banners, vinyl, canvas, magazines, corporate gifts" },
-      { label: "Methods", value: "UV, DTF, screen, offset, digital & large-format printing" },
+      { label: "Typical output", value: "Large-format banners & panels, offset print runs, UV & DTF apparel/gifts" },
+      { label: "Methods", value: "Large-format digital, offset, UV, DTF & screen printing" },
       { label: "Built for", value: "Outdoor UAE and Qatar heat and UV exposure" },
-      { label: "Order sizes", value: "Single items to bulk merchandise and print runs" },
+      { label: "Feeds into", value: "Signage, Events & Exhibitions, Packaging and Gift Items" },
     ],
     regionalNote:
       "Gulf summers push surface temperatures well past 45°C on outdoor prints, stickers and banners from Sharjah's industrial zones to Doha's corniche, so materials and finishes are chosen to hold up to that heat and UV load, not just to look right on day one.",
     capabilities: [
+      "Large-format digital printing for banners & display panels",
+      "Offset printing for magazines, books & high-volume runs",
       "UV printing on rigid items & corporate gifts",
       "DTF printing for full-colour apparel",
       "Screen printing for bulk apparel & merchandise",
-      "Offset & digital printing for magazines and books",
-      "Large-format digital printing for banners & panels",
       "Vinyl printing & cut decals",
       "Canvas printing for photo & display prints",
       "Flags, feather flags & bunting",
       "Vehicle branding decals",
     ],
     faqs: [
+      {
+        q: "What is large-format digital printing used for?",
+        a: "Large-format digital printing produces banners, vinyl graphics, exhibition panels and canvas prints at sizes standard printers can't reach. It's the same production capacity behind our signage faces and exhibition stand graphics, so a brand's print, signage and event visuals come off the same floor and match exactly.",
+      },
+      {
+        q: "Do you offer offset printing for magazines and books?",
+        a: "Yes. Offset printing runs in-house for magazines, books and stationery, from single proof copies to full circulation and high-volume runs, alongside the large-format, UV, DTF and screen print work.",
+      },
+      {
+        q: "Does your printing work connect to signage, exhibitions, packaging and gift items?",
+        a: "Yes. Large-format digital printing produces the graphics used across our Signages and Events & Exhibitions and event management work, and the same UV and offset capacity brands our Packaging and Gift Items work, so a project can move between sections without switching vendors.",
+      },
       {
         q: "Do you offer UV printing?",
         a: "Yes. UV printing cures ink directly onto rigid items, promotional products and corporate gifts with a UV light as it prints, giving a durable, scratch-resistant finish without a separate curing step.",
@@ -72,10 +84,6 @@ export const sections: Section[] = [
       {
         q: "Do you offer screen printing for bulk apparel orders?",
         a: "Yes. Screen printing runs alongside DTF for apparel work, and is generally the more cost-effective method for large, uniform runs with a limited number of colours, such as branded staff uniforms or event T-shirts.",
-      },
-      {
-        q: "Do you offer offset printing for magazines and books?",
-        a: "Yes. Offset and digital printing run in-house for magazines, books and stationery, from single proof copies to full circulation and print runs, alongside the UV, DTF and large-format print work.",
       },
       {
         q: "Can you print on canvas?",
@@ -159,17 +167,17 @@ export const sections: Section[] = [
     name: "Events & Exhibitions",
     code: "EVT-03",
     icon: Presentation,
-    short: "Exhibition stands, event branding and kiosks, start to finish.",
+    short: "Exhibition stands, event branding, kiosks and on-site event management, start to finish.",
     description:
-      "Exhibition booth design and build, event branding, backdrops, and custom kiosks for malls, events and pop-ups, produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
+      "Exhibition booth design and build, event branding, backdrops, custom kiosks for malls, events and pop-ups, and on-site event management from load-in to breakdown, produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
     metaDescription:
-      "Exhibition stand design and build, event branding and kiosks for trade shows and activations across the UAE and Qatar.",
+      "Exhibition stand design and build, event branding, kiosks and on-site event management for trade shows across the UAE and Qatar.",
     definition:
-      "Events and exhibitions covers the design, build and installation of exhibition stands, event branding, backdrops and custom kiosks for conferences, trade shows, malls and activations.",
+      "Events and exhibitions covers the design, build and installation of exhibition stands, event branding, backdrops and custom kiosks, plus the on-site event management, load-in, installation, staffing support and breakdown, that gets a stand ready before doors open and cleared once a show ends.",
     quickFacts: [
       { label: "Typical output", value: "Exhibition stands, event backdrops, custom kiosks, branded booths" },
       { label: "Venues", value: "Dubai World Trade Centre, Abu Dhabi ADNEC, Doha DECC and QNCC" },
-      { label: "Service", value: "Design, build, on-site installation and breakdown" },
+      { label: "Service", value: "Design, build, on-site event management and breakdown" },
       { label: "Timeline", value: "Planned around each venue's exhibition calendar" },
     ],
     regionalNote:
@@ -178,7 +186,7 @@ export const sections: Section[] = [
       "Exhibition stand design & build",
       "Event branding & backdrops",
       "Custom kiosk design & build",
-      "On-site production support",
+      "On-site event management & production support",
       "Trade show & activation support",
     ],
     faqs: [
@@ -201,6 +209,10 @@ export const sections: Section[] = [
       {
         q: "Can an exhibition stand be reused across multiple shows?",
         a: "Yes. Modular stand designs are commonly built for reuse across a season's worth of trade shows.",
+      },
+      {
+        q: "Do you offer event management, or only stand design and build?",
+        a: "Both. Alongside design and fabrication, the team manages the on-site side of an event: load-in, installation, staffing the build during show hours, and breakdown, so a stand is ready before doors open and cleared once the show ends.",
       },
     ],
   },
