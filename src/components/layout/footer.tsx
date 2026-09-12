@@ -75,17 +75,17 @@ export async function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-zinc-600 transition-colors hover:border-green-600 hover:text-green-700"
+                      className="block h-9 w-9 transition-transform hover:scale-110"
                     >
-                      <Icon className="h-4 w-4" />
+                      <Icon className="h-9 w-9" />
                     </a>
                   ) : (
                     <span
                       key={label}
                       aria-label={`${label} (coming soon)`}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-300"
+                      className="block h-9 w-9 opacity-40 grayscale"
                     >
-                      <Icon className="h-4 w-4" />
+                      <Icon className="h-9 w-9" />
                     </span>
                   ),
                 )}
