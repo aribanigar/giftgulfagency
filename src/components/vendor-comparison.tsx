@@ -6,6 +6,8 @@ const oldWay = [
   "The exhibition stand is built by an events company that's never seen the storefront or the product packaging in person",
   "A social media agency schedules the launch content from a brand PDF, before the signage has even been installed",
   "A signage delay pushes the store opening back a week, but nobody tells the digital agency, so the launch posts go out on the old date",
+  "The cheapest quote wins, then the storefront sticker starts fading and lifting within a season of Gulf summer heat",
+  "A sign goes up crooked or a print run comes back off-colour, and every vendor points at someone else instead of fixing it",
   "Five vendors, five invoices, and no one who can actually answer for how the whole launch is going",
 ];
 
@@ -14,6 +16,8 @@ const giftsGulfWay = [
   "A reorder on a sticker or box goes back to the same file, the same team, not a rebuild from a screenshot",
   "The person building the exhibition stand has already seen the storefront and handled the packaging, so nothing looks like it came from a different brand",
   "A signage delay gets flagged internally the same day, and the launch content calendar shifts with it instead of firing on the old date",
+  "Materials and finishes are specified for Gulf heat and UV exposure at the quote stage, not swapped for something cheaper once the job's underway",
+  "Installation and quality checks happen in-house, so a defect gets fixed by the same team that built it, not chased across five phone numbers",
   "One point of contact can answer for the sign, the packaging and the launch post, because one team briefed all three from the same conversation",
 ];
 
