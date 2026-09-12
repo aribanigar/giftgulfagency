@@ -63,7 +63,6 @@ const values = [
 ];
 
 const leadSections = sections.filter((s) => s.slug !== "social-media");
-const otherSections = sections.filter((s) => s.slug === "social-media");
 
 export default function AboutPage() {
   return (
@@ -110,13 +109,13 @@ export default function AboutPage() {
           What we build
         </h2>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          Five production categories, one team behind all of them. Pick
-          where your project starts, every section links through to a full
-          brief and a quote.
+          Six sections, one team behind all of them. Pick where your
+          project starts, every section links through to a full brief and
+          a quote.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {leadSections.map((s, i) => {
+          {sections.map((s, i) => {
             const Icon = s.icon;
             const photo = sectionHeroGalleries[s.slug]?.[0];
             return (
@@ -153,34 +152,6 @@ export default function AboutPage() {
                       Get a quote for {s.name.toLowerCase()}
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </div>
-                  </div>
-                </Link>
-              </Reveal>
-            );
-          })}
-
-          {otherSections.map((s) => {
-            const Icon = s.icon;
-            return (
-              <Reveal key={s.slug}>
-                <Link
-                  href={`/${s.slug}`}
-                  className="group flex h-full flex-col justify-between rounded-[var(--radius-xl)] border border-dashed border-zinc-300 bg-zinc-50 p-6 transition-colors hover:border-green-600"
-                >
-                  <div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-lg)] border border-zinc-300 bg-white text-zinc-700">
-                      <Icon className="h-5 w-5" strokeWidth={1.75} />
-                    </div>
-                    <h3 className="mt-4 font-heading text-lg font-semibold text-zinc-900">
-                      {s.name}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                      {s.short}
-                    </p>
-                  </div>
-                  <div className="mt-5 flex items-center gap-1.5 text-sm font-medium text-green-700">
-                    See what&apos;s included
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
               </Reveal>
