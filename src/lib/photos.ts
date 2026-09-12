@@ -78,10 +78,11 @@ export const sectionHeroGalleries: Record<string, string[]> = {
     heroPhoto("packaging-set"),
   ],
   "gift-items": [
+    heroPhoto("gift-totebag"),
+    heroPhoto("gift-tshirt"),
+    heroPhoto("gift-notebook"),
     heroPhoto("gift-pens"),
-    heroPhoto("gift-bottles"),
-    heroPhoto("gift-hamper"),
-    heroPhoto("gift-items"),
+    heroPhoto("gift-tumbler"),
     heroPhoto("gift-mugs"),
   ],
   "social-media": [
@@ -157,7 +158,7 @@ export const blogPhotoIds: Record<string, string> = {
   "restaurant-branding-guide": "packaging-cups",
   "offset-printing-guide": "printing-magazine",
   "canvas-printing-guide": "printing-largeformat",
-  "acrylic-lettering-displays-guide": "signage-illuminated",
+  "acrylic-lettering-displays-guide": "signage-lasercutting",
   "acrylic-awards-trophies-guide": "gift-items",
   "exhibition-kiosk-design-guide": "events-stand",
   "paid-social-advertising-guide": "social-analytics",

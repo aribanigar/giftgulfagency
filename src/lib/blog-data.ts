@@ -3216,7 +3216,7 @@ export const blogPosts: BlogPost[] = [
     category: "Events",
     excerpt:
       "How a stand goes from concept sketch to an approved 3D render before a single panel gets cut.",
-    photoId: "events-hall",
+    photoId: "3d-design-exhibition-stands-guide",
     readTime: "6 min read",
     publishedAt: "2026-11-23",
     relatedSectionSlug: "events-exhibitions",
@@ -3286,7 +3286,7 @@ export const blogPosts: BlogPost[] = [
     category: "Events",
     excerpt:
       "Standard sizes, base types, and when a roll-up stand beats a larger, more expensive display.",
-    photoId: "printing-largeformat",
+    photoId: "roll-up-banner-stands-guide",
     readTime: "5 min read",
     publishedAt: "2026-11-30",
     relatedSectionSlug: "events-exhibitions",
@@ -3353,7 +3353,7 @@ export const blogPosts: BlogPost[] = [
     category: "Events",
     excerpt:
       "Magnetic panel frames vs tension fabric systems, and which suits a busy exhibition schedule better.",
-    photoId: "events-stand",
+    photoId: "popup-display-stands-guide",
     readTime: "6 min read",
     publishedAt: "2026-12-07",
     relatedSectionSlug: "events-exhibitions",
@@ -3423,7 +3423,7 @@ export const blogPosts: BlogPost[] = [
     category: "Printing",
     excerpt:
       "Dye-sublimation vs direct fabric printing, and why fabric beats PVC for certain display jobs.",
-    photoId: "events-backdrop",
+    photoId: "fabric-printing-guide",
     readTime: "5 min read",
     publishedAt: "2026-12-14",
     relatedSectionSlug: "printing",
