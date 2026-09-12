@@ -1,19 +1,20 @@
 import { X, Check } from "lucide-react";
 
 const oldWay = [
-  "A signage company for the storefront",
-  "A separate printer for stickers and packaging",
-  "A different contractor for the shop fit-out",
-  "An events company for the next exhibition",
-  "A digital agency for the website, SEO and social media",
-  "Five vendors, five timelines, five invoices to reconcile",
+  "The signage company designs the storefront sign without ever seeing the packaging vendor's colour file, so the green is never quite the same green",
+  "A sticker and packaging reorder goes to a different printer than the one who made the original artwork, and the file has to be rebuilt from scratch",
+  "The exhibition stand is built by an events company that's never seen the storefront or the product packaging in person",
+  "A social media agency schedules the launch content from a brand PDF, before the signage has even been installed",
+  "A signage delay pushes the store opening back a week, but nobody tells the digital agency, so the launch posts go out on the old date",
+  "Five vendors, five invoices, and no one who can actually answer for how the whole launch is going",
 ];
 
 const giftsGulfWay = [
-  "One brief covers signage, print, fit-out, exhibitions, gifting, website, SEO and social",
-  "One team, one timeline, one invoice",
-  "Brand stays consistent from the storefront to the Instagram feed",
-  "Production and digital run in parallel, not queued behind separate vendors",
+  "The same artwork file used for the storefront sign is reused for the packaging and the exhibition stand graphics, so the colour actually matches",
+  "A reorder on a sticker or box goes back to the same file, the same team, not a rebuild from a screenshot",
+  "The person building the exhibition stand has already seen the storefront and handled the packaging, so nothing looks like it came from a different brand",
+  "A signage delay gets flagged internally the same day, and the launch content calendar shifts with it instead of firing on the old date",
+  "One point of contact can answer for the sign, the packaging and the launch post, because one team briefed all three from the same conversation",
 ];
 
 export function VendorComparison() {
