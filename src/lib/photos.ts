@@ -164,4 +164,8 @@ export const blogPhotoIds: Record<string, string> = {
   "social-media-content-design-copywriting-guide": "social-flatlay",
   "influencer-ugc-marketing-guide": "social-studio",
   "social-media-analytics-reporting-guide": "blog-seo-services",
+  "3d-design-exhibition-stands-guide": "events-hall",
+  "roll-up-banner-stands-guide": "printing-largeformat",
+  "popup-display-stands-guide": "events-stand",
+  "fabric-printing-guide": "events-backdrop",
 };

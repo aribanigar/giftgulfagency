@@ -40,7 +40,7 @@ export const sections: Section[] = [
     metaDescription:
       "Large-format digital and offset printing at the core, feeding signage, exhibitions, packaging and gifts, produced by one team across the UAE and Qatar.",
     definition:
-      "Printing centres on two workhorse methods: large-format digital printing, which produces the banners, vinyl graphics and exhibition panels used across our Signage and Events & Exhibitions work, and offset printing, which runs magazines, books and high-volume stationery. UV printing adds direct branding onto rigid items and corporate gifts, and DTF and screen printing cover apparel. Because one production floor handles all of it, a signage face, an exhibition graphic, a packaging run and a printed gift item can be matched and produced together rather than sourced from separate print shops.",
+      "Printing centres on two workhorse methods: large-format digital printing, which produces the banners, vinyl graphics and exhibition panels used across our Signage and Events & Exhibitions work, and offset printing, which runs magazines, books and high-volume stationery. UV printing adds direct branding onto rigid items and corporate gifts, and DTF and screen printing cover apparel. Because one production floor handles all of it, a signage face, an exhibition graphic, a packaging run and a printed gift item can be matched and produced together on the same equipment.",
     quickFacts: [
       { label: "Typical output", value: "Large-format banners & panels, offset print runs, UV & DTF apparel/gifts" },
       { label: "Methods", value: "Large-format digital, offset, UV, DTF & screen printing" },
@@ -57,6 +57,7 @@ export const sections: Section[] = [
       "Screen printing for bulk apparel & merchandise",
       "Vinyl printing & cut decals",
       "Canvas printing for photo & display prints",
+      "Fabric & tension-fabric printing for displays",
       "Flags, feather flags & bunting",
       "Vehicle branding decals",
     ],
@@ -88,6 +89,10 @@ export const sections: Section[] = [
       {
         q: "Can you print on canvas?",
         a: "Yes. Canvas printing is available for photo prints, display pieces and branded wall art, produced on the same large-format equipment used for banners and vinyl graphics.",
+      },
+      {
+        q: "Do you offer fabric printing for backdrops and tension-fabric displays?",
+        a: "Yes. Fabric printing, including dye-sublimation for a smooth, wrinkle-resistant finish, is available for tension-fabric display systems, step-and-repeat backdrops and stage graphics, alongside the standard PVC and vinyl printing used for other display work.",
       },
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
@@ -169,22 +174,25 @@ export const sections: Section[] = [
     icon: Presentation,
     short: "Exhibition stands, event branding, kiosks and on-site event management, start to finish.",
     description:
-      "Exhibition booth design and build, event branding, backdrops, custom kiosks for malls, events and pop-ups, and on-site event management from load-in to breakdown, produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
+      "3D exhibition stand design, exhibition booth build, event branding, backdrops, roll-up and pop-up display stands, fabric printing, custom kiosks for malls, events and pop-ups, and on-site event management from load-in to breakdown, produced and installed for conferences, trade shows and activations across the UAE and Qatar's exhibition calendar.",
     metaDescription:
-      "Exhibition stand design and build, event branding, kiosks and on-site event management for trade shows across the UAE and Qatar.",
+      "3D exhibition stand design, backdrops, roll-up and pop-up displays, and on-site event management for trade shows across the UAE and Qatar.",
     definition:
-      "Events and exhibitions covers the design, build and installation of exhibition stands, event branding, backdrops and custom kiosks, plus the on-site event management, load-in, installation, staffing support and breakdown, that gets a stand ready before doors open and cleared once a show ends.",
+      "Events and exhibitions covers 3D design and the build and installation of exhibition stands, event branding, backdrops, roll-up and pop-up display stands, fabric printing, and custom kiosks, plus the on-site event management, load-in, installation, staffing support and breakdown, that gets a stand ready before doors open and cleared once a show ends.",
     quickFacts: [
-      { label: "Typical output", value: "Exhibition stands, event backdrops, custom kiosks, branded booths" },
+      { label: "Typical output", value: "Exhibition stands, backdrops, roll-up & pop-up displays, custom kiosks" },
+      { label: "Design", value: "3D concept rendering and build drawings before fabrication" },
       { label: "Venues", value: "Dubai World Trade Centre, Abu Dhabi ADNEC, Doha DECC and QNCC" },
       { label: "Service", value: "Design, build, on-site event management and breakdown" },
-      { label: "Timeline", value: "Planned around each venue's exhibition calendar" },
     ],
     regionalNote:
       "Exhibition and conference activity runs on a busy calendar across Dubai World Trade Centre, Abu Dhabi's ADNEC, and Doha's DECC and QNCC, so booth and kiosk builds are planned around that calendar and a stand is ready before the doors open, wherever the show is.",
     capabilities: [
+      "3D exhibition stand design",
       "Exhibition stand design & build",
       "Event branding & backdrops",
+      "Roll-up banner stands",
+      "Pop-up display stands",
       "Custom kiosk design & build",
       "On-site event management & production support",
       "Trade show & activation support",
@@ -213,6 +221,18 @@ export const sections: Section[] = [
       {
         q: "Do you offer event management, or only stand design and build?",
         a: "Both. Alongside design and fabrication, the team manages the on-site side of an event: load-in, installation, staffing the build during show hours, and breakdown, so a stand is ready before doors open and cleared once the show ends.",
+      },
+      {
+        q: "Do you provide 3D design for exhibition stands before fabrication starts?",
+        a: "Yes. Every stand goes through 3D concept rendering and revisions before it's converted into technical build drawings, so layout, branding and lighting can be reviewed and approved before any material is cut.",
+      },
+      {
+        q: "Do you supply roll-up banners and pop-up display stands, or only full exhibition stands?",
+        a: "Both. Roll-up banner stands and pop-up display stands (magnetic panel and tension fabric systems) are available on their own for a single-point presence, or as part of a larger exhibition stand build.",
+      },
+      {
+        q: "Can you print on fabric for backdrops and tension-fabric displays?",
+        a: "Yes. Fabric printing, including dye-sublimation for tension-fabric display systems and step-and-repeat backdrops, runs alongside the standard PVC and vinyl printing used for other event graphics.",
       },
     ],
   },
@@ -463,6 +483,7 @@ export const capabilityBlogSlug: Record<string, string> = {
   "Screen printing for bulk apparel & merchandise": "dtf-vs-screen-vs-sublimation",
   "Vinyl printing & cut decals": "vinyl-stickers-guide",
   "Canvas printing for photo & display prints": "canvas-printing-guide",
+  "Fabric & tension-fabric printing for displays": "fabric-printing-guide",
   "Flags, feather flags & bunting": "flag-printing-guide",
   "Vehicle branding decals": "vehicle-branding-fleet-graphics",
 
@@ -475,8 +496,11 @@ export const capabilityBlogSlug: Record<string, string> = {
   "Acrylic awards & trophies": "acrylic-awards-trophies-guide",
 
   // Events & Exhibitions
+  "3D exhibition stand design": "3d-design-exhibition-stands-guide",
   "Exhibition stand design & build": "exhibition-stand-guide",
   "Event branding & backdrops": "event-backdrop-step-and-repeat-guide",
+  "Roll-up banner stands": "roll-up-banner-stands-guide",
+  "Pop-up display stands": "popup-display-stands-guide",
   "Custom kiosk design & build": "exhibition-kiosk-design-guide",
   "On-site event management & production support": "trade-show-checklist",
   "Trade show & activation support": "product-launch-event-planning",

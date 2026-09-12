@@ -3207,6 +3207,286 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "3d-design-exhibition-stands-guide",
+    title: "3D design for exhibition stands: how the process actually works",
+    metaDescription:
+      "How 3D design and rendering for an exhibition stand works, from concept to approved build drawing, and why it matters before fabrication starts.",
+    category: "Events",
+    excerpt:
+      "How a stand goes from concept sketch to an approved 3D render before a single panel gets cut.",
+    photoId: "events-hall",
+    readTime: "6 min read",
+    publishedAt: "2026-11-23",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "An exhibition stand is expensive to get wrong once it's built, which is why the design work happens almost entirely in 3D before any material is cut. A 3D design pass is what turns a brief into something a client can actually approve, and a fabricator can actually build from.",
+    sections: [
+      {
+        heading: "Why 3D design comes before fabrication",
+        blocks: [
+          p(
+            "A flat 2D floor plan tells a client where the stand's walls and counters sit, but it doesn't show how tall the branding reads from the aisle, whether a meeting pod feels open or cramped, or how the lighting will actually land on a feature wall. A 3D render answers those questions before the stand exists physically, catching design problems while they're still a few clicks to fix rather than a rebuild on the show floor.",
+          ),
+        ],
+      },
+      {
+        heading: "From brief to concept render",
+        blocks: [
+          ul([
+            "Brief and floor plan: booth dimensions, required zones (reception, meeting area, storage, product display) and any brand guidelines are gathered first.",
+            "Concept sketches: quick 3D blockouts test a few different layout and structure ideas before committing to one direction.",
+            "Detailed render: the chosen concept is modelled with accurate materials, lighting and branding, viewable from multiple angles including the visitor's actual eye-level approach from the aisle.",
+            "Client review and revisions: renders are usually the point where a client requests changes, since it's far easier to move a wall or resize a logo in software than after fabrication starts.",
+          ]),
+        ],
+      },
+      {
+        heading: "From approved render to build drawing",
+        blocks: [
+          p(
+            "Once a render is approved, it's converted into technical build drawings, with exact dimensions, materials and structural details a fabrication team can work from. This is also the stage where structural and electrical requirements (load-bearing points, cable runs for lighting and AV) get finalised, and where any venue-specific rules, height restrictions, sightline requirements between neighbouring stands, get checked against the design.",
+          ),
+        ],
+      },
+      {
+        heading: "What a 3D render actually shows a client",
+        blocks: [
+          ul([
+            "True-to-scale proportions, so a wall or counter doesn't look different in person than it did on screen.",
+            "Material and colour accuracy, close enough to the final finish that there are no surprises on install day.",
+            "Lighting behaviour, since a feature wall or logo can look completely different under the actual lighting plan versus a flatly lit render.",
+            "Multiple viewing angles, particularly the aisle approach, which is the first impression most visitors actually get.",
+          ]),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Why does an exhibition stand need a 3D render before it's built?",
+        a: "A 3D render surfaces design problems, proportions, lighting, sightlines, brand visibility from the aisle, while they're still easy to change in software, rather than after the stand has already been fabricated and installed.",
+      },
+      {
+        q: "How many rounds of revisions are normal for a 3D design?",
+        a: "It varies by project, but most stands go through at least one or two rounds of revisions after the first concept render, as a client fine-tunes layout, branding placement or material choices before signing off.",
+      },
+      {
+        q: "Does the 3D render account for venue rules like height restrictions?",
+        a: "Yes, venue-specific requirements, height limits, sightline rules for neighbouring stands, permitted structural methods, are checked against the design before it moves to build drawings, to avoid a design that isn't actually approvable on site.",
+      },
+    ],
+  },
+
+  {
+    slug: "roll-up-banner-stands-guide",
+    title: "Roll-up banner stands: sizes, materials and when to use them",
+    metaDescription:
+      "How roll-up (pull-up) banner stands work, the standard sizes and base types available, and when they're the right choice over a larger exhibition display.",
+    category: "Events",
+    excerpt:
+      "Standard sizes, base types, and when a roll-up stand beats a larger, more expensive display.",
+    photoId: "printing-largeformat",
+    readTime: "5 min read",
+    publishedAt: "2026-11-30",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "A roll-up banner stand is the most portable, fastest-to-deploy display format available, a printed banner that retracts into its own base for transport and storage, ready to stand back up in under a minute. It's a workhorse for reception areas, retail counters and exhibition aisles precisely because it asks nothing of the venue and nothing of the person setting it up.",
+    sections: [
+      {
+        heading: "How a roll-up stand works",
+        blocks: [
+          p(
+            "A printed PVC or polyester banner is fixed to a spring-loaded roller inside a base unit, and pulled up to full height along a support pole, which locks it in place. To pack down, the pole is released and the banner retracts automatically into the base, the whole unit collapsing into a single carry case that one person can move.",
+          ),
+        ],
+      },
+      {
+        heading: "Standard sizes and base types",
+        blocks: [
+          ul([
+            "Standard size: roughly 85cm wide by 200cm tall, the most common size for reception areas and single-stand event use.",
+            "Wide format: up to 150cm or more wide, used where more content or a wider visual needs to fit on one stand.",
+            "Double-sided stands: readable from both sides, suited to a stand placed in an open walkway rather than against a wall.",
+            "Premium bases: heavier, more stable bases for outdoor use or higher-footfall venues where a lightweight base risks tipping.",
+          ]),
+        ],
+      },
+      {
+        heading: "When a roll-up stand is the right choice",
+        blocks: [
+          p(
+            "A roll-up stand suits a single, focused message, a promotion, a directional sign, a speaker's name at a conference, displayed at one specific spot. It's the fastest and least expensive display option for that kind of single-point messaging, and it travels well for a business that presents at multiple events or locations. For a full exhibition presence with multiple zones, product display and a larger branded footprint, a built exhibition stand or a pop-up display system suits the job better than a row of roll-up stands trying to do that job instead.",
+          ),
+        ],
+      },
+      {
+        heading: "Material and print considerations",
+        blocks: [
+          p(
+            "Most roll-up banners print on a matte or satin PVC or polyester material, chosen for how it looks under typical indoor lighting without glare and how well it survives repeated rolling without the print cracking at the fold line. A banner intended for years of reuse across multiple events benefits from a slightly heavier-weight material, since a thin banner shows wear at the fold faster with repeated use.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the standard size for a roll-up banner stand?",
+        a: "The most common size is roughly 85cm wide by 200cm tall, though wider formats up to 150cm or more are available when a design needs more space.",
+      },
+      {
+        q: "How long does a roll-up stand last with repeated use?",
+        a: "A well-made stand with a properly specified banner material can last for years of repeated setup and pack-down, though a thinner, lower-weight banner will show wear at the fold line faster than a heavier-weight material.",
+      },
+      {
+        q: "Is a roll-up stand a good substitute for a full exhibition stand?",
+        a: "Not for a full presence. A roll-up stand suits a single, focused message at one point, but a full exhibition stand or pop-up display system handles multiple zones, product display and a larger branded footprint far better than several roll-up stands together.",
+      },
+    ],
+  },
+
+  {
+    slug: "popup-display-stands-guide",
+    title: "Pop-up display stands: magnetic frames vs tension fabric systems",
+    metaDescription:
+      "How pop-up display stands work, magnetic panel frames vs tension fabric systems, and when each suits an exhibition or retail activation.",
+    category: "Events",
+    excerpt:
+      "Magnetic panel frames vs tension fabric systems, and which suits a busy exhibition schedule better.",
+    photoId: "events-stand",
+    readTime: "6 min read",
+    publishedAt: "2026-12-07",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "A pop-up display sits between a roll-up banner and a fully built exhibition stand: bigger and more visually impactful than a single banner, but still packed into a case or two and set up without tools. It's the standard choice for a business that needs a real backdrop presence at trade shows without committing to a custom-built stand every time.",
+    sections: [
+      {
+        heading: "Magnetic panel (pop-up frame) systems",
+        blocks: [
+          p(
+            "A curved or straight aluminium frame unfolds and locks into shape, and separately printed fabric or foam-board panels attach to it with magnetic strips or hook-and-loop fasteners. This is the classic pop-up backdrop format seen at trade show booths and press conference walls, valued for how quickly it assembles and how compactly the frame and panels pack into a wheeled case.",
+          ),
+        ],
+      },
+      {
+        heading: "Tension fabric systems",
+        blocks: [
+          p(
+            "A tension fabric display uses a lightweight frame with a stretched, seamless fabric print pulled tight over it like a fitted sheet, giving a smooth, wrinkle-free graphic with no visible panel seams. It's generally lighter to transport than a panel system of the same size and rolls up small for storage, though the fabric graphic itself needs to be replaced as a whole piece rather than swapping individual panels.",
+          ),
+        ],
+      },
+      {
+        heading: "Choosing between the two systems",
+        blocks: [
+          ul([
+            "Frequency of reuse: a magnetic panel system is easier to partially update (swap one panel) if messaging changes between events, where a tension fabric graphic is replaced as a single piece.",
+            "Visual finish: tension fabric gives a seamless, wrinkle-resistant look with no visible panel joins, generally read as the more premium finish.",
+            "Transport weight: tension fabric systems are usually lighter and pack down smaller than an equivalent panel system.",
+            "Set-up speed: both are designed for tool-free assembly, but a straight or slightly curved tension fabric wall is often marginally faster to set up than a multi-panel frame.",
+          ]),
+        ],
+      },
+      {
+        heading: "Where pop-up displays are used",
+        blocks: [
+          ul([
+            "Trade show booth backdrops.",
+            "Press conference and media step-and-repeat walls.",
+            "Retail activation and pop-up shop backdrops.",
+            "Conference stage and speaker backdrops.",
+          ]),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between a magnetic panel and a tension fabric pop-up display?",
+        a: "A magnetic panel system uses separate printed panels attached to a frame with magnets, easier to partially update between events. A tension fabric system stretches one seamless fabric graphic over a frame for a smoother, wrinkle-free finish, but the whole graphic is replaced as one piece if the design changes.",
+      },
+      {
+        q: "Are pop-up display stands reusable across multiple events?",
+        a: "Yes, both magnetic panel and tension fabric systems are built for repeated setup and pack-down across many events, which is the main reason businesses choose them over a one-off built structure.",
+      },
+      {
+        q: "How long does it take to set up a pop-up display stand?",
+        a: "Most pop-up frames, whether magnetic panel or tension fabric, are designed for tool-free assembly by one or two people in well under half an hour, considerably faster than a custom-built exhibition stand.",
+      },
+    ],
+  },
+
+  {
+    slug: "fabric-printing-guide",
+    title: "Fabric printing for backdrops, displays and tension-fabric stands",
+    metaDescription:
+      "How fabric printing works for backdrops and tension-fabric displays, dye-sublimation vs direct printing, and why fabric beats PVC for some jobs.",
+    category: "Printing",
+    excerpt:
+      "Dye-sublimation vs direct fabric printing, and why fabric beats PVC for certain display jobs.",
+    photoId: "events-backdrop",
+    readTime: "5 min read",
+    publishedAt: "2026-12-14",
+    relatedSectionSlug: "printing",
+    intro:
+      "Fabric has become the standard material behind tension-fabric display systems, step-and-repeat backdrops and premium exhibition graphics, chosen specifically for a smooth, matte, wrinkle-resistant finish that a rigid PVC banner can't match at the same size.",
+    sections: [
+      {
+        heading: "Dye-sublimation vs direct fabric printing",
+        blocks: [
+          p(
+            "Dye-sublimation printing transfers ink onto a special transfer paper first, then heat-presses it into the fabric fibres themselves, so the colour becomes part of the fabric rather than sitting on its surface, giving a soft-hand finish that doesn't crack, peel or fade the way a surface print can. Direct-to-fabric printing applies ink straight onto the material, a faster process suited to shorter runs, though generally with a slightly less vivid, less durable result than dye-sublimation on polyester fabric.",
+          ),
+        ],
+      },
+      {
+        heading: "Why fabric over PVC for some display jobs",
+        blocks: [
+          ul([
+            "No glare: fabric has a matte finish that reads cleanly in photographs and under stage lighting, where glossy PVC can reflect light and wash out a photo.",
+            "Wrinkle resistance: fabric can be tensioned drum-tight over a frame for a smooth, seamless look that a heavier PVC banner can't achieve at the same size.",
+            "Weight and packing: fabric graphics fold and roll into a much smaller, lighter package than an equivalent PVC banner, a real factor for anyone shipping displays between events.",
+            "Colour depth: dye-sublimated fabric holds rich, saturated colour well, which is part of why it's the standard for tension-fabric exhibition walls and step-and-repeat backdrops.",
+          ]),
+          p(
+            "PVC still wins for outdoor durability, cost on very large runs, and jobs where a stiffer, flatter material is genuinely needed, so fabric isn't a universal replacement, it's the better choice for a specific set of display formats.",
+          ),
+        ],
+      },
+      {
+        heading: "Common uses for printed fabric",
+        blocks: [
+          ul([
+            "Tension-fabric pop-up display systems for exhibitions.",
+            "Step-and-repeat and press conference backdrops.",
+            "Stage and conference backdrops.",
+            "Fabric banners and hanging graphics for retail and event spaces.",
+          ]),
+        ],
+      },
+      {
+        heading: "Care and handling",
+        blocks: [
+          p(
+            "Printed fabric graphics fold for transport without the cracking risk a PVC banner faces at the fold line, but they should be folded along designed seam lines where possible rather than crushed randomly, and stored dry to avoid mildew on the fabric backing over long storage periods between events.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between dye-sublimation and direct fabric printing?",
+        a: "Dye-sublimation transfers ink into the fabric fibres via heat, so colour becomes part of the material with strong durability and colour depth. Direct-to-fabric printing applies ink to the surface directly, faster for short runs but generally less vivid and less durable than dye-sublimation on polyester.",
+      },
+      {
+        q: "Why choose fabric printing over PVC for a display?",
+        a: "Fabric gives a matte, glare-free finish that photographs well, can be tensioned wrinkle-free over a frame, and packs down lighter and smaller than an equivalent PVC banner, making it the standard choice for tension-fabric displays and step-and-repeat backdrops.",
+      },
+      {
+        q: "Is printed fabric durable enough for repeated events?",
+        a: "Yes, particularly dye-sublimated polyester fabric, which resists cracking, fading and wrinkling across repeated folding, transport and setup, provided it's stored dry between uses.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
