@@ -17,7 +17,7 @@ const giftsGulfWay = [
   "The person building the exhibition stand has already seen the storefront and handled the packaging, so nothing looks like it came from a different brand",
   "A signage delay gets flagged internally the same day, and the launch content calendar shifts with it instead of firing on the old date",
   "Materials and finishes are specified for Gulf heat and UV exposure at the quote stage, not swapped for something cheaper once the job's underway",
-  "Installation and quality checks happen in-house, so a defect gets fixed by the same team that built it, not chased across five phone numbers",
+  "Installation and quality checks are handled by the same team that built the piece, so a defect gets fixed directly, not chased across five phone numbers",
   "One point of contact can answer for the sign, the packaging and the launch post, because one team briefed all three from the same conversation",
 ];
 

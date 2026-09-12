@@ -174,7 +174,7 @@ export default async function BlogPostPage({
               Need this for your brand?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-zinc-600">
-              {relatedService.name} is handled in-house, start to finish,
+              {relatedService.name} is handled by one team, start to finish,
               across the UAE and Qatar.
             </p>
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">

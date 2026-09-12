@@ -36,9 +36,9 @@ export const sections: Section[] = [
     icon: Printer,
     short: "Large-format digital and offset printing at the core, feeding signage, exhibitions, packaging and gift items.",
     description:
-      "Large-format digital printing for banners, vinyl graphics and exhibition panels, and offset printing for magazines, books and high-volume runs, sit at the centre of what we produce, the same in-house capacity that feeds signage faces, exhibition stand graphics, printed packaging and branded gift items. UV, DTF and screen printing round out the rest, for corporate gifts and apparel, all produced across the UAE and Qatar.",
+      "Large-format digital printing for banners, vinyl graphics and exhibition panels, and offset printing for magazines, books and high-volume runs, sit at the centre of what we produce, the same production capacity that feeds signage faces, exhibition stand graphics, printed packaging and branded gift items. UV, DTF and screen printing round out the rest, for corporate gifts and apparel, all produced across the UAE and Qatar.",
     metaDescription:
-      "Large-format digital and offset printing at the core, feeding signage, exhibitions, packaging and gifts, produced in-house across the UAE and Qatar.",
+      "Large-format digital and offset printing at the core, feeding signage, exhibitions, packaging and gifts, produced by one team across the UAE and Qatar.",
     definition:
       "Printing centres on two workhorse methods: large-format digital printing, which produces the banners, vinyl graphics and exhibition panels used across our Signage and Events & Exhibitions work, and offset printing, which runs magazines, books and high-volume stationery. UV printing adds direct branding onto rigid items and corporate gifts, and DTF and screen printing cover apparel. Because one production floor handles all of it, a signage face, an exhibition graphic, a packaging run and a printed gift item can be matched and produced together rather than sourced from separate print shops.",
     quickFacts: [
@@ -67,7 +67,7 @@ export const sections: Section[] = [
       },
       {
         q: "Do you offer offset printing for magazines and books?",
-        a: "Yes. Offset printing runs in-house for magazines, books and stationery, from single proof copies to full circulation and high-volume runs, alongside the large-format, UV, DTF and screen print work.",
+        a: "Yes. Offset printing runs on the same production floor for magazines, books and stationery, from single proof copies to full circulation and high-volume runs, alongside the large-format, UV, DTF and screen print work.",
       },
       {
         q: "Does your printing work connect to signage, exhibitions, packaging and gift items?",
@@ -91,7 +91,7 @@ export const sections: Section[] = [
       },
       {
         q: "Do you handle both large-format printing and small merchandise runs?",
-        a: "Yes. From large-format banners, vinyl and canvas to DTF-printed apparel and UV-printed corporate gifts, everything is produced in-house rather than farmed out to different shops.",
+        a: "Yes. From large-format banners, vinyl and canvas to DTF-printed apparel and UV-printed corporate gifts, everything is produced by the same team rather than farmed out to different shops.",
       },
       {
         q: "Can you print branding directly onto corporate gift items?",
@@ -221,13 +221,13 @@ export const sections: Section[] = [
     name: "Packaging",
     code: "PKG-04",
     icon: Package,
-    short: "Custom boxes, cups, hardboard boxes and carry bags, designed and printed in-house.",
+    short: "Custom boxes, cups, hardboard boxes and carry bags, designed and printed by one team.",
     description:
-      "Custom packaging: takeaway and retail boxes, hot and cold cups, hardboard boxes and kraft carry bags, designed and printed in-house with a brand's logo and colours, and specified to hold up to Gulf handling, shipping and delivery conditions.",
+      "Custom packaging: takeaway and retail boxes, hot and cold cups, hardboard boxes and kraft carry bags, designed and printed with a brand's logo and colours, and specified to hold up to Gulf handling, shipping and delivery conditions.",
     metaDescription:
       "Custom-printed boxes, cups, hardboard packaging and carry bags for retail and F&B businesses across the UAE and Qatar.",
     definition:
-      "Packaging covers the boxes, cups, hardboard boxes and carry bags a brand hands a customer at the point of sale or delivery. Gifts Gulf Advertising designs and prints all of it in-house, so packaging stays as consistent as a brand's signage and other print work.",
+      "Packaging covers the boxes, cups, hardboard boxes and carry bags a brand hands a customer at the point of sale or delivery. Gifts Gulf Advertising designs and prints all of it, so packaging stays as consistent as a brand's signage and other print work.",
     quickFacts: [
       { label: "Typical output", value: "Takeaway & retail boxes, hot/cold cups, hardboard boxes, carry bags" },
       { label: "Materials", value: "Food-grade kraft, corrugated hardboard, grease-resistant lining" },
@@ -247,7 +247,7 @@ export const sections: Section[] = [
     faqs: [
       {
         q: "Do you make custom boxes, cups and carry bags for businesses?",
-        a: "Yes. Takeaway and retail boxes, hot and cold cups, hardboard boxes and carry bags are all designed and printed in-house for retail, F&B and delivery-driven businesses across the UAE and Qatar.",
+        a: "Yes. Takeaway and retail boxes, hot and cold cups, hardboard boxes and carry bags are all designed and printed by the same team for retail, F&B and delivery-driven businesses across the UAE and Qatar.",
       },
       {
         q: "Can you print a brand's logo on packaging boxes, cups and bags?",
@@ -327,11 +327,11 @@ export const sections: Section[] = [
     icon: Share2,
     short: "Content, campaigns, and the website and search behind them.",
     description:
-      "Social media strategy, in-house content production, paid campaign management, community management and influencer coordination across the platforms UAE and Qatar audiences actually use, backed by social commerce setup and the website and search engine work that turns followers into leads.",
+      "Social media strategy, content production, paid campaign management, community management and influencer coordination across the platforms UAE and Qatar audiences actually use, backed by social commerce setup and the website and search engine work that turns followers into leads.",
     metaDescription:
       "Social media strategy, content production, paid campaigns and website/SEO support for businesses across the UAE and Qatar.",
     definition:
-      "Social media covers everything from content strategy and in-house photography or video production to paid advertising, community management and influencer coordination, plus social commerce integration and the website and SEO work that turns an engaged following into actual enquiries.",
+      "Social media covers everything from content strategy and photography or video production to paid advertising, community management and influencer coordination, plus social commerce integration and the website and SEO work that turns an engaged following into actual enquiries.",
     quickFacts: [
       { label: "Typical output", value: "Content calendars, Reels & UGC, paid campaigns, monthly reports" },
       { label: "Platforms", value: "Instagram, TikTok, Facebook, LinkedIn, Snapchat" },
@@ -342,7 +342,7 @@ export const sections: Section[] = [
       "Retail and F&B brands in Dubai and Abu Dhabi live on Instagram and TikTok. Doha's market leans more heavily on WhatsApp and Snapchat alongside them. Content and paid strategy is built around where each city's audience actually spends time, not a one size template.",
     capabilities: [
       "Social media strategy & content pillars",
-      "In-house photography, video & Reels production",
+      "Photography, video & Reels production",
       "Graphic design & bilingual copywriting",
       "Paid social advertising (Meta & TikTok Ads)",
       "Community management & review monitoring",
@@ -358,8 +358,8 @@ export const sections: Section[] = [
         a: "We plan and manage content and paid campaigns across Instagram, Facebook, TikTok, LinkedIn and Snapchat, choosing the mix based on where a brand's UAE or Qatar audience is most active.",
       },
       {
-        q: "Do you produce content in-house or only manage existing material?",
-        a: "Content is produced in-house, photography, video and Reels, graphic design and copywriting, rather than relying only on a client's existing assets, so posting frequency and quality don't depend on what's supplied from elsewhere.",
+        q: "Do you produce content yourselves or only manage existing material?",
+        a: "Content is produced directly, photography, video and Reels, graphic design and copywriting, rather than relying only on a client's existing assets, so posting frequency and quality don't depend on what's supplied from elsewhere.",
       },
       {
         q: "Do you run paid social advertising, or only organic content?",
@@ -412,7 +412,7 @@ export const siteFaqs: Faq[] = [
   },
   {
     q: "What types of printing does Gifts Gulf Advertising offer?",
-    a: "UV printing, which cures ink directly onto rigid surfaces like acrylic, PVC, wood, metal and glass for a scratch-resistant finish; DTF (direct-to-film) printing for full-colour, detailed designs on apparel without screen-printing set-up costs; screen printing for bulk uniform and T-shirt runs in solid spot colours; large-format digital printing for banners, mesh banners, roll-up standees and backlit media; and offset and digital printing for magazines, books and stationery. Sticker, label and flag printing run alongside all of it in-house.",
+    a: "UV printing, which cures ink directly onto rigid surfaces like acrylic, PVC, wood, metal and glass for a scratch-resistant finish; DTF (direct-to-film) printing for full-colour, detailed designs on apparel without screen-printing set-up costs; screen printing for bulk uniform and T-shirt runs in solid spot colours; large-format digital printing for banners, mesh banners, roll-up standees and backlit media; and offset and digital printing for magazines, books and stationery. Sticker, label and flag printing run alongside all of it on the same production floor.",
   },
   {
     q: "What's the difference between UV printing and DTF printing?",
@@ -420,7 +420,7 @@ export const siteFaqs: Faq[] = [
   },
   {
     q: "What types of signage do you produce?",
-    a: "Illuminated signage (LED-lit acrylic letters, backlit lightboxes and neon-style LED strip signs), non-illuminated flat-cut acrylic and ACP (aluminium composite panel) signs, 3D channel letters for storefront branding, monument and pylon signs for building entrances and compounds, indoor wayfinding and directional signage, engraved plaques, and window, glass and vehicle graphics. Every type is designed, fabricated and installed in-house.",
+    a: "Illuminated signage (LED-lit acrylic letters, backlit lightboxes and neon-style LED strip signs), non-illuminated flat-cut acrylic and ACP (aluminium composite panel) signs, 3D channel letters for storefront branding, monument and pylon signs for building entrances and compounds, indoor wayfinding and directional signage, engraved plaques, and window, glass and vehicle graphics. Every type is designed, fabricated and installed by one team.",
   },
   {
     q: "What kinds of large-format stickers and vinyl graphics are available?",
@@ -447,3 +447,63 @@ export const siteFaqs: Faq[] = [
     a: "Use the contact form, or email or call directly with the service, quantity and timeline, and the team will follow up with next steps.",
   },
 ];
+
+/**
+ * Maps each "What's included" capability line (across all 6 sections) to the
+ * blog post slug with the deepest, most relevant coverage of that specific
+ * capability, so the capability grid can link out to genuine content instead
+ * of sitting as a static list.
+ */
+export const capabilityBlogSlug: Record<string, string> = {
+  // Printing
+  "Large-format digital printing for banners & display panels": "large-format-printing-guide",
+  "Offset printing for magazines, books & high-volume runs": "offset-printing-guide",
+  "UV printing on rigid items & corporate gifts": "uv-printing-explained",
+  "DTF printing for full-colour apparel": "dtf-vs-screen-vs-sublimation",
+  "Screen printing for bulk apparel & merchandise": "dtf-vs-screen-vs-sublimation",
+  "Vinyl printing & cut decals": "vinyl-stickers-guide",
+  "Canvas printing for photo & display prints": "canvas-printing-guide",
+  "Flags, feather flags & bunting": "flag-printing-guide",
+  "Vehicle branding decals": "vehicle-branding-fleet-graphics",
+
+  // Signages
+  "3D & LED signboards": "channel-letters-guide",
+  "Illuminated & non-illuminated boards": "led-vs-neon-signage",
+  "Wayfinding systems": "indoor-signage-guide",
+  "Laser-cut acrylic lettering & displays": "acrylic-lettering-displays-guide",
+  "Storefront & retail branding": "outdoor-signage-guide",
+  "Acrylic awards & trophies": "acrylic-awards-trophies-guide",
+
+  // Events & Exhibitions
+  "Exhibition stand design & build": "exhibition-stand-guide",
+  "Event branding & backdrops": "event-backdrop-step-and-repeat-guide",
+  "Custom kiosk design & build": "exhibition-kiosk-design-guide",
+  "On-site event management & production support": "trade-show-checklist",
+  "Trade show & activation support": "product-launch-event-planning",
+
+  // Packaging
+  "Custom-printed takeaway & retail boxes": "retail-packaging-unboxing-guide",
+  "Branded hot & cold cups": "food-packaging-guide-uae-qatar",
+  "Hardboard boxes for bulk orders": "eco-friendly-packaging-guide",
+  "Kraft & paper carry bags": "ecommerce-packaging-guide",
+  "Grease-resistant, food-safe stock": "food-packaging-guide-uae-qatar",
+  "Sample runs before bulk production": "retail-packaging-unboxing-guide",
+
+  // Gift Items
+  "UV printing on gift items": "corporate-gift-items-guide",
+  "Custom branding & personalisation": "corporate-gift-items-guide",
+  "Bulk corporate orders": "employee-onboarding-kit-guide",
+  "Gift sets & hampers": "eid-corporate-gifting-guide",
+
+  // Social Media
+  "Social media strategy & content pillars": "social-media-content-calendar-guide",
+  "Photography, video & Reels production": "instagram-marketing-guide-uae-qatar",
+  "Graphic design & bilingual copywriting": "social-media-content-design-copywriting-guide",
+  "Paid social advertising (Meta & TikTok Ads)": "paid-social-advertising-guide",
+  "Community management & review monitoring": "google-business-profile-optimization",
+  "Influencer sourcing & UGC coordination": "influencer-ugc-marketing-guide",
+  "Social commerce setup (Instagram & TikTok Shop)": "instagram-marketing-guide-uae-qatar",
+  "Monthly analytics & performance reporting": "social-media-analytics-reporting-guide",
+  "Ramadan & National Day campaign planning": "social-media-content-calendar-guide",
+  "Website design & SEO support": "seo-services-guide",
+};

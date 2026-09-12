@@ -82,7 +82,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
             Printing, signage, event and exhibition stands, packaging and
-            gift items, produced in-house and delivered across the UAE and
+            gift items, produced by one team and delivered across the UAE and
             Qatar, so nothing gets lost briefing five different vendors.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -32,7 +32,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SectionVisual } from "@/components/section-visual";
 import { JsonLd } from "@/components/json-ld";
-import { sections, type Section } from "@/lib/site-data";
+import { sections, capabilityBlogSlug, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { sectionHeroGalleries } from "@/lib/photos";
@@ -159,15 +159,21 @@ export function SectionPage({ section }: { section: Section }) {
         <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {section.capabilities.map((c) => {
             const CapIcon = capabilityIcon(c);
+            const slug = capabilityBlogSlug[c];
             return (
-              <li
-                key={c}
-                className="flex items-start gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 text-sm text-zinc-700 transition-colors hover:border-green-600"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
-                  <CapIcon className="h-4 w-4" strokeWidth={1.75} />
-                </span>
-                <span className="pt-1">{c}</span>
+              <li key={c}>
+                <Link
+                  href={slug ? `/blog/${slug}` : "/blog"}
+                  className="group flex h-full items-start gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 text-sm text-zinc-700 transition-colors hover:border-green-600 hover:bg-green-50/40"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
+                    <CapIcon className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
+                  <span className="flex flex-1 items-start justify-between gap-2 pt-1">
+                    <span>{c}</span>
+                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-zinc-300 transition-colors group-hover:text-green-600" />
+                  </span>
+                </Link>
               </li>
             );
           })}

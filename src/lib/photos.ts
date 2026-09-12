@@ -155,4 +155,13 @@ export const blogPhotoIds: Record<string, string> = {
   "local-seo-multi-location-guide": "social-studio",
   "retail-store-opening-checklist": "signage-acrylic",
   "restaurant-branding-guide": "packaging-cups",
+  "offset-printing-guide": "printing-magazine",
+  "canvas-printing-guide": "printing-largeformat",
+  "acrylic-lettering-displays-guide": "signage-illuminated",
+  "acrylic-awards-trophies-guide": "gift-items",
+  "exhibition-kiosk-design-guide": "events-stand",
+  "paid-social-advertising-guide": "social-analytics",
+  "social-media-content-design-copywriting-guide": "social-flatlay",
+  "influencer-ugc-marketing-guide": "social-studio",
+  "social-media-analytics-reporting-guide": "blog-seo-services",
 };
