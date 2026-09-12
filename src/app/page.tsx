@@ -34,14 +34,24 @@ const indexCaptions: Record<string, string> = {
   "/about": "Who we are, and how the work actually gets done.",
 };
 
+// This panel is a tall 4:5 box, not the wide 16:9 the hero galleries are
+// shot for. Most first-slide photos crop fine either way, but signages[0]
+// is composed specifically for a wide frame (installer + sign panel side
+// by side), so a narrow centre-crop of it loses both — use its second
+// slide here instead.
+const indexPanelPhotoIndex: Record<string, number> = {
+  signages: 1,
+};
+
 const sectionIndexRows: SectionIndexRow[] = navLinks.map((link) => {
   const slug = link.href.replace("/", "");
   const section = sections.find((s) => s.slug === slug);
+  const photoIndex = indexPanelPhotoIndex[slug] ?? 0;
   return {
     href: link.href,
     label: link.label,
     caption: indexCaptions[link.href] ?? section?.short ?? "",
-    photo: sectionHeroGalleries[slug]?.[0] ?? featurePhotos.fabrication,
+    photo: sectionHeroGalleries[slug]?.[photoIndex] ?? featurePhotos.fabrication,
   };
 });
 
