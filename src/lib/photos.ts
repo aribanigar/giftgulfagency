@@ -51,8 +51,9 @@ export const sectionPhotos: Record<string, string> = {
 export const sectionHeroGalleries: Record<string, string[]> = {
   printing: [
     heroPhoto("printing-digital"),
+    heroPhoto("printing-screen1"),
     heroPhoto("printing-largeformat"),
-    heroPhoto("printing-uvcase"),
+    heroPhoto("printing-screen2"),
     heroPhoto("printing-vinyl"),
   ],
   signages: [
