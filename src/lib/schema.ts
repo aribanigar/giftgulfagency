@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import type { SiteSettings } from "@/lib/settings";
 import type { Faq, Section } from "@/lib/site-data";
 
 function areaServed() {
@@ -8,15 +9,60 @@ function areaServed() {
   ];
 }
 
-export function organizationSchema() {
+function sameAs(settings: SiteSettings) {
+  return Object.values(settings.socialLinks).filter(Boolean);
+}
+
+export function organizationSchema(settings: SiteSettings) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
+    logo: `${siteConfig.url}/favicon.ico`,
     description: siteConfig.description,
+    email: settings.contactEmail,
+    telephone: settings.contactPhone,
     areaServed: areaServed(),
+    sameAs: sameAs(settings),
+  };
+}
+
+// Distinct from organizationSchema: this is what Google's local-pack and
+// AI answer engines cross-check against a Google Business Profile listing,
+// so it needs telephone/address to be the same values published there (NAP
+// consistency). addressLocality/addressCountry below default to the first
+// entry in siteConfig.cities/areaServed until a verified street address is
+// supplied via the admin settings.
+export function localBusinessSchema(settings: SiteSettings) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AdvertisingAgency",
+    name: siteConfig.name,
+    legalName: siteConfig.legalName,
+    url: siteConfig.url,
+    image: `${siteConfig.url}/favicon.ico`,
+    description: siteConfig.description,
+    email: settings.contactEmail,
+    telephone: settings.contactPhone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: settings.address,
+      addressLocality: siteConfig.cities[0],
+      addressCountry: "AE",
+    },
+    areaServed: areaServed(),
+    sameAs: sameAs(settings),
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
   };
 }
 

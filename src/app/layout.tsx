@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site-config";
+import { getSettings } from "@/lib/settings";
+import { organizationSchema, localBusinessSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -51,13 +54,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const settings = await getSettings();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-zinc-900">
+        <JsonLd data={organizationSchema(settings)} />
+        <JsonLd data={localBusinessSchema(settings)} />
+        <JsonLd data={websiteSchema()} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

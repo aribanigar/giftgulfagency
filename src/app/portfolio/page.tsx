@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Portfolio | Gifts Gulf Advertising",
   description:
-    "Work across printing, signages, events and exhibitions, packaging, gift items and social media for clients in the UAE and Qatar.",
+    "Work across printing, signages, events and exhibitions, packaging, gift items and social media for clients in the UAE and Qatar, organised by category.",
   alternates: { canonical: `${siteConfig.url}/portfolio` },
 };
 
@@ -18,9 +21,9 @@ export default function PortfolioPage() {
             Work, by category.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-zinc-600">
-            This page is set up to hold real project photography and case
-            studies from across the UAE and Qatar, organised by service.
-            Swap the placeholders below for actual completed work.
+            Project photography and case studies from across the UAE and
+            Qatar are being added here. In the meantime, here&apos;s exactly
+            what each category covers and delivers.
           </p>
         </div>
       </section>
@@ -30,8 +33,9 @@ export default function PortfolioPage() {
           {sections.map((section) => {
             const Icon = section.icon;
             return (
-              <div
+              <Link
                 key={section.slug}
+                href={`/${section.slug}`}
                 className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-colors hover:border-green-600"
               >
                 <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-zinc-50">
@@ -57,13 +61,44 @@ export default function PortfolioPage() {
                       {section.short}
                     </p>
                   </div>
-                  <p className="mt-4 border-t border-zinc-100 pt-3 font-mono text-[11px] uppercase tracking-wide text-zinc-400">
-                    Photography pending
-                  </p>
+                  <ul className="mt-4 flex flex-col gap-1.5 border-t border-zinc-100 pt-3">
+                    {section.capabilities.slice(0, 3).map((c) => (
+                      <li
+                        key={c}
+                        className="flex items-start gap-2 text-xs text-zinc-600"
+                      >
+                        <Check className="mt-0.5 h-3 w-3 shrink-0 text-green-600" />
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-green-700">
+                    See {section.name.toLowerCase()} in detail
+                    <ArrowRight className="h-3 w-3" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             );
           })}
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-200 bg-zinc-50">
+        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
+          <h2 className="font-heading text-2xl font-bold text-zinc-900 sm:text-3xl">
+            Want to see how this applies to your brand?
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-zinc-600">
+            Share what you&apos;re working on and we&apos;ll walk you through
+            relevant examples for your category and market.
+          </p>
+          <div className="mt-7">
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Get a Quote <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

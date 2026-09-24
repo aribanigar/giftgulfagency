@@ -73,6 +73,10 @@ export const sections: Section[] = [
         q: "Can printing be matched to an existing brand's colours?",
         a: "Yes. Colour matching against existing brand guidelines or Pantone references is standard practice for repeat print orders.",
       },
+      {
+        q: "Why do materials matter more for outdoor printing in the UAE and Qatar?",
+        a: "Gulf summers push outdoor surface temperatures well past 45°C, from Sharjah's industrial zones to Doha's corniche. Materials and finishes for banners, stickers and vehicle graphics are chosen to hold up to that heat and UV load long-term, not just to look right on day one.",
+      },
     ],
   },
   {
@@ -122,6 +126,10 @@ export const sections: Section[] = [
         q: "Do you remove and dispose of old signage during a replacement?",
         a: "Yes. Removal of existing signage is typically included as part of a replacement installation.",
       },
+      {
+        q: "Why do signage approvals vary between Dubai, Abu Dhabi and Doha?",
+        a: "Signboard approvals run through different authorities depending on the emirate, or through Qatar's municipalities, and mall landlords add their own sign-off process on top. Design and fabrication account for the relevant approval route from the start, whether the install is a Dubai mall unit, an Abu Dhabi corniche-facing shopfront, or a Doha retail strip.",
+      },
     ],
   },
   {
@@ -170,6 +178,10 @@ export const sections: Section[] = [
         q: "Can an exhibition stand be reused across multiple shows?",
         a: "Yes. Modular stand designs are commonly built for reuse across a season's worth of trade shows.",
       },
+      {
+        q: "Which exhibition venues do you build stands and kiosks for?",
+        a: "Primarily Dubai World Trade Centre, Abu Dhabi's ADNEC, and Doha's DECC and QNCC. Builds are planned around each venue's exhibition calendar so a stand is ready before the doors open, wherever the show is.",
+      },
     ],
   },
   {
@@ -212,6 +224,10 @@ export const sections: Section[] = [
       {
         q: "Do you offer packaging samples before a full production run?",
         a: "Sample or prototype runs can be arranged before committing to bulk production. Mention this when requesting a quote.",
+      },
+      {
+        q: "Does packaging need to handle different shipping conditions across the region?",
+        a: "Retail packaging for a Dubai flagship, an Abu Dhabi boutique, or a Doha concept store all needs to survive the same handling and shipping conditions across the region, so structural design accounts for that before the print run starts.",
       },
     ],
   },
@@ -260,6 +276,10 @@ export const sections: Section[] = [
         q: "Can gift items be branded with a different design per recipient?",
         a: "Yes. Personalised per-recipient branding, such as individual names, is possible for suitable item types.",
       },
+      {
+        q: "When does corporate gifting peak in the UAE and Qatar?",
+        a: "Corporate gifting spikes around UAE National Day and Qatar National Day, plus year-end and Ramadan gifting across both markets. UV printing and gift sourcing are planned with those peak periods in mind, so ordering ahead of them is worth factoring into a gifting brief.",
+      },
     ],
   },
   {
@@ -307,6 +327,10 @@ export const sections: Section[] = [
       {
         q: "Do you write captions in both English and Arabic?",
         a: "Content can be produced in English, Arabic, or both, depending on the audience the campaign is targeting.",
+      },
+      {
+        q: "Do social platform priorities differ between the UAE and Qatar?",
+        a: "Yes. Retail and F&B brands in Dubai and Abu Dhabi live on Instagram and TikTok. Doha's market leans more heavily on WhatsApp and Snapchat alongside them. Content and paid strategy is built around where each city's audience actually spends time, not a one size template.",
       },
     ],
   },

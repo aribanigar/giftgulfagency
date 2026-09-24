@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/json-ld";
 import { getSettings } from "@/lib/settings";
 import { parseVideoUrl } from "@/lib/video";
 import { sections, sectors, markets, siteFaqs } from "@/lib/site-data";
-import { organizationSchema, faqPageSchema } from "@/lib/schema";
+import { faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -51,7 +51,6 @@ export default async function Home() {
 
   return (
     <div>
-      <JsonLd data={organizationSchema()} />
       <JsonLd data={faqPageSchema(siteFaqs)} />
 
       {/* Hero */}
