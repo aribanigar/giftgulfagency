@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SectionVisual } from "@/components/section-visual";
+import { Kicker } from "@/components/kicker";
 import { JsonLd } from "@/components/json-ld";
 import { sections, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
@@ -24,7 +25,7 @@ export function SectionPage({ section }: { section: Section }) {
       />
 
       <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
           <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-500">
             <Link href="/" className="hover:text-green-700">
               Home
@@ -38,7 +39,10 @@ export function SectionPage({ section }: { section: Section }) {
               <Icon className="h-7 w-7" strokeWidth={1.75} />
             </div>
             <div>
-              <h1 className="max-w-2xl font-heading text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+              <span className="font-mono text-xs tracking-wider text-zinc-400">
+                {section.code}
+              </span>
+              <h1 className="mt-1 max-w-3xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl">
                 {section.name} in the UAE &amp; Qatar
               </h1>
             </div>
@@ -56,8 +60,9 @@ export function SectionPage({ section }: { section: Section }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+        <Kicker>Definition</Kicker>
+        <h2 className="mt-4 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           What is {section.name.toLowerCase()}?
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600">
@@ -113,8 +118,9 @@ export function SectionPage({ section }: { section: Section }) {
       </section>
 
       <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+          <Kicker>FAQ</Kicker>
+          <h2 className="mt-4 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
             Frequently asked questions
           </h2>
           <div className="mt-8">
@@ -123,8 +129,9 @@ export function SectionPage({ section }: { section: Section }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+        <Kicker>More</Kicker>
+        <h2 className="mt-4 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
           Other sections
         </h2>
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">

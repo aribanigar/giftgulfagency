@@ -26,9 +26,10 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-700 transition-colors hover:text-green-700"
+              className="group relative py-1 text-sm font-medium text-zinc-700 transition-colors hover:text-zinc-900"
             >
               {link.label}
+              <span className="absolute inset-x-0 -bottom-0.5 h-px scale-x-0 bg-green-600 transition-transform duration-200 group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>

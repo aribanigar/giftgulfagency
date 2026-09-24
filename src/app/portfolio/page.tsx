@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Kicker } from "@/components/kicker";
 import { sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 
@@ -16,11 +17,12 @@ export default function PortfolioPage() {
   return (
     <div>
       <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+          <Kicker>Portfolio</Kicker>
+          <h1 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl">
             Work, by category.
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-zinc-600">
+          <p className="mt-6 max-w-xl text-lg text-zinc-600">
             Project photography and case studies from across the UAE and
             Qatar are being added here. In the meantime, here&apos;s exactly
             what each category covers and delivers.
@@ -36,7 +38,7 @@ export default function PortfolioPage() {
               <Link
                 key={section.slug}
                 href={`/${section.slug}`}
-                className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-colors hover:border-green-600"
+                className="group flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-all hover:-translate-y-0.5 hover:border-zinc-900 hover:shadow-[0_8px_24px_-12px_rgba(0,0,0,0.15)]"
               >
                 <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-zinc-50">
                   <div aria-hidden className="pointer-events-none absolute inset-0">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ContactForm } from "./contact-form";
+import { Kicker } from "@/components/kicker";
 import { siteConfig } from "@/lib/site-config";
 import { getSettings } from "@/lib/settings";
 
@@ -18,11 +19,12 @@ export default async function ContactPage() {
   return (
     <div>
       <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+          <Kicker>Contact</Kicker>
+          <h1 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl">
             Let&apos;s talk about the work.
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-zinc-600">
+          <p className="mt-6 max-w-xl text-lg text-zinc-600">
             Whether it&apos;s one service or all of them, tell us what
             you&apos;re working on and we&apos;ll follow up with next steps.
           </p>

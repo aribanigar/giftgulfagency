@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Kicker } from "@/components/kicker";
 import { markets, sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 
@@ -35,11 +36,12 @@ export default function AboutPage() {
   return (
     <div>
       <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+          <Kicker>About</Kicker>
+          <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl">
             An advertising &amp; printing partner, built around one roof.
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600">
             Gifts Gulf Advertising brings together printing, from large-format
             work to stickers, screen printing and banners, with signages, events
             &amp; exhibitions, packaging, and gift items, plus the social
@@ -53,28 +55,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          What we do
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+        <Kicker>What we do</Kicker>
+        <h2 className="mt-4 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+          Six sections, under one brief
         </h2>
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map((s) => (
             <Link
               key={s.slug}
               href={`/${s.slug}`}
-              className="rounded-[var(--radius-lg)] border border-zinc-200 p-4 transition-colors hover:border-green-600"
+              className="flex items-center justify-between gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 transition-colors hover:border-zinc-900"
             >
               <h3 className="font-heading text-base font-semibold text-zinc-900">
                 {s.name}
               </h3>
+              <span className="font-mono text-[11px] tracking-wider text-zinc-300">
+                {s.code}
+              </span>
             </Link>
           ))}
         </div>
       </section>
 
       <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+          <Kicker>Approach</Kicker>
+          <h2 className="mt-4 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
             How we think about the work
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
