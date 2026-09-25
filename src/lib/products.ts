@@ -15,6 +15,14 @@ import {
   Award,
   PartyPopper,
   Usb,
+  Printer,
+  Sticker,
+  Flag,
+  CreditCard,
+  Frame,
+  FileText,
+  Stamp,
+  Megaphone,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -636,6 +644,311 @@ export const products: Product[] = [
       {
         q: "What's the minimum order for branded tech gifts?",
         a: "Both smaller executive-gift batches and bulk corporate orders are handled. Share the quantity when requesting a quote.",
+      },
+    ],
+  },
+  {
+    slug: "printing-services-dubai",
+    name: "Printing Services",
+    parentSection: "printing",
+    icon: Printer,
+    primaryKeyword: "printing shop",
+    short: "Same-day digital printing and higher-volume offset runs, for documents, photos and posters.",
+    metaDescription:
+      "Digital and offset printing services, same-day document and photo printing to high-volume offset runs, across the UAE and Qatar.",
+    definition:
+      "Printing services covers the quick-turn side of the production floor: same-day digital printing for documents, photos and posters, alongside offset printing for higher-volume runs, both produced on the same equipment used for our large-format and specialty print work.",
+    options: [
+      "Same-day digital printing",
+      "Offset printing for high-volume runs",
+      "Photo printing",
+      "Document printing & copying",
+      "Poster printing",
+    ],
+    quickFacts: [
+      { label: "Methods", value: "Digital printing (same-day) and offset (bulk runs)" },
+      { label: "Best for", value: "Documents, photos, posters, high-volume print jobs" },
+      { label: "Order sizes", value: "Single documents to bulk offset print runs" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between digital and offset printing?",
+        a: "Digital printing is faster to set up and suits smaller, same-day jobs like documents, photos or short posters. Offset printing has a higher set-up cost but a lower per-unit cost at volume, so it's the better fit for large runs like magazines, books or high-quantity stationery.",
+      },
+      {
+        q: "Can documents or photos be printed the same day?",
+        a: "Yes. Digital printing handles same-day turnaround for documents, photos and posters, separate from the longer lead times typical of offset or large-format jobs.",
+      },
+      {
+        q: "Do you print single copies, or only bulk orders?",
+        a: "Both. Single documents and photo prints are handled alongside bulk offset runs, on the same production floor.",
+      },
+    ],
+  },
+  {
+    slug: "stickers-labels",
+    name: "Stickers & Labels",
+    parentSection: "printing",
+    icon: Sticker,
+    primaryKeyword: "sticker shop near me",
+    short: "Die-cut stickers, one-way vision window film, frosted glass film and product labels.",
+    metaDescription:
+      "Custom die-cut stickers, one-way vision window film, frosted glass film and product labels across the UAE and Qatar.",
+    definition:
+      "Stickers and labels cover printed and die-cut stickers, one-way vision perforated window film, frosted glass film, static cling stickers and product or packaging labels, laminated for outdoor durability where needed.",
+    options: [
+      "Die-cut & printed stickers",
+      "One-way vision window stickers",
+      "Frosted glass film",
+      "Gold & foil labels",
+      "Static cling stickers",
+      "Product & packaging labels",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Die-cut stickers, window film, product & packaging labels" },
+      { label: "Finish", value: "Laminated for outdoor durability where needed" },
+      { label: "Order sizes", value: "Small sticker sheets to bulk label runs" },
+    ],
+    faqs: [
+      {
+        q: "What is one-way vision window film?",
+        a: "One-way vision is a perforated film that shows a full graphic from outside a shop window while staying see-through from inside, commonly used for storefront branding without blocking natural light for staff.",
+      },
+      {
+        q: "Are your stickers durable enough for outdoor use?",
+        a: "Materials are laminated for outdoor durability where the application calls for it, which is standard for stickers and window film used in this region's heat and UV exposure.",
+      },
+      {
+        q: "What's the minimum order for product or packaging labels?",
+        a: "Both small sticker sheets and bulk label runs are handled. Share the size and quantity when requesting a quote.",
+      },
+    ],
+  },
+  {
+    slug: "banners-rollups",
+    name: "Banners, Roll-Ups & Displays",
+    parentSection: "printing",
+    icon: Flag,
+    primaryKeyword: "banner printing",
+    short: "PVC banners, roll-up stands, pop-up displays, flags and foam board printing.",
+    metaDescription:
+      "Custom PVC banners, roll-up display stands, pop-up displays, flags and foam board printing across the UAE and Qatar.",
+    definition:
+      "Banners, roll-ups and displays cover PVC and mesh banners, roll-up (pull-up) banner stands, pop-up display stands, flags and feather flags, and foam board printing, produced for storefronts, events and promotions.",
+    options: [
+      "PVC & vinyl banners",
+      "Roll-up (pull-up) banner stands",
+      "Pop-up display stands",
+      "Flag & feather flag printing",
+      "Foam board printing",
+      "Mesh banners for outdoor use",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "PVC banners, roll-up stands, pop-up displays, flags" },
+      { label: "Best for", value: "Storefronts, events, promotions, exhibitions" },
+      { label: "Materials", value: "PVC, mesh, foam board, flag fabric" },
+    ],
+    faqs: [
+      {
+        q: "What size is a standard roll-up banner stand?",
+        a: "Roll-up banner stands are commonly produced around 80-100cm wide and up to 200cm tall, though custom sizes are available. Share the intended use when requesting a quote to confirm the right size.",
+      },
+      {
+        q: "Is mesh banner material better for outdoor use than standard PVC?",
+        a: "Mesh banners let wind pass through, which reduces the load on the frame and fixings in exposed, windy locations, while standard PVC gives a fully solid, opaque print for most indoor and sheltered outdoor use.",
+      },
+      {
+        q: "Can banners or flags be ready for a same-week event?",
+        a: "Turnaround depends on quantity and finish. Share the event date when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "business-card-printing",
+    name: "Business Card Printing",
+    parentSection: "printing",
+    icon: CreditCard,
+    primaryKeyword: "business card dubai",
+    short: "Matte, gloss and spot-UV business cards, printed for individuals and bulk staff orders.",
+    metaDescription:
+      "Custom business card printing, matte, gloss and spot-UV finishes, for individuals and bulk staff orders across the UAE and Qatar.",
+    definition:
+      "Business card printing covers standard and premium card stock in matte, gloss or spot-UV finishes, produced for a single individual's cards or a full staff reorder at once, matched against a brand's existing design and colours.",
+    options: [
+      "Standard & premium card stock",
+      "Matte, gloss & spot-UV finishes",
+      "Same-week printing",
+      "Bulk staff reorders",
+      "Design & artwork support",
+    ],
+    quickFacts: [
+      { label: "Finishes", value: "Matte, gloss, spot-UV" },
+      { label: "Order sizes", value: "Single-person cards to bulk staff reorders" },
+      { label: "Service", value: "Design support and colour-matched printing" },
+    ],
+    faqs: [
+      {
+        q: "How fast can business cards be printed?",
+        a: "Standard business card orders typically turn around within a same-week timeframe, depending on quantity and finish. Share the target date when requesting a quote.",
+      },
+      {
+        q: "What's the difference between matte, gloss and spot-UV finishes?",
+        a: "Matte gives a non-reflective, understated finish. Gloss gives a brighter, more reflective look. Spot-UV adds a raised, glossy highlight over specific design elements (like a logo) against an otherwise matte card.",
+      },
+      {
+        q: "Can you reprint cards for new staff without a full redesign?",
+        a: "Yes. Reorders using an existing approved design are handled quickly, without needing to redo the artwork each time.",
+      },
+    ],
+  },
+  {
+    slug: "canvas-fabric-printing",
+    name: "Canvas & Fabric Printing",
+    parentSection: "printing",
+    icon: Frame,
+    primaryKeyword: "canvas printing",
+    short: "Canvas photo prints, framed wall art, fabric prints and poster printing.",
+    metaDescription:
+      "Custom canvas photo prints, framed wall art, fabric prints and poster printing across the UAE and Qatar.",
+    definition:
+      "Canvas and fabric printing covers canvas photo prints and framed wall art, fabric prints (including dye-sublimation) for display and backdrop use, and standard poster printing, all produced on the same large-format equipment.",
+    options: [
+      "Canvas photo prints",
+      "Framed & stretched canvas",
+      "Fabric & tension-fabric prints",
+      "Poster printing",
+      "Wall art printing",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Canvas prints, framed wall art, fabric prints, posters" },
+      { label: "Best for", value: "Home & office wall art, display backdrops, photo prints" },
+      { label: "Custom sizing", value: "Framed and stretched to a specified size" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between a canvas print and a poster print?",
+        a: "A canvas print is stretched over a wooden frame for a textured, gallery-style finish that hangs without additional framing. A poster print is a flat paper print, generally lower cost, that can be framed separately if needed.",
+      },
+      {
+        q: "Can canvas prints be custom-sized for a specific wall or space?",
+        a: "Yes. Canvas and framed prints are produced to a specified size rather than only standard stock dimensions.",
+      },
+      {
+        q: "Is fabric printing available for event backdrops, not just wall art?",
+        a: "Yes. Fabric printing, including dye-sublimation for a smooth finish, is also used for tension-fabric display systems and step-and-repeat backdrops as part of our events and exhibitions work.",
+      },
+    ],
+  },
+  {
+    slug: "flyer-brochure-printing",
+    name: "Flyer & Brochure Printing",
+    parentSection: "printing",
+    icon: FileText,
+    primaryKeyword: "printing brochures",
+    short: "Tri-fold brochures, flyers, leaflets and booklets, printed for marketing campaigns.",
+    metaDescription:
+      "Custom tri-fold brochure, flyer, leaflet and booklet printing for marketing campaigns across the UAE and Qatar.",
+    definition:
+      "Flyer and brochure printing covers tri-fold and bi-fold brochures, flyers, leaflets and booklets, printed for a marketing campaign, product launch or point-of-sale material, at both same-week and bulk campaign quantities.",
+    options: [
+      "Tri-fold & bi-fold brochures",
+      "Flyers & leaflets",
+      "Booklets & catalogues",
+      "Same-week turnaround",
+      "Bulk campaign runs",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Tri-fold brochures, flyers, leaflets, booklets" },
+      { label: "Best for", value: "Marketing campaigns, product launches, point-of-sale material" },
+      { label: "Order sizes", value: "Same-week short runs to bulk campaign quantities" },
+    ],
+    faqs: [
+      {
+        q: "What fold options are available for brochures?",
+        a: "Tri-fold and bi-fold are the standard options, alongside flat flyers and stapled or perfect-bound booklets for longer content.",
+      },
+      {
+        q: "What's the minimum order for flyers or brochures?",
+        a: "Both short, same-week runs and bulk campaign quantities are handled. Share the quantity and target date when requesting a quote.",
+      },
+      {
+        q: "Can a brochure be printed to match our existing brand design?",
+        a: "Yes. Brochures, flyers and booklets are colour-matched against existing brand guidelines or supplied artwork.",
+      },
+    ],
+  },
+  {
+    slug: "stationery-printing",
+    name: "Office Stationery Printing",
+    parentSection: "printing",
+    icon: Stamp,
+    primaryKeyword: "company stamps dubai",
+    short: "Company rubber stamps, letterheads, payment vouchers and receipt books.",
+    metaDescription:
+      "Company rubber stamps, letterheads, payment vouchers and receipt book printing for offices across the UAE and Qatar.",
+    definition:
+      "Office stationery printing covers company rubber stamps, letterheads and envelopes, and pre-numbered payment voucher and receipt books, the everyday paperwork a business runs on, printed alongside our marketing and signage work.",
+    options: [
+      "Company rubber stamps",
+      "Letterheads & envelopes",
+      "Payment vouchers & receipt books",
+      "Invoice & document printing",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Company stamps, letterheads, payment voucher & receipt books" },
+      { label: "Best for", value: "Day-to-day office and accounts paperwork" },
+      { label: "Order sizes", value: "Single stamps to bulk pre-numbered voucher books" },
+    ],
+    faqs: [
+      {
+        q: "How quickly can a company stamp be made?",
+        a: "Company rubber stamps are typically a fast turnaround item once the design and wording are confirmed. Share the required text and target date when requesting a quote.",
+      },
+      {
+        q: "Can letterheads be printed to match our existing brand design?",
+        a: "Yes. Letterheads and envelopes are printed to match a brand's existing colours, logo and layout.",
+      },
+      {
+        q: "Are payment voucher and receipt books pre-numbered?",
+        a: "Yes. Voucher and receipt books can be printed with sequential numbering, in line with standard accounting and audit practice.",
+      },
+    ],
+  },
+  {
+    slug: "event-branding",
+    name: "Event Branding & Activations",
+    parentSection: "events-exhibitions",
+    icon: Megaphone,
+    primaryKeyword: "event branding",
+    short: "On-site branding, backdrops and signage for conferences, launches and activations.",
+    metaDescription:
+      "On-site event branding, backdrops and signage for conferences, product launches and brand activations across the UAE and Qatar.",
+    definition:
+      "Event branding and activations covers the physical branding of a conference, launch or activation space, backdrops, step-and-repeat walls, directional signage and branded touchpoints, designed and installed on-site around a venue's existing layout rather than the venue booking or event-planning process itself.",
+    options: [
+      "Conference & exhibition branding",
+      "Product launch & activation branding",
+      "Backdrops & step-and-repeat walls",
+      "On-site directional & venue signage",
+      "Installation & breakdown",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Backdrops, step-and-repeat walls, on-site signage" },
+      { label: "Service", value: "Design, production and on-site installation" },
+      { label: "Not included", value: "Venue booking, team-building or event-planning services" },
+    ],
+    faqs: [
+      {
+        q: "Do you plan the event itself, or only produce the branding?",
+        a: "Branding, backdrops and on-site signage are designed, produced and installed for a conference, launch or activation. Venue booking, team-building programmes and overall event planning sit outside this and are handled by the client or a separate event planner.",
+      },
+      {
+        q: "Can you brand a conference venue we've already booked?",
+        a: "Yes. Backdrops, step-and-repeat walls, directional signage and other on-site branding are designed and installed around a venue's existing layout once it's confirmed.",
+      },
+      {
+        q: "How far ahead should activation branding be briefed?",
+        a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
       },
     ],
   },
