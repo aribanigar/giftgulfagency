@@ -1,6 +1,7 @@
 import {
   Printer,
   Signpost,
+  Building2,
   Presentation,
   Package,
   Gift,
@@ -164,6 +165,57 @@ export const sections: Section[] = [
       {
         q: "Do you remove and dispose of old signage during a replacement?",
         a: "Yes. Removal of existing signage is typically included as part of a replacement installation.",
+      },
+    ],
+  },
+  {
+    slug: "fit-out",
+    name: "Fit-Out & Interior Design",
+    code: "FIT-07",
+    icon: Building2,
+    short: "Office, retail and interior fit-out contracting across the UAE and Qatar.",
+    description:
+      "Turnkey interior fit-out for offices, retail stores, clinics and restaurants, from design and joinery through MEP and final handover, delivered as a single contract across the UAE and Qatar.",
+    metaDescription:
+      "Turnkey office and retail fit-out, from design and joinery through MEP and handover, delivered as one contract across the UAE and Qatar.",
+    definition:
+      "Fit-out and interior design covers the build-out of an interior space once its shell and core are complete: partitions, ceilings, flooring, joinery, MEP and finishes, for offices, retail stores, clinics and restaurants.",
+    quickFacts: [
+      { label: "Typical output", value: "Office fit-out, retail fit-out, joinery, MEP coordination" },
+      { label: "Project types", value: "New fit-out, renovation, refurbishment" },
+      { label: "Best for", value: "Offices, retail stores, clinics, restaurants, showrooms" },
+      { label: "Service", value: "Design, contracting and turnkey project delivery" },
+    ],
+    regionalNote:
+      "A fit-out permit in Dubai runs through a different authority than one in Abu Dhabi, Sharjah or Doha, and most malls and business towers add their own fit-out guide on top of that. Project sequencing accounts for whichever approval route applies before joinery work starts.",
+    capabilities: [
+      "Office fit-out & design",
+      "Retail & showroom fit-out",
+      "Joinery & carpentry",
+      "MEP coordination",
+      "Renovation & refurbishment",
+      "Turnkey project management",
+    ],
+    faqs: [
+      {
+        q: "What's the difference between a fit-out contractor and an interior designer?",
+        a: "An interior designer plans the look and layout. A fit-out contractor builds it. Turnkey fit-out means both roles sit under one contract, so the design intent carries through to construction without getting lost at handover.",
+      },
+      {
+        q: "Do you handle office fit-out as well as retail fit-out?",
+        a: "Yes. Office, retail, hospitality and clinic fit-out are all handled by the same team, each with its own approval process and fit-out guide.",
+      },
+      {
+        q: "What does 'turnkey' mean for a fit-out project?",
+        a: "Turnkey means design, contracting, MEP and handover are delivered as one contract with one point of contact, rather than a client coordinating separate consultants and contractors.",
+      },
+      {
+        q: "Can fit-out be combined with signage and branding in one project?",
+        a: "Yes. A shop or office fit-out and its exterior signage can be briefed, designed and installed together, so the interior and the storefront read as one brand.",
+      },
+      {
+        q: "Do you handle renovation and refurbishment, or only new fit-out?",
+        a: "Both. Renovation and refurbishment of existing spaces is handled alongside new fit-out projects.",
       },
     ],
   },
