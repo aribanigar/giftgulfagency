@@ -53,13 +53,17 @@ export const sections: Section[] = [
     capabilities: [
       "Large-format digital printing for banners & display panels",
       "Offset printing for magazines, books & high-volume runs",
+      "Book, brochure & booklet printing",
       "UV printing on rigid items & corporate gifts",
       "DTF printing for full-colour apparel",
       "Screen printing for bulk apparel & merchandise",
+      "Hoodie, polo & T-shirt printing",
       "Vinyl printing & cut decals",
+      "Sticker & label printing (one-way vision, frosted, die-cut)",
       "Canvas printing for photo & display prints",
       "Fabric & tension-fabric printing for displays",
       "Flags, feather flags & bunting",
+      "Business card printing",
       "Vehicle branding decals",
     ],
     faqs: [
@@ -115,6 +119,22 @@ export const sections: Section[] = [
         q: "Can printing be matched to an existing brand's colours?",
         a: "Yes. Colour matching against existing brand guidelines or Pantone references is standard practice for repeat print orders.",
       },
+      {
+        q: "Do you print books and brochures, or only single-sheet flyers?",
+        a: "Both. Offset printing handles full book and booklet runs, from single proof copies to full circulation, alongside brochure, flyer and leaflet printing for shorter marketing pieces.",
+      },
+      {
+        q: "Can you print hoodies and T-shirts, or only single garments?",
+        a: "Yes. Hoodies, polos and T-shirts are printed via DTF for detailed, full-colour designs on smaller runs, or screen printing for bulk, uniform-colour orders like staff uniforms or event merchandise.",
+      },
+      {
+        q: "What kinds of stickers can you produce?",
+        a: "Printed and die-cut stickers, laminated for outdoor durability, one-way vision perforated film for windows, frosted glass film, and static cling stickers that use no adhesive are all produced, alongside standard vinyl decals.",
+      },
+      {
+        q: "Do you print business cards?",
+        a: "Yes. Business card printing runs alongside brochure, flyer and office stationery printing on the same production floor, so a brand's cards, print and signage stay visually consistent.",
+      },
     ],
   },
   {
@@ -139,10 +159,13 @@ export const sections: Section[] = [
       "Signboard approvals run through different authorities depending on the emirate, or through Qatar's municipalities, and mall landlords add their own sign-off process on top. Design and fabrication account for the relevant approval route from the start, whether the install is a Dubai mall unit, an Abu Dhabi corniche-facing shopfront, or a Doha retail strip.",
     capabilities: [
       "3D & LED signboards",
+      "2D & 3D acrylic & metal letters",
+      "Neon & LED-strip signage",
       "Illuminated & non-illuminated boards",
       "Wayfinding systems",
       "Laser-cut acrylic lettering & displays",
       "Storefront & retail branding",
+      "Retail & cosmetic brand fit-out signage",
       "Acrylic awards & trophies",
     ],
     faqs: [
@@ -165,6 +188,18 @@ export const sections: Section[] = [
       {
         q: "Do you remove and dispose of old signage during a replacement?",
         a: "Yes. Removal of existing signage is typically included as part of a replacement installation.",
+      },
+      {
+        q: "What's the difference between 2D and 3D acrylic letters?",
+        a: "2D letters are flat-cut from a single sheet of acrylic or metal. 3D letters have depth, built up from a return edge and face, giving a raised, dimensional look that reads better in daylight and casts a visible shadow at night. Both are produced in-house, illuminated or non-illuminated.",
+      },
+      {
+        q: "Do you produce neon-style LED signage?",
+        a: "Yes. Neon-effect LED strip signage (often called LED neon or flex neon) is produced alongside traditional channel letters and lightboxes, for a similar look to glass neon without the fragility.",
+      },
+      {
+        q: "Do you handle signage as part of a retail or cosmetic store's brand fit-out?",
+        a: "Yes. Storefront signage, in-store branding panels and acrylic displays are briefed and installed alongside a retail or cosmetic brand's interior fit-out, so the exterior sign and the in-store look match.",
       },
     ],
   },
@@ -243,9 +278,12 @@ export const sections: Section[] = [
       "3D exhibition stand design",
       "Exhibition stand design & build",
       "Event branding & backdrops",
+      "Wooden backdrops & display stands",
+      "Acrylic stands & displays",
       "Roll-up banner stands",
       "Pop-up display stands",
       "Custom kiosk design & build",
+      "Photo booths & touch-screen kiosks",
       "On-site event management & production support",
       "Trade show & activation support",
     ],
@@ -286,6 +324,18 @@ export const sections: Section[] = [
         q: "Can you print on fabric for backdrops and tension-fabric displays?",
         a: "Yes. Fabric printing, including dye-sublimation for tension-fabric display systems and step-and-repeat backdrops, runs alongside the standard PVC and vinyl printing used for other event graphics.",
       },
+      {
+        q: "Do you build wooden backdrops as well as fabric and PVC ones?",
+        a: "Yes. Wooden-framed backdrops and display stands are built for a sturdier, reusable structure, alongside the lighter fabric and PVC backdrops used for shorter activations.",
+      },
+      {
+        q: "Do you supply acrylic stands and displays for events or retail?",
+        a: "Yes. Acrylic stands, from small tabletop displays to full acrylic product stands, are fabricated alongside the wooden and fabric display options for events, exhibitions and retail counters.",
+      },
+      {
+        q: "Can you supply photo booths or touch-screen kiosks for an event?",
+        a: "Yes. Photo booths and touch-screen digital kiosks are supplied and set up alongside custom mall or activation kiosks, either as standalone units or built into a larger stand design.",
+      },
     ],
   },
   {
@@ -310,6 +360,8 @@ export const sections: Section[] = [
       "Delivery apps and online ordering drive a large share of retail and food orders across Dubai, Abu Dhabi, Sharjah and Doha, so packaging spends longer in transit and handling than it would for a straight over-the-counter sale. Boxes and carry bags are specified with sturdy handles, and food-facing items with grease-resistant lining, with that in mind, not just printed to look right on the shelf.",
     capabilities: [
       "Custom-printed takeaway & retail boxes",
+      "Rigid & gift packaging boxes",
+      "Retail & cosmetic brand packaging",
       "Branded hot & cold cups",
       "Hardboard boxes for bulk orders",
       "Kraft & paper carry bags",
@@ -341,6 +393,18 @@ export const sections: Section[] = [
         q: "Can packaging match a brand's existing colours?",
         a: "Yes. Boxes, cups, hardboard boxes and carry bags are colour-matched against existing branding or Pantone references, produced by the same team that handles signage and print.",
       },
+      {
+        q: "Do you produce rigid gift boxes as well as everyday retail boxes?",
+        a: "Yes. Rigid boxes with a more premium, structured finish are produced for gift and retail packaging, alongside the standard folding cartons used for takeaway and everyday retail packaging.",
+      },
+      {
+        q: "Do you design packaging specifically for retail or cosmetic brands?",
+        a: "Yes. Retail and cosmetic packaging, boxes, inserts and branded carry bags designed to match a brand's shelf presence and unboxing experience, is a regular part of the packaging work handled alongside standard retail and F&B packaging.",
+      },
+      {
+        q: "Are you a paper bag manufacturer, or only a printer?",
+        a: "Both. Kraft and paper carry bags are manufactured and printed in-house, from stock designs to fully custom sizes and finishes, rather than outsourced to a separate bag supplier.",
+      },
     ],
   },
   {
@@ -365,6 +429,11 @@ export const sections: Section[] = [
       "Corporate gifting spikes around UAE National Day and Qatar National Day, plus year-end and Ramadan gifting across both markets, so UV printing and gift sourcing are planned with those peak periods in mind.",
     capabilities: [
       "UV printing on gift items",
+      "Custom mugs, bottles & drinkware",
+      "Branded umbrellas & outdoor gifts",
+      "Tote bags & eco bags",
+      "Keychains, pens & desk accessories",
+      "Notebooks, diaries & stationery gifts",
       "Custom branding & personalisation",
       "Bulk corporate orders",
       "Gift sets & hampers",
@@ -389,6 +458,10 @@ export const sections: Section[] = [
       {
         q: "Can gift items be branded with a different design per recipient?",
         a: "Yes. Personalised per-recipient branding, such as individual names, is possible for suitable item types.",
+      },
+      {
+        q: "What's the full range of corporate gift items you supply?",
+        a: "Mugs, water bottles and drinkware, umbrellas, tote and eco bags, keychains, pens and desk accessories, and notebooks and diaries are all sourced, branded and fulfilled in bulk, alongside UV-printed awards, tech accessories and hampers.",
       },
     ],
   },
@@ -475,7 +548,16 @@ export const sectors = [
   "Healthcare",
 ];
 
-export const markets = ["Dubai", "Abu Dhabi", "Sharjah", "Doha"];
+export const markets = [
+  "Dubai",
+  "Abu Dhabi",
+  "Sharjah",
+  "Doha",
+  "Riyadh",
+  "Kuwait City",
+  "Manama",
+  "Muscat",
+];
 
 export const siteFaqs: Faq[] = [
   {
@@ -537,28 +619,40 @@ export const capabilityBlogSlug: Record<string, string> = {
   "Canvas printing for photo & display prints": "canvas-printing-guide",
   "Fabric & tension-fabric printing for displays": "fabric-printing-guide",
   "Flags, feather flags & bunting": "flag-printing-guide",
+  "Business card printing": "large-format-printing-guide",
   "Vehicle branding decals": "vehicle-branding-fleet-graphics",
+  "Book, brochure & booklet printing": "offset-printing-guide",
+  "Hoodie, polo & T-shirt printing": "dtf-vs-screen-vs-sublimation",
+  "Sticker & label printing (one-way vision, frosted, die-cut)": "vinyl-stickers-guide",
 
   // Signages
   "3D & LED signboards": "channel-letters-guide",
+  "2D & 3D acrylic & metal letters": "channel-letters-guide",
+  "Neon & LED-strip signage": "led-vs-neon-signage",
   "Illuminated & non-illuminated boards": "led-vs-neon-signage",
   "Wayfinding systems": "indoor-signage-guide",
   "Laser-cut acrylic lettering & displays": "acrylic-lettering-displays-guide",
   "Storefront & retail branding": "outdoor-signage-guide",
+  "Retail & cosmetic brand fit-out signage": "retail-store-opening-checklist",
   "Acrylic awards & trophies": "acrylic-awards-trophies-guide",
 
   // Events & Exhibitions
   "3D exhibition stand design": "3d-design-exhibition-stands-guide",
   "Exhibition stand design & build": "exhibition-stand-guide",
   "Event branding & backdrops": "event-backdrop-step-and-repeat-guide",
+  "Wooden backdrops & display stands": "event-backdrop-step-and-repeat-guide",
+  "Acrylic stands & displays": "popup-display-stands-guide",
   "Roll-up banner stands": "roll-up-banner-stands-guide",
   "Pop-up display stands": "popup-display-stands-guide",
   "Custom kiosk design & build": "exhibition-kiosk-design-guide",
+  "Photo booths & touch-screen kiosks": "exhibition-kiosk-design-guide",
   "On-site event management & production support": "trade-show-checklist",
   "Trade show & activation support": "product-launch-event-planning",
 
   // Packaging
   "Custom-printed takeaway & retail boxes": "retail-packaging-unboxing-guide",
+  "Rigid & gift packaging boxes": "acrylic-box-packaging",
+  "Retail & cosmetic brand packaging": "leather-gift-boxes",
   "Branded hot & cold cups": "food-packaging-guide-uae-qatar",
   "Hardboard boxes for bulk orders": "eco-friendly-packaging-guide",
   "Kraft & paper carry bags": "ecommerce-packaging-guide",
@@ -567,6 +661,11 @@ export const capabilityBlogSlug: Record<string, string> = {
 
   // Gift Items
   "UV printing on gift items": "corporate-gift-items-guide",
+  "Custom mugs, bottles & drinkware": "promotional-merchandise-guide",
+  "Branded umbrellas & outdoor gifts": "promotional-merchandise-guide",
+  "Tote bags & eco bags": "eco-friendly-packaging-guide",
+  "Keychains, pens & desk accessories": "corporate-gift-items-guide",
+  "Notebooks, diaries & stationery gifts": "national-day-gift-guide",
   "Custom branding & personalisation": "corporate-gift-items-guide",
   "Bulk corporate orders": "employee-onboarding-kit-guide",
   "Gift sets & hampers": "eid-corporate-gifting-guide",

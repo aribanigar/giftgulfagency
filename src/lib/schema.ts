@@ -2,6 +2,7 @@ import { siteConfig } from "@/lib/site-config";
 import type { Faq, Section } from "@/lib/site-data";
 import type { BlogPost } from "@/lib/blog-data";
 import type { SiteSettings } from "@/lib/settings";
+import type { Location } from "@/lib/locations";
 
 function areaServed() {
   return [
@@ -67,6 +68,23 @@ export function serviceSchema(section: Section) {
     },
     areaServed: areaServed(),
     url: `${siteConfig.url}/${section.slug}`,
+  };
+}
+
+export function locationSchema(location: Location) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Printing, signage & advertising services",
+    name: `Gifts Gulf Advertising in ${location.city}`,
+    description: location.definition,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: { "@type": "City", name: location.city },
+    url: `${siteConfig.url}/locations/${location.slug}`,
   };
 }
 
