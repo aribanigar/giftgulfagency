@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { sections } from "@/lib/site-data";
 import { blogPosts } from "@/lib/blog-data";
 import { locations } from "@/lib/locations";
+import { products } from "@/lib/products";
 import { siteConfig } from "@/lib/site-config";
 
 const staticRoutePriority: Record<string, { changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }> = {
@@ -47,5 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...sectionRoutes, ...blogRoutes, ...locationRoutes];
+  const productRoutes = products.map((product) => ({
+    url: `${siteConfig.url}/${product.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...sectionRoutes, ...blogRoutes, ...locationRoutes, ...productRoutes];
 }

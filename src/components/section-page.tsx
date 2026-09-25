@@ -36,6 +36,7 @@ import { sections, capabilityBlogSlug, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { sectionHeroGalleries } from "@/lib/photos";
+import { productsForSection } from "@/lib/products";
 
 const capabilityIconRules: [RegExp, LucideIcon][] = [
   // Specific multi-word phrases first, so a generic word (like "design" or
@@ -86,6 +87,7 @@ function capabilityIcon(text: string): LucideIcon {
 export function SectionPage({ section }: { section: Section }) {
   const Icon = section.icon;
   const related = sections.filter((s) => s.slug !== section.slug);
+  const products = productsForSection(section.slug);
 
   return (
     <div>
@@ -195,6 +197,41 @@ export function SectionPage({ section }: { section: Section }) {
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">
           {section.regionalNote}
         </p>
+
+        {products.length > 0 ? (
+          <>
+            <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
+              Popular {section.name.toLowerCase()} products
+            </h2>
+            <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => {
+                const ProductIcon = product.icon;
+                return (
+                  <li key={product.slug}>
+                    <Link
+                      href={`/${product.slug}`}
+                      className="group flex h-full flex-col gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-5 transition-colors hover:border-green-600 hover:bg-green-50/40"
+                    >
+                      <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
+                        <ProductIcon className="h-4 w-4" strokeWidth={1.75} />
+                      </span>
+                      <span>
+                        <span className="font-heading text-base font-semibold text-zinc-900">
+                          {product.name}
+                        </span>
+                        <span className="mt-1 block text-sm text-zinc-600">{product.short}</span>
+                      </span>
+                      <span className="mt-auto flex items-center gap-1 text-sm font-medium text-green-700">
+                        View {product.name.toLowerCase()}{" "}
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        ) : null}
       </section>
 
       <section className="border-t border-zinc-200 bg-zinc-50">

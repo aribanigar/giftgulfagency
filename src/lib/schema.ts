@@ -71,6 +71,21 @@ export function serviceSchema(section: Section) {
   };
 }
 
+export function productSchema(product: { slug: string; name: string; metaDescription: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.metaDescription,
+    brand: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    url: `${siteConfig.url}/${product.slug}`,
+  };
+}
+
 export function locationSchema(location: Location) {
   return {
     "@context": "https://schema.org",
