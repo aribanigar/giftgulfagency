@@ -3487,6 +3487,352 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "office-fit-out-cost-guide-dubai",
+    title: "Office fit-out cost in Dubai and Abu Dhabi: what actually drives the price",
+    metaDescription:
+      "What drives office fit-out cost in Dubai and Abu Dhabi: shell condition, MEP scope, finishes and approvals, with what to ask a contractor for before comparing quotes.",
+    category: "Fit-Out",
+    excerpt:
+      "Two fit-out quotes for the same square footage can differ by double. Here's what's usually driving the gap.",
+    photoId: "office-fit-out-cost-guide-dubai",
+    readTime: "8 min read",
+    publishedAt: "2026-12-21",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "Ask three fit-out contractors to quote the same office and the numbers rarely land close together. That's not always one contractor overcharging or another underbidding, it's usually because each quote is scoped differently, one includes MEP and one doesn't, one assumes existing ceiling tiles are reusable and one doesn't, one allows for a mid-range finish and one for a premium one. Before comparing a single dirham figure, it helps to know which line items actually move the total.",
+    sections: [
+      {
+        heading: "Shell condition sets the floor",
+        blocks: [
+          p(
+            "A fit-out starts from one of two positions: shell and core (bare concrete, no ceiling, no partitions, no finished MEP) or a warm shell or previously fitted space with some infrastructure already in place. Shell and core costs more per square foot because everything, from the first partition to the last light fitting, is new. A space that already has a working ceiling grid, functioning AC distribution and existing flooring can come in significantly cheaper if that infrastructure is reused rather than stripped out.",
+          ),
+          p(
+            "This is the single biggest reason two quotes for the same floor area diverge: one contractor priced against the actual site condition, the other quoted a standard rate per square foot without a proper site survey. A fit-out cost estimate that wasn't preceded by a site visit is a placeholder, not a real number.",
+          ),
+        ],
+      },
+      {
+        heading: "MEP and approvals are where budgets actually break",
+        blocks: [
+          p(
+            "MEP, mechanical, electrical and plumbing, is usually the least visible line item and the one most likely to be underestimated. Relocating AC diffusers, adding data and power points for a new desk layout, and running additional circuits for a server room or pantry all add real cost that doesn't show up in a simple per-square-foot partition and paint estimate.",
+          ),
+          ul([
+            "Partitions, ceiling and flooring: the visible, most commonly quoted layer",
+            "MEP: AC relocation, additional power/data points, fire and life safety systems",
+            "Joinery: reception desks, storage, custom millwork",
+            "Approvals: authority and civil defence submissions, which add time even when they don't add much direct cost",
+            "Finishes: the tier of flooring, ceiling tile and paint specified, often the easiest place to cut cost without touching layout",
+          ]),
+          p(
+            "Authority and civil defence approvals in Dubai, Abu Dhabi and Sharjah each run through a different process, and a project that skips a required submission can be forced to redo completed work to pass inspection. A contractor quoting a realistic timeline builds approval lead time into the schedule rather than treating it as a formality at the end.",
+          ),
+        ],
+      },
+      {
+        heading: "What to ask for before comparing quotes",
+        blocks: [
+          p(
+            "The fastest way to get quotes that are actually comparable is to ask every contractor for the same scope in writing: a site survey before pricing, a line-item breakdown (not a single lump sum), and an explicit statement of what's excluded. A quote that's meaningfully lower than the others is usually lower because something, MEP scope, approvals, a finishes allowance, has been left out, not because that contractor is simply more efficient.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Why do office fit-out quotes for the same space vary so much?",
+        a: "Different assumptions about shell condition, MEP scope and finish tier are the usual cause, not a straightforward difference in efficiency or margin. A quote without a prior site survey is the biggest red flag for an unreliable number.",
+      },
+      {
+        q: "What's the single biggest cost driver in an office fit-out?",
+        a: "Shell condition. Fitting out bare shell-and-core space costs meaningfully more than reusing existing ceiling, MEP and flooring infrastructure in a previously fitted space.",
+      },
+      {
+        q: "Do approvals add real cost, or just time?",
+        a: "Mostly time, but a project that skips a required authority or civil defence submission can be forced to redo already-completed work to pass inspection later, which turns a timeline problem into a cost problem.",
+      },
+      {
+        q: "Should a fit-out quote be a single lump sum?",
+        a: "A line-item breakdown, partitions, MEP, joinery, approvals and finishes priced separately, makes it possible to see exactly where two quotes for the same space actually differ.",
+      },
+    ],
+  },
+  {
+    slug: "fit-out-contractor-vs-interior-designer",
+    title: "Fit-out contractor vs interior designer: who does what, and why it matters",
+    metaDescription:
+      "The difference between a fit-out contractor and an interior designer, what each is responsible for, and why a turnkey fit-out avoids the gap between design intent and construction.",
+    category: "Fit-Out",
+    excerpt:
+      "One plans the space. One builds it. Knowing where that line sits avoids the most common source of fit-out delays.",
+    photoId: "fit-out-contractor-vs-interior-designer",
+    readTime: "6 min read",
+    publishedAt: "2026-12-28",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "The two terms get used almost interchangeably in casual conversation, and a business briefing its first fit-out project often assumes one company handles both roles by default. Sometimes that's true. Often it isn't, and the gap between the two is exactly where projects lose time: a beautiful design that the contractor can't build to budget, or a build that technically matches the drawings but misses the design intent because nobody on site fully understood it.",
+    sections: [
+      {
+        heading: "What an interior designer is responsible for",
+        blocks: [
+          p(
+            "An interior designer plans the space: layout, material palette, furniture selection, lighting design and the overall look a brand or space is going for. The deliverable is typically a design concept, mood boards, material specifications and drawings, the intent, not the physical build. A designer may or may not have the in-house capability to fabricate joinery, run MEP or manage a construction crew.",
+          ),
+        ],
+      },
+      {
+        heading: "What a fit-out contractor is responsible for",
+        blocks: [
+          p(
+            "A fit-out contractor builds it: partitions, ceilings, flooring, MEP, joinery and finishes, executed to a set of drawings and specifications, on a schedule, to a budget. A contractor without in-house design capability typically works from drawings supplied by a designer or architect, translating intent into a buildable, code-compliant sequence of trades.",
+          ),
+          ul([
+            "Interior designer: concept, layout, material and furniture specification, mood and brand feel",
+            "Fit-out contractor: partitions, ceilings, flooring, MEP, joinery, finishes and on-site execution",
+            "Turnkey fit-out: both roles under one contract and one point of contact",
+          ]),
+        ],
+      },
+      {
+        heading: "Why the split matters, and when turnkey avoids the problem",
+        blocks: [
+          p(
+            "When design and construction sit with two separate companies, design intent has to survive a handoff, drawings, specifications and material samples passed from designer to contractor, with the contractor pricing and building to what's on paper. Anything not fully specified gets decided on site, sometimes by someone without the original design brief in front of them. That's usually where a design starts to drift from what was originally approved.",
+          ),
+          p(
+            "Turnkey fit-out puts design and construction under one contract, so the same team that specified a material or detail is the one building it, and there's a single point of contact if something needs adjusting mid-project rather than a conversation split across two companies with different priorities.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can one company act as both interior designer and fit-out contractor?",
+        a: "Yes, this is what a turnkey fit-out means: design and construction delivered under one contract, with the same team responsible for both the concept and the build.",
+      },
+      {
+        q: "Do I need to hire a separate interior designer before approaching a fit-out contractor?",
+        a: "Not necessarily. A turnkey fit-out contractor with in-house design capability can handle both, which also avoids the handoff gap between a separate designer's drawings and a contractor's build.",
+      },
+      {
+        q: "Why do fit-out projects sometimes look different from the original design once built?",
+        a: "This usually happens when a detail wasn't fully specified in the drawings handed from designer to contractor, and got decided on site by someone without full context on the original design intent.",
+      },
+      {
+        q: "Is turnkey fit-out more expensive than hiring a designer and contractor separately?",
+        a: "Not inherently. It removes a layer of coordination and handoff risk, and a single point of contact for changes, rather than necessarily costing more.",
+      },
+    ],
+  },
+  {
+    slug: "retail-fit-out-timeline-guide",
+    title: "Retail fit-out timeline: from lease signing to opening day",
+    metaDescription:
+      "A realistic retail fit-out timeline from lease signing to opening day, including mall or landlord approval, joinery lead time and signage, for stores in the UAE and Qatar.",
+    category: "Fit-Out",
+    excerpt:
+      "Retail fit-out has less flexibility on timing than office fit-out, since rent and a fixed opening date are both running against it.",
+    photoId: "retail-fit-out-timeline-guide",
+    readTime: "7 min read",
+    publishedAt: "2027-01-04",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "A retail fit-out runs against two clocks that an office fit-out doesn't: rent, which usually starts from lease signing regardless of whether the store is open, and a fixed opening date, if there's a launch campaign, a mall opening or a seasonal window already committed to. That makes sequencing, what has to happen before what, matter more here than almost anywhere else in a fit-out project.",
+    sections: [
+      {
+        heading: "Before the fit-out starts: lease and landlord requirements",
+        blocks: [
+          p(
+            "Most mall landlords and business towers issue their own fit-out guide alongside the lease, a document specifying everything from ceiling height and shopfront line to approved contractor lists and permitted working hours. Reading this before finalising a design avoids the common early mistake of designing to a concept that the landlord's guide doesn't actually permit.",
+          ),
+          ul([
+            "Lease signed and fit-out guide received from landlord",
+            "Design concept developed against the landlord's actual constraints",
+            "Landlord design approval submitted (often required before any on-site work starts)",
+            "Municipal or authority permit submission, run in parallel where possible",
+          ]),
+        ],
+      },
+      {
+        heading: "During the fit-out: sequencing that avoids rework",
+        blocks: [
+          p(
+            "MEP and ceiling work go in first, since flooring and joinery installed before overhead work is complete are the most common source of on-site damage and rework. Joinery, reception counters, shelving, POS counters, custom millwork, typically has the longest lead time of any single item, since it's fabricated off-site to the approved design and can't be compressed the way on-site labour sometimes can.",
+          ),
+          p(
+            "Signage is usually the last physical item to go up, not because it's less important, but because it depends on final measurements taken once the shopfront structure is complete, and its own approval (often separate from the interior fit-out approval) is running on its own timeline in parallel.",
+          ),
+        ],
+      },
+      {
+        heading: "What actually determines the total timeline",
+        blocks: [
+          p(
+            "For a standard mall retail unit, landlord and municipal approvals typically take longer than the physical construction itself, which is why starting design and submission the moment a lease is signed, rather than waiting for drawings to be fully finalised, is what actually protects an opening date. A well-run retail fit-out is less about how fast the trades can work and more about how early the paperwork started.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the first thing to do after signing a retail lease?",
+        a: "Request the landlord's fit-out guide before finalising any design. It specifies constraints, ceiling height, shopfront line, approved contractors, that a design needs to work within from the start.",
+      },
+      {
+        q: "What usually takes the longest in a retail fit-out timeline?",
+        a: "Landlord and municipal approvals, more often than the physical construction itself, which is why submitting for approval as early as possible protects the opening date.",
+      },
+      {
+        q: "Why is signage installed last?",
+        a: "Signage depends on final shopfront measurements taken once the structure is complete, and typically has its own separate approval process running in parallel with the interior fit-out approval.",
+      },
+      {
+        q: "Can fit-out and signage approvals be submitted at the same time?",
+        a: "Yes, running them in parallel rather than sequentially is standard practice to avoid the two approval processes adding to each other's timeline.",
+      },
+    ],
+  },
+  {
+    slug: "dubai-fit-out-approval-process",
+    title: "Fit-out approvals in Dubai, Abu Dhabi and Sharjah: what actually needs sign-off",
+    metaDescription:
+      "What needs approval before an office or retail fit-out starts in Dubai, Abu Dhabi and Sharjah: authority permits, civil defence, and landlord or mall sign-off.",
+    category: "Fit-Out",
+    excerpt:
+      "Fit-out approval isn't one step, it's several, and they run through different authorities depending on the emirate.",
+    photoId: "dubai-fit-out-approval-process",
+    readTime: "6 min read",
+    publishedAt: "2027-01-11",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "Fit-out approval gets treated as a single checkbox more often than it should be. In practice it's several separate sign-offs, sometimes from different authorities, sometimes running in parallel and sometimes sequentially, and which ones apply depends on the emirate, the building type and whether the space sits inside a free zone, mall or standalone building.",
+    sections: [
+      {
+        heading: "Authority approval varies by emirate",
+        blocks: [
+          p(
+            "Dubai, Abu Dhabi and Sharjah each run fit-out permits through their own municipal or development authority, and the specific process differs between them, not just the paperwork but which drawings and certifications are required at submission. A contractor working across multiple emirates needs to know which route applies before design even starts, since a drawing set built for one authority's requirements doesn't always transfer cleanly to another's.",
+          ),
+          p(
+            "Free zones (DIFC, JAFZA and similar) frequently run a separate approval process from the surrounding emirate's standard municipal route, with their own drawing standards and submission portal.",
+          ),
+        ],
+      },
+      {
+        heading: "Civil defence and life safety sign-off",
+        blocks: [
+          ul([
+            "Fire alarm and detection system compliance",
+            "Sprinkler and suppression system approval where applicable",
+            "Emergency exit and egress path compliance",
+            "Fire-rated partition and ceiling material certification",
+          ]),
+          p(
+            "Civil defence approval is a separate submission from the general authority fit-out permit, and is usually required before final handover regardless of which emirate the project is in. Fire-rated material specifications need to be built into the design from the start, since substituting a non-compliant material after installation means redoing that portion of the work.",
+          ),
+        ],
+      },
+      {
+        heading: "Landlord and mall sign-off, on top of authority approval",
+        blocks: [
+          p(
+            "Malls and business towers add a design and construction sign-off process on top of the municipal and civil defence approvals, usually managed by the building's facilities or leasing team rather than a government authority. This layer covers things a municipal permit doesn't: shopfront design consistency across a mall, permitted working hours, and site access and waste removal rules specific to that building.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is fit-out approval the same process in Dubai, Abu Dhabi and Sharjah?",
+        a: "No. Each emirate runs its own municipal or development authority approval route, with different drawing and submission requirements, so a process built for one doesn't transfer directly to another.",
+      },
+      {
+        q: "Is civil defence approval separate from the general fit-out permit?",
+        a: "Yes. Civil defence sign-off covers fire and life safety systems specifically and is a separate submission, usually required before final handover regardless of emirate.",
+      },
+      {
+        q: "Do malls require their own approval on top of government permits?",
+        a: "Yes. Mall and business tower landlords typically run their own design and construction sign-off process, covering things like shopfront consistency and working hours, in addition to municipal and civil defence approval.",
+      },
+      {
+        q: "Does a free zone use the same approval process as the surrounding emirate?",
+        a: "Not always. Free zones like DIFC or JAFZA often run their own separate fit-out approval process with their own drawing standards and submission route.",
+      },
+    ],
+  },
+  {
+    slug: "google-ads-ppc-guide-uae",
+    title: "Google Ads (PPC) vs SEO for a UAE business: which to start with",
+    metaDescription:
+      "Google Ads (PPC) vs SEO for a UAE or Qatar business: how each works, realistic cost and timeline expectations, and which to start with for a limited budget.",
+    category: "Digital",
+    excerpt:
+      "PPC and SEO solve different problems on different timelines. Here's how to decide which one a limited budget should go to first.",
+    photoId: "google-ads-ppc-guide-uae",
+    readTime: "7 min read",
+    publishedAt: "2027-01-18",
+    relatedSectionSlug: "social-media",
+    intro:
+      "\"Should we run Google Ads or just do SEO?\" is one of the most common questions from a business setting a digital budget for the first time, and it usually comes from treating the two as competing options rather than tools that solve different problems on different timelines. Understanding what each one actually does makes the budget decision a lot more straightforward.",
+    sections: [
+      {
+        heading: "What Google Ads (PPC) actually does",
+        blocks: [
+          p(
+            "Pay-per-click advertising puts a business at the top of Google's search results immediately, for the keywords it bids on, and the traffic stops the moment the budget does. It's the right tool when a result is needed now, a launch, a limited promotion, a competitive keyword an SEO campaign hasn't ranked for yet, and its main cost variable is cost-per-click, which rises with how competitive and high-intent the keyword is.",
+          ),
+          ul([
+            "Immediate visibility, live within hours of campaign approval",
+            "Fully stops generating traffic once budget or the campaign is paused",
+            "Cost scales directly with clicks and competition on the keyword",
+            "Best for time-sensitive or highly competitive terms",
+          ]),
+        ],
+      },
+      {
+        heading: "What SEO actually does",
+        blocks: [
+          p(
+            "SEO (search engine optimisation) improves a website's organic ranking, the unpaid results, over time, through a combination of technical site health, content relevance and authority signals like backlinks and local citations. It typically takes weeks to months to show meaningful movement, but ranking gains don't disappear the moment spend stops the way paid traffic does.",
+          ),
+          p(
+            "The trade-off is patience versus ownership: PPC rents visibility for as long as it's paid for, SEO builds a ranking asset that keeps generating traffic without an ongoing per-click cost, once it's established.",
+          ),
+        ],
+      },
+      {
+        heading: "Which to start with on a limited budget",
+        blocks: [
+          p(
+            "A new business or a new website with little existing authority usually gets faster measurable results from PPC, since there's no ranking history to build from and SEO's timeline can outlast the patience of a tight budget. An established business with a working website but a stalled ranking often gets more long-term value putting the same budget into SEO, since it's already past the slowest part of building initial authority.",
+          ),
+          p(
+            "In practice, most businesses that run both eventually use PPC for immediate, high-intent or time-sensitive terms and SEO for the broader base of ongoing organic visibility, rather than treating it as a permanent either-or choice.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is Google Ads or SEO better for a brand-new website?",
+        a: "PPC typically shows results faster for a brand-new site, since there's no existing organic ranking or authority to build from, and SEO's timeline can outlast a tight, short-term budget.",
+      },
+      {
+        q: "Does SEO traffic stop if the budget is paused, like PPC does?",
+        a: "No. Organic rankings built through SEO don't disappear the moment spend stops, unlike PPC traffic, which stops as soon as the campaign budget runs out or is paused.",
+      },
+      {
+        q: "How long does SEO take to show results compared to PPC?",
+        a: "PPC can generate traffic within hours of a campaign going live. SEO typically takes weeks to months to show meaningful ranking movement, depending on the competitiveness of the keywords and the site's starting authority.",
+      },
+      {
+        q: "Can a business run PPC and SEO at the same time?",
+        a: "Yes, and it's the common long-term approach: PPC for immediate or highly competitive terms, SEO for broader, ongoing organic visibility, rather than choosing one permanently over the other.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {

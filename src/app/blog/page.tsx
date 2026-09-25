@@ -37,6 +37,7 @@ const categoryStyles: Record<string, string> = {
   "Social Media": "bg-fuchsia-50 text-fuchsia-700",
   Digital: "bg-indigo-50 text-indigo-700",
   Events: "bg-orange-50 text-orange-700",
+  "Fit-Out": "bg-teal-50 text-teal-700",
 };
 
 export default function BlogIndexPage() {

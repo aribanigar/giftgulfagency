@@ -609,6 +609,14 @@ export const siteFaqs: Faq[] = [
  * of sitting as a static list.
  */
 export const capabilityBlogSlug: Record<string, string> = {
+  // Fit-Out & Interior Design
+  "Office fit-out & design": "office-fit-out-cost-guide-dubai",
+  "Retail & showroom fit-out": "retail-fit-out-timeline-guide",
+  "Joinery & carpentry": "office-fit-out-cost-guide-dubai",
+  "MEP coordination": "office-fit-out-cost-guide-dubai",
+  "Renovation & refurbishment": "dubai-fit-out-approval-process",
+  "Turnkey project management": "fit-out-contractor-vs-interior-designer",
+
   // Printing
   "Large-format digital printing for banners & display panels": "large-format-printing-guide",
   "Offset printing for magazines, books & high-volume runs": "offset-printing-guide",

@@ -169,4 +169,9 @@ export const blogPhotoIds: Record<string, string> = {
   "roll-up-banner-stands-guide": "printing-largeformat",
   "popup-display-stands-guide": "events-stand",
   "fabric-printing-guide": "events-backdrop",
+  "office-fit-out-cost-guide-dubai": "sheikh-zayed-road",
+  "fit-out-contractor-vs-interior-designer": "sheikh-zayed-road",
+  "retail-fit-out-timeline-guide": "sheikh-zayed-road",
+  "dubai-fit-out-approval-process": "sheikh-zayed-road",
+  "google-ads-ppc-guide-uae": "blog-web-development",
 };
