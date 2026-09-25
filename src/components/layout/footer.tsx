@@ -140,6 +140,9 @@ export async function Footer() {
             <Link href="/terms" className="inline-block py-1.5 hover:text-green-700">
               Terms
             </Link>
+            <a href="/sitemap.xml" className="inline-block py-1.5 hover:text-green-700">
+              Sitemap
+            </a>
           </div>
         </div>
       </div>
