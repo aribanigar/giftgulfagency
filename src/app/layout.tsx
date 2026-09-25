@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/json-ld";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { getSettings } from "@/lib/settings";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos } from "@/lib/photos";
@@ -69,6 +69,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-white text-zinc-900">
         <JsonLd data={organizationSchema(settings)} />
+        <JsonLd data={websiteSchema()} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
