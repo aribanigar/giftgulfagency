@@ -28,14 +28,26 @@ const productColumns = sections
   .map((section) => ({ section, products: productsForSection(section.slug) }))
   .filter((c) => c.products.length > 0);
 
-const fitOutGuideSlugs = [
-  "office-fit-out-cost-guide-dubai",
-  "fit-out-contractor-vs-interior-designer",
-  "retail-fit-out-timeline-guide",
-  "dubai-fit-out-approval-process",
-  "google-ads-ppc-guide-uae",
+// Long-tail, education-first guides for exactly the searches people
+// actually run before buying (what kind of vinyl sticker, what a roll-up
+// is, the difference between 2D and 3D signage) — curated by topic, not
+// every post on the blog, so the footer stays a real answer to "what do
+// I search for" rather than a dump of the whole archive.
+const longTailGuideSlugs = [
+  "vinyl-stickers-guide",
+  "banner-printing-guide",
+  "roll-up-banner-stands-guide",
+  "popup-display-stands-guide",
+  "wooden-backdrops-guide",
+  "acrylic-lettering-displays-guide",
+  "channel-letters-guide",
+  "acrylic-display-stands-guide",
+  "exhibition-stand-guide",
+  "exhibition-kiosk-design-guide",
+  "restaurant-mall-kiosk-guide",
+  "painting-carpentry-fitout-guide",
 ];
-const fitOutGuides = fitOutGuideSlugs
+const longTailGuides = longTailGuideSlugs
   .map((slug) => blogPosts.find((p) => p.slug === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
@@ -191,19 +203,19 @@ export async function Footer() {
             </div>
           ))}
 
-          {fitOutGuides.length > 0 ? (
+          {longTailGuides.length > 0 ? (
             <div>
               <h4 className="font-mono text-[11px] font-medium tracking-wide text-zinc-400">
                 Guides
               </h4>
               <ul className="mt-3 flex flex-col">
-                {fitOutGuides.map((post) => (
+                {longTailGuides.map((post) => (
                   <li key={post.slug}>
                     <Link
                       href={`/blog/${post.slug}`}
                       className="inline-block py-1 text-xs text-zinc-500 hover:text-green-700"
                     >
-                      {post.category === "Digital" ? "Google Ads vs SEO" : post.title.split(":")[0]}
+                      {post.title.split(":")[0]}
                     </Link>
                   </li>
                 ))}

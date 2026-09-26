@@ -177,4 +177,12 @@ export const blogPhotoIds: Record<string, string> = {
   "artwork-vector-file-guide": "printing-digital",
   "gitex-global-2026-exhibition-checklist": "events-hall",
   "diwali-corporate-gifting-guide": "gift-hamper",
+  // No dedicated photography exists yet for a wooden backdrop specifically,
+  // a restaurant/mall kiosk, or a carpentry workshop — each reuses the
+  // closest real, honestly-related existing photo rather than a file that
+  // doesn't exist, same pattern as the fit-out guides above.
+  "wooden-backdrops-guide": "events-backdrop",
+  "restaurant-mall-kiosk-guide": "events-stand",
+  "acrylic-display-stands-guide": "signage-acrylic",
+  "painting-carpentry-fitout-guide": "sheikh-zayed-road",
 };

@@ -4126,6 +4126,275 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "wooden-backdrops-guide",
+    title: "Wooden backdrops vs fabric and PVC: when a built structure is the right call",
+    metaDescription:
+      "Wooden event backdrops explained: how they're built, how they compare to fabric and PVC step-and-repeat walls, and when the extra weight and cost is worth it.",
+    category: "Events",
+    excerpt:
+      "A wooden backdrop costs more and weighs more than fabric. Here's what that extra weight actually buys you.",
+    photoId: "wooden-backdrops-guide",
+    readTime: "6 min read",
+    publishedAt: "2027-01-25",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "Most event backdrops are fabric or PVC because they pack flat, ship light and go up fast. A wooden backdrop trades all three of those advantages for something fabric can't do: a genuinely rigid, dimensional structure that reads as permanent rather than printed. That trade-off only makes sense for specific briefs, and knowing which ones separates a backdrop that looks like an investment from one that just cost more than it needed to.",
+    sections: [
+      {
+        heading: "How a wooden backdrop is actually built",
+        blocks: [
+          p(
+            "A wooden backdrop starts as a structural frame, typically timber battens or a plywood substrate, built to the panel sizes the design calls for. Detailing, cut-out logos, shaped edges, raised lettering or panel joints, is CNC-routed or laser-cut into MDF or plywood sheet rather than hand-cut, which is what makes clean, repeatable detail possible across a wide backdrop built from multiple panels.",
+          ),
+          p(
+            "The finish goes on after assembly: painted MDF for a flat, matte brand colour, laminate or veneer for a wood-grain or textured look, or a printed vinyl wrap over the timber substrate when the design needs full-colour graphics rather than a solid finish. That last option, a vinyl-wrapped wooden structure, is the middle ground between a flat printed backdrop and a fully painted one, printed graphics on a rigid, dimensional base.",
+          ),
+        ],
+      },
+      {
+        heading: "What it buys you over fabric or PVC",
+        blocks: [
+          ul([
+            "Genuine rigidity: no ripples, sag or fabric tension issues under event lighting",
+            "Real depth: raised lettering, shaped panels and layered elements a flat print can't produce",
+            "A permanent-feel finish, suited to a flagship launch rather than a one-off activation",
+            "Reusability across multiple events, if storage and transport are planned for",
+          ]),
+          p(
+            "The cost of that: a wooden backdrop is heavier, needs a van rather than a car to move, doesn't pack flat like a tension-fabric system, and takes longer to build and install. It also has a longer lead time, since CNC-routing and painting or laminating takes real production time that a next-day fabric print doesn't.",
+          ),
+        ],
+      },
+      {
+        heading: "Where a wooden backdrop is the right call",
+        blocks: [
+          p(
+            "Photo-op walls for a retail or product launch, where the backdrop itself is part of the brand experience rather than just a logo wall behind a speaker, are the most common use case. Press conference and dais backdrops for a flagship announcement are another, where the brief calls for a built, permanent-feeling stage rather than a printed panel. For a standard conference logo wall or a multi-city roadshow where the backdrop needs to travel light, fabric or PVC step-and-repeat is still the better, and cheaper, choice.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is a wooden backdrop reusable across multiple events?",
+        a: "Yes, more so than fabric or PVC, provided it's stored and transported carefully. That reusability is one of the main reasons to choose wood over a single-use printed backdrop.",
+      },
+      {
+        q: "Can a wooden backdrop carry full-colour branding, or only a painted finish?",
+        a: "Both. A painted or laminate finish suits a solid brand colour or wood-grain look; a printed vinyl wrap over the timber structure carries full-colour graphics on the same rigid base.",
+      },
+      {
+        q: "How much longer does a wooden backdrop take to produce than a fabric one?",
+        a: "Lead time depends on size and detail, but CNC-routing, assembly and finishing take meaningfully longer than a fabric print run. Share the event date when requesting a quote so the build schedule can be confirmed.",
+      },
+      {
+        q: "Is a wooden backdrop worth it for a single one-off event?",
+        a: "Usually only if the design calls for raised or shaped detail a flat print can't produce. For a single standard logo wall, fabric or PVC is more cost-effective and just as effective on camera.",
+      },
+    ],
+  },
+  {
+    slug: "restaurant-mall-kiosk-guide",
+    title: "Restaurant kiosks vs mall kiosks: what actually differs in the build",
+    metaDescription:
+      "Restaurant (F&B) kiosks vs retail mall kiosks: the plumbing, electrical, ventilation and approval differences that actually drive the build and cost.",
+    category: "Events",
+    excerpt:
+      "A food kiosk and a retail kiosk look similar on a floor plan. What's behind the counter is a different build entirely.",
+    photoId: "restaurant-mall-kiosk-guide",
+    readTime: "6 min read",
+    publishedAt: "2027-02-01",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "\"Kiosk\" covers two genuinely different builds that happen to look similar from the mall walkway. A retail kiosk selling phone accessories or cosmetics and a food kiosk selling coffee or snacks both fit inside a similar footprint, but one needs plumbing and ventilation and the other doesn't, and that difference shapes the design, the approval process and the cost long before either one gets built.",
+    sections: [
+      {
+        heading: "What a retail mall kiosk actually needs",
+        blocks: [
+          p(
+            "A standard retail kiosk is largely a display and merchandising problem: shelving, counter space, lighting and branding within a footprint and height set by the mall's own kiosk design guide. Most malls issue this guide to every kiosk tenant, covering maximum footprint, height restrictions (often lower than a full store unit so sightlines across the walkway stay open), permitted signage size, and sometimes a required material or colour palette to keep the mall's common areas visually consistent.",
+          ),
+          p(
+            "Electrical needs are usually light: power for lighting, a POS system and maybe a phone charging display. No plumbing, no ventilation and no grease trap requirement, which keeps both the build and the approval process considerably simpler than a food kiosk in the same square footage.",
+          ),
+        ],
+      },
+      {
+        heading: "What a restaurant or F&B kiosk needs on top of that",
+        blocks: [
+          ul([
+            "Plumbing for a wash basin and, depending on the menu, a prep sink",
+            "Ventilation and extraction for cooking equipment, even light equipment like espresso machines or panini presses",
+            "Higher electrical load for kitchen equipment (blenders, ovens, refrigeration)",
+            "Food-grade, water-resistant countertop and wall surfaces",
+            "Food safety and municipal health authority approval, in addition to the mall's own design and construction sign-off",
+          ]),
+          p(
+            "That last point is the real cost and timeline driver: a food kiosk needs sign-off from the relevant food safety or health authority on top of the standard mall landlord approval, and that inspection covers surfaces, waste handling and ventilation, not just the visual design. Skipping ahead on construction before that approval is confirmed is the most common way a food kiosk opening date slips.",
+          ),
+        ],
+      },
+      {
+        heading: "What this means for planning either one",
+        blocks: [
+          p(
+            "A retail kiosk brief can usually move straight from mall design approval to fabrication. A food kiosk brief needs the health authority requirements confirmed alongside the mall's design guide before the build starts, since plumbing and ventilation routing has to be designed in from the start rather than retrofitted once a shell is already built.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Does a coffee or snack kiosk need the same approval as a full restaurant?",
+        a: "It needs food safety and health authority sign-off covering surfaces, waste handling and ventilation, on top of the mall's standard design approval, even for a small kiosk footprint. The scope is smaller than a full restaurant, but the approval category is the same.",
+      },
+      {
+        q: "Can an existing retail kiosk be converted into a food kiosk?",
+        a: "Usually not without significant rework, since plumbing, ventilation and food-grade surfaces need to be designed into the structure rather than added afterward. It's typically more practical to build a new food kiosk than retrofit a retail one.",
+      },
+      {
+        q: "What's the biggest cause of delay in opening a mall food kiosk?",
+        a: "Starting construction before health authority requirements are confirmed alongside the mall's design guide. Plumbing and ventilation routing needs to be locked in before the build starts, not adjusted after.",
+      },
+      {
+        q: "Do retail kiosks have the same height and footprint restrictions across all malls?",
+        a: "No. Each mall issues its own kiosk design guide with its own footprint, height and signage limits, so a kiosk design approved for one mall doesn't automatically transfer to another.",
+      },
+    ],
+  },
+  {
+    slug: "acrylic-display-stands-guide",
+    title: "Acrylic display stands: tabletop, literature and product stands explained",
+    metaDescription:
+      "Acrylic display stands explained: how tabletop, literature and product stands are fabricated, material thickness by use case, and where each type is used.",
+    category: "Signage",
+    excerpt:
+      "The same acrylic fabrication process behind signage also builds the display stands sitting on the counter next to it.",
+    photoId: "acrylic-display-stands-guide",
+    readTime: "6 min read",
+    publishedAt: "2027-02-08",
+    relatedSectionSlug: "signages",
+    intro:
+      "Acrylic display stands sit in the same fabrication category as acrylic signage, laser-cut, precision-finished plastic, but solve a different problem: holding, presenting or organising something on a counter or table rather than identifying a building or storefront. The types look simple, but material thickness and fabrication method both change depending on what the stand needs to hold and how much handling it'll see.",
+    sections: [
+      {
+        heading: "How acrylic stands are made",
+        blocks: [
+          p(
+            "Flat-panel stands, sign holders, brochure racks, tiered risers, are laser-cut from a single sheet and assembled with acrylic cement (a solvent that chemically welds the pieces at the seam, rather than glue sitting on top of the joint) for a clean, near-invisible bond. Curved or bent stands, rounded tabletop stands or wrap-around risers, are heat-formed: the acrylic is warmed until pliable and bent over a jig, which avoids a visible seam entirely for a smoother, more premium finish.",
+          ),
+        ],
+      },
+      {
+        heading: "Material thickness by use case",
+        blocks: [
+          ul([
+            "3mm: light signage holders, small brochure stands, low-handling display cards",
+            "5mm: standard tabletop menu and price stands, moderate daily handling",
+            "8mm-10mm: product risers and stands under repeated handling or heavier product weight",
+          ]),
+          p(
+            "Clear acrylic is the default for a stand that shouldn't visually compete with what's displayed on or in it. Frosted acrylic diffuses light and hides fingerprints better on a high-touch stand like a menu holder. Coloured acrylic is used when the stand itself is a branding element rather than a neutral support.",
+          ),
+        ],
+      },
+      {
+        heading: "Where each type is used",
+        blocks: [
+          p(
+            "Tabletop menu and price stands are the most common restaurant and retail application. Literature and brochure holders sit at reception desks and trade show tables. Product riser stands raise a hero item above the rest of a retail display or a cosmetics counter. Phone and tablet stands and sign holders round out the smaller, high-volume end of the category, often ordered alongside a retail or exhibition fit-out rather than as a standalone item.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between laser-cut and heat-formed acrylic stands?",
+        a: "Laser-cut stands are flat panels cemented together at the seams, suited to angular designs. Heat-formed stands are bent over a jig for curved shapes with no visible seam, giving a smoother, more premium finish at a higher production cost.",
+      },
+      {
+        q: "What acrylic thickness should a tabletop menu stand use?",
+        a: "5mm is the standard choice for a tabletop menu or price stand under normal daily handling. Thinner 3mm suits lighter, lower-handling signage holders; thicker 8-10mm suits stands carrying heavier products.",
+      },
+      {
+        q: "Should a display stand be clear, frosted or coloured?",
+        a: "Clear is the default when the stand shouldn't visually compete with what it's displaying. Frosted suits high-touch items like menu holders, since it hides fingerprints better. Coloured acrylic is used when the stand itself is meant to carry brand colour.",
+      },
+      {
+        q: "Can display stands be branded with a logo?",
+        a: "Yes. A logo or design can be UV-printed directly onto the acrylic or cut into the panel itself, depending on the look required.",
+      },
+    ],
+  },
+  {
+    slug: "painting-carpentry-fitout-guide",
+    title: "Painting and carpentry in a fit-out: what's actually included",
+    metaDescription:
+      "What painting and carpentry actually cover in an office or retail fit-out: wall finishes, fire-rated paint, custom joinery, and workshop vs on-site fabrication.",
+    category: "Fit-Out",
+    excerpt:
+      "Two line items on almost every fit-out quote that are easy to underscope: painting and carpentry.",
+    photoId: "painting-carpentry-fitout-guide",
+    readTime: "7 min read",
+    publishedAt: "2027-02-15",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "Painting and carpentry show up as short line items on a fit-out quote, but each covers more ground than the name suggests, and both are common places for a quote to under-scope what a project actually needs. Knowing what's typically included, and what usually needs to be specified separately, avoids finding out mid-project that a feature wall or a reception desk was never actually priced in.",
+    sections: [
+      {
+        heading: "What painting covers",
+        blocks: [
+          p(
+            "Standard wall painting is usually specified as emulsion (matte or low-sheen) for most office and retail walls, with eggshell or satin finishes reserved for higher-traffic areas like corridors and washrooms, where a slightly more washable surface holds up better. Two coats over a primed surface is standard practice for even coverage and colour consistency; a single coat over a colour change (dark to light, or vice versa) usually shows through and needs a third.",
+          ),
+          p(
+            "Feature walls, an accent colour, a textured finish, or a branded mural, are priced separately from the general painting scope, since they use different materials and take more time per square metre. In corridors, stairwells and other paths of escape, civil defence requirements in most UAE emirates and in Qatar call for fire-rated paint, which behaves differently under application and costs more per litre than standard emulsion, so it needs to be specified in the brief rather than assumed as part of a general paint allowance.",
+          ),
+        ],
+      },
+      {
+        heading: "What carpentry and joinery covers",
+        blocks: [
+          ul([
+            "Custom reception desks and counters",
+            "Built-in cabinetry and storage",
+            "Partition framing and door casings",
+            "Feature joinery: slatted wood panelling, ceiling features, custom shelving",
+          ]),
+          p(
+            "Material choice drives both look and cost: MDF with a laminate or veneer finish is the standard, cost-effective choice for most built-in joinery; solid wood or a higher-grade veneer is reserved for a reception desk or feature piece meant to read as premium. Workshop-fabricated joinery, built off-site to exact drawings and delivered for installation, gives a cleaner finish and better dust control than building on-site, but it depends on accurate site measurements being taken before fabrication starts, since a workshop piece built to the wrong dimension can't be adjusted the way an on-site build can.",
+          ),
+        ],
+      },
+      {
+        heading: "Why these two get under-scoped",
+        blocks: [
+          p(
+            "Both painting and carpentry are easy to quote as a generic allowance rather than against the actual brief, standard paint and standard MDF joinery, without accounting for a feature wall, fire-rated corridor paint, or a solid-wood reception desk that the brief actually calls for. Confirming exactly which walls get a feature finish and which joinery pieces are meant to be premium, rather than leaving it to a general allowance, is what keeps a fit-out quote accurate against what actually gets built.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Does a fit-out paint allowance usually include feature walls?",
+        a: "Not by default. A feature wall, accent colour or textured or branded finish is typically priced separately from the general painting scope, since it uses different materials and takes longer per square metre.",
+      },
+      {
+        q: "Is fire-rated paint required everywhere in a fit-out?",
+        a: "It's typically required in corridors, stairwells and other paths of escape under civil defence requirements, not across every wall in the space. It needs to be specified in the brief since it costs more than standard emulsion.",
+      },
+      {
+        q: "What's the difference between MDF and solid wood joinery?",
+        a: "MDF with a laminate or veneer finish is the standard, cost-effective choice for most built-in cabinetry and joinery. Solid wood or a higher-grade veneer is reserved for a reception desk or feature piece meant to read as more premium.",
+      },
+      {
+        q: "Should joinery be built on-site or in a workshop?",
+        a: "Workshop fabrication gives a cleaner finish and better dust control, and is the standard approach once accurate site measurements are taken. On-site building suits pieces that need adjustment during installation or can't be pre-measured accurately.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
