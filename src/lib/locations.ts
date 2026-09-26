@@ -139,14 +139,26 @@ export const locations: Location[] = [
     country: "Saudi Arabia",
     blurb: "Printing, signage and packaging support for Jeddah's retail and trade businesses.",
     definition:
-      "Jeddah's retail corridors and trade links make signage, packaging and printing a constant need for the city's businesses, and that work is delivered under the same brief-to-installation process used across our other GCC markets.",
-    keyAreas: ["Al Hamra", "Tahlia Street", "King Abdulaziz Road", "Jeddah Industrial City"],
+      "Jeddah's retail corridors and trade links make signage, packaging and printing a constant need for the city's businesses, and that work is delivered under the same brief-to-installation process used across our other GCC markets. Quotes for Jeddah are priced in Saudi Riyals (SAR) at the Kingdom's standard 15% VAT rate, not simply converted from an AED quote, since Saudi VAT sits well above the UAE's 5% and needs to be budgeted for separately.",
+    keyAreas: ["Al Hamra", "Tahlia Street", "King Abdulaziz Road", "Jeddah Industrial City", "Jeddah Islamic Port"],
     approvalNote:
       "Signage and outdoor branding approvals in Jeddah run through the city's municipal authority, with retail landlords along corridors like Tahlia Street adding their own sign-off.",
     faqs: [
       {
         q: "Do you produce retail signage for businesses on Jeddah's main retail streets?",
         a: "Yes. Storefront and retail signage is designed, fabricated and installed for Jeddah businesses, including along corridors such as Tahlia Street, following the city's municipal approval process.",
+      },
+      {
+        q: "What currency and VAT rate applies to a Jeddah order?",
+        a: "Jeddah quotes are issued in Saudi Riyals (SAR) at Saudi Arabia's standard 15% VAT rate, which has applied since July 2020 and is materially higher than the UAE's 5% rate, so a Jeddah budget shouldn't be planned as a straight AED-to-SAR conversion of a UAE quote.",
+      },
+      {
+        q: "How does material or stock coming through Jeddah Islamic Port affect lead time?",
+        a: "Jeddah Islamic Port is Saudi Arabia's busiest container port, and imported material or products cleared through it typically need a valid SABER certificate; clearance with complete documentation generally runs a few business days, longer if a shipment is selected for physical inspection. That's factored into the project timeline at brief stage for any Jeddah order that relies on imported stock rather than locally held material.",
+      },
+      {
+        q: "Can corporate gifting and signage orders for Jeddah be combined with a Riyadh order?",
+        a: "Yes. Businesses with locations in both Jeddah and Riyadh commonly brief both cities as one order, with delivery split by site, so branding and invoicing stay consistent across the Kingdom rather than run as two separate jobs.",
       },
     ],
   },

@@ -27,6 +27,7 @@ import {
   Camera,
   UtensilsCrossed,
   Type,
+  Stethoscope,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -1133,6 +1134,58 @@ export const products: Product[] = [
       {
         q: "Can channel letters be installed alongside other signage on the same building?",
         a: "Yes. Channel letters are commonly briefed together with wayfinding, window graphics or a monument sign at the same site so the full signage package is designed and installed as one project.",
+      },
+    ],
+  },
+  {
+    slug: "clinic-fit-out-dubai",
+    name: "Clinic & Medical Centre Fit-Out",
+    parentSection: "fit-out",
+    icon: Stethoscope,
+    primaryKeyword: "clinic fit out dubai",
+    short: "DHA-compliant fit-out for clinics, polyclinics and medical centres in Dubai, sequenced around the DM permit, DHA licence and DED trade licence.",
+    metaDescription:
+      "Clinic fit-out in Dubai: DHA-compliant design, the DM-to-DHA-to-DED approval sequence, and 2026 minimum space standards for GP and specialist clinics.",
+    definition:
+      "Clinic fit-out is the build-out of a medical facility's interior, reception, waiting area, consultation and treatment rooms, sterilisation and clinical waste storage, to a layout a DHA-approved engineering firm has designed and the Dubai Health Authority has reviewed before construction starts. It differs from a standard commercial fit-out in one key way: the sequence of approvals is fixed. The Dubai Municipality or Trakhees fit-out permit has to be issued before the DHA Healthcare Facility Licence application can go in through the Sheryan portal, and the DED medical trade licence can't be issued until the DHA licence clears, so a clinic can't open on a build-first, licence-later timeline the way a retail unit sometimes can.",
+    options: [
+      "DHA-compliant architectural layout & submission",
+      "Reception, waiting area & consultation room build-out",
+      "Treatment room, sterilisation & clinical waste zoning",
+      "Medical gas & specialist MEP coordination",
+      "Civil Defence (DCD) fire safety compliance",
+      "DM/Trakhees permit and DHA Sheryan submission support",
+    ],
+    quickFacts: [
+      { label: "Approval sequence", value: "DM/Trakhees permit → DCD NOC → DHA licence (Sheryan) → DED trade licence" },
+      { label: "Facility types", value: "GP clinics, specialist clinics, polyclinics, dental clinics" },
+      { label: "2026 minimum area", value: "GP clinic 50 sq m · specialist clinic 70 sq m (applications from 1 Mar 2026)" },
+      { label: "Design requirement", value: "Layout must be prepared by a DHA-approved engineering firm" },
+    ],
+    faqs: [
+      {
+        q: "What approvals does a clinic fit-out need in Dubai?",
+        a: "Four in sequence: a Dubai Municipality or Trakhees fit-out permit for the construction itself, a Dubai Civil Defence fire safety NOC, a DHA Healthcare Facility Licence applied for through the Sheryan portal, and a DED medical trade licence, which can't be issued until the DHA licence is in hand.",
+      },
+      {
+        q: "Can construction start before DHA approves the layout?",
+        a: "No. The architectural layout has to be prepared by a DHA-approved engineering firm and submitted for DHA review, covering reception, consultation rooms, treatment areas, sterilisation and clinical waste storage, before construction begins.",
+      },
+      {
+        q: "What's the minimum clinic size under DHA's 2026 standards?",
+        a: "DHA raised its minimum space standards for applications submitted from 1 March 2026: a GP clinic now needs at least 50 sq m (up from 40 sq m) and a specialist clinic at least 70 sq m (up from 60 sq m). An existing licence isn't affected until it's renewed or the layout changes.",
+      },
+      {
+        q: "How much does a clinic fit-out cost in Dubai?",
+        a: "Cost depends mainly on the number of consultation and treatment rooms, whether medical gas or specialist equipment MEP is required, and the finish level DHA's infection-control standards call for in sterilisation and clinical areas. Share the facility category and room count when requesting a quote for an accurate figure.",
+      },
+      {
+        q: "How long does a DHA-compliant clinic fit-out take?",
+        a: "Construction timeline depends on scope, but the approval sequence itself, DM permit, then DHA licence, then DED licence, is usually the longer lead item, since each step waits on the one before it rather than running in parallel.",
+      },
+      {
+        q: "Can a clinic fit-out be combined with exterior signage?",
+        a: "Yes. Storefront and reception signage is commonly briefed alongside the interior fit-out so both are designed and installed as one project, though signage content still needs to meet DHA's rules on medical advertising where applicable.",
       },
     ],
   },

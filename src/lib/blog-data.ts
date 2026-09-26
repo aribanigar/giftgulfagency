@@ -4761,6 +4761,117 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "corporate-gifts-budget-guide-uae",
+    title: "Corporate gifts by budget: what fits AED 25, 50, 100 and 250 per person",
+    metaDescription:
+      "Corporate gift budgets in the UAE by tier — AED 25, 50, 100 and 250 per person — what each realistically buys and what pushes cost up within a tier.",
+    category: "Procurement",
+    excerpt:
+      "What AED 25, 50, 100 and 250 per person realistically buys, and the four things that push cost up or down within any tier.",
+    photoId: "corporate-gifts-budget-guide-uae",
+    readTime: "7 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "A per-person budget is usually set before the product is picked, not after, so the real question isn't \"what's a good corporate gift\" but \"what does AED 50 or AED 250 actually buy once branding and quantity are factored in.\" UAE promotional pricing generally falls into three market bands: roughly AED 10-50 for mass giveaways, AED 50-150 for mid-range gifts, and AED 150-500+ for luxury or executive gifts, with the branding method and order quantity moving a product up or down within its band. Exact pricing always depends on quantity and branding method, so treat the ranges below as planning guidance, not a quote.",
+    sections: [
+      {
+        heading: "What fits an AED 25 per-person budget?",
+        blocks: [
+          p(
+            "AED 25 sits at the mass-giveaway end of the market, roughly AED 10-50 for this category, and covers single-colour branded basics: keychains, pens, notebooks, lanyards and simple tote bags. At this budget, the branding is usually one colour, one location, since multi-colour or full-wrap branding pushes a AED 15 item toward AED 30-40 once print costs are added.",
+          ),
+          p(
+            "This tier works for mass distribution, staff onboarding batches, trade show giveaways, conference attendee gifts, where volume matters more than any single item feeling premium.",
+          ),
+        ],
+      },
+      {
+        heading: "What fits an AED 50 per-person budget?",
+        blocks: [
+          p(
+            "AED 50 sits at the upper end of the mass-giveaway band and the entry point of mid-range gifts (roughly AED 50-150). It typically buys a decent notebook and diary set, a printed mug, a basic water bottle, or a two-item bundle like a pen-and-notebook combo. Full-colour DTF branding becomes realistic at this budget for smaller runs, where a single-colour screen print was the more common route at AED 25.",
+          ),
+          p(
+            "This is a common range for internal recognition gifts, client thank-yous after a small order, and event attendee gifts where the brand wants the item to feel like more than a giveaway.",
+          ),
+        ],
+      },
+      {
+        heading: "What fits an AED 100 per-person budget?",
+        blocks: [
+          p(
+            "AED 100 lands mid-way through the mid-range band and typically buys a quality insulated water bottle, a branded cap-and-bag set, a basic power bank, or a mid-tier notebook and pen gift set. This is usually the first budget tier where a genuine tech item, a small power bank or a USB drive with decent storage, fits without cutting into branding quality elsewhere in the order.",
+          ),
+          p(
+            "Client gifting for an active account, new-hire welcome kits, and National Day or Eid gifting for a mid-size client list commonly sit in this range.",
+          ),
+        ],
+      },
+      {
+        heading: "What fits an AED 250 per-person budget?",
+        blocks: [
+          p(
+            "AED 250 sits inside the luxury band (roughly AED 150-500+) and typically buys a branded gift box or set: a premium notebook, a metal pen and a drinkware item packaged together, a leather-finish gift set, or a higher-capacity power bank paired with a second item. Packaging becomes part of the gift itself at this tier, a printed or rigid gift box, not a poly bag, since unboxing is part of what the budget is paying for.",
+          ),
+          p(
+            "This range is typical for VIP client gifting, senior leadership or board gifts, and year-end or National Day gifts for a business's top-tier accounts.",
+          ),
+        ],
+      },
+      {
+        heading: "What actually moves a gift's cost within its budget tier?",
+        blocks: [
+          ul([
+            "Branding method: single-colour screen printing costs less per unit than full-colour DTF, UV printing or embroidery, especially at lower quantities where set-up costs aren't spread across many units.",
+            "Order quantity: unit cost drops as quantity rises, so the same AED 50 item at 50 pieces and at 500 pieces can land at meaningfully different per-unit rates once quoted.",
+            "Local stock vs import: items held in local UAE stock generally quote faster and can cost less than an item that has to be imported and branded to order.",
+            "Packaging: a rigid or printed gift box adds cost on top of the product itself, which is usually the difference between a AED 100 item feeling like a AED 100 gift and feeling like a AED 150 one.",
+          ]),
+        ],
+      },
+      {
+        heading: "Does the AED 500 VAT gift threshold affect which tier to choose?",
+        blocks: [
+          p(
+            "It can, for repeat gifting to the same person. UAE VAT treats gifts to one recipient as a taxable \"deemed supply\" once their combined value passes AED 500 within a rolling 12 months, so a business giving the same client a National Day gift and a year-end gift both from the AED 250-300 tier can cross that threshold across the year even though neither gift looks expensive on its own. Budgeting each occasion against what's already been sent to that recipient that year avoids an unplanned VAT liability landing on finance later.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the minimum order quantity for a budget-tier corporate gift?",
+        a: "It depends on the product and branding method. Simpler single-colour items generally accept lower minimums than a multi-item gift set, and exact minimums are confirmed against the specific product once a quote is requested.",
+      },
+      {
+        q: "How does lead time change between budget tiers?",
+        a: "Simpler, locally stocked single-item gifts in the AED 25-50 range generally quote faster than a multi-item AED 250 gift set that needs assembly and box packaging, since the set has more components to source and brand before it can ship.",
+      },
+      {
+        q: "Which branding methods are available at the lower budget tiers?",
+        a: "Single-colour screen printing and basic pad printing are the most cost-effective at the AED 25-50 tier. Full-colour DTF, UV printing and embroidery are all available at every tier, but their per-unit set-up cost is easier to justify once the budget or the quantity is higher.",
+      },
+      {
+        q: "What's the single biggest driver of price within a budget tier?",
+        a: "Order quantity, followed by branding method. The same product briefed at a higher quantity or with a simpler one-colour branding method routinely comes in well under the same item briefed as a small, full-colour run.",
+      },
+      {
+        q: "Do you deliver budget-tier corporate gifts across the whole UAE and Qatar?",
+        a: "Yes. Delivery is arranged across the UAE and Qatar for any budget tier, and delivery to a specific site or multiple branch locations can be scoped at quote stage.",
+      },
+      {
+        q: "What artwork is needed to quote a budget-tier gift order?",
+        a: "A vector logo file (AI, EPS or high-resolution PDF) and the target quantity and budget per person are enough to get an accurate quote. A raster logo (JPEG or PNG) can usually be redrawn, though this can add a small design step before production.",
+      },
+      {
+        q: "Can different budget tiers be mixed in the same order, for example VIP clients at AED 250 and general staff at AED 50?",
+        a: "Yes. Tiered gifting, a higher-value gift for VIP clients or leadership and a lower-value item for general staff or attendees, is a common way to brief a single order and is handled as one project with separate line items.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
