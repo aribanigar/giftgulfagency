@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { sections, markets } from "@/lib/site-data";
 import { getSettings } from "@/lib/settings";
@@ -76,13 +77,8 @@ export async function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex flex-col leading-none">
-              <span className="font-heading text-xl font-bold tracking-tight text-zinc-900">
-                Gifts Gulf
-              </span>
-              <span className="mt-0.5 text-[10px] font-medium tracking-[0.2em] text-green-700">
-                Media &amp; Advertising
-              </span>
+            <Link href="/" className="inline-flex items-center" aria-label="Gifts Gulf Advertising, home">
+              <Image src="/logo.png" alt="Gifts Gulf Advertising" width={1516} height={364} className="h-11 w-auto" />
             </Link>
             <p className="mt-4 max-w-[30ch] text-sm text-zinc-600">
               Every brand touchpoint, one partner. Printing, signages,
