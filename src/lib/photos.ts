@@ -185,4 +185,6 @@ export const blogPhotoIds: Record<string, string> = {
   "restaurant-mall-kiosk-guide": "events-stand",
   "acrylic-display-stands-guide": "signage-acrylic",
   "painting-carpentry-fitout-guide": "sheikh-zayed-road",
+  "vat-corporate-gifts-printing-uae": "blog-seo-services",
+  "national-day-decoration-signage-dubai": "signage-illuminated",
 };

@@ -25,6 +25,7 @@ import {
   Megaphone,
   Car,
   Camera,
+  UtensilsCrossed,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -1027,6 +1028,58 @@ export const products: Product[] = [
       {
         q: "Can the photo booth frame or backdrop be branded?",
         a: "Yes. Photo booth frames and backdrops are branded with a logo or campaign design, consistent with the rest of an event's branding.",
+      },
+    ],
+  },
+  {
+    slug: "restaurant-fit-out-dubai",
+    name: "Restaurant Fit-Out",
+    parentSection: "fit-out",
+    icon: UtensilsCrossed,
+    primaryKeyword: "restaurant fit out dubai",
+    short: "Turnkey café and restaurant fit-out across the UAE, from kitchen MEP and joinery to Food Control-ready handover.",
+    metaDescription:
+      "Restaurant and café fit-out in the UAE: kitchen MEP, joinery and Food Control approvals, delivered as one turnkey contract.",
+    definition:
+      "Restaurant fit-out covers the build-out of a café, casual-dining or fine-dining unit from shell-and-core handover to a trading-ready space: kitchen extraction, gas and drainage coordinated with the equipment supplier, front-of-house joinery and counters, flooring, ceiling and lighting, and the Food Control and civil defence documentation a restaurant needs before it can open. Cost and timeline both scale with concept, since a quick-service café is a different build to a full exhaust-hooded kitchen for fine dining, and the fit-out plan is priced and sequenced around which one is being built.",
+    options: [
+      "Kitchen MEP: extraction, gas & drainage coordination",
+      "Front-of-house design & joinery",
+      "Bar, counter & display build",
+      "Flooring, ceiling & lighting",
+      "Furniture, fixtures & branding (FF&E)",
+      "Food Control & civil defence documentation support",
+    ],
+    quickFacts: [
+      { label: "Project types", value: "Café/QSR, casual dining, fine dining" },
+      { label: "Typical cost", value: "AED 400-1,800+ per sq ft, by concept" },
+      { label: "Typical timeline", value: "3-5 weeks (café) to 12-16+ weeks (fine dining)" },
+      { label: "Service", value: "Design, contracting, MEP and handover as one contract" },
+    ],
+    faqs: [
+      {
+        q: "How much does a restaurant fit-out cost in Dubai?",
+        a: "Cost typically runs from around AED 400-700 per sq ft for a café or quick-service unit, AED 700-1,200 per sq ft for casual dining, and AED 1,200-1,800 or more per sq ft for fine dining, driven mainly by kitchen equipment scope, extraction and joinery finish level. A 3,000 sq ft restaurant commonly lands between AED 2-4.5 million depending on finishes and imported materials.",
+      },
+      {
+        q: "How long does a restaurant fit-out take?",
+        a: "A small café or coffee kiosk can be ready in 3-5 weeks. A full casual-dining or fine-dining fit-out with a commercial kitchen typically runs 12-16 weeks or more, largely set by how quickly Food Control, civil defence and landlord approvals clear rather than by the construction itself.",
+      },
+      {
+        q: "Do you handle the kitchen and MEP work, or only the interior finish?",
+        a: "Kitchen extraction, gas and drainage are coordinated directly with the kitchen equipment supplier as part of the fit-out, alongside the interior finish, joinery and FF&E, so the two aren't planned as separate projects that clash on-site.",
+      },
+      {
+        q: "What approvals does a restaurant need before opening in the UAE?",
+        a: "Food Control or health authority approval, civil defence sign-off and a municipality building permit are the standard approvals, on top of the trade licence, and the exact route and sequence vary by emirate and by mall or landlord. These are confirmed at brief stage for the specific site.",
+      },
+      {
+        q: "Can restaurant fit-out be combined with exterior signage and branding?",
+        a: "Yes. Storefront signage and interior fit-out are commonly briefed together so a restaurant's exterior sign and its interior finish are designed and installed as one project rather than two.",
+      },
+      {
+        q: "Do you fit out cafés as well as full-service restaurants?",
+        a: "Yes. Café and quick-service fit-outs are handled alongside full casual-dining and fine-dining projects, each scoped to its own kitchen and seating requirements.",
       },
     ],
   },

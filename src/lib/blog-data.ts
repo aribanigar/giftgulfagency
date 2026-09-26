@@ -4126,6 +4126,193 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "vat-corporate-gifts-printing-uae",
+    title: "VAT on Corporate Gifts and Printing in the UAE",
+    metaDescription:
+      "UAE VAT on corporate gifts and printing: the 5% rate, the AED 500 gift threshold, and when a full tax invoice is required.",
+    category: "Procurement",
+    excerpt:
+      "The 5% rate, the AED 500 per-recipient gift threshold, and what has to be on the invoice for a bulk order to clear finance.",
+    photoId: "vat-corporate-gifts-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "UAE VAT on corporate gifts and printing sits at the standard 5% rate. Gifts to the same person are excluded from the deemed-supply rule only if their total value stays under AED 500 over a rolling 12 months; go over that, and output VAT is due even though no cash changed hands. Printing and signage invoices follow standard VAT rules, with a full tax invoice required once a VAT-registered customer's order exceeds AED 10,000.",
+    sections: [
+      {
+        heading: "What VAT rate applies to corporate gifts and printing in the UAE?",
+        blocks: [
+          p(
+            "The standard UAE VAT rate is 5%, confirmed for 2026 with no change to the rate itself, and it applies to almost everything a procurement or admin team buys for a gifting or print campaign: mugs, apparel, bags, banners, signage and packaging all sit under the standard rate rather than a zero-rated or exempt category.",
+          ),
+        ],
+      },
+      {
+        heading: "When do corporate gifts trigger a VAT deemed supply?",
+        blocks: [
+          p(
+            "Free gifts don't normally carry VAT, since no payment changes hands, but the Federal Tax Authority treats a gift as a \"deemed supply\" once its value crosses a threshold, and deemed supplies are taxed as if they'd been sold at market value. The exception that keeps most corporate gifting out of scope: gifts to the same recipient are excluded from deemed supply if their total value doesn't exceed AED 500 within a rolling 12-month period.",
+          ),
+          p(
+            "Example: a branded gift set worth AED 475 given to a client once in the year stays under the exemption. The same client receiving a National Day gift and a year-end gift that together total AED 620 in the same 12 months crosses it, and the business owes output VAT on the full value, not just the amount over AED 500.",
+          ),
+        ],
+      },
+      {
+        heading: "Does printing and signage work carry VAT the same way as gift items?",
+        blocks: [
+          p(
+            "Yes. Printing, signage fabrication and packaging are standard-rated supplies like any other service, with VAT charged on the invoice value and recoverable as input VAT by a VAT-registered business, provided the printed material is used for a taxable business purpose, marketing collateral, branded packaging, signage, rather than personal use.",
+          ),
+        ],
+      },
+      {
+        heading: "What has to be on the invoice for a bulk gifting or print order?",
+        blocks: [
+          p(
+            "A simplified tax invoice is enough when the recipient isn't VAT-registered, or when a VAT-registered recipient's order stays at or under AED 10,000 including VAT. Once an order to a VAT-registered business goes over AED 10,000, a full tax invoice is required, showing both parties' names and addresses, both Tax Registration Numbers where applicable, a sequential invoice number, the 5% VAT amount broken out separately from the net value, and a description specific enough to identify what was supplied.",
+          ),
+        ],
+      },
+      {
+        heading: "How should this be planned into a gifting or print campaign budget?",
+        blocks: [
+          p(
+            "Two numbers matter at the budgeting stage: the 5% VAT that sits on top of every quoted price, and whether the per-recipient gift value for the campaign stays under AED 500 across the year if National Day, Eid and year-end gifts are all going to the same client list. A campaign that spreads three separate gifts to the same contact can cross that threshold even if no single gift looks expensive on its own, so it's worth checking against what's already been sent that year, not just the current order.",
+          ),
+        ],
+      },
+      {
+        heading: "Does the same VAT treatment apply to orders in Qatar?",
+        blocks: [
+          p(
+            "No, not yet. Qatar has not implemented VAT as of late 2026, so Qatar-based orders for corporate gifts, printing and signage carry no VAT charge, and none of the AED 500 deemed-supply logic applies there. Qatar has approved draft e-invoicing legislation, generally the groundwork regional authorities put in place before a VAT launch, so this is worth rechecking before assuming it stays this way through 2027.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is VAT charged on corporate gifts in the UAE?",
+        a: "Not directly, since no payment is exchanged, but a gift can be treated as a taxable \"deemed supply\" once its value to a single recipient exceeds AED 500 within a rolling 12-month period, in which case output VAT is due on its value.",
+      },
+      {
+        q: "What is the AED 500 corporate gift threshold?",
+        a: "It's the total value of gifts one recipient can receive from the same business within 12 months before VAT applies as a deemed supply. Below AED 500 total per recipient per year, the gift is excluded from VAT; at or above it, the full value becomes taxable, not just the excess.",
+      },
+      {
+        q: "Can a business reclaim VAT paid on branded merchandise or printing?",
+        a: "Yes, provided the business is VAT-registered and the merchandise or print work is used for a genuine business purpose. VAT on the purchase can generally be recovered as input VAT against the business's own VAT return, in line with standard FTA input tax rules.",
+      },
+      {
+        q: "Do I need a full tax invoice for every printing or gift order?",
+        a: "Only once the order value to a VAT-registered customer exceeds AED 10,000 including VAT. Below that, or when the recipient isn't VAT-registered, a simplified tax invoice showing the supplier's TRN, invoice date and total VAT is sufficient.",
+      },
+      {
+        q: "Does VAT apply if corporate gifts are imported from outside the UAE?",
+        a: "Yes. Import VAT applies at the standard rate when gift items are brought into the UAE from abroad, separately from the deemed-supply rules that apply once the item is gifted domestically.",
+      },
+      {
+        q: "Is VAT charged on corporate gifts and printing orders in Qatar?",
+        a: "Not currently. Qatar has not implemented VAT as of 2026, so no VAT applies to gifts, printing or signage orders delivered there, unlike in the UAE where the 5% rate and AED 500 gift threshold apply.",
+      },
+      {
+        q: "Does Gifts Gulf provide VAT invoices for corporate orders?",
+        a: "Yes. A standard VAT invoice, itemised at the 5% rate with a full tax invoice for orders over the AED 10,000 threshold, is issued for corporate gifting, printing and signage orders.",
+      },
+    ],
+  },
+
+  {
+    slug: "national-day-decoration-signage-dubai",
+    title: "UAE National Day Decoration and Signage for Offices and Storefronts",
+    metaDescription:
+      "UAE National Day decoration and signage for 2026: flags, banners, illuminated signs and window film, and when to order for 2 December.",
+    category: "Seasonal",
+    excerpt:
+      "Flags, banners, illuminated signage and window film for 2 December, and the order-by date that keeps a storefront from scrambling in late November.",
+    photoId: "national-day-decoration-signage-dubai",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "signages",
+    intro:
+      "UAE National Day falls on Wednesday, 2 December 2026, with Qatar National Day following on 18 December. Storefront and office decoration for the day runs on printing and signage lead times, not party-supply stock, so flags, banners, illuminated signage and window film need to be briefed by early-to-mid November to avoid the capacity crunch that hits the trade in the final two weeks before the date.",
+    sections: [
+      {
+        heading: "When should National Day decoration and signage be ordered?",
+        blocks: [
+          p(
+            "UAE National Day (2 December 2026, a Wednesday) and Qatar National Day (18 December 2026, a Friday) both draw on the same printing and fabrication capacity that every other business in the market is booking at once. Corporate buyers ordering illuminated signage, large-format banners or window film should brief the job 4 to 6 weeks ahead, by early-to-mid November for the UAE date, since production and, for illuminated pieces, any approval steps need that runway.",
+          ),
+        ],
+      },
+      {
+        heading: "What decoration and signage options work for a retail storefront?",
+        blocks: [
+          ul([
+            "Illuminated signage in national colours: LED-lit acrylic or lightbox faces re-skinned for the season, visible after dark.",
+            "Large-format PVC banners across a storefront or mall unit frontage.",
+            "One-way vision window film in flag colours, printed to cover a full shopfront glass panel.",
+            "Flag bunting and hand-held flags for counters, queues and giveaways.",
+            "Static cling window stickers for a short campaign that comes down cleanly after the holiday.",
+          ]),
+        ],
+      },
+      {
+        heading: "What suits an office or corporate lobby better than a storefront treatment?",
+        blocks: [
+          p(
+            "An office doesn't need the same visibility-from-the-road treatment as a shopfront. A lobby or reception area is more commonly dressed with a printed banner or backdrop at the entrance, desk and meeting-room flag accents, and sometimes a temporary vinyl wall graphic, rather than illuminated exterior signage, since the goal is an internal, photograph-ready moment for staff and visitors rather than street-level branding.",
+          ),
+        ],
+      },
+      {
+        heading: "Does Qatar National Day need separate planning from the UAE date?",
+        blocks: [
+          p(
+            "Yes, on timing and currency, if not on the product range. Qatar National Day (18 December) lands over two weeks after the UAE's, so Doha-based orders have a slightly longer runway from today, but the same 4-to-6-week briefing rule applies, priced and invoiced in QAR rather than AED. The decoration types, flags, banners, illuminated signage and window film, carry across both markets.",
+          ),
+        ],
+      },
+      {
+        heading: "What approvals apply to temporary National Day signage?",
+        blocks: [
+          p(
+            "Temporary banners and window treatments generally still fall under the same municipal and mall-landlord sign-off that applies to permanent signage, though authorities in both the UAE and Qatar typically allow a lighter, faster process for a short, dated campaign than for a permanent installation. A mall or tower landlord's own rules on size and takedown date are worth confirming before production starts, since they vary by property.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is UAE National Day in 2026?",
+        a: "Wednesday, 2 December 2026, marking the UAE's 55th National Day, with 2-3 December observed as the public holiday.",
+      },
+      {
+        q: "When is Qatar National Day in 2026?",
+        a: "Friday, 18 December 2026, marking Qatar's national unification day.",
+      },
+      {
+        q: "How far ahead should storefront decoration be ordered for National Day?",
+        a: "4 to 6 weeks ahead is a safe margin, which for the UAE's 2 December date means briefing by early-to-mid November, since signage and large-format print capacity across the market tightens sharply in the final two weeks before the holiday.",
+      },
+      {
+        q: "Can illuminated signage be temporarily re-skinned for National Day, or does it need a new sign?",
+        a: "An existing illuminated sign can often be re-faced or overlaid for the season rather than rebuilt, which is faster and cheaper than a new installation; whether that's possible depends on the existing sign's construction and is confirmed at brief stage.",
+      },
+      {
+        q: "Do National Day banners and window film need municipality approval?",
+        a: "Temporary signage generally still needs sign-off from the relevant municipality or mall landlord, though the process for a short, dated campaign is typically quicker than for a permanent sign. Confirming the specific property's rules before production avoids a late removal notice.",
+      },
+      {
+        q: "Is National Day decoration priced differently for offices versus storefronts?",
+        a: "Yes, mainly because the product mix differs: an office lobby typically needs a banner, backdrop and flag accents, while a storefront often adds illuminated signage and full window film, which carries a higher production cost than print-only decoration.",
+      },
+    ],
+  },
   {
     slug: "wooden-backdrops-guide",
     title: "Wooden backdrops vs fabric and PVC: when a built structure is the right call",
