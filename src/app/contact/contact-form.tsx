@@ -8,7 +8,7 @@ import { submitContactAction, type ContactResult } from "./actions";
 const initialState: ContactResult | null = null;
 
 const inputClass =
-  "h-11 w-full rounded-[var(--radius-md)] border border-zinc-300 bg-white px-3 text-sm text-zinc-900 outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600";
+  "h-12 w-full border border-ink/20 bg-white px-4 text-[15px] text-ink outline-none transition-colors focus:border-brand focus:ring-1 focus:ring-brand";
 
 const cities = [
   "Dubai",
@@ -67,7 +67,7 @@ function Field({
 function Group({ title, children }: { title: string; children: ReactNode }) {
   return (
     <fieldset className="flex flex-col gap-5">
-      <legend className="mb-1 font-heading text-base font-semibold text-zinc-900">
+      <legend className="eyebrow mb-2">
         {title}
       </legend>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">{children}</div>
@@ -190,7 +190,7 @@ export function ContactForm() {
           rows={5}
           required
           minLength={10}
-          className="resize-none rounded-[var(--radius-md)] border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+          className="resize-none border border-ink/20 bg-white px-4 py-3 text-[15px] text-ink outline-none transition-colors focus:border-brand focus:ring-1 focus:ring-brand"
         />
       </Field>
 
@@ -203,7 +203,7 @@ export function ContactForm() {
         <p role="alert" className="text-sm text-red-600">{state.error}</p>
       ) : null}
 
-      <Button type="submit" size="lg" className="self-start" disabled={pending}>
+      <Button type="submit" size="lg" className="h-14 self-start px-10 text-base" disabled={pending}>
         {pending ? "Sending…" : "Request My Quote"}
       </Button>
     </form>
