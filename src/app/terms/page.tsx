@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { getSettings } from "@/lib/settings";
+import { PageHero } from "@/components/editorial";
 
 export const metadata: Metadata = {
   title: "Terms | Gifts Gulf Advertising",
@@ -13,23 +14,27 @@ export default async function TermsPage() {
   const settings = await getSettings();
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
-      <h1 className="font-heading text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-        Terms of Use
-      </h1>
-      <p className="mt-3 text-sm text-zinc-500">Last updated: September 2026</p>
+    <div>
+      <PageHero
+        size="md"
+        crumbs={[{ name: "Home", href: "/" }, { name: "Terms" }]}
+        eyebrow="Last updated: September 2026"
+        title="Terms of Use"
+      />
+      <div className="bg-white py-20 sm:py-28">
+      <div className="mx-auto w-full max-w-3xl px-5 sm:px-8">
 
-      <div className="mt-8 flex flex-col gap-6 text-sm leading-relaxed text-zinc-700 sm:text-base">
+      <div className="flex flex-col gap-10 text-[17px] leading-[1.75] text-ink/75">
         <p>
           These terms cover use of this website, {siteConfig.url}. Using
           this site means accepting the terms below.
         </p>
 
         <section>
-          <h2 className="font-heading text-lg font-semibold text-zinc-900">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Website content
           </h2>
-          <p className="mt-2">
+          <p className="mt-3">
             The content on this site, including text, photography and
             design, describes the services {siteConfig.name} offers across
             printing, signage, events &amp; exhibitions, packaging, gift
@@ -41,10 +46,10 @@ export default async function TermsPage() {
         </section>
 
         <section>
-          <h2 className="font-heading text-lg font-semibold text-zinc-900">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Enquiries and quotes
           </h2>
-          <p className="mt-2">
+          <p className="mt-3">
             Submitting the contact form or requesting a quote does not
             create a binding order. A project is confirmed once both sides
             agree on scope, pricing and timeline directly.
@@ -52,10 +57,10 @@ export default async function TermsPage() {
         </section>
 
         <section>
-          <h2 className="font-heading text-lg font-semibold text-zinc-900">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Intellectual property
           </h2>
-          <p className="mt-2">
+          <p className="mt-3">
             The design, photography and written content on this site
             belong to {siteConfig.name} unless otherwise credited, and
             aren&apos;t to be reproduced without permission.
@@ -63,10 +68,10 @@ export default async function TermsPage() {
         </section>
 
         <section>
-          <h2 className="font-heading text-lg font-semibold text-zinc-900">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Acceptable use
           </h2>
-          <p className="mt-2">
+          <p className="mt-3">
             This site shouldn&apos;t be used to submit false enquiries,
             attempt to disrupt the site, or access it in a way not intended
             by its normal design.
@@ -74,20 +79,22 @@ export default async function TermsPage() {
         </section>
 
         <section>
-          <h2 className="font-heading text-lg font-semibold text-zinc-900">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink">
             Questions
           </h2>
-          <p className="mt-2">
+          <p className="mt-3">
             For any question about these terms, contact{" "}
             <a
               href={`mailto:${settings.contactEmail}`}
-              className="text-green-700 hover:underline"
+              className="text-brand underline underline-offset-4"
             >
               {settings.contactEmail}
             </a>
             .
           </p>
         </section>
+      </div>
+      </div>
       </div>
     </div>
   );
