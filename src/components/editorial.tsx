@@ -75,7 +75,7 @@ export function PageHero({
           <div className="page-hero-shade absolute inset-0" />
         </>
       ) : null}
-      <Container className="relative pb-14 pt-36 sm:pb-20 sm:pt-44">
+      <Container className={cn("relative pb-14 pt-36 sm:pb-20 sm:pt-44", hasPhoto && "hero-text-shadow")}>
         {crumbs && crumbs.length ? (
           <nav aria-label="Breadcrumb" className="mb-8 text-xs text-white/60">
             {crumbs.map((c, i) => (

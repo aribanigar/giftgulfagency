@@ -306,11 +306,9 @@ export default async function Home() {
       {/* FAQ (AEO) */}
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <SectionIntro eyebrow="FAQ" title={<>Questions,<br />answered</>} size="md" />
-            </div>
-            <div className="lg:col-span-8">
+          <SectionIntro eyebrow="FAQ" title="Questions, answered" size="md" />
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 lg:col-start-5">
               <FaqAccordion faqs={siteFaqs} />
             </div>
           </div>
