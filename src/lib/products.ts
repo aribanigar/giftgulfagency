@@ -23,6 +23,8 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Car,
+  Camera,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +951,82 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "vehicle-branding",
+    name: "Vehicle Branding",
+    parentSection: "printing",
+    icon: Car,
+    primaryKeyword: "vehicle branding dubai",
+    short: "Full wraps, partial decals and fleet branding, fitted in-house for cars, vans and trucks.",
+    metaDescription:
+      "Full and partial vehicle wraps, decals and fleet branding, printed and fitted in-house across the UAE and Qatar.",
+    definition:
+      "Vehicle branding covers full-body wraps, partial decals and fleet-wide branding for cars, vans and trucks, using vinyl rated for outdoor conditions, printed and fitted by the same team rather than outsourced to a separate wrap installer.",
+    options: [
+      "Full vehicle wraps",
+      "Partial wraps & door decals",
+      "Fleet branding across multiple vehicles",
+      "Window & rear-glass graphics",
+      "Vinyl rated for outdoor heat and UV exposure",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Full wraps, partial decals, fleet branding" },
+      { label: "Materials", value: "Cast or calendered vinyl, rated for UAE and Qatar outdoor conditions" },
+      { label: "Best for", value: "Single vehicles to full delivery or sales fleets" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between a full wrap and a partial wrap?",
+        a: "A full wrap covers the entire vehicle body for maximum brand visibility. A partial wrap covers specific panels, such as doors and the rear, at a lower cost, and suits a lighter branding need or a tighter budget.",
+      },
+      {
+        q: "Do you brand a full fleet of vehicles, or only single cars?",
+        a: "Both. Single-vehicle branding and full fleet branding across delivery vans, sales cars or trucks are handled by the same team, with consistent placement and colours across every vehicle.",
+      },
+      {
+        q: "Is vehicle wrap vinyl durable enough for daily use in the Gulf?",
+        a: "Vinyl is selected for outdoor heat and UV exposure, which is a standard consideration for wraps that stay on a vehicle daily rather than for a single event.",
+      },
+    ],
+  },
+  {
+    slug: "photo-booths-digital-kiosks",
+    name: "Photo Booths & Digital Kiosks",
+    parentSection: "events-exhibitions",
+    icon: Camera,
+    primaryKeyword: "photo booths for rent",
+    short: "Photo booth rental and touch-screen digital kiosks for events, activations and malls.",
+    metaDescription:
+      "Photo booth rental and touch-screen digital kiosk supply for events, activations and malls across the UAE and Qatar.",
+    definition:
+      "Photo booths and digital kiosks cover standalone photo booth rental (including Instagram-style social booths) and touch-screen digital kiosks, supplied either for a single event or as part of a shell scheme exhibition booth.",
+    options: [
+      "Photo booth rental",
+      "Instagram-style social photo booths",
+      "Touch-screen digital kiosks",
+      "Shell scheme booth add-ons",
+      "Branded photo booth frames & backdrops",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Photo booth rental, touch-screen kiosks, shell scheme add-ons" },
+      { label: "Best for", value: "Malls, activations, product launches, exhibition booths" },
+      { label: "Service", value: "Delivery, setup and on-site operation available" },
+    ],
+    faqs: [
+      {
+        q: "Can a photo booth be rented for a single-day event?",
+        a: "Yes. Photo booth rental is available for single-day events as well as multi-day activations and mall installations.",
+      },
+      {
+        q: "Do you supply touch-screen kiosks for exhibition booths?",
+        a: "Yes. Touch-screen digital kiosks are supplied as standalone units or built into a shell scheme or custom exhibition booth.",
+      },
+      {
+        q: "Can the photo booth frame or backdrop be branded?",
+        a: "Yes. Photo booth frames and backdrops are branded with a logo or campaign design, consistent with the rest of an event's branding.",
       },
     ],
   },
