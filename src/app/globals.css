@@ -19,7 +19,7 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --radius: 3px;
+  --radius: 0px;
 }
 
 .dark {
@@ -63,9 +63,18 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-sans: "Poppins", "Poppins Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Menlo", monospace;
-  --font-heading: "Poppins", "Poppins Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand palette: near-black ink, one dark surface, the logo green, and a
+     brighter green that stays legible as small text on the dark surface. */
+  --color-ink: #0f0f0f;
+  --color-night: #111312;
+  --color-night-2: #1a1d1b;
+  --color-brand: #1f9d4f;
+  --color-brand-dark: #177a3d;
+  --color-brand-bright: #3ecb7c;
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -279,4 +288,57 @@
   text-shadow:
     0 2px 16px rgb(0 0 0 / 0.6),
     0 1px 4px rgb(0 0 0 / 0.5);
+}
+
+/* ---- Editorial type system (big uppercase display, iProspect-style) ---- */
+@layer components {
+  .display-xl,
+  .display-lg,
+  .display-md,
+  .display-sm {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+  .display-xl { font-size: clamp(2.75rem, 8.4vw, 7.5rem); }
+  .display-lg { font-size: clamp(2.4rem, 6.2vw, 5.5rem); }
+  .display-md { font-size: clamp(2rem, 4.4vw, 3.75rem); line-height: 1; }
+  .display-sm { font-size: clamp(1.5rem, 2.6vw, 2.25rem); line-height: 1.05; }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+  }
+  .on-dark .eyebrow,
+  .eyebrow-bright { color: var(--color-brand-bright); }
+
+  /* Underlined text link with an arrow, the site's primary CTA style. */
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid currentColor;
+    font-weight: 500;
+    transition: gap 0.2s ease, color 0.2s ease;
+  }
+  .link-arrow:hover { gap: 0.85rem; color: var(--color-brand); }
+  .on-dark .link-arrow:hover { color: var(--color-brand-bright); }
+
+  .hairline { border-color: rgb(15 15 15 / 0.14); }
+  .on-dark .hairline { border-color: rgb(255 255 255 / 0.16); }
+}
+
+/* Page hero scrim: darkens the top edge for the overlaid header and the
+   lower half where the headline sits, leaving the middle of the photo clear. */
+.page-hero-shade {
+  background:
+    linear-gradient(180deg, rgb(10 11 11 / 0.55) 0%, rgb(10 11 11 / 0.1) 22%, rgb(10 11 11 / 0.35) 55%, rgb(10 11 11 / 0.9) 100%);
 }

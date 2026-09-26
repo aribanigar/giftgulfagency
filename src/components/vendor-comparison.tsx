@@ -1,5 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
-
 const benefits = [
   "The same artwork file used for the storefront sign carries through to the packaging and exhibition stand graphics, so brand colours match exactly everywhere",
   "A reorder on a sticker or box goes straight back to the original file with the same team, ready quickly",
@@ -12,16 +10,15 @@ const benefits = [
 
 export function ServiceBenefits() {
   return (
-    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {benefits.map((item) => (
-        <li
-          key={item}
-          className="flex items-start gap-3 rounded-[var(--radius-xl)] border border-zinc-200 bg-white p-5 text-sm leading-relaxed text-zinc-700"
-        >
-          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" strokeWidth={1.75} />
-          {item}
+    <ol className="hairline grid grid-cols-1 border-t md:grid-cols-2 md:gap-x-12">
+      {benefits.map((item, i) => (
+        <li key={item} className="hairline flex gap-6 border-b py-7">
+          <span className="w-7 shrink-0 font-heading text-sm font-bold text-brand">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span className="text-base leading-relaxed">{item}</span>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 }

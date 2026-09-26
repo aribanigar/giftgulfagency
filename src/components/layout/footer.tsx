@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { sections, markets } from "@/lib/site-data";
 import { getSettings } from "@/lib/settings";
 import { locations } from "@/lib/locations";
@@ -72,166 +73,156 @@ export async function Footer() {
   ].filter((s) => s.url);
   const socials = [...alwaysShownSocials, ...optionalSocials];
 
+  const colHead = "eyebrow eyebrow-bright mb-4";
+  const subLink = "inline-block py-1 text-sm text-white/55 transition-colors hover:text-white";
+
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex items-center" aria-label="Gifts Gulf Advertising, home">
-              <Image src="/logo.png" alt="Gifts Gulf Advertising" width={1516} height={364} className="h-11 w-auto" />
+    <footer className="on-dark bg-night text-white">
+      {/* Closing call to action, shown above every page's footer. */}
+      <div className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+        <p className="display-xl [text-wrap:wrap]">
+          <span className="block"><span className="text-brand-bright">Grow</span> your brand</span>
+          <span className="block">across the Gulf.</span>
+        </p>
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-6 lg:col-start-7">
+            <p className="text-lg leading-relaxed text-white/70">
+              Signage, print, an exhibition stand, packaging or a social
+              campaign. Tell us what you need and where, and we will come back
+              with a quote.
+            </p>
+            <Link href="/contact" className="link-arrow mt-8 text-xl">
+              Start the conversation <ArrowRight className="h-5 w-5" />
             </Link>
-            <p className="mt-4 max-w-[30ch] text-sm text-zinc-600">
-              Every brand touchpoint, one partner. Printing, signages,
-              events and gifting, across the UAE and Qatar.
-            </p>
-            <p className="mt-4 text-xs text-zinc-500">
-              {markets.join(" · ")}
-            </p>
-            <div className="mt-2 flex flex-col text-sm text-zinc-600">
-              <a href={`mailto:${settings.contactEmail}`} className="inline-block py-1.5 hover:text-green-700">
-                {settings.contactEmail}
-              </a>
-              <a href={telHref} className="inline-block py-1.5 hover:text-green-700">
-                {settings.contactPhone}
-              </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-8">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
+            <div className="col-span-2">
+              <Link href="/" className="inline-flex items-center" aria-label="Gifts Gulf Advertising, home">
+                <Image src="/logo-white.png" alt="Gifts Gulf Advertising" width={1516} height={358} className="h-11 w-auto" />
+              </Link>
+              <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+                Every brand touchpoint, one partner. Printing, signage, events,
+                packaging, gifting and social media across the UAE and Qatar.
+              </p>
+              <p className="mt-5 text-xs uppercase tracking-[0.08em] text-white/40">
+                {markets.join(" · ")}
+              </p>
+              <div className="mt-4 flex flex-col text-sm">
+                <a href={`mailto:${settings.contactEmail}`} className="py-1 text-white/80 hover:text-white">
+                  {settings.contactEmail}
+                </a>
+                <a href={telHref} className="py-1 text-white/80 hover:text-white">
+                  {settings.contactPhone}
+                </a>
+              </div>
+              {socials.length > 0 ? (
+                <div className="mt-6 flex gap-3">
+                  {socials.map(({ url, label, Icon }) =>
+                    url ? (
+                      <a
+                        key={label}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={label}
+                        className="block h-9 w-9 transition-transform hover:scale-110"
+                      >
+                        <Icon className="h-9 w-9" />
+                      </a>
+                    ) : (
+                      <span key={label} aria-label={`${label} (coming soon)`} className="block h-9 w-9 opacity-40 grayscale">
+                        <Icon className="h-9 w-9" />
+                      </span>
+                    ),
+                  )}
+                </div>
+              ) : null}
             </div>
-            {socials.length > 0 ? (
-              <div className="mt-5 flex gap-3">
-                {socials.map(({ url, label, Icon }) =>
-                  url ? (
-                    <a
-                      key={label}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={label}
-                      className="block h-9 w-9 transition-transform hover:scale-110"
-                    >
-                      <Icon className="h-9 w-9" />
-                    </a>
-                  ) : (
-                    <span
-                      key={label}
-                      aria-label={`${label} (coming soon)`}
-                      className="block h-9 w-9 opacity-40 grayscale"
-                    >
-                      <Icon className="h-9 w-9" />
-                    </span>
-                  ),
-                )}
+
+            <div>
+              <h3 className={colHead}>Services</h3>
+              <ul className="flex flex-col">
+                {sections.map((s) => (
+                  <li key={s.slug}>
+                    <Link href={`/${s.slug}`} className="inline-block py-1.5 text-[15px] text-white/80 hover:text-white">
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className={colHead}>Company</h3>
+              <ul className="flex flex-col">
+                {companyLinks.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="inline-block py-1.5 text-[15px] text-white/80 hover:text-white">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-white/10 pt-12 sm:grid-cols-3 lg:grid-cols-6">
+            <div>
+              <h4 className={colHead}>Locations</h4>
+              <ul className="flex flex-col">
+                {locations.map((l) => (
+                  <li key={l.slug}>
+                    <Link href={`/locations/${l.slug}`} className={subLink}>
+                      {l.city}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {productColumns.map(({ section, products }) => (
+              <div key={section.slug}>
+                <h4 className={colHead}>{section.name}</h4>
+                <ul className="flex flex-col">
+                  {products.map((p) => (
+                    <li key={p.slug}>
+                      <Link href={`/${p.slug}`} className={subLink}>
+                        {p.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {longTailGuides.length > 0 ? (
+              <div>
+                <h4 className={colHead}>Guides</h4>
+                <ul className="flex flex-col">
+                  {longTailGuides.map((post) => (
+                    <li key={post.slug}>
+                      <Link href={`/blog/${post.slug}`} className={subLink}>
+                        {post.title.split(":")[0]}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ) : null}
           </div>
 
-          <div>
-            <h3 className="font-heading text-sm font-semibold text-zinc-900">
-              Services
-            </h3>
-            <ul className="mt-2 flex flex-col">
-              {sections.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/${s.slug}`}
-                    className="inline-block py-1.5 text-sm text-zinc-600 hover:text-green-700"
-                  >
-                    {s.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-heading text-sm font-semibold text-zinc-900">
-              Company
-            </h3>
-            <ul className="mt-2 flex flex-col">
-              {companyLinks.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="inline-block py-1.5 text-sm text-zinc-600 hover:text-green-700"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-zinc-200 pt-10 sm:grid-cols-3 lg:grid-cols-6">
-          <div>
-            <h4 className="font-mono text-[11px] font-medium tracking-wide text-zinc-400">
-              Locations
-            </h4>
-            <ul className="mt-3 flex flex-col">
-              {locations.map((l) => (
-                <li key={l.slug}>
-                  <Link
-                    href={`/locations/${l.slug}`}
-                    className="inline-block py-1 text-xs text-zinc-500 hover:text-green-700"
-                  >
-                    {l.city}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {productColumns.map(({ section, products }) => (
-            <div key={section.slug}>
-              <h4 className="font-mono text-[11px] font-medium tracking-wide text-zinc-400">
-                {section.name}
-              </h4>
-              <ul className="mt-3 flex flex-col">
-                {products.map((p) => (
-                  <li key={p.slug}>
-                    <Link
-                      href={`/${p.slug}`}
-                      className="inline-block py-1 text-xs text-zinc-500 hover:text-green-700"
-                    >
-                      {p.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+            <p>&copy; {year} Gifts Gulf Advertising. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white">Terms</Link>
+              <a href="/sitemap.xml" className="hover:text-white">Sitemap</a>
             </div>
-          ))}
-
-          {longTailGuides.length > 0 ? (
-            <div>
-              <h4 className="font-mono text-[11px] font-medium tracking-wide text-zinc-400">
-                Guides
-              </h4>
-              <ul className="mt-3 flex flex-col">
-                {longTailGuides.map((post) => (
-                  <li key={post.slug}>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-block py-1 text-xs text-zinc-500 hover:text-green-700"
-                    >
-                      {post.title.split(":")[0]}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </div>
-
-        <div className="mt-10 flex flex-col gap-4 border-t border-zinc-200 pt-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {year} Gifts Gulf Advertising. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="inline-block py-1.5 hover:text-green-700">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="inline-block py-1.5 hover:text-green-700">
-              Terms
-            </Link>
-            <a href="/sitemap.xml" className="inline-block py-1.5 hover:text-green-700">
-              Sitemap
-            </a>
           </div>
         </div>
       </div>

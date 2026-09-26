@@ -9,7 +9,7 @@ export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-zinc-200 border-y border-zinc-200">
+    <div className="hairline divide-y divide-[rgb(15_15_15/0.14)] border-y [.on-dark_&]:divide-white/15">
       {faqs.map((faq, i) => {
         const open = openIndex === i;
         return (
@@ -18,14 +18,14 @@ export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
               type="button"
               onClick={() => setOpenIndex(open ? null : i)}
               aria-expanded={open}
-              className="flex w-full items-center justify-between gap-4 py-5 text-left"
+              className="group flex w-full items-center justify-between gap-6 py-6 text-left"
             >
-              <span className="font-heading text-base font-semibold text-zinc-900 sm:text-lg">
+              <span className="text-lg font-semibold tracking-tight transition-colors group-hover:text-brand sm:text-xl">
                 {faq.q}
               </span>
               <Plus
                 className={cn(
-                  "h-5 w-5 shrink-0 text-green-700 transition-transform duration-200",
+                  "h-6 w-6 shrink-0 text-brand transition-transform duration-300",
                   open && "rotate-45",
                 )}
               />
@@ -33,11 +33,11 @@ export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
             <div
               className={cn(
                 "grid overflow-hidden transition-all duration-200 ease-out",
-                open ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]",
+                open ? "grid-rows-[1fr] pb-7" : "grid-rows-[0fr]",
               )}
             >
               <div className="min-h-0">
-                <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base">
+                <p className="max-w-3xl text-base leading-relaxed opacity-70">
                   {faq.a}
                 </p>
               </div>

@@ -46,7 +46,7 @@ export function SectionVisual({ photos }: { photos: string[] }) {
       ))}
 
       {multi ? (
-        <div className="absolute right-1 top-2 z-10 flex sm:right-3">
+        <div className="absolute bottom-3 right-2 z-10 flex sm:bottom-5 sm:right-5">
           {photos.map((_, i) => (
             <button
               key={i}
