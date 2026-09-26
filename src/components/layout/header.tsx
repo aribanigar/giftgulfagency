@@ -12,24 +12,24 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6">
         <Link href="/" className="mr-6 flex shrink-0 items-center" aria-label="Gifts Gulf Advertising, home" onClick={() => setOpen(false)}>
           <Image src="/logo.png" alt="Gifts Gulf Advertising" width={1516} height={364} priority className="h-9 w-auto max-w-none shrink-0 sm:h-11" />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-700 transition-colors hover:text-green-700"
+              className="whitespace-nowrap text-sm font-medium text-zinc-700 transition-colors hover:text-green-700"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="ml-5 hidden shrink-0 xl:block">
           <Button asChild size="default">
             <Link href="/contact">Get a Quote</Link>
           </Button>
@@ -37,7 +37,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center text-zinc-900 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-zinc-900 xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -47,8 +47,8 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-zinc-200 bg-white lg:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4">
+        <div className="border-t border-zinc-200 bg-white xl:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
