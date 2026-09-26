@@ -1,19 +1,18 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/json-ld";
+import { ArrowLink, Container, FactGrid, HairlineLinks, PageHero, SectionIntro } from "@/components/editorial";
 import { getSection } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, productSchema, breadcrumbSchema } from "@/lib/schema";
 import { productsForSection, type Product } from "@/lib/products";
 
 export function ProductPage({ product }: { product: Product }) {
-  const Icon = product.icon;
   const section = getSection(product.parentSection);
   const related = productsForSection(product.parentSection).filter(
     (p) => p.slug !== product.slug,
   );
+  const lower = product.name.toLowerCase();
 
   return (
     <div>
@@ -29,134 +28,90 @@ export function ProductPage({ product }: { product: Product }) {
         ])}
       />
 
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-zinc-950">
-        <div className="section-hero-shade absolute inset-0" />
-        <div className="hero-text-shadow relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-300">
-            <Link href="/" className="hover:text-green-400">Home</Link>
-            <span className="mx-2 text-zinc-500">/</span>
+      <PageHero
+        crumbs={[
+          { name: "Home", href: "/" },
+          ...(section ? [{ name: section.name, href: `/${section.slug}` }] : []),
+          { name: product.name },
+        ]}
+        eyebrow={section ? section.name : "Products"}
+        title={product.name}
+        intro={<p>{product.short}</p>}
+        cta={{ href: "/contact", label: `Get a quote for ${lower}` }}
+      />
+
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
+            <p>{product.definition}</p>
+          </SectionIntro>
+          <div className="mt-16">
+            <FactGrid facts={product.quickFacts} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="on-dark bg-night py-24 text-white sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="Options" title="Choose what fits" size="md">
             {section ? (
-              <>
-                <Link href={`/${section.slug}`} className="hover:text-green-400">{section.name}</Link>
-                <span className="mx-2 text-zinc-500">/</span>
-              </>
+              <p>
+                Produced alongside the rest of our{" "}
+                <Link href={`/${section.slug}`} className="underline underline-offset-4 hover:text-brand-bright">
+                  {section.name.toLowerCase()}
+                </Link>{" "}
+                work, so it can be briefed together with a brand&apos;s other
+                printing, signage, packaging or gifting needs.
+              </p>
             ) : null}
-            <span className="text-white">{product.name}</span>
-          </nav>
-          <div className="mt-6 flex items-start gap-5">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-lg)] border border-white/20 bg-white/10 text-white backdrop-blur-sm">
-              <Icon className="h-7 w-7" strokeWidth={1.75} />
-            </div>
-            <h1 className="max-w-2xl font-heading text-3xl font-bold tracking-tight text-white sm:text-5xl">
-              {product.name}
-            </h1>
-          </div>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">{product.short}</p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Get a Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
+          </SectionIntro>
+          <ul className="hairline mt-14 grid grid-cols-1 border-t md:grid-cols-2 md:gap-x-12">
+            {product.options.map((option, i) => (
+              <li key={option} className="hairline flex gap-6 border-b py-6">
+                <span className="w-7 shrink-0 font-heading text-sm font-bold text-brand-bright">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-lg">{option}</span>
+              </li>
+            ))}
+          </ul>
+        </Container>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          What is {product.name.toLowerCase()}?
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600">
-          {product.definition}
-        </p>
-
-        <dl className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-lg)] border border-zinc-200 bg-zinc-200 sm:grid-cols-3">
-          {product.quickFacts.map((fact) => (
-            <div key={fact.label} className="bg-white p-4">
-              <dt className="font-mono text-[11px] tracking-wide text-zinc-400">{fact.label}</dt>
-              <dd className="mt-1 text-sm text-zinc-800">{fact.value}</dd>
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="FAQ" title="Questions, answered" size="md" />
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 lg:col-start-5">
+              <FaqAccordion faqs={product.faqs} />
             </div>
-          ))}
-        </dl>
-
-        <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          Options
-        </h2>
-        <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {product.options.map((option) => (
-            <li
-              key={option}
-              className="flex items-start gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 text-sm text-zinc-700"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
-                <Check className="h-4 w-4" strokeWidth={1.75} />
-              </span>
-              <span className="pt-1">{option}</span>
-            </li>
-          ))}
-        </ul>
-
-        {section ? (
-          <div className="mt-6 rounded-[var(--radius-lg)] border border-green-200 bg-green-50 p-5 text-sm leading-relaxed text-zinc-700">
-            <span className="font-semibold text-green-800">Part of {section.name}.</span>{" "}
-            {product.name} is produced alongside the rest of our{" "}
-            <Link href={`/${section.slug}`} className="font-medium text-green-700 underline underline-offset-2">
-              {section.name.toLowerCase()}
-            </Link>{" "}
-            work, so it can be briefed and delivered together with a brand&apos;s other printing,
-            signage, packaging or gifting needs.
           </div>
-        ) : null}
-      </section>
-
-      <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Frequently asked questions
-          </h2>
-          <div className="mt-8">
-            <FaqAccordion faqs={product.faqs} />
-          </div>
-        </div>
+        </Container>
       </section>
 
       {related.length > 0 ? (
-        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Other {section ? section.name.toLowerCase() : "products"}
-          </h2>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {related.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/${p.slug}`}
-                className="group rounded-[var(--radius-lg)] border border-zinc-200 p-5 transition-colors hover:border-green-600"
-              >
-                <h3 className="font-heading text-base font-semibold text-zinc-900">{p.name}</h3>
-                <p className="mt-1 text-sm text-zinc-600">{p.short}</p>
-              </Link>
-            ))}
-          </div>
+        <section className="bg-[#f3f4f2] py-24 sm:py-32">
+          <Container>
+            <SectionIntro
+              eyebrow="Explore"
+              title={`More ${section ? section.name.toLowerCase() : "products"}`}
+              size="md"
+            />
+            <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
+              <div className="lg:col-span-3">
+                {section ? (
+                  <ArrowLink href={`/${section.slug}`} className="text-lg">
+                    All {section.name.toLowerCase()}
+                  </ArrowLink>
+                ) : null}
+              </div>
+              <div className="lg:col-span-8 lg:col-start-5">
+                <HairlineLinks items={related.map((p) => ({ href: `/${p.slug}`, title: p.name, meta: p.short }))} />
+              </div>
+            </div>
+          </Container>
         </section>
       ) : null}
-
-      <section className="border-t border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-bold text-zinc-900 sm:text-3xl">
-            Ready to brief {product.name.toLowerCase()}?
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-zinc-600">
-            Tell us the quantity and timeline, and we&apos;ll follow up with next steps.
-          </p>
-          <div className="mt-7">
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Get a Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

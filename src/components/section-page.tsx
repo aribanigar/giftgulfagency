@@ -50,7 +50,7 @@ export function SectionPage({ section }: { section: Section }) {
       {/* Overview */}
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          <SectionIntro eyebrow="Overview" title={`What is ${lower}?`} size="md">
+          <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
             <p>{section.definition}</p>
           </SectionIntro>
           <div className="mt-16">
