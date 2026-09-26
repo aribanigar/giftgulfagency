@@ -26,6 +26,7 @@ import {
   Car,
   Camera,
   UtensilsCrossed,
+  Type,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -1080,6 +1081,58 @@ export const products: Product[] = [
       {
         q: "Do you fit out cafés as well as full-service restaurants?",
         a: "Yes. Café and quick-service fit-outs are handled alongside full casual-dining and fine-dining projects, each scoped to its own kitchen and seating requirements.",
+      },
+    ],
+  },
+  {
+    slug: "channel-letters-dubai",
+    name: "3D Channel Letters",
+    parentSection: "signages",
+    icon: Type,
+    primaryKeyword: "channel letters dubai",
+    short: "Illuminated 3D channel letters, fabricated in aluminium and acrylic and installed on storefronts across the UAE and Qatar.",
+    metaDescription:
+      "3D channel letters in Dubai and the UAE: aluminium and acrylic fabrication, front-lit or halo-lit, designed, built and installed as one project.",
+    definition:
+      "Channel letters are individually fabricated 3D letters built from aluminium returns with an acrylic face, the standard signage for retail and F&B storefronts and mall units because they read clearly day and night and can be cut to almost any typeface or logo shape. Front-lit letters carry LED modules inside the letter body so light shines through the face; halo-lit letters stay dark on the face while light spills out from behind onto the wall. UV-stabilised acrylic and an adequately IP-rated LED driver are what decide whether a set of letters holds its colour through Gulf summers or yellows and fails within a couple of years.",
+    options: [
+      "Front-lit channel letters (LED-illuminated face)",
+      "Halo-lit (back-lit) channel letters",
+      "Non-illuminated dimensional letters",
+      "Aluminium return & acrylic face fabrication",
+      "UV-stabilised acrylic for outdoor durability",
+      "Municipality & mall approval documentation support",
+    ],
+    quickFacts: [
+      { label: "Construction", value: "Aluminium returns with an acrylic face, LED-illuminated" },
+      { label: "Illumination options", value: "Front-lit, halo-lit, or non-illuminated" },
+      { label: "Best for", value: "Storefronts, mall units, building-top signage" },
+      { label: "Service", value: "Design, fabrication, approval support and installation" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between front-lit and halo-lit channel letters?",
+        a: "Front-lit letters have LEDs inside the letter body so light shines through the face, giving a bright, even glow, and are the more common, cost-effective option. Halo-lit letters stay dark on the face while light spills out from behind onto the wall, creating a soft glow around the letter shape, a look usually chosen for hotel and flagship retail frontages.",
+      },
+      {
+        q: "How long do channel letters last in UAE and Qatar heat?",
+        a: "A set built with UV-stabilised acrylic and a properly IP-rated LED driver typically holds its colour and function for 5 to 8 years or more, while lower-grade acrylic and unsealed electronics can visibly yellow or fail within 2 years of constant summer sun.",
+      },
+      {
+        q: "Do channel letters need municipality or mall approval?",
+        a: "Generally yes, for anything visible from a public road or a mall frontage. Requirements on size, brightness and setback vary by emirate and by mall or landlord, and are confirmed at brief stage for the specific site.",
+      },
+      {
+        q: "Can channel letters be produced non-illuminated?",
+        a: "Yes. Non-illuminated dimensional letters use the same aluminium-and-acrylic or solid metal fabrication without LED modules, suited to daytime-only businesses or locations with strong ambient lighting already.",
+      },
+      {
+        q: "How are channel letters sized for a specific storefront?",
+        a: "Letters are sized to the available fascia width and viewing distance from the road, then cut to a brand's exact typeface or logo shape rather than picked from a stock font set.",
+      },
+      {
+        q: "Can channel letters be installed alongside other signage on the same building?",
+        a: "Yes. Channel letters are commonly briefed together with wayfinding, window graphics or a monument sign at the same site so the full signage package is designed and installed as one project.",
       },
     ],
   },

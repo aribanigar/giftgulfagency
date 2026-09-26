@@ -187,4 +187,9 @@ export const blogPhotoIds: Record<string, string> = {
   "painting-carpentry-fitout-guide": "sheikh-zayed-road",
   "vat-corporate-gifts-printing-uae": "blog-seo-services",
   "national-day-decoration-signage-dubai": "signage-illuminated",
+  // No dedicated photography exists for an RFQ/procurement process or a
+  // bank-industry gifting scene either — reusing the closest honestly-
+  // related existing photo, same pattern as above.
+  "how-to-write-rfq-corporate-gifts-printing-uae": "blog-web-development",
+  "corporate-gifts-banks-financial-institutions-uae": "gift-pens",
 };

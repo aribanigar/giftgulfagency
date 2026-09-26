@@ -4582,6 +4582,185 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "how-to-write-rfq-corporate-gifts-printing-uae",
+    title: "How to Write an RFQ for Corporate Gifts and Printing in the UAE",
+    metaDescription:
+      "How to write an RFQ for corporate gifts and printing in the UAE: what to include, the LPO and proof-approval steps, and realistic lead times.",
+    category: "Procurement",
+    excerpt:
+      "What actually belongs in the RFQ, the LPO step that follows it, and the proof-approval stage most delivery-date slippage traces back to.",
+    photoId: "how-to-write-rfq-corporate-gifts-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "printing",
+    intro:
+      "A usable RFQ for corporate gifts or printing in the UAE states the item or job, exact quantity, branding method and placement, artwork status, and the delivery date, not just \"need a quote for mugs.\" That's the difference between a quote turned around the same day and a back-and-forth that costs a week. The LPO that follows confirms the price and terms in writing before production starts, and a proof-approval step sits between the LPO and the production run so nothing goes to press unapproved.",
+    sections: [
+      {
+        heading: "What has to be in an RFQ for it to get a fast, accurate quote?",
+        blocks: [
+          ul([
+            "Item or job description: the product, printing method, or signage/fit-out scope.",
+            "Exact quantity, or a realistic range if it isn't finalised yet.",
+            "Branding method and placement, if known: logo position, number of colours, engraving vs print.",
+            "Artwork status: vector file ready, needs a redraw, or design not started.",
+            "Delivery date and delivery address or site.",
+            "Budget range, if there is one, so options can be matched to it rather than quoted blind.",
+          ]),
+        ],
+      },
+      {
+        heading: "What is an LPO and why does production wait for it?",
+        blocks: [
+          p(
+            "A Local Purchase Order (LPO) is the buyer's written confirmation of the agreed price, quantity and terms, issued after a quote is accepted. Production on a bulk order doesn't start against a verbal or emailed \"go ahead\" alone, since materials and, for personalised or engraved items, production capacity are committed against a confirmed order. An LPO also becomes the paper trail an internal finance or audit process typically asks for, alongside the VAT invoice that follows.",
+          ),
+        ],
+      },
+      {
+        heading: "What happens at the proof-approval stage?",
+        blocks: [
+          p(
+            "Before a bulk run starts, a proof, a physical sample for items like mugs, apparel or engraved pieces, or a digital print-ready layout for banners, packaging and stationery, is sent for sign-off. This is the point to catch a wrong Pantone shade, a misspelled name on an award, or a logo sized wrong for the print area, before it's repeated across the full quantity rather than after. A signed-off proof is also what a supplier works from if a dispute comes up later about what was actually agreed.",
+          ),
+        ],
+      },
+      {
+        heading: "How does artwork readiness affect the quoted lead time?",
+        blocks: [
+          p(
+            "A lead time quoted against \"artwork ready\" assumes a usable vector file arrives on day one. If the only logo on hand is a low-resolution JPEG, a redraw gets added before production can start, which pushes the delivery date back by however long that redraw and its own approval round take. Flagging artwork status honestly in the RFQ, rather than assuming a logo file will simply work, is the single biggest lever on whether a quoted date holds.",
+          ),
+        ],
+      },
+      {
+        heading: "How far ahead should an RFQ be sent for a bulk or personalised order?",
+        blocks: [
+          p(
+            "For standard bulk items with straightforward branding, sending the RFQ 2 to 3 weeks ahead of the need date leaves room for a quote, an LPO, a proof round and production. Personalised, per-recipient items (engraved awards, individually named gifts) and peak periods (National Day, Ramadan, Eid, year-end) both compress available capacity, so those briefs are better sent 4 to 6 weeks out rather than 2 to 3.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the minimum information needed to get an accurate quote?",
+        a: "The item or job, exact or realistic quantity, and delivery date are the minimum. Branding method, placement and artwork status can follow, but leaving them out is the most common reason an initial quote comes back as a wide range rather than a firm number.",
+      },
+      {
+        q: "Is an LPO required for a small or one-off order?",
+        a: "It's less common to require one for a small, low-value order, but it's still good practice, since it gives both sides the same written record of what was agreed. Bulk and corporate orders generally do require one before production starts.",
+      },
+      {
+        q: "Who approves the proof before production starts?",
+        a: "Whoever briefed the order, or a designated approver on their team, since the proof is the last point to catch an error before it's repeated across the full quantity. Sign-off is best given by one named person rather than left open to a group with no clear final say.",
+      },
+      {
+        q: "Can an RFQ be sent without final artwork?",
+        a: "Yes. Flagging that artwork isn't ready yet, rather than leaving it out of the RFQ entirely, lets the quote and lead time account for a redraw or design step upfront instead of surfacing it as a delay later.",
+      },
+      {
+        q: "Does a signed proof delay the overall timeline?",
+        a: "It adds a short, planned step, not an open-ended delay, provided the approver reviews and signs off promptly. Most delays at this stage come from the proof sitting unreviewed rather than from the proof process itself.",
+      },
+      {
+        q: "What happens if the quantity in the RFQ changes after the quote is issued?",
+        a: "A revised quantity generally needs a revised quote and LPO, since unit pricing and lead time both scale with volume. Flagging a likely quantity range in the original RFQ reduces how often this happens.",
+      },
+    ],
+  },
+
+  {
+    slug: "corporate-gifts-banks-financial-institutions-uae",
+    title: "Corporate Gifting for Banks and Financial Institutions in the UAE",
+    metaDescription:
+      "Corporate gifting for UAE banks and financial institutions: staying inside internal gift policies, the AED 500 symbolic-gift line, and safe item choices.",
+    category: "Industry",
+    excerpt:
+      "Why banks and financial institutions gift differently, the AED 500 symbolic-gift line internal policies lean on, and item choices that stay inside it.",
+    photoId: "corporate-gifts-banks-financial-institutions-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Banks and financial institutions gift under tighter internal rules than most other industries, since gifts to or from a regulated entity sit under anti-bribery and conflict-of-interest policies as well as ordinary budget limits. Most internal gift policies in the UAE lean on the same AED 500 line the Federal Tax Authority treats as a symbolic, non-cash gift, so a corporate gifting brief for a bank client or a bank's own staff usually starts from that ceiling rather than from a fixed budget.",
+    sections: [
+      {
+        heading: "Why do banks and financial institutions have stricter gifting rules?",
+        blocks: [
+          p(
+            "Anti-bribery and conflict-of-interest policies apply to regulated financial institutions more directly than to most other industries, since a gift to a decision-maker at a bank can be read as an attempt to influence a lending, procurement or account decision. Internal compliance policies typically require gifts to be non-cash, given openly rather than privately, tied to a recognised occasion, and reported once they cross a set value, rather than left to individual discretion.",
+          ),
+        ],
+      },
+      {
+        heading: "What is the AED 500 line internal gift policies work from?",
+        blocks: [
+          p(
+            "AED 500 is the threshold UAE tax rules already use to define a \"symbolic\" business gift, below which it isn't treated as a taxable deemed supply (covered in the guide to VAT on corporate gifts and printing). Many internal corporate gift policies, banks included, lean on the same figure as their own reporting or approval threshold, so a gift built to stay under it usually clears both the tax treatment and the internal compliance check at once.",
+          ),
+        ],
+      },
+      {
+        heading: "What kinds of gifts suit a bank or financial institution?",
+        blocks: [
+          ul([
+            "Branded desk items and stationery: pens, notebooks and diaries, practical, low-key and easy to keep under a compliance threshold.",
+            "Drinkware: mugs, bottles and tumblers, a safe, visible everyday item.",
+            "Seasonal hampers timed to a recognised occasion, National Day, Ramadan or year-end, rather than an ordinary business day.",
+            "Branded tech accessories at the lower end of the category, USB drives or basic power banks, rather than premium electronics.",
+          ]),
+          p(
+            "What's generally avoided: cash or cash-equivalent vouchers, high-value personal items, and anything sized to a specific individual's known preferences rather than a standard gift line, since all three read as closer to an inducement than a courtesy.",
+          ),
+        ],
+      },
+      {
+        heading: "Does this apply to gifts between banks and their own staff, or only external clients?",
+        blocks: [
+          p(
+            "Both, though the sensitivity is usually higher for anything moving between a bank and an external party, a client, a vendor, a regulator-adjacent contact, than for internal staff recognition, which typically follows a standard HR gifting policy rather than a conflict-of-interest one. Either way, the same non-cash, openly-given, occasion-tied approach applies.",
+          ),
+        ],
+      },
+      {
+        heading: "How does this change the corporate gifting brief?",
+        blocks: [
+          p(
+            "A gifting brief for a bank or financial institution is usually worth flagging as compliance-sensitive at the outset. Per-recipient value and occasion matter more here than for a typical retail or hospitality client, and personalisation is best kept to the name-or-initials level rather than anything that reads as tailored to an individual's personal taste.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can a bank give cash or vouchers as a corporate gift in the UAE?",
+        a: "It's generally avoided under standard internal gift policies, since cash and cash-equivalent vouchers read closer to an inducement than a courtesy and are harder to justify against anti-bribery rules than a branded, non-cash item.",
+      },
+      {
+        q: "What's the safest gift value for a bank client relationship gift?",
+        a: "Staying under AED 500 per recipient keeps a gift under the same symbolic-gift line UAE tax rules use, which most internal bank compliance policies also lean on for their own approval or reporting threshold.",
+      },
+      {
+        q: "Do bank staff need to report gifts they receive?",
+        a: "Under most internal gift policies, yes, once a gift's value crosses a set threshold, staff are expected to declare it to the appropriate department rather than leaving it undisclosed.",
+      },
+      {
+        q: "Are gifts to a bank's own employees treated the same as gifts to external clients?",
+        a: "Not usually. Internal staff recognition typically follows a standard HR gifting policy, while gifts involving an external party, a client, vendor or regulator-adjacent contact, sit under the stricter conflict-of-interest rules.",
+      },
+      {
+        q: "Can a bank gift be personalised with a client's name?",
+        a: "Yes. Name-or-initials personalisation is standard and low-risk. Personalisation that reflects a specific individual's personal taste or lifestyle is generally avoided, since it reads as more targeted than a standard relationship gift.",
+      },
+      {
+        q: "Is a VAT invoice still needed for a compliance-conscious bank gift order?",
+        a: "Yes. The same 5% VAT rate and AED 500 deemed-supply threshold apply regardless of the recipient's industry, so a proper invoice is issued the same way as for any other corporate gifting order.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
