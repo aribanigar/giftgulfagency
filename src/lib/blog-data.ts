@@ -3833,6 +3833,299 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "artwork-vector-file-guide",
+    title: "Preparing artwork and vector files for printing: a practical guide",
+    metaDescription:
+      "What print-ready artwork actually means: vector vs raster, CMYK vs RGB, resolution, bleed and fonts, and what happens when a logo file isn't usable.",
+    category: "Printing",
+    excerpt:
+      "Vector vs raster, CMYK vs RGB, bleed and fonts, and what to do when the only logo file on hand is a low-res JPEG.",
+    photoId: "artwork-vector-file-guide",
+    readTime: "7 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "printing",
+    intro:
+      "Quick answer: print-ready artwork means a vector file (AI, EPS or a vector-based PDF) in CMYK colour, with text outlined and 3mm of bleed added past the trim edge. A JPEG or PNG pulled off a website almost never meets that, which is the single most common reason a print proof gets delayed. The terms below explain why each requirement exists, not just that it's asked for.",
+    sections: [
+      {
+        heading: "Vector vs raster: the first thing that decides everything else",
+        blocks: [
+          p(
+            "A raster file, a JPEG, PNG or standard screenshot, is a fixed grid of pixels. Enlarge it past its native size and the pixels stretch, so edges soften and go blurry or blocky. A vector file, built in software like Adobe Illustrator and saved as AI, EPS or a vector PDF, stores a logo as mathematical paths instead of pixels, so it can be printed at the size of a business card or the size of a 6-metre banner from the same file with no loss of sharpness.",
+          ),
+          p(
+            "This is why a logo works fine on a website (raster, small, screen resolution) and then looks soft or pixelated the moment it's blown up onto a banner or signboard. The fix isn't a bigger JPEG, it's the original vector file the logo was designed in, or a professional redraw if that file no longer exists.",
+          ),
+        ],
+      },
+      {
+        heading: "CMYK vs RGB: why a printed colour never matches the screen",
+        blocks: [
+          p(
+            "Screens display colour as light, mixing Red, Green and Blue (RGB) to produce a wide, vivid range that includes colours no printer can physically reproduce, particularly bright neons and deep saturated blues. Printers build colour from ink, mixing Cyan, Magenta, Yellow and Black (CMYK), a smaller range. A file designed in RGB and sent straight to print gets converted automatically, and the result usually comes out flatter or slightly shifted from what showed on screen, especially in bright blues, purples and greens.",
+          ),
+          p(
+            "Designing directly in CMYK from the start, and checking a printed proof rather than judging colour from a screen, avoids the surprise. For an exact brand colour, a Pantone (PMS) reference number, checked against a physical swatch book, is the only reliable way to confirm a match across different print runs and materials.",
+          ),
+        ],
+      },
+      {
+        heading: "Resolution: 300 DPI at final size, not screen size",
+        blocks: [
+          p(
+            "Any raster element inside a design, like a product photo placed next to a logo, needs to be 300 DPI (dots per inch) at the final printed size, not at the size it currently sits on screen. A photo that's 300 DPI at 10cm wide is only about 100 DPI once stretched to 30cm, which reads as soft or pixelated in print even though it looked sharp in the design file. Large-format prints viewed from a distance, banners, signage panels, are more forgiving and can run lower, but anything held or viewed up close, business cards, packaging, gift item branding, needs the full 300 DPI at true size.",
+          ),
+        ],
+      },
+      {
+        heading: "Bleed, safe margin and trim marks",
+        blocks: [
+          p(
+            "Bleed is extra artwork extended past the edge where a design will be trimmed, typically 3mm on each side in the UAE and Qatar, so that any tiny shift in cutting doesn't leave a thin white sliver at the edge where colour was meant to run to the border. Safe margin works the other way: a buffer, usually 3-5mm, kept clear of important text or logos on the inside of the trim line, so nothing critical gets cut off if the trim shifts slightly. Trim marks (small lines just outside the bleed) show a printer exactly where the final cut should fall.",
+          ),
+          p(
+            "A file supplied without bleed, with a background colour that stops exactly at the trim edge, is one of the most common reasons a print job comes back with a visible white edge, and it can't always be fixed after the fact without cropping into the design.",
+          ),
+        ],
+      },
+      {
+        heading: "Fonts: outline them before sending the file",
+        blocks: [
+          p(
+            "A font used in a design file only displays correctly on a computer that has that exact font installed. Send an editable file with live text and a missing font gets silently substituted for a default one, changing spacing, size and sometimes the whole look of a logo or headline. Outlining text (converting letters into vector shapes, sometimes called 'create outlines' or 'convert to curves') locks the exact letterforms into the file permanently, so it prints exactly as designed regardless of what fonts are installed on the machine doing the printing.",
+          ),
+        ],
+      },
+      {
+        heading: "What happens when there's no usable logo file at all",
+        blocks: [
+          p(
+            "It's common for a business to only have a logo as a small JPEG pulled from an old website or a WhatsApp screenshot, with no original vector file anywhere. In that case a redraw, manually rebuilding the logo as a clean vector file by tracing the shapes, colours and proportions, is the standard fix, usually a one-time cost before the first print run rather than something needed on every order after.",
+          ),
+        ],
+      },
+      {
+        heading: "A short glossary",
+        blocks: [
+          ul([
+            "Vector — artwork built from mathematical paths, scalable to any size without quality loss (AI, EPS, vector PDF).",
+            "Raster — artwork built from a fixed grid of pixels, loses sharpness when enlarged (JPEG, PNG).",
+            "CMYK — the four-ink colour model (Cyan, Magenta, Yellow, Black) used for print.",
+            "RGB — the light-based colour model (Red, Green, Blue) used for screens.",
+            "PMS / Pantone — a standardised colour-matching system used to specify an exact brand colour.",
+            "DPI — dots per inch; print resolution measured at the artwork's final printed size.",
+            "Bleed — artwork extended past the trim edge to prevent white edges after cutting.",
+            "Safe margin — a buffer kept clear of critical text/logos, away from the trim edge.",
+            "Outline text / convert to curves — turning live, editable text into fixed vector shapes.",
+            "Dieline — the template outline showing where a packaging design folds and cuts.",
+          ]),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What file format should I send for printing?",
+        a: "A vector file (AI, EPS, or a vector-based PDF) in CMYK colour, with all text outlined. If the design includes photos, they should be at least 300 DPI at the final printed size.",
+      },
+      {
+        q: "Can you print from a JPEG or PNG logo?",
+        a: "Small, low-resolution use is fine, but a JPEG or PNG enlarged onto signage, banners or large gift items usually looks soft or pixelated. A vector version, or a redraw if none exists, gives a sharp result at any size.",
+      },
+      {
+        q: "Why does my printed colour look different from what I see on screen?",
+        a: "Screens display colour as light (RGB), which includes brighter and more saturated tones than ink (CMYK) can reproduce. Designing in CMYK from the start, and checking a Pantone reference for an exact brand colour, keeps the result predictable.",
+      },
+      {
+        q: "What is bleed and why is it needed?",
+        a: "Bleed is artwork extended past the edge that will be trimmed, usually 3mm, so a slight shift in cutting doesn't leave a white edge where the design was meant to run to the border.",
+      },
+      {
+        q: "I don't have a vector file of my logo. What now?",
+        a: "A redraw, manually rebuilt as a clean vector file from whatever logo image is available, is the standard fix. It's usually a one-time job before the first print run.",
+      },
+      {
+        q: "Do fonts need to be outlined before sending a file?",
+        a: "Yes, if the file contains live, editable text. Outlining (converting text to vector shapes) locks in the exact letterforms so the design prints correctly regardless of which fonts are installed on the printing side.",
+      },
+    ],
+  },
+
+  {
+    slug: "gitex-global-2026-exhibition-checklist",
+    title: "GITEX Global 2026: an exhibition stand and event branding checklist",
+    metaDescription:
+      "GITEX Global 2026 runs 7-11 December at Dubai Exhibition Centre. A working-backward checklist for stand design, branding, print and on-site setup.",
+    category: "Events",
+    excerpt:
+      "GITEX Global 2026 moves to a new venue for the first time in 45 years. A working-backward checklist for stand branding and on-site setup.",
+    photoId: "gitex-global-2026-exhibition-checklist",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "Quick answer: GITEX Global 2026 runs 7-11 December at Dubai Exhibition Centre, Expo City Dubai, the first time the show has left Dubai World Trade Centre in 45 years. With roughly 6,800 exhibitors and 200,000 visitors expected across 180+ countries, a stand needs its design, branding and print collateral locked well before the show floor opens, not the week of.",
+    sections: [
+      {
+        heading: "What's changing at GITEX Global 2026",
+        blocks: [
+          p(
+            "GITEX has run at Dubai World Trade Centre for over four decades. For 2026, the show moves to Dubai Exhibition Centre at Expo City Dubai, a newer, larger venue built for global-scale events. A new venue means new hall dimensions, new loading and rigging logistics, and, for exhibitors who've built stands at DWTC before, no assumption from a previous year's floor plan carries over automatically. Confirm hall, booth number and loading access directly with the organiser rather than working from memory of a past edition.",
+          ),
+        ],
+      },
+      {
+        heading: "Working backward from 7 December",
+        blocks: [
+          p(
+            "Stand size and complexity set the real timeline, but as a general shape: 3D design and concept approval first, technical build drawings next, fabrication and branding print after drawings are signed off, then load-in and installation in the days immediately before the show opens. Corporate buyers and exhibitors typically need to commit to design 6-10 weeks out for anything beyond a simple shell-scheme booth, which puts late September and October as the realistic window to start a custom stand for this year's dates.",
+          ),
+        ],
+      },
+      {
+        heading: "What a stand needs before doors open",
+        blocks: [
+          ul([
+            "3D concept design and build drawings, reviewed and approved before fabrication starts.",
+            "Branding print for the stand structure, backdrops and any meeting-pod or demo-area graphics.",
+            "Reception desk or counter branding, matched to the stand's colour and material palette.",
+            "Directional and product signage inside larger stands with multiple zones.",
+            "Printed collateral, brochures, one-pagers and business cards for the team working the floor.",
+          ]),
+        ],
+      },
+      {
+        heading: "Backup and secondary presence",
+        blocks: [
+          p(
+            "A roll-up banner stand or pop-up display, magnetic panel or tension fabric, is worth having on-site even alongside a full custom stand, for placement at a satellite meeting area, a speaking-slot backdrop, or as a fallback if a structural element runs late. These are lighter, pack down small, and don't depend on the same fabrication timeline as a full booth build.",
+          ),
+        ],
+      },
+      {
+        heading: "Giveaways and promotional merchandise",
+        blocks: [
+          p(
+            "Foot traffic through a tech and AI exhibition of GITEX's scale means giveaways get picked up in volume, so branding needs to survive being handled, thrown in a bag and carried through the rest of the show. UV-printed items on hard surfaces, pens, tech accessories, tumblers, tend to hold branding better over a multi-day show than printed paper alone.",
+          ),
+        ],
+      },
+      {
+        heading: "Breakdown and what to keep",
+        blocks: [
+          p(
+            "Modular stand components, structural frames, reusable graphic panels, are usually worth storing rather than scrapping after a single show, particularly for a business planning to exhibit again the following year or at a different trade show on the UAE and Qatar's exhibition calendar. Confirm breakdown and storage as part of the original brief rather than deciding it on the last day of the show.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is GITEX Global 2026 and where is it held?",
+        a: "GITEX Global 2026 runs from 7 to 11 December 2026 at Dubai Exhibition Centre, Expo City Dubai. This is the first year the show has moved away from Dubai World Trade Centre after more than four decades there.",
+      },
+      {
+        q: "How far in advance should a GITEX stand be planned?",
+        a: "For anything beyond a basic shell-scheme booth, 6-10 weeks is a realistic planning window: time for 3D design approval, technical drawings, fabrication and branding print before installation ahead of the show.",
+      },
+      {
+        q: "Do I need a full custom stand, or is a roll-up display enough?",
+        a: "Depends on budget and stand size. A roll-up banner or pop-up display works well for a small footprint or as a secondary presence alongside a larger stand, but doesn't replace a custom-built stand for a larger booth space.",
+      },
+      {
+        q: "What kind of giveaways hold up at a multi-day trade show like GITEX?",
+        a: "Items UV-printed directly onto a hard surface, pens, tech accessories, tumblers, tend to keep their branding legible through a multi-day show better than printed paper items alone.",
+      },
+      {
+        q: "Can exhibition stand components be reused for a future show?",
+        a: "Yes. Modular frames and reusable graphic panels are commonly stored and reused for future trade shows rather than rebuilt from scratch each time, provided that's planned for at the breakdown stage.",
+      },
+    ],
+  },
+
+  {
+    slug: "diwali-corporate-gifting-guide",
+    title: "Diwali corporate gifting for UAE and Qatar businesses",
+    metaDescription:
+      "Diwali 2026 falls on 8 November. A practical guide to Diwali corporate gifting timelines, gift formats and branding for UAE and Qatar businesses.",
+    category: "Gift Items",
+    excerpt:
+      "Diwali 2026 falls on 8 November. What a corporate Diwali gift usually includes, and when to place the order.",
+    photoId: "diwali-corporate-gifting-guide",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: Diwali 2026 falls on Sunday 8 November, with the wider festival spanning 6-10 November. Corporate Diwali gifting is a genuine seasonal peak across the UAE and Qatar given the size of the South Asian workforce and business community in both markets, and orders should be placed by mid-to-late October to allow time for sourcing, branding and delivery before the date.",
+    sections: [
+      {
+        heading: "Why Diwali matters for corporate gifting in the Gulf",
+        blocks: [
+          p(
+            "Both the UAE and Qatar have large, established South Asian communities across banking, retail, construction, healthcare and government-adjacent sectors, and Diwali gifting to staff, clients and business partners is a standard part of the corporate calendar in both markets, running alongside, not instead of, Eid and National Day gifting later in the year.",
+          ),
+        ],
+      },
+      {
+        heading: "What a Diwali corporate gift usually includes",
+        blocks: [
+          ul([
+            "Gift hampers combining sweets, dry fruits and a branded item, the most common format for both staff and client gifting.",
+            "Personalised desk or tech accessories, notebooks, tumblers, power banks, UV-printed with a company logo.",
+            "Festive-themed gift boxes, sized for bulk staff distribution or a smaller curated set for VIP clients.",
+            "Branded packaging for the gift itself, since a Diwali hamper is usually opened and shared visibly in an office setting.",
+          ]),
+        ],
+      },
+      {
+        heading: "Branding a Diwali gift without it looking like a giveaway",
+        blocks: [
+          p(
+            "A logo placed subtly, on a hamper's outer box, a ribbon tag or a single branded item inside a mixed hamper, reads as a considered corporate gift. Covering every visible surface with a logo tends to read the opposite way, closer to a promotional giveaway than a festive gift. UV printing works well for the hard items inside a hamper (a tumbler, a pen, a small tray) since it applies branding directly without a separate sticker or label.",
+          ),
+        ],
+      },
+      {
+        heading: "Employee gifts vs client and VIP gifts",
+        blocks: [
+          p(
+            "Employee Diwali gifts are usually distributed in bulk and standardised across the team, so cost-efficiency and a fast bulk-packing turnaround matter more than individual customisation. Client and VIP gifts are typically a smaller batch with a higher unit cost and more personalisation, sometimes down to an individual name on the item or the packaging, and are worth planning as a separate order from the staff batch rather than one single spec for everyone.",
+          ),
+        ],
+      },
+      {
+        heading: "Timeline: when to order",
+        blocks: [
+          p(
+            "With Diwali falling on 8 November 2026, mid-to-late October is a realistic order-by point for bulk hampers and personalised items, allowing time for sourcing, UV printing or personalisation, and delivery across multiple sites or departments before the festival week. Smaller, simpler orders can move faster, but a hamper involving sourced items, packaging and printed branding needs that lead time to avoid a rushed, visibly last-minute result.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is Diwali 2026?",
+        a: "Diwali 2026 falls on Sunday 8 November, with the broader festival period running from 6 to 10 November.",
+      },
+      {
+        q: "When should Diwali corporate gifts be ordered?",
+        a: "Mid-to-late October is a realistic order-by point for bulk hampers or personalised items, allowing time for sourcing, branding and delivery before the festival week in early November.",
+      },
+      {
+        q: "What's a typical Diwali corporate gift?",
+        a: "A hamper combining sweets, dry fruits and a branded item is the most common format, alongside personalised desk or tech accessories for a smaller, higher-value client or VIP gift.",
+      },
+      {
+        q: "Can Diwali gifts be personalised per employee or client?",
+        a: "Yes. Bulk employee gifts are usually standardised for a fast turnaround, while client and VIP gifts are more commonly personalised down to an individual name, run as a separate, smaller batch.",
+      },
+      {
+        q: "Is Diwali gifting common in Qatar as well as the UAE?",
+        a: "Yes. Both markets have large South Asian business communities, and Diwali gifting runs as a standard part of the corporate calendar in both, alongside Eid and National Day gifting later in the year.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
