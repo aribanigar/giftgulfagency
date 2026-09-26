@@ -80,7 +80,7 @@ export default async function AdminPage({
       ) : null}
       {!isEmailConfigured() ? (
         <Notice tone="amber">
-          Email isn&apos;t set up. Add RESEND_API_KEY and EMAIL_FROM in Vercel environment
+          Email isn&apos;t set up. Add SMTP_USER and SMTP_PASS in Vercel environment
           variables to send admin alerts and customer emails.
         </Notice>
       ) : null}
