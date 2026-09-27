@@ -17,12 +17,14 @@ import { sectionHeroGalleries } from "@/lib/photos";
 import { productsForSection } from "@/lib/products";
 import { serviceGuides } from "@/lib/service-guides";
 import { GuideContent } from "@/components/guide-content";
+import { topicsForSection } from "@/lib/topics";
 
 export function SectionPage({ section }: { section: Section }) {
   const related = sections.filter((s) => s.slug !== section.slug);
   const products = productsForSection(section.slug);
   const lower = section.name.toLowerCase();
   const guide = serviceGuides[section.slug];
+  const sectionTopics = topicsForSection(section.slug);
 
   return (
     <div>
@@ -55,7 +57,11 @@ export function SectionPage({ section }: { section: Section }) {
         <Container>
           {guide ? (
             <>
-              <SectionIntro eyebrow="Buyer's guide" title={guide.title} size="md">
+              <SectionIntro
+                eyebrow="Buyer's guide"
+                title={guide.title}
+                size="md"
+              >
                 <p>{guide.lead}</p>
               </SectionIntro>
               <div className="mt-16">
@@ -64,7 +70,11 @@ export function SectionPage({ section }: { section: Section }) {
             </>
           ) : (
             <>
-              <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
+              <SectionIntro
+                eyebrow="Overview"
+                title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`}
+                size="md"
+              >
                 <p>{section.definition}</p>
               </SectionIntro>
               <div className="mt-16">
@@ -78,8 +88,15 @@ export function SectionPage({ section }: { section: Section }) {
       {/* Capabilities */}
       <section className="on-dark bg-night py-24 text-white sm:py-32">
         <Container>
-          <SectionIntro eyebrow="What's included" title="Capabilities" size="md">
-            <p>Each line links to a practical guide on how that part of the job works.</p>
+          <SectionIntro
+            eyebrow="What's included"
+            title="Capabilities"
+            size="md"
+          >
+            <p>
+              Each line links to a practical guide on how that part of the job
+              works.
+            </p>
           </SectionIntro>
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-8 lg:col-start-5">
@@ -100,30 +117,80 @@ export function SectionPage({ section }: { section: Section }) {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow mb-5">Where we deliver</p>
-              <h2 className="display-sm">Across the UAE, Qatar and the wider GCC</h2>
+              <h2 className="display-sm">
+                Across the UAE, Qatar and the wider GCC
+              </h2>
             </div>
-            <p className="text-lg leading-relaxed text-ink/75 lg:col-span-6 lg:col-start-7">{section.regionalNote}</p>
+            <p className="text-lg leading-relaxed text-ink/75 lg:col-span-6 lg:col-start-7">
+              {section.regionalNote}
+            </p>
           </div>
         </Container>
       </section>
 
-      {products.length > 0 ? (
+      {products.length > 0 || sectionTopics.length > 0 ? (
         <section className="bg-white py-24 sm:py-32">
           <Container>
-            <SectionIntro eyebrow="Products" title={`Popular ${lower} products`} size="md" />
-            <ul className="hairline mt-14 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => (
-                <li key={product.slug} className="hairline border-b sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0">
-                  <Link href={`/${product.slug}`} className="group flex h-full flex-col gap-4 p-8 transition-colors hover:bg-white">
-                    <span className="flex items-start justify-between gap-4">
-                      <span className="text-xl font-semibold tracking-tight">{product.name}</span>
-                      <ArrowUpRight className="h-5 w-5 shrink-0 opacity-40 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand group-hover:opacity-100" strokeWidth={1.5} />
-                    </span>
-                    <span className="text-[15px] leading-relaxed text-ink/65">{product.short}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {products.length > 0 ? (
+              <>
+                <SectionIntro
+                  eyebrow="Products"
+                  title={`Popular ${lower} products`}
+                  size="md"
+                />
+                <ul className="hairline mt-14 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3">
+                  {products.map((product) => (
+                    <li
+                      key={product.slug}
+                      className="hairline border-b sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0"
+                    >
+                      <Link
+                        href={`/${product.slug}`}
+                        className="group flex h-full flex-col gap-4 p-8 transition-colors hover:bg-white"
+                      >
+                        <span className="flex items-start justify-between gap-4">
+                          <span className="text-xl font-semibold tracking-tight">
+                            {product.name}
+                          </span>
+                          <ArrowUpRight
+                            className="h-5 w-5 shrink-0 opacity-40 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand group-hover:opacity-100"
+                            strokeWidth={1.5}
+                          />
+                        </span>
+                        <span className="text-[15px] leading-relaxed text-ink/65">
+                          {product.short}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+            {sectionTopics.length > 0 ? (
+              <div className={products.length > 0 ? "mt-24" : undefined}>
+                <SectionIntro
+                  eyebrow="Directory"
+                  title={`${section.name} guides`}
+                  size="md"
+                >
+                  <p>
+                    Sizes, materials and options for each product, written to
+                    help you brief with confidence.
+                  </p>
+                </SectionIntro>
+                <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+                  <div className="lg:col-span-8 lg:col-start-5">
+                    <HairlineLinks
+                      items={sectionTopics.map((t) => ({
+                        href: `/${t.slug}`,
+                        title: t.name,
+                        meta: t.category,
+                      }))}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </Container>
         </section>
       ) : null}
@@ -146,10 +213,18 @@ export function SectionPage({ section }: { section: Section }) {
           <SectionIntro eyebrow="Explore" title="Other services" size="md" />
           <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-3">
-              <ArrowLink href="/contact" className="text-lg">Brief several at once</ArrowLink>
+              <ArrowLink href="/contact" className="text-lg">
+                Brief several at once
+              </ArrowLink>
             </div>
             <div className="lg:col-span-8 lg:col-start-5">
-              <HairlineLinks items={related.map((s) => ({ href: `/${s.slug}`, title: s.name, meta: s.short }))} />
+              <HairlineLinks
+                items={related.map((s) => ({
+                  href: `/${s.slug}`,
+                  title: s.name,
+                  meta: s.short,
+                }))}
+              />
             </div>
           </div>
         </Container>
@@ -170,7 +245,9 @@ export function sectionMetadata(section: Section) {
       title,
       description,
       url: `${siteConfig.url}/${section.slug}`,
-      images: image ? [{ url: image, width: 1920, height: 1080, alt: title }] : undefined,
+      images: image
+        ? [{ url: image, width: 1920, height: 1080, alt: title }]
+        : undefined,
     },
     twitter: {
       card: "summary_large_image",

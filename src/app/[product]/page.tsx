@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products, getProduct } from "@/lib/products";
+import { topics, getTopic } from "@/lib/topics";
 import { ProductPage, productMetadata } from "@/components/product-page";
+import { TopicPage, topicMetadata } from "@/components/topic-page";
 
+// Serves both catalogue products and directory topics at root-level slugs.
+// Slug uniqueness across the two is enforced in src/lib/topics/index.ts.
 export function generateStaticParams() {
-  return products.map((p) => ({ product: p.slug }));
+  return [...products.map((p) => ({ product: p.slug })), ...topics.map((t) => ({ product: t.slug }))];
 }
 
 export async function generateMetadata({
@@ -14,8 +18,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { product: slug } = await params;
   const product = getProduct(slug);
-  if (!product) return {};
-  return productMetadata(product);
+  if (product) return productMetadata(product);
+  const topic = getTopic(slug);
+  if (topic) return topicMetadata(topic);
+  return {};
 }
 
 export default async function Page({
@@ -25,6 +31,8 @@ export default async function Page({
 }) {
   const { product: slug } = await params;
   const product = getProduct(slug);
-  if (!product) notFound();
-  return <ProductPage product={product} />;
+  if (product) return <ProductPage product={product} />;
+  const topic = getTopic(slug);
+  if (topic) return <TopicPage topic={topic} />;
+  notFound();
 }
