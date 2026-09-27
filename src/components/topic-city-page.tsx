@@ -1,8 +1,12 @@
 import { FaqAccordion } from "@/components/faq-accordion";
 import { GuideContent } from "@/components/guide-content";
 import { JsonLd } from "@/components/json-ld";
-import { ArrowLink, Container, HairlineLinks, PageHero, SectionIntro } from "@/components/editorial";
+import { ArrowLink, Container, PageHero, SectionIntro } from "@/components/editorial";
 import { siteConfig } from "@/lib/site-config";
+import { getSection } from "@/lib/site-data";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { quoteCityFor } from "@/lib/quick-quote";
+import { guideLinks, placeLinks } from "@/lib/related-links";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { citiesForTopic, topicsForCity, type TopicCityPage } from "@/lib/topic-city";
 
@@ -56,16 +60,35 @@ export function TopicCityView({ page }: { page: TopicCityPage }) {
           <SectionIntro eyebrow="Local guide" title={`Planning in ${city.city}`} size="md">
             <p>
               The {city.city}-specific details first, then the essentials of{" "}
-              {topic.name.toLowerCase()} that apply everywhere.
+              {topic.name} that apply everywhere.
             </p>
           </SectionIntro>
-          <div className="mt-16">
-            <GuideContent sections={page.sections} />
-          </div>
-          <div className="mt-10">
-            <ArrowLink href={`/${topic.slug}`} className="text-lg">
-              Full {topic.name.toLowerCase()} guide
-            </ArrowLink>
+          <div className="mt-16 grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
+              <GuideContent sections={page.sections} stacked />
+              <div className="mt-10">
+                <ArrowLink href={`/${topic.slug}`} className="text-lg">
+                  Full {topic.name.toLowerCase()} guide
+                </ArrowLink>
+              </div>
+            </div>
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{
+                  item: `${topic.name} in ${city.city}`,
+                  service: getSection(topic.section)?.name,
+                  source: page.path,
+                  city: quoteCityFor(city.slug),
+                }}
+                groups={[
+                  { title: `More in ${city.city}`, links: moreHere.slice(0, 8).map((t) => ({ href: `/${t.slug}/${city.slug}`, title: t.name })) },
+                  { title: `Areas and venues in ${city.city}`, links: placeLinks(city.slug) },
+                  { title: "Related guides", links: guideLinks([topic.slug], { limit: 5 }) },
+                  { title: `${topic.name} in other cities`, links: otherCities.map((c) => ({ href: `/${topic.slug}/${c.slug}`, title: c.city, meta: c.country })) },
+                  { title: `${city.city} overview`, links: [{ href: `/locations/${city.slug}`, title: `Serving ${city.city}` }] },
+                ]}
+              />
+            </div>
           </div>
         </Container>
       </section>
@@ -81,24 +104,6 @@ export function TopicCityView({ page }: { page: TopicCityPage }) {
         </Container>
       </section>
 
-      <section className="bg-white py-24 sm:py-32">
-        <Container>
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-            {moreHere.length > 0 ? (
-              <div>
-                <p className="eyebrow mb-6">More in {city.city}</p>
-                <HairlineLinks items={moreHere.map((t) => ({ href: `/${t.slug}/${city.slug}`, title: t.name }))} />
-              </div>
-            ) : null}
-            {otherCities.length > 0 ? (
-              <div>
-                <p className="eyebrow mb-6">{topic.name} in other cities</p>
-                <HairlineLinks items={otherCities.map((c) => ({ href: `/${topic.slug}/${c.slug}`, title: c.city, meta: c.country }))} />
-              </div>
-            ) : null}
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }

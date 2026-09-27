@@ -7,6 +7,9 @@ import { locations, getLocation } from "@/lib/locations";
 import { sections } from "@/lib/site-data";
 import { topicsForCity } from "@/lib/topic-city";
 import { placesForCity } from "@/lib/places";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { quoteCityFor } from "@/lib/quick-quote";
+import { guideLinks, locationLinks } from "@/lib/related-links";
 import { siteConfig } from "@/lib/site-config";
 import { locationSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
 
@@ -66,32 +69,44 @@ export default async function LocationPage({
 
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          <SectionIntro eyebrow="Overview" title={`Serving ${location.city}`} size="md">
-            <p>{location.definition}</p>
-          </SectionIntro>
-          <div className="hairline mt-16 grid grid-cols-1 border-t lg:grid-cols-2">
-            <div className="hairline border-b py-8 lg:border-b-0 lg:border-r lg:pr-12">
-              <p className="eyebrow">Areas we work in</p>
-              <p className="mt-4 text-lg leading-relaxed">{location.keyAreas.join(" · ")}</p>
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
+              <SectionIntro eyebrow="Overview" title={`Serving ${location.city}`} size="md">
+                <p>{location.definition}</p>
+              </SectionIntro>
+              <div className="hairline mt-14 border-t">
+                <div className="hairline border-b py-8">
+                  <p className="eyebrow">Areas we work in</p>
+                  <p className="mt-4 text-lg leading-relaxed">{location.keyAreas.join(" · ")}</p>
+                </div>
+                <div className="py-8">
+                  <p className="eyebrow">Approvals in {location.city}</p>
+                  <p className="mt-4 text-lg leading-relaxed text-ink/75">{location.approvalNote}</p>
+                </div>
+              </div>
+              {localPlaces.length > 0 ? (
+                <div className="mt-14">
+                  <p className="eyebrow">Areas and venues</p>
+                  <h2 className="display-sm mt-4">Around {location.city}</h2>
+                  <div className="mt-8">
+                    <HairlineLinks
+                      items={localPlaces.map((x) => ({ href: `/locations/${location.slug}/${x.slug}`, title: x.name, meta: x.summary }))}
+                    />
+                  </div>
+                </div>
+              ) : null}
             </div>
-            <div className="py-8 lg:pl-12">
-              <p className="eyebrow">Approvals in {location.city}</p>
-              <p className="mt-4 text-lg leading-relaxed text-ink/75">{location.approvalNote}</p>
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{ source: `/locations/${location.slug}`, city: quoteCityFor(location.slug), heading: `A project in ${location.city}?` }}
+                groups={[
+                  { title: "Popular guides", links: guideLinks(localTopics.map((t) => t.slug), { limit: 6 }) },
+                  { title: "Directory", links: [{ href: "/directory", title: "All products and services" }] },
+                  { title: "Other locations", links: locationLinks(location.slug) },
+                ]}
+              />
             </div>
           </div>
-          {localPlaces.length > 0 ? (
-            <div className="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-12">
-              <div className="lg:col-span-4">
-                <p className="eyebrow">Areas and venues</p>
-                <h2 className="display-sm mt-4">Around {location.city}</h2>
-              </div>
-              <div className="lg:col-span-8">
-                <HairlineLinks
-                  items={localPlaces.map((x) => ({ href: `/locations/${location.slug}/${x.slug}`, title: x.name, meta: x.summary }))}
-                />
-              </div>
-            </div>
-          ) : null}
         </Container>
       </section>
 

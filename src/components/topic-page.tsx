@@ -9,13 +9,15 @@ import { breadcrumbSchema, faqPageSchema, productSchema } from "@/lib/schema";
 import { getTopic, type Topic } from "@/lib/topics";
 import { citiesForTopic } from "@/lib/topic-city";
 import { blogPosts } from "@/lib/blog-data";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { cityLinksForTopic, serviceLinks, siblingTopicLinks } from "@/lib/related-links";
 
 export function TopicPage({ topic }: { topic: Topic }) {
   const section = getSection(topic.section);
   const related = topic.related.map(getTopic).filter((t): t is Topic => Boolean(t));
   const lower = topic.name.toLowerCase();
   const cities = citiesForTopic(topic.slug);
-  const articles = blogPosts.filter((p) => p.relatedTopics?.includes(topic.slug)).slice(0, 6);
+  const articles = blogPosts.filter((p) => p.relatedTopics?.includes(topic.slug)).slice(0, 8);
 
   return (
     <div>
@@ -50,20 +52,30 @@ export function TopicPage({ topic }: { topic: Topic }) {
               trade-offs and the details that change the result.
             </p>
           </SectionIntro>
-          <div className="mt-16">
-            <GuideContent sections={topic.sections} />
-          </div>
-          {articles.length > 0 ? (
-            <div className="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-12">
-              <div className="lg:col-span-4">
-                <p className="eyebrow">Go deeper</p>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight">Detailed answers</h3>
-              </div>
-              <div className="lg:col-span-8">
-                <HairlineLinks items={articles.map((a) => ({ href: `/blog/${a.slug}`, title: a.title, meta: a.category }))} />
-              </div>
+          <div className="mt-16 grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
+              <GuideContent sections={topic.sections} stacked />
+              {articles.length > 0 ? (
+                <div className="mt-16">
+                  <p className="eyebrow">Go deeper</p>
+                  <h3 className="mt-4 text-2xl font-semibold tracking-tight">Detailed answers</h3>
+                  <div className="mt-6">
+                    <HairlineLinks items={articles.map((a) => ({ href: `/blog/${a.slug}`, title: a.title, meta: a.category }))} />
+                  </div>
+                </div>
+              ) : null}
             </div>
-          ) : null}
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{ item: topic.name, service: section?.name, source: `/${topic.slug}` }}
+                groups={[
+                  { title: cities.length > 0 ? "By city" : "Locations", links: cityLinksForTopic(topic.slug) },
+                  { title: `More ${topic.category.toLowerCase()}`, links: siblingTopicLinks(topic) },
+                  { title: "Services", links: serviceLinks(section?.slug) },
+                ]}
+              />
+            </div>
+          </div>
         </Container>
       </section>
 

@@ -10,6 +10,8 @@ import { heroPhoto } from "@/lib/photos";
 import { BlogCover, blogPhotoId } from "@/components/blog-cover";
 import { BlockView } from "@/components/guide-content";
 import { getTopic, type Topic } from "@/lib/topics";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { cityLinksForTopic, guideLinks, serviceLinks, topicLinks } from "@/lib/related-links";
 import { siteConfig } from "@/lib/site-config";
 import { getSection } from "@/lib/site-data";
 import { articleSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
@@ -107,8 +109,8 @@ export default async function BlogPostPage({
 
       <article className="bg-white py-20 sm:py-28">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-8 lg:col-start-3">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
               {post.quickAnswer ? (
                 <aside className="mb-12 border-l-4 border-brand bg-[#f3f4f2] p-6 sm:p-8">
                   <p className="eyebrow">Quick answer</p>
@@ -157,6 +159,20 @@ export default async function BlogPostPage({
                   ))}
                 </ul>
               ) : null}
+            </div>
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{
+                  service: relatedService?.name,
+                  source: `/blog/${post.slug}`,
+                }}
+                groups={[
+                  { title: "Related guides", links: guideLinks(post.relatedTopics ?? [], { exclude: post.slug, limit: 5 }) },
+                  { title: "In the directory", links: topicLinks(post.relatedTopics ?? [], 5) },
+                  { title: topics[0] ? `${topics[0].name} by city` : "Locations", links: cityLinksForTopic(topics[0]?.slug).slice(0, 9) },
+                  { title: "Services", links: serviceLinks() },
+                ]}
+              />
             </div>
           </div>
         </Container>

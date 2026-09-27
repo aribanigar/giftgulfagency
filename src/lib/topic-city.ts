@@ -196,7 +196,7 @@ function timingSection(topic: Topic, c: GccCity): GuideSection {
       ...(installs ? [p(approvalText(topic, c))] : []),
       ul([
         `Weekend: ${c.weekend}. Deliveries and installs are scheduled around it and around venue access hours.`,
-        `Ramadan, ${days(c)} change working hours and push up demand, so allow extra time.`,
+        `${days(c).includes(" and ") ? `Ramadan, ${days(c)}` : `Ramadan and ${days(c)}`} change working hours and push up demand, so allow extra time.`,
         `Share the delivery address or venue, target date and quantities with your brief so we can confirm what is achievable.`,
       ]),
     ],

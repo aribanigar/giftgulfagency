@@ -1,7 +1,8 @@
 "use server";
 
-import { buildLead, isLeadsStoreConfigured, persistLead } from "@/lib/leads";
+import { buildLead, isLeadsStoreConfigured, persistLead, type NewLead } from "@/lib/leads";
 import { notifyNewEnquiry } from "@/lib/notify";
+import { QUICK_QUOTE_CITIES } from "@/lib/quick-quote";
 
 export type ContactResult =
   | { ok: true; ref: string; emailedCustomer: boolean }
@@ -73,6 +74,10 @@ export async function submitContactAction(
     };
   }
 
+  return saveAndNotify(data);
+}
+
+async function saveAndNotify(data: NewLead): Promise<ContactResult> {
   const lead = buildLead(data);
   const events = await notifyNewEnquiry(lead);
   lead.emails = events;
@@ -102,4 +107,51 @@ export async function submitContactAction(
     ref: lead.ref,
     emailedCustomer: events.some((e) => e.kind === "enquiry-customer" && e.ok),
   };
+}
+
+
+/** Short sidebar form: fewer required fields, same lead store and emails. */
+export async function submitQuickQuoteAction(
+  _prev: ContactResult | null,
+  formData: FormData,
+): Promise<ContactResult> {
+  if (String(formData.get("website") ?? "").trim()) {
+    return { ok: true, ref: "GG-000000-0000", emailedCustomer: false };
+  }
+  const f = (name: string, max = 200) =>
+    String(formData.get(name) ?? "").trim().slice(0, max);
+
+  const name = f("name", 100);
+  const email = f("email", 160).toLowerCase();
+  const phone = f("phone", 30);
+  const city = f("city", 60);
+  const item = f("item", 160);
+  const details = f("message", 2000);
+  const source = f("source", 200);
+
+  if (!name) return { ok: false, error: "Please enter your name." };
+  if (!EMAIL_RE.test(email)) return { ok: false, error: "Please enter a valid email address." };
+  if (phone.replace(/\D/g, "").length < 7) {
+    return { ok: false, error: "Please enter a phone number with country code." };
+  }
+  if (!QUICK_QUOTE_CITIES.includes(city)) return { ok: false, error: "Please choose a city." };
+  if (!item) return { ok: false, error: "Please tell us what you need." };
+
+  return saveAndNotify({
+    name,
+    company: "",
+    email,
+    phone,
+    service: f("service", 60) || "General enquiry",
+    city,
+    item,
+    quantity: f("quantity", 60),
+    size: "",
+    budget: "",
+    deadline: "",
+    installation: "",
+    artwork: "",
+    contactMethod: "",
+    message: [details, source ? `Sent from: ${source}` : ""].filter(Boolean).join("\n\n"),
+  });
 }

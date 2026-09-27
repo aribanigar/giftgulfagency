@@ -46,7 +46,23 @@ export function BlockView({ block }: { block: Block }) {
 }
 
 /** Long-form guide: heading on the left, content on the right, split by hairlines. */
-export function GuideContent({ sections }: { sections: GuideSection[] }) {
+export function GuideContent({ sections, stacked }: { sections: GuideSection[]; stacked?: boolean }) {
+  if (stacked) {
+    return (
+      <div className="hairline border-t">
+        {sections.map((s) => (
+          <section key={s.heading} className="hairline flex flex-col gap-5 border-b py-10">
+            <h3 className="text-2xl font-semibold leading-snug tracking-tight">{s.heading}</h3>
+            <div className="flex flex-col gap-6">
+              {s.blocks.map((b, i) => (
+                <BlockView key={i} block={b} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    );
+  }
   return (
     <div className="hairline border-t">
       {sections.map((s) => (
