@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Container, PageHero } from "@/components/editorial";
 import { ContactForm } from "./contact-form";
 import { siteConfig } from "@/lib/site-config";
 import { getSettings } from "@/lib/settings";
@@ -33,50 +33,52 @@ export default async function ContactPage() {
 
   return (
     <div>
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h1 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
-            Let&apos;s talk about the work.
-          </h1>
-          <p className="mt-5 max-w-xl text-lg text-zinc-600">
-            Whether it&apos;s one service or all of them, tell us what
-            you&apos;re working on and we&apos;ll follow up with next steps.
+      <PageHero
+        crumbs={[{ name: "Home", href: "/" }, { name: "Contact" }]}
+        eyebrow="Get a quote"
+        title={<>Let&apos;s talk<br /><span className="text-brand-bright">about the work.</span></>}
+        intro={
+          <p>
+            One service or all of them, tell us what you are working on and we
+            will come back with a quote. The more detail you give, the more
+            accurate it will be.
           </p>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1.3fr]">
-          <div>
-            <h2 className="font-heading text-xl font-semibold text-zinc-900">
-              Reach us directly
-            </h2>
-            <div className="mt-6 flex flex-col gap-5">
-              <a
-                href={`mailto:${settings.contactEmail}`}
-                className="flex items-start gap-3 text-sm text-zinc-700 hover:text-green-700"
-              >
-                <Mail className="mt-0.5 h-5 w-5 text-green-600" />
-                {settings.contactEmail}
-              </a>
-              <a
-                href={telHref}
-                className="flex items-start gap-3 text-sm text-zinc-700 hover:text-green-700"
-              >
-                <Phone className="mt-0.5 h-5 w-5 text-green-600" />
-                {settings.contactPhone}
-              </a>
-              <div className="flex items-start gap-3 text-sm text-zinc-700">
-                <MapPin className="mt-0.5 h-5 w-5 text-green-600" />
-                {settings.address}
-              </div>
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+            <aside className="lg:col-span-4">
+              <p className="eyebrow mb-5">Reach us directly</p>
+              <ul className="hairline border-t">
+                <li className="hairline border-b py-6">
+                  <p className="text-sm text-ink/55">Email</p>
+                  <a href={`mailto:${settings.contactEmail}`} className="mt-1 block text-xl font-semibold tracking-tight hover:text-brand">
+                    {settings.contactEmail}
+                  </a>
+                </li>
+                <li className="hairline border-b py-6">
+                  <p className="text-sm text-ink/55">Phone / WhatsApp</p>
+                  <a href={telHref} className="mt-1 block text-xl font-semibold tracking-tight hover:text-brand">
+                    {settings.contactPhone}
+                  </a>
+                </li>
+                <li className="hairline border-b py-6">
+                  <p className="text-sm text-ink/55">Offices</p>
+                  <p className="mt-1 text-xl font-semibold tracking-tight">{settings.address}</p>
+                </li>
+              </ul>
+              <p className="mt-8 text-[15px] leading-relaxed text-ink/65">
+                Every request gets a reference number and a confirmation email,
+                and we reply with any questions or a quote.
+              </p>
+            </aside>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <ContactForm />
             </div>
           </div>
-
-          <div>
-            <ContactForm />
-          </div>
-        </div>
+        </Container>
       </section>
     </div>
   );

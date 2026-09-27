@@ -22,14 +22,14 @@ export const locations: Location[] = [
     country: "United Arab Emirates",
     blurb: "Printing, signage, exhibitions, packaging, gifting and social media for Dubai brands, from Deira to Dubai Marina.",
     definition:
-      "Dubai is our home market: production, fabrication and the team that handles a Dubai brief day to day are all based in the UAE, so turnaround for signage installs, print runs and exhibition builds across the city doesn't depend on shipping work in from elsewhere.",
+      "Dubai is the busiest market we serve: shopfront signage in its malls, exhibition stands at DWTC and Expo City Dubai, print runs for events and launches, and corporate gifting for year-end and National Day. We deliver and install across the city, from Deira to Dubai Marina.",
     keyAreas: ["Deira", "Al Quoz", "Business Bay", "Sheikh Zayed Road", "Jumeirah Lake Towers (JLT)", "Dubai Marina", "Downtown Dubai"],
     approvalNote:
       "Signage, fit-out and outdoor branding in Dubai typically need sign-off from the relevant municipal or free-zone authority, and malls and business towers usually add their own approval process on top. That sequencing is factored into the project timeline from the brief stage, not discovered midway through.",
     faqs: [
       {
-        q: "Do you have a production team based in Dubai, or is work shipped in?",
-        a: "Production and fabrication are based in the UAE, so Dubai signage, printing and exhibition work is handled locally rather than shipped in from another country.",
+        q: "Do you deliver and install across all of Dubai?",
+        a: "Yes. We deliver and install signage, printing, exhibition stands, packaging and gifts across Dubai, including free zones, malls and business towers.",
       },
       {
         q: "Can you handle a signage install in a specific Dubai free zone or mall?",

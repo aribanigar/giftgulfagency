@@ -1,59 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Building2,
-  CalendarDays,
-  Globe2,
-  Handshake,
-  HeartPulse,
-  Landmark,
-  Layers,
-  MapPin,
-  ShoppingBag,
-  UtensilsCrossed,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ServiceMarquee } from "@/components/service-marquee";
-import { SectionIndex, type SectionIndexRow } from "@/components/section-index";
-import { SectionVisual } from "@/components/section-visual";
+import { BlogCover } from "@/components/blog-cover";
+import { ArrowUpRight } from "lucide-react";
 import { ServiceBenefits } from "@/components/vendor-comparison";
+import { ServicesList } from "@/components/services-list";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { VideoEmbed } from "@/components/video-embed";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/reveal";
+import { ArrowLink, Container, PageHero, SectionIntro } from "@/components/editorial";
 import { getSettings } from "@/lib/settings";
 import { parseVideoUrl } from "@/lib/video";
-import { sectors, markets, siteFaqs, navLinks, sections } from "@/lib/site-data";
+import { sectors, markets, siteFaqs, sections } from "@/lib/site-data";
+import { blogPosts } from "@/lib/blog-data";
 import { faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos, homeHeroGallery, sectionHeroGalleries } from "@/lib/photos";
-
-const indexCaptions: Record<string, string> = {
-  "/about": "Who we are, and how the work actually gets done.",
-};
-
-// This panel is a tall 4:5 box, not the wide 16:9 the hero galleries are
-// shot for. Most first-slide photos crop fine either way, but signages[0]
-// is composed specifically for a wide frame (installer + sign panel side
-// by side), so a narrow centre-crop of it loses both — use its second
-// slide here instead.
-const indexPanelPhotoIndex: Record<string, number> = {
-  signages: 1,
-};
-
-const sectionIndexRows: SectionIndexRow[] = navLinks.map((link) => {
-  const slug = link.href.replace("/", "");
-  const section = sections.find((s) => s.slug === slug);
-  const photoIndex = indexPanelPhotoIndex[slug] ?? 0;
-  return {
-    href: link.href,
-    label: link.label,
-    caption: indexCaptions[link.href] ?? section?.short ?? "",
-    photo: sectionHeroGalleries[slug]?.[photoIndex] ?? featurePhotos.fabrication,
-  };
-});
 
 const homeTitle =
   "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising";
@@ -78,37 +41,28 @@ export const metadata: Metadata = {
   },
 };
 
-const sectorIcons: Record<string, typeof ShoppingBag> = {
-  Retail: ShoppingBag,
-  Hospitality: UtensilsCrossed,
-  Corporate: Building2,
-  Events: CalendarDays,
-  Government: Landmark,
-  Healthcare: HeartPulse,
-};
-
 const processSteps = [
   {
-    n: "01",
     title: "Brief",
     text: "We start with the brand, the market, whether UAE or Qatar, and the outcome you need, not a generic questionnaire.",
   },
   {
-    n: "02",
     title: "Design",
     text: "Concepts move fast, with production, installation and search visibility considered from the first sketch.",
   },
   {
-    n: "03",
     title: "Produce",
     text: "Printing, signage, events and digital work happens under one roof, so nothing waits on a third party.",
   },
   {
-    n: "04",
-    title: "Launch & Grow",
+    title: "Launch & grow",
     text: "Install, go live, then keep momentum with social media, SEO and the rest of the digital side of the business.",
   },
 ];
+
+const latestPosts = [...blogPosts]
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  .slice(0, 3);
 
 export default async function Home() {
   const settings = await getSettings();
@@ -118,222 +72,230 @@ export default async function Home() {
     <div>
       <JsonLd data={faqPageSchema(siteFaqs)} />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-zinc-950">
-        <SectionVisual photos={homeHeroGallery} />
-        <div className="hero-shade absolute inset-0" />
-
-        <div className="hero-text-shadow relative mx-auto w-full max-w-6xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">
-          <div className="mb-6 flex items-center gap-2 font-mono text-xs tracking-[0.25em] text-green-400">
-            <span className="h-1.5 w-1.5 bg-green-400" />
-            UAE &amp; Qatar &middot; Advertising &amp; Signage
-          </div>
-          <h1 className="max-w-3xl text-balance font-heading text-4xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-6xl">
+      <PageHero
+        size="xl"
+        photos={homeHeroGallery}
+        eyebrow="Advertising · Signage · Print · Events"
+        title={
+          <>
             Every brand touchpoint.
             <br />
-            <span className="text-green-400">One partner</span>, across
-            the UAE &amp; Qatar.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
-            Gifts Gulf Advertising covers printing, signages, events &amp;
+            <span className="text-brand-bright">One partner.</span>
+          </>
+        }
+        intro={
+          <p>
+            Gifts Gulf Advertising covers printing, signages, events and
             exhibitions, packaging and gift items, plus the social media,
-            website and SEO work that keeps a brand visible, for
-            businesses in Dubai, Abu Dhabi, Sharjah and Doha.
+            website and SEO work that keeps a brand visible, for businesses in
+            Dubai, Abu Dhabi, Sharjah and Doha.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Get a Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white/30 bg-white/5 text-white backdrop-blur-sm hover:bg-white/15 hover:text-white"
-            >
-              <Link href="#services">Explore Services</Link>
-            </Button>
+        }
+        cta={{ href: "/contact", label: "Get a quote" }}
+      />
+
+      {/* About */}
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="About us" title={<>One team.<br />Every touchpoint.</>} />
+          <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <div className="relative aspect-[4/3] overflow-hidden bg-night lg:col-span-7">
+              <Image
+                src={featurePhotos.fabrication}
+                alt="Production floor where signage and fit-out work is fabricated"
+                fill
+                sizes="(min-width:1024px) 58vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-end lg:col-span-4 lg:col-start-9">
+              <p className="text-lg leading-relaxed text-ink/75">
+                Print, signage, exhibition stands, packaging, gifts and social
+                media, planned and produced by one team from a single brief, so
+                colours, timelines and messaging stay consistent from the
+                shopfront to the feed.
+              </p>
+              <ArrowLink href="/about" className="mt-8 self-start text-lg">
+                More about us
+              </ArrowLink>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <ServiceMarquee />
-
-      {/* Process */}
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            How we work
-          </h2>
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step, i) => (
-              <div key={step.n} className="relative">
-                <span className="font-heading text-3xl font-bold text-green-600/30">
-                  {step.n}
-                </span>
-                <h3 className="mt-3 font-heading text-lg font-semibold text-zinc-900">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                  {step.text}
-                </p>
-                {i < processSteps.length - 1 ? (
-                  <span
-                    aria-hidden
-                    className="absolute right-[-1rem] top-2 hidden h-px w-8 bg-zinc-300 lg:block"
-                  />
-                ) : null}
+          <dl className="hairline mt-24 grid grid-cols-1 border-t sm:grid-cols-3">
+            {[
+              { value: String(sections.length), label: "Services under one roof" },
+              { value: String(markets.length), label: "Gulf cities we deliver to" },
+              { value: "1", label: "Team, brief and point of contact" },
+            ].map((stat) => (
+              <div key={stat.label} className="hairline border-b py-10 sm:border-b-0 sm:border-r sm:px-8 sm:first:pl-0 sm:last:border-r-0">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd>
+                  <span className="display-xl block text-brand">{stat.value}</span>
+                  <span className="mt-4 block text-base text-ink/70">{stat.label}</span>
+                </dd>
               </div>
             ))}
+          </dl>
+
+          <div className="mt-24">
+            <SectionIntro eyebrow="Why one team" title="What changes when it is all one brief" size="md" />
+            <div className="mt-12">
+              <ServiceBenefits />
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Services */}
-      <SectionIndex rows={sectionIndexRows} />
+      {/* Work */}
+      <section className="on-dark bg-night py-24 text-white sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="Our work" title={<>Built. Printed.<br />Installed.</>}>
+            <p>
+              From a single shop sign to a full exhibition hall, every piece is
+              designed, produced and installed by the same team, for retail,
+              hospitality, corporate and government clients across the Gulf.
+            </p>
+          </SectionIntro>
 
-      {/* Integrated service benefits */}
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Everything under one roof
-          </h2>
-          <p className="mt-3 max-w-2xl text-zinc-600">
-            Printing, signage, events, packaging, gifting and social media
-            all run through the same team, so a brand&apos;s colours,
-            timelines and messaging stay consistent across every
-            touchpoint.
-          </p>
-          <div className="mt-10">
-            <ServiceBenefits />
-          </div>
-        </div>
-      </section>
-
-      {/* Coverage: stats, markets & sectors */}
-      <section className="border-b border-zinc-800 bg-zinc-950">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {[
-              { icon: Layers, value: "6", label: "Sections under one roof." },
-              { icon: Globe2, value: "2", label: "Markets: the UAE and Qatar." },
-              { icon: Handshake, value: "1", label: "Team, brief and point of contact." },
-            ].map((stat) => {
-              const Icon = stat.icon;
+          <div className="mt-20 grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
+            {sections.map((s, i) => {
+              const gallery = sectionHeroGalleries[s.slug] ?? [];
+              const photo = gallery[0] ?? featurePhotos.fabrication;
               return (
-                <div
-                  key={stat.label}
-                  className="rounded-[var(--radius-xl)] border border-zinc-800 bg-zinc-900/60 p-6"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[var(--radius-lg)] bg-green-500/10 text-green-400">
-                    <Icon className="h-5 w-5" strokeWidth={1.75} />
-                  </div>
-                  <div className="mt-5 font-heading text-4xl font-bold text-white">
-                    {stat.value}
-                  </div>
-                  <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
-                </div>
+                <Reveal key={s.slug} delay={(i % 2) * 120} className={i % 2 === 1 ? "md:mt-40" : ""}>
+                  <Link href={`/${s.slug}`} className="group block">
+                    <div className={`relative overflow-hidden bg-night-2 ${i % 3 === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+                      <Image
+                        src={photo}
+                        alt={`${s.name} work by Gifts Gulf Advertising`}
+                        fill
+                        sizes="(min-width:768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="mt-6 flex items-start justify-between gap-6">
+                      <div>
+                        <h3 className="display-sm">{s.name}</h3>
+                        <p className="mt-3 max-w-md text-base leading-relaxed text-white/65">{s.short}</p>
+                      </div>
+                      <ArrowUpRight className="mt-1 h-7 w-7 shrink-0 opacity-50 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-brand-bright group-hover:opacity-100" strokeWidth={1.5} />
+                    </div>
+                  </Link>
+                </Reveal>
               );
             })}
           </div>
 
-          <div className="mt-4 grid grid-cols-1 gap-4 rounded-[var(--radius-xl)] border border-zinc-800 bg-zinc-900/60 p-6 sm:grid-cols-2 sm:p-8">
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-green-400">
-                Where we work
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2.5">
-                {markets.map((city) => (
-                  <span
-                    key={city}
-                    className="flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-sm font-medium text-zinc-300"
-                  >
-                    <MapPin className="h-3.5 w-3.5 text-green-400" strokeWidth={2} />
-                    {city}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-green-400">
-                Who we work with
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2.5">
-                {sectors.map((sector) => {
-                  const Icon = sectorIcons[sector] ?? Building2;
-                  return (
-                    <span
-                      key={sector}
-                      className="flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-950 px-3.5 py-2 text-sm font-medium text-zinc-300"
-                    >
-                      <Icon className="h-3.5 w-3.5 text-green-400" strokeWidth={2} />
-                      {sector}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
+          <div className="mt-20">
+            <ArrowLink href="/portfolio" className="text-lg">See all our work</ArrowLink>
           </div>
-        </div>
+        </Container>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="scroll-mt-20 bg-white py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="Services" title={<>Advertising across<br />the Gulf</>}>
+            <p>
+              Every service below runs through the same team. Open any one to see
+              what is included, or brief several at once.
+            </p>
+          </SectionIntro>
+          <div className="mt-16">
+            <ServicesList
+              rows={sections.map((s) => ({
+                slug: s.slug,
+                name: s.name,
+                short: s.short,
+                capabilities: s.capabilities,
+              }))}
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* Process */}
+      <section className="bg-[#f3f4f2] py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="How we work" title="From brief to launch" size="md" />
+          <ol className="hairline mt-14 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, i) => (
+              <li key={step.title} className="hairline border-b py-10 lg:border-b-0 lg:border-r lg:px-8 lg:first:pl-0 lg:last:border-r-0">
+                <span className="display-md block text-brand">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      {/* Coverage */}
+      <section className="on-dark overflow-hidden bg-night py-24 text-white sm:py-32">
+        <Container>
+          <p className="eyebrow mb-10">Where we deliver</p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {markets.map((city, i) => (
+              <li key={city} className="display-lg flex items-center gap-6">
+                <span className={i % 2 === 0 ? "text-white" : "text-white/35"}>{city}</span>
+                {i < markets.length - 1 ? <span className="text-brand-bright">·</span> : null}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <p className="eyebrow lg:col-span-3">Who we work with</p>
+            <ul className="flex flex-wrap gap-x-10 gap-y-4 text-xl text-white/80 lg:col-span-9">
+              {sectors.map((sector) => (
+                <li key={sector}>{sector}</li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      {/* Insights */}
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <SectionIntro eyebrow="Insights" title={<>Guides that help<br />you buy right</>} />
+            <ArrowLink href="/blog" className="shrink-0 text-lg">All insights</ArrowLink>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
+            {latestPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+                <BlogCover post={post} sizes="(min-width:768px) 33vw, 100vw" className="aspect-[4/3]" />
+                <p className="eyebrow mt-6">{post.category}</p>
+                <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-brand">
+                  {post.title}
+                </h3>
+                <p className="mt-3 text-sm text-ink/55">{post.readTime}</p>
+              </Link>
+            ))}
+          </div>
+        </Container>
       </section>
 
       {hasVideo ? (
-        <section className="border-b border-zinc-200 bg-white">
-          <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
-            <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-              {settings.featuredVideo.title}
-            </h2>
-            <div className="mt-8">
-              <VideoEmbed
-                url={settings.featuredVideo.url}
-                title={settings.featuredVideo.title}
-              />
+        <section className="bg-[#f3f4f2] py-24 sm:py-32">
+          <Container>
+            <SectionIntro eyebrow="Watch" title={settings.featuredVideo.title} size="md" />
+            <div className="mt-12 max-w-5xl">
+              <VideoEmbed url={settings.featuredVideo.url} title={settings.featuredVideo.title} />
             </div>
-          </div>
+          </Container>
         </section>
       ) : null}
 
       {/* FAQ (AEO) */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Frequently asked questions
-          </h2>
-          <div className="mt-8">
-            <FaqAccordion faqs={siteFaqs} />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="relative overflow-hidden bg-zinc-950">
-        <Image
-          src={featurePhotos.sheikhZayedRoad}
-          alt="Sheikh Zayed Road towers with light trails at dusk"
-          fill
-          sizes="100vw"
-          className="object-cover object-center opacity-40"
-        />
-        <div className="photo-shade-strong absolute inset-0" />
-        <div className="hero-text-shadow relative mx-auto max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-28">
-          <Reveal>
-            <h2 className="font-heading text-3xl font-extrabold text-white sm:text-4xl">
-              Let&apos;s build your next brand moment.
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-zinc-300">
-              Signage, an exhibition stand, a new website, or all of it.
-              Wherever you are between Dubai and Doha, tell us what you need.
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Get a Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="FAQ" title="Questions, answered" size="md" />
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 lg:col-start-5">
+              <FaqAccordion faqs={siteFaqs} />
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Container>
       </section>
     </div>
   );

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
-import { sectionPhotos, heroPhoto } from "@/lib/photos";
+import { sectionHeroGalleries, sectionPhotos, heroPhoto } from "@/lib/photos";
 import { Reveal } from "@/components/reveal";
+import { Container, PageHero } from "@/components/editorial";
 
 const portfolioTitle = "Portfolio | Gifts Gulf Advertising";
 const portfolioDescription =
@@ -30,75 +33,56 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <div>
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-zinc-950">
-        <Image
-          src={sectionPhotos["events-exhibitions"]}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center opacity-30"
-        />
-        <div className="photo-shade-strong absolute inset-0" />
-        <div className="hero-text-shadow relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h1 className="max-w-2xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Work, by category.
-          </h1>
-          <p className="mt-5 max-w-xl text-lg text-zinc-300">
-            This page is set up to hold real project photography and case
-            studies from across the UAE and Qatar, organised by service.
-            The images below are stock placeholders. Swap them for actual
-            completed work.
+      <PageHero
+        photos={[heroPhoto("events-exhibitions")]}
+        crumbs={[{ name: "Home", href: "/" }, { name: "Work" }]}
+        eyebrow="Our work"
+        title={<>Built. Printed.<br /><span className="text-brand-bright">Installed.</span></>}
+        intro={
+          <p>
+            Work across printing, signage, exhibitions, packaging, gift items
+            and social media for clients in the UAE and Qatar. Project case
+            studies are being added; until then, the images below illustrate
+            each service.
           </p>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sections.map((section, i) => {
-            const Icon = section.icon;
-            const photo = sectionPhotos[section.slug];
-            return (
-              <Reveal
-                key={section.slug}
-                delay={(i % 3) * 90}
-                className="group flex flex-col overflow-hidden border border-zinc-200 bg-white transition-colors hover:border-green-600"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
-                  {photo ? (
-                    <Image
-                      src={photo}
-                      alt={`${section.name} work in the UAE and Qatar`}
-                      fill
-                      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    />
-                  ) : null}
-                  <div className="photo-shade absolute inset-0" />
-                  <span className="absolute bottom-3 right-3 bg-green-600 px-2 py-1 font-mono text-[10px] tracking-wider text-white">
-                    {section.name}
-                  </span>
-                  <div className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center border border-white/25 bg-white/10 text-white backdrop-blur-sm">
-                    <Icon className="h-4 w-4" strokeWidth={1.75} />
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col justify-between p-5">
-                  <div>
-                    <h3 className="font-heading text-base font-semibold text-zinc-900">
-                      {section.name}
-                    </h3>
-                    <p className="mt-1 text-sm text-zinc-600">
-                      {section.short}
-                    </p>
-                  </div>
-                  <p className="mt-4 border-t border-zinc-100 pt-3 font-mono text-[11px] tracking-wide text-zinc-400">
-                    Photography pending
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+      <section className="on-dark bg-night py-24 text-white sm:py-32">
+        <Container>
+          <div className="flex flex-col gap-28">
+            {sections.map((section, i) => {
+              const gallery = sectionHeroGalleries[section.slug] ?? [];
+              const photo = gallery[0] ?? sectionPhotos[section.slug];
+              const flip = i % 2 === 1;
+              return (
+                <Reveal key={section.slug}>
+                  <Link href={`/${section.slug}`} className="group grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+                    <div className={`relative aspect-[16/10] overflow-hidden bg-night-2 lg:col-span-8 ${flip ? "lg:order-2 lg:col-start-5" : ""}`}>
+                      {photo ? (
+                        <Image
+                          src={photo}
+                          alt={`${section.name} work in the UAE and Qatar`}
+                          fill
+                          sizes="(min-width:1024px) 66vw, 100vw"
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      ) : null}
+                    </div>
+                    <div className={`lg:col-span-4 ${flip ? "lg:order-1 lg:col-start-1 lg:row-start-1" : ""}`}>
+                      <p className="eyebrow">{String(i + 1).padStart(2, "0")} · Service</p>
+                      <h2 className="display-md mt-5 transition-colors group-hover:text-brand-bright">{section.name}</h2>
+                      <p className="mt-5 text-lg leading-relaxed text-white/65">{section.short}</p>
+                      <span className="link-arrow mt-8 text-base">
+                        Explore {section.name} <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
+        </Container>
       </section>
     </div>
   );

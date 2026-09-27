@@ -37,7 +37,7 @@ export function heroPhoto(id: string, gravity: "auto" | "south" | "center" = "au
 /** Small thumbnails — the portfolio grid, one per section. */
 export const sectionPhotos: Record<string, string> = {
   printing: wide("printing-digital"),
-  signages: wide("signage-install"),
+  signages: wide("signage-3dletters"),
   "events-exhibitions": wide("events-exhibitions"),
   packaging: wide("packaging-boxes"),
   "gift-items": wide("gift-items"),
@@ -57,7 +57,6 @@ export const sectionHeroGalleries: Record<string, string[]> = {
     heroPhoto("printing-vinyl"),
   ],
   signages: [
-    heroPhoto("signage-install"),
     heroPhoto("signage-3dletters"),
     heroPhoto("signage-wayfinding"),
     heroPhoto("signage-illuminated"),
@@ -110,7 +109,7 @@ export const homeHeroGallery: string[] = [
   heroPhoto("hero-skyline", "south"),
   heroPhoto("sheikh-zayed-road", "auto"),
   heroPhoto("fabrication", "auto"),
-  heroPhoto("signage-install", "auto"),
+  heroPhoto("signage-3dletters", "auto"),
 ];
 
 /**
@@ -121,7 +120,7 @@ export const homeHeroGallery: string[] = [
  */
 export const blogPhotoIds: Record<string, string> = {
   "indoor-signage-guide": "signage-wayfinding",
-  "outdoor-signage-guide": "signage-install",
+  "outdoor-signage-guide": "signage-3dletters",
   "vinyl-stickers-guide": "stickers-labels",
   "banner-printing-guide": "printing-digital",
   "acrylic-box-packaging": "blog-acrylic-box",
@@ -137,7 +136,7 @@ export const blogPhotoIds: Record<string, string> = {
   "flag-printing-guide": "events-backdrop",
   "channel-letters-guide": "signage-led",
   "led-vs-neon-signage": "signage-illuminated",
-  "shop-signage-approvals-uae": "signage-install",
+  "shop-signage-approvals-uae": "signage-illuminated",
   "vehicle-branding-fleet-graphics": "signage-vehiclewrap",
   "product-launch-event-planning": "events-stand",
   "trade-show-checklist": "events-truss",

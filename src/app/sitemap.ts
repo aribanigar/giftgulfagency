@@ -3,6 +3,9 @@ import { sections } from "@/lib/site-data";
 import { blogPosts } from "@/lib/blog-data";
 import { locations } from "@/lib/locations";
 import { products } from "@/lib/products";
+import { topics } from "@/lib/topics";
+import { topicCityPairs } from "@/lib/topic-city";
+import { places } from "@/lib/places";
 import { siteConfig } from "@/lib/site-config";
 
 const staticRoutePriority: Record<string, { changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }> = {
@@ -11,6 +14,7 @@ const staticRoutePriority: Record<string, { changeFrequency: MetadataRoute.Sitem
   "/about": { changeFrequency: "monthly", priority: 0.6 },
   "/contact": { changeFrequency: "monthly", priority: 0.5 },
   "/blog": { changeFrequency: "weekly", priority: 0.6 },
+  "/directory": { changeFrequency: "weekly", priority: 0.8 },
   "/locations": { changeFrequency: "monthly", priority: 0.6 },
   "/privacy": { changeFrequency: "yearly", priority: 0.2 },
   "/terms": { changeFrequency: "yearly", priority: 0.2 },
@@ -55,5 +59,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...staticRoutes, ...sectionRoutes, ...blogRoutes, ...locationRoutes, ...productRoutes];
+  const topicRoutes = topics.map((topic) => ({
+    url: `${siteConfig.url}/${topic.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const topicCityRoutes = topicCityPairs().map(({ topicSlug, citySlug }) => ({
+    url: `${siteConfig.url}/${topicSlug}/${citySlug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const placeRoutes = places.map((pl) => ({
+    url: `${siteConfig.url}/locations/${pl.citySlug}/${pl.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...sectionRoutes,
+    ...blogRoutes,
+    ...locationRoutes,
+    ...productRoutes,
+    ...topicRoutes,
+    ...topicCityRoutes,
+    ...placeRoutes,
+  ];
 }
