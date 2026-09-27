@@ -15,11 +15,14 @@ import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { sectionHeroGalleries } from "@/lib/photos";
 import { productsForSection } from "@/lib/products";
+import { serviceGuides } from "@/lib/service-guides";
+import { GuideContent } from "@/components/guide-content";
 
 export function SectionPage({ section }: { section: Section }) {
   const related = sections.filter((s) => s.slug !== section.slug);
   const products = productsForSection(section.slug);
   const lower = section.name.toLowerCase();
+  const guide = serviceGuides[section.slug];
 
   return (
     <div>
@@ -47,15 +50,28 @@ export function SectionPage({ section }: { section: Section }) {
         cta={{ href: "/contact", label: `Get a quote for ${lower}` }}
       />
 
-      {/* Overview */}
+      {/* Buyer's guide (unique per service), falling back to the definition */}
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
-            <p>{section.definition}</p>
-          </SectionIntro>
-          <div className="mt-16">
-            <FactGrid facts={section.quickFacts} />
-          </div>
+          {guide ? (
+            <>
+              <SectionIntro eyebrow="Buyer's guide" title={guide.title} size="md">
+                <p>{guide.lead}</p>
+              </SectionIntro>
+              <div className="mt-16">
+                <GuideContent sections={guide.sections} />
+              </div>
+            </>
+          ) : (
+            <>
+              <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
+                <p>{section.definition}</p>
+              </SectionIntro>
+              <div className="mt-16">
+                <FactGrid facts={section.quickFacts} />
+              </div>
+            </>
+          )}
         </Container>
       </section>
 
@@ -78,30 +94,21 @@ export function SectionPage({ section }: { section: Section }) {
         </Container>
       </section>
 
-      {/* Regional note + one-team note */}
-      <section className="bg-white py-24 sm:py-32">
+      {/* Regional note */}
+      <section className="bg-[#f3f4f2] py-24 sm:py-32">
         <Container>
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-            <div>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
               <p className="eyebrow mb-5">Where we deliver</p>
-              <h2 className="display-sm">Dubai, Abu Dhabi, Sharjah &amp; Doha</h2>
-              <p className="mt-6 text-lg leading-relaxed text-ink/70">{section.regionalNote}</p>
+              <h2 className="display-sm">Across the UAE, Qatar and the wider GCC</h2>
             </div>
-            <div>
-              <p className="eyebrow mb-5">One brief</p>
-              <h2 className="display-sm">Pairs with everything else a brand needs</h2>
-              <p className="mt-6 text-lg leading-relaxed text-ink/70">
-                {section.name} can be briefed together with printing, signage,
-                events, packaging, gifting and social media, all handled by the
-                same team.
-              </p>
-            </div>
+            <p className="text-lg leading-relaxed text-ink/75 lg:col-span-6 lg:col-start-7">{section.regionalNote}</p>
           </div>
         </Container>
       </section>
 
       {products.length > 0 ? (
-        <section className="bg-[#f3f4f2] py-24 sm:py-32">
+        <section className="bg-white py-24 sm:py-32">
           <Container>
             <SectionIntro eyebrow="Products" title={`Popular ${lower} products`} size="md" />
             <ul className="hairline mt-14 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3">
@@ -122,7 +129,7 @@ export function SectionPage({ section }: { section: Section }) {
       ) : null}
 
       {/* FAQ */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-[#f3f4f2] py-24 sm:py-32">
         <Container>
           <SectionIntro eyebrow="FAQ" title="Questions, answered" size="md" />
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
@@ -134,7 +141,7 @@ export function SectionPage({ section }: { section: Section }) {
       </section>
 
       {/* Other services */}
-      <section className="bg-[#f3f4f2] py-24 sm:py-32">
+      <section className="bg-white py-24 sm:py-32">
         <Container>
           <SectionIntro eyebrow="Explore" title="Other services" size="md" />
           <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
