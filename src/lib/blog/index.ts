@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/blog-data";
+import { blogPhotoIds } from "@/lib/photos";
 import { eventsGiftsPosts } from "./events-gifts";
 import { merchPosts } from "./merch";
 import { printProductPosts } from "./print-products";
@@ -14,4 +15,4 @@ export const guidePosts: BlogPost[] = [
   ...stickerPosts,
   ...printProductPosts,
   ...eventsGiftsPosts,
-];
+].map((post) => (!post.photoId && blogPhotoIds[post.slug] ? { ...post, photoId: post.slug } : post));
