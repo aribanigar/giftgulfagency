@@ -5,6 +5,7 @@ import { Container, HairlineLinks, PageHero, SectionIntro } from "@/components/e
 import { JsonLd } from "@/components/json-ld";
 import { locations, getLocation } from "@/lib/locations";
 import { sections } from "@/lib/site-data";
+import { topicsForCity } from "@/lib/topic-city";
 import { siteConfig } from "@/lib/site-config";
 import { locationSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
 
@@ -39,6 +40,7 @@ export default async function LocationPage({
   const { slug } = await params;
   const location = getLocation(slug);
   if (!location) notFound();
+  const localTopics = topicsForCity(location.slug);
 
   return (
     <div>
@@ -86,6 +88,19 @@ export default async function LocationPage({
               <HairlineLinks items={sections.map((s) => ({ href: `/${s.slug}`, title: s.name, meta: s.short }))} />
             </div>
           </div>
+          {localTopics.length > 0 ? (
+            <div className="mt-24 grid grid-cols-1 gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <p className="eyebrow eyebrow-bright">Local guides</p>
+                <h2 className="display-sm mt-4">{location.city} guides</h2>
+              </div>
+              <div className="lg:col-span-8">
+                <HairlineLinks
+                  items={localTopics.map((t) => ({ href: `/${t.slug}/${location.slug}`, title: `${t.name} in ${location.city}`, meta: t.category }))}
+                />
+              </div>
+            </div>
+          ) : null}
         </Container>
       </section>
 

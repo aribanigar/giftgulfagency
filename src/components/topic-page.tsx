@@ -7,11 +7,13 @@ import { getSection } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { breadcrumbSchema, faqPageSchema, productSchema } from "@/lib/schema";
 import { getTopic, type Topic } from "@/lib/topics";
+import { citiesForTopic } from "@/lib/topic-city";
 
 export function TopicPage({ topic }: { topic: Topic }) {
   const section = getSection(topic.section);
   const related = topic.related.map(getTopic).filter((t): t is Topic => Boolean(t));
   const lower = topic.name.toLowerCase();
+  const cities = citiesForTopic(topic.slug);
 
   return (
     <div>
@@ -51,6 +53,26 @@ export function TopicPage({ topic }: { topic: Topic }) {
           </div>
         </Container>
       </section>
+
+      {cities.length > 0 ? (
+        <section className="on-dark bg-night py-24 text-white sm:py-32">
+          <Container>
+            <SectionIntro eyebrow="By city" title={`${topic.name} near you`} size="md">
+              <p>
+                Local guides with venues, areas, approvals and timing for each
+                city we deliver to.
+              </p>
+            </SectionIntro>
+            <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-8 lg:col-start-5">
+                <HairlineLinks
+                  items={cities.map((c) => ({ href: `/${topic.slug}/${c.slug}`, title: `${topic.name} in ${c.city}`, meta: c.country }))}
+                />
+              </div>
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section className="bg-[#f3f4f2] py-24 sm:py-32">
         <Container>

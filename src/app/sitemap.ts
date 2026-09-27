@@ -4,6 +4,7 @@ import { blogPosts } from "@/lib/blog-data";
 import { locations } from "@/lib/locations";
 import { products } from "@/lib/products";
 import { topics } from "@/lib/topics";
+import { topicCityPairs } from "@/lib/topic-city";
 import { siteConfig } from "@/lib/site-config";
 
 const staticRoutePriority: Record<string, { changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }> = {
@@ -64,5 +65,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...sectionRoutes, ...blogRoutes, ...locationRoutes, ...productRoutes, ...topicRoutes];
+  const topicCityRoutes = topicCityPairs().map(({ topicSlug, citySlug }) => ({
+    url: `${siteConfig.url}/${topicSlug}/${citySlug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...sectionRoutes,
+    ...blogRoutes,
+    ...locationRoutes,
+    ...productRoutes,
+    ...topicRoutes,
+    ...topicCityRoutes,
+  ];
 }
