@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { blogPosts } from "@/lib/blog-data";
-import { blogPhotoIds, heroPhoto, wide } from "@/lib/photos";
+import { blogCategories, blogPosts } from "@/lib/blog-data";
+import { BlogCover, blogPhotoId } from "@/components/blog-cover";
+import { BlogBrowser, type BlogCard } from "./blog-browser";
+import { heroPhoto, wide } from "@/lib/photos";
 import { siteConfig } from "@/lib/site-config";
-import { Reveal } from "@/components/reveal";
 import { Container, PageHero } from "@/components/editorial";
 
 const blogTitle = "Blog | Signage, Printing, Packaging & Digital Guides | Gifts Gulf Advertising";
@@ -35,6 +35,19 @@ export default function BlogIndexPage() {
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
   const [featured, ...rest] = posts;
+  const cards: BlogCard[] = rest.map((p) => {
+    const id = blogPhotoId(p);
+    return {
+      slug: p.slug,
+      title: p.title,
+      excerpt: p.excerpt,
+      category: p.category,
+      readTime: p.readTime,
+      image: id ? wide(id) : undefined,
+      coverStat: p.coverStat,
+      tags: p.tags ?? [],
+    };
+  });
 
   return (
     <div>
@@ -44,9 +57,9 @@ export default function BlogIndexPage() {
         title={<>Guides that help<br /><span className="text-brand-bright">you buy right.</span></>}
         intro={
           <p>
-            Practical, factual answers to the questions that come up before a
-            brief: which material, which platform, which format, written for
-            businesses in Dubai, Abu Dhabi, Sharjah and Doha.
+            {blogPosts.length} practical guides to the questions that come up
+            before a brief: sizes, materials, formats, approvals and costs, for
+            businesses across the UAE, Qatar and the GCC.
           </p>
         }
       />
@@ -55,16 +68,12 @@ export default function BlogIndexPage() {
         <section className="bg-white pt-24 sm:pt-32">
           <Container>
             <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 gap-10 lg:grid-cols-12">
-              <div className="relative aspect-[16/10] overflow-hidden bg-night lg:col-span-7">
-                <Image
-                  src={wide(blogPhotoIds[featured.photoId])}
-                  alt={featured.title}
-                  fill
-                  priority
-                  sizes="(min-width:1024px) 58vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+              <BlogCover
+                post={featured}
+                priority
+                sizes="(min-width:1024px) 58vw, 100vw"
+                className="aspect-[16/10] lg:col-span-7"
+              />
               <div className="flex flex-col justify-end lg:col-span-5">
                 <p className="eyebrow">Latest · {featured.category}</p>
                 <h2 className="display-sm mt-5 transition-colors group-hover:text-brand">{featured.title}</h2>
@@ -80,31 +89,7 @@ export default function BlogIndexPage() {
 
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          <div className="hairline grid grid-cols-1 gap-x-10 gap-y-16 border-t pt-16 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((post, i) => (
-              <Reveal key={post.slug} delay={(i % 3) * 90}>
-                <Link href={`/blog/${post.slug}`} className="group block">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-night">
-                    <Image
-                      src={wide(blogPhotoIds[post.photoId])}
-                      alt={post.title}
-                      fill
-                      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="mt-6 flex items-center justify-between gap-3">
-                    <p className="eyebrow">{post.category}</p>
-                    <p className="text-sm text-ink/50">{post.readTime}</p>
-                  </div>
-                  <h2 className="mt-3 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-brand">
-                    {post.title}
-                  </h2>
-                  <p className="mt-3 text-[15px] leading-relaxed text-ink/65">{post.excerpt}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+          <BlogBrowser posts={cards} categories={blogCategories} />
         </Container>
       </section>
     </div>

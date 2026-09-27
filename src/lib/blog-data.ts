@@ -1,8 +1,8 @@
 import type { Faq } from "@/lib/site-data";
+import type { Block } from "@/lib/content-types";
+import { guidePosts } from "@/lib/blog";
 
-export type ContentBlock =
-  | { type: "p"; text: string }
-  | { type: "ul"; items: string[] };
+export type ContentBlock = Block;
 
 export type BlogSection = {
   heading: string;
@@ -15,10 +15,18 @@ export type BlogPost = {
   metaDescription: string;
   category: string;
   excerpt: string;
-  photoId: string;
+  /** Key into blogPhotoIds. Omit when no photo matches the subject exactly: the post gets a typographic cover instead. */
+  photoId?: string;
+  /** Short figure or phrase shown large on a typographic cover, e.g. "210 x 297 mm". */
+  coverStat?: string;
   readTime: string;
   publishedAt: string;
   relatedSectionSlug?: string;
+  /** One- or two-sentence direct answer shown at the top, for readers and answer engines. */
+  quickAnswer?: string;
+  tags?: string[];
+  /** Directory topic slugs this post supports. */
+  relatedTopics?: string[];
   intro: string;
   sections: BlogSection[];
   faqs: Faq[];
@@ -32,7 +40,7 @@ function ul(items: string[]): ContentBlock {
   return { type: "ul", items };
 }
 
-export const blogPosts: BlogPost[] = [
+const corePosts: BlogPost[] = [
   {
     slug: "indoor-signage-guide",
     title: "Indoor signage: a guide to the types, materials and where each one belongs",
@@ -4762,6 +4770,19 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+export const blogPosts: BlogPost[] = [...corePosts, ...guidePosts];
+
+// Duplicate slugs would silently shadow a post; fail the build instead.
+{
+  const seen = new Set<string>();
+  for (const post of blogPosts) {
+    if (seen.has(post.slug)) throw new Error(`Duplicate blog slug: ${post.slug}`);
+    seen.add(post.slug);
+  }
+}
+
+export const blogCategories = Array.from(new Set(blogPosts.map((post) => post.category))).sort();
 
 export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);

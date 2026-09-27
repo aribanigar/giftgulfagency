@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BlogCover } from "@/components/blog-cover";
 import { ArrowUpRight } from "lucide-react";
 import { ServiceBenefits } from "@/components/vendor-comparison";
 import { ServicesList } from "@/components/services-list";
@@ -15,13 +16,7 @@ import { sectors, markets, siteFaqs, sections } from "@/lib/site-data";
 import { blogPosts } from "@/lib/blog-data";
 import { faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
-import {
-  blogPhotoIds,
-  featurePhotos,
-  homeHeroGallery,
-  sectionHeroGalleries,
-  wide,
-} from "@/lib/photos";
+import { featurePhotos, homeHeroGallery, sectionHeroGalleries } from "@/lib/photos";
 
 const homeTitle =
   "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising";
@@ -268,15 +263,7 @@ export default async function Home() {
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
             {latestPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden bg-night">
-                  <Image
-                    src={wide(blogPhotoIds[post.photoId])}
-                    alt={post.title}
-                    fill
-                    sizes="(min-width:768px) 33vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
+                <BlogCover post={post} sizes="(min-width:768px) 33vw, 100vw" className="aspect-[4/3]" />
                 <p className="eyebrow mt-6">{post.category}</p>
                 <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-brand">
                   {post.title}

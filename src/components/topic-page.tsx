@@ -8,12 +8,14 @@ import { siteConfig } from "@/lib/site-config";
 import { breadcrumbSchema, faqPageSchema, productSchema } from "@/lib/schema";
 import { getTopic, type Topic } from "@/lib/topics";
 import { citiesForTopic } from "@/lib/topic-city";
+import { blogPosts } from "@/lib/blog-data";
 
 export function TopicPage({ topic }: { topic: Topic }) {
   const section = getSection(topic.section);
   const related = topic.related.map(getTopic).filter((t): t is Topic => Boolean(t));
   const lower = topic.name.toLowerCase();
   const cities = citiesForTopic(topic.slug);
+  const articles = blogPosts.filter((p) => p.relatedTopics?.includes(topic.slug)).slice(0, 6);
 
   return (
     <div>
@@ -51,6 +53,17 @@ export function TopicPage({ topic }: { topic: Topic }) {
           <div className="mt-16">
             <GuideContent sections={topic.sections} />
           </div>
+          {articles.length > 0 ? (
+            <div className="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <p className="eyebrow">Go deeper</p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight">Detailed answers</h3>
+              </div>
+              <div className="lg:col-span-8">
+                <HairlineLinks items={articles.map((a) => ({ href: `/blog/${a.slug}`, title: a.title, meta: a.category }))} />
+              </div>
+            </div>
+          ) : null}
         </Container>
       </section>
 

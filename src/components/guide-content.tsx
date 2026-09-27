@@ -1,6 +1,6 @@
 import type { Block, GuideSection } from "@/lib/content-types";
 
-function BlockView({ block }: { block: Block }) {
+export function BlockView({ block }: { block: Block }) {
   if (block.type === "p") {
     return <p className="text-[17px] leading-[1.75] text-current opacity-80">{block.text}</p>;
   }
