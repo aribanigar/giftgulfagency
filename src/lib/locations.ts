@@ -116,20 +116,28 @@ export const locations: Location[] = [
     slug: "riyadh",
     city: "Riyadh",
     country: "Saudi Arabia",
-    blurb: "Signage, printing, exhibition stands and corporate gifting for Riyadh businesses.",
+    blurb: "Signage, printing, exhibition stands and corporate gifting for Riyadh businesses, quoted in SAR.",
     definition:
-      "Riyadh is Saudi Arabia's largest business market, and briefs from the city cover the same range as our UAE and Qatar work: storefront and corporate signage, large-format printing, exhibition stands for Riyadh's conference calendar, and corporate gifting for Saudi National Day and other peak periods.",
-    keyAreas: ["Olaya", "King Fahd Road", "Al Malaz", "Riyadh's second industrial city"],
+      "Riyadh is Saudi Arabia's largest business market, and briefs from the city cover the same range as our UAE and Qatar work: storefront and corporate signage, large-format printing, exhibition stands for Riyadh's conference calendar, and corporate gifting for Saudi National Day and other peak periods. Quotes for Riyadh are priced in Saudi Riyal (SAR), with Saudi Arabia's standard 15% VAT (ZATCA) shown separately on the invoice rather than folded into a single AED-based number carried over from a UAE quote.",
+    keyAreas: ["Olaya", "King Fahd Road", "Al Malaz", "Diplomatic Quarter", "Riyadh's second industrial city", "King Abdullah Financial District"],
     approvalNote:
-      "Signage and outdoor branding in Riyadh go through the relevant municipal approval route, with malls and business towers typically adding a landlord sign-off process on top.",
+      "Signage and outdoor branding in Riyadh go through the relevant municipal approval route, with malls and business towers typically adding a landlord sign-off process on top. Items produced or sourced outside Saudi Arabia and imported for a Riyadh order also carry customs clearance time, which is planned into the schedule separately from local fabrication and printing work.",
     faqs: [
       {
         q: "Do you deliver signage and printing projects in Riyadh?",
         a: "Yes. Riyadh is served alongside our UAE and Qatar markets, covering signage, printing, exhibition stands, packaging, corporate gifting and social media.",
       },
       {
-        q: "Can you produce corporate gifts for Saudi National Day campaigns in Riyadh?",
-        a: "Yes. Corporate gifting is planned around regional peak periods, including Saudi National Day, for Riyadh-based clients.",
+        q: "Are Riyadh quotes priced in SAR or AED?",
+        a: "Riyadh quotes are priced in Saudi Riyal (SAR), with Saudi Arabia's 15% VAT shown as a separate line, since carrying over an AED-based UAE quote would understate both the currency and the tax difference.",
+      },
+      {
+        q: "Can you produce corporate gifts for Saudi National Day and Founding Day campaigns in Riyadh?",
+        a: "Yes. Saudi National Day (23 September) and Saudi Founding Day (22 February) are both planned into the regional gifting calendar for Riyadh-based clients, alongside Ramadan, Eid and year-end campaigns.",
+      },
+      {
+        q: "Does an order shipped into Riyadh from outside Saudi Arabia take longer than a locally sourced one?",
+        a: "It can. Items imported into Saudi Arabia go through customs clearance on top of production time, so an imported item's lead time is quoted separately from a locally fabricated sign or a locally printed run.",
       },
     ],
   },

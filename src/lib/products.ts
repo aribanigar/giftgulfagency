@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Lightbulb,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,45 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "illuminated-signage",
+    name: "Illuminated Signage",
+    parentSection: "signages",
+    icon: Lightbulb,
+    primaryKeyword: "illuminated signage dubai",
+    short: "LED lightbox, backlit channel letters and neon-effect signs, fabricated and installed for storefronts and offices.",
+    metaDescription:
+      "Illuminated signage in the UAE and Qatar: LED lightbox signs, backlit channel letters and neon-effect signage, fabricated and installed for storefronts and offices.",
+    definition:
+      "Illuminated signage covers any sign built with a light source behind or inside it, LED lightbox panels, backlit (push-through) acrylic letters, front-lit and halo-lit channel letters, and neon-effect LED strip signs, so a storefront or building name stays legible after dark rather than only during opening hours. It sits alongside non-illuminated acrylic and ACP signage as one of the two main sign categories, and the choice between them usually comes down to storefront visibility hours and whether the site's electrical supply can run a lit sign.",
+    options: [
+      "LED lightbox panels",
+      "Backlit (push-through) acrylic letters",
+      "Front-lit channel letters",
+      "Halo-lit (back-glow) channel letters",
+      "Neon-effect LED strip signage",
+      "Programmable LED message displays",
+    ],
+    quickFacts: [
+      { label: "Light source", value: "LED modules or LED strip, not gas-filled neon tube" },
+      { label: "Best for", value: "Storefronts, building signage, malls, sites open after dark" },
+      { label: "Depends on", value: "Municipal/free-zone signage approval and site electrical supply" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between front-lit and halo-lit illuminated signage?",
+        a: "Front-lit channel letters have LEDs inside the letter body so light shines out through the face, giving a bright, even glow that's the standard choice for retail storefronts. Halo-lit letters keep the face dark while light spills out from behind onto the wall, a look more common on hotel and flagship building signage.",
+      },
+      {
+        q: "Does illuminated signage need separate approval from a standard sign board?",
+        a: "Illuminated signage typically goes through the same municipal or free-zone signage approval process as non-illuminated boards, but the application usually needs to show the electrical load and mounting detail as well as the design, so it's briefed and submitted as part of the same approval step rather than a separate one.",
+      },
+      {
+        q: "How long does an illuminated sign take to fabricate and install?",
+        a: "Turnaround depends on the sign type, size and whether approval is already in hand. Share the sign type, dimensions, site address and target date when requesting a quote and we'll confirm what's achievable.",
       },
     ],
   },

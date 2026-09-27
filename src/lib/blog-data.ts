@@ -2670,6 +2670,101 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
+    slug: "vat-corporate-gifts-printing-uae",
+    title: "VAT on corporate gifts and printing in the UAE: what a procurement brief needs",
+    metaDescription:
+      "How UAE VAT applies to corporate gifts and printing orders: the 5% rate, the AED 500 gift threshold, and what a compliant invoice needs.",
+    category: "Gift Items",
+    excerpt:
+      "The 5% rate, the AED 500 per-recipient gift threshold, and what has to be on the invoice before a gifting order is approved.",
+    photoId: "corporate-gift-items-guide",
+    readTime: "6 min read",
+    publishedAt: "2026-09-27",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: standard UAE VAT is 5% on corporate gifting and printing purchases. Gifts given free to the same person stay outside VAT as a deemed supply as long as their value doesn't pass AED 500 per recipient in a 12-month period, a threshold set by the Federal Tax Authority's Executive Regulation. Above that, or without a compliant tax invoice, a procurement sign-off can stall.",
+    sections: [
+      {
+        heading: "What VAT rate applies to corporate gifts and printing?",
+        blocks: [
+          p(
+            "The UAE's standard VAT rate is 5%, unchanged since it was introduced in 2018, and it applies to most corporate gifting and printing purchases the same way it applies to any other taxable business expense, mugs, apparel, gift boxes, signage, brochures, business cards. A supplier registered for VAT charges 5% on top of the agreed price unless the item falls under a specific zero-rated or exempt category, which corporate gifts and print jobs generally don't.",
+          ),
+        ],
+      },
+      {
+        heading: "When does handing out free gifts trigger VAT anyway?",
+        blocks: [
+          p(
+            "Under UAE VAT's deemed supply rules, giving away goods for free can itself be treated as a taxable supply, even though no money changes hands, because input VAT was likely recovered when the gifts were bought. The FTA's exception: if the value of goods given to one recipient doesn't exceed AED 500 within a rolling 12-month period, it isn't a deemed supply and no output VAT is due on it. A separate de-minimis rule also excuses a business from deemed-supply VAT if its total output tax on all deemed supplies stays under AED 2,000 across the same 12 months.",
+          ),
+          p(
+            "In practice, this covers most single-item corporate gifting, a branded mug, pen or diary handed to one client, but a bulk seasonal hamper or a higher-value gift set can cross AED 500 per person once several items are bundled together. Tracking gift value per recipient, not just per order, is what keeps a National Day or Ramadan gifting campaign inside the exception.",
+          ),
+        ],
+      },
+      {
+        heading: "What has to be on the invoice for a gifting or printing order?",
+        blocks: [
+          p(
+            "A UAE tax invoice needs to say \"Tax Invoice\" at the top, carry the supplier's Tax Registration Number (TRN), a unique sequential invoice number, the date, a description and quantity of what was supplied, and the VAT amount shown separately from the pre-tax price. For any business-to-business order where the buyer pays more than AED 10,000, a full tax invoice is mandatory, not optional, which covers the large majority of corporate gifting and bulk print orders.",
+          ),
+          p(
+            "Requesting the TRN and a sample invoice format before placing a bulk order is a normal, low-friction step, and it's the easiest way for a procurement or finance team to confirm a supplier is actually VAT-registered rather than assuming it from the quote alone.",
+          ),
+        ],
+      },
+      {
+        heading: "Can the VAT on gifts and printing be recovered as input tax?",
+        blocks: [
+          p(
+            "For a VAT-registered business, input VAT paid on corporate gifts and printing used for business purposes is generally recoverable in the same way as any other business expense, provided a valid tax invoice is held and the goods aren't for a blocked category like personal use or client entertainment (a separate rule from gifting). This is a general position, not a substitute for advice from a tax professional or the FTA on a specific order.",
+          ),
+        ],
+      },
+      {
+        heading: "How this differs across the wider Gulf",
+        blocks: [
+          ul([
+            "UAE: standard VAT rate 5%, in place since 2018.",
+            "Saudi Arabia: standard VAT rate 15%, in place since July 2020, roughly three times the UAE rate on the same gifting or printing spend.",
+            "Qatar: no VAT in force as of late 2026, though an e-invoicing law approved earlier in the year is typically the groundwork stage before a VAT launch.",
+          ]),
+          p(
+            "A gifting budget built for a UAE campaign doesn't transfer directly to a Riyadh or Jeddah order at the same per-unit cost, since the 15% Saudi rate has a materially larger effect on a bulk order than the UAE's 5%.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is VAT charged on corporate gifts in the UAE?",
+        a: "Yes, at the standard 5% rate, when a VAT-registered supplier sells gifting items to a business. Separately, giving those gifts away for free can also trigger VAT as a deemed supply, unless the value per recipient stays under AED 500 in a 12-month period.",
+      },
+      {
+        q: "What is the AED 500 rule for corporate gifts?",
+        a: "It's the FTA's threshold for the deemed supply exception: if the value of goods given free to one recipient doesn't exceed AED 500 within a rolling 12-month period, no output VAT is due on that gift. Above that value per person, or once total deemed-supply output tax across all recipients passes AED 2,000 in the same period, VAT can apply.",
+      },
+      {
+        q: "Do we need a formal tax invoice for a corporate gifting order?",
+        a: "It's mandatory once a VAT-registered buyer pays more than AED 10,000 for the order, and it's good practice below that threshold too. The invoice needs to say \"Tax Invoice\", show the supplier's TRN, a sequential invoice number, and the VAT amount separately from the pre-tax price.",
+      },
+      {
+        q: "Can we claim back the VAT paid on printing and branded merchandise?",
+        a: "Generally yes, for a VAT-registered business using the printing or merchandise for business purposes, provided a valid tax invoice is on file. This is general practice, not a substitute for a tax adviser's confirmation on a specific order.",
+      },
+      {
+        q: "Is the VAT rate the same for a gifting campaign that ships to Saudi Arabia or Qatar?",
+        a: "No. Saudi Arabia's standard VAT rate is 15%, three times the UAE's 5%, and Qatar has no VAT in force as of late 2026. Budget and quotes should be built per country, not carried over from a UAE number.",
+      },
+      {
+        q: "Does the AED 500 threshold apply per gift or per recipient?",
+        a: "Per recipient, over a rolling 12-month period, not per individual gift. A single AED 300 mug is inside the exception on its own, but the same recipient receiving a second AED 300 item within 12 months would push their total past the AED 500 threshold.",
+      },
+    ],
+  },
+
+  {
     slug: "canvas-printing-guide",
     title: "Canvas printing: photo prints, display pieces and branded wall art",
     metaDescription:
