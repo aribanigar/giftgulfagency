@@ -5,6 +5,7 @@ import { locations } from "@/lib/locations";
 import { products } from "@/lib/products";
 import { topics } from "@/lib/topics";
 import { topicCityPairs } from "@/lib/topic-city";
+import { places } from "@/lib/places";
 import { siteConfig } from "@/lib/site-config";
 
 const staticRoutePriority: Record<string, { changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }> = {
@@ -72,6 +73,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const placeRoutes = places.map((pl) => ({
+    url: `${siteConfig.url}/locations/${pl.citySlug}/${pl.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...sectionRoutes,
@@ -80,5 +88,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...productRoutes,
     ...topicRoutes,
     ...topicCityRoutes,
+    ...placeRoutes,
   ];
 }

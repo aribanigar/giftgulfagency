@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { locations, getLocation } from "@/lib/locations";
 import { sections } from "@/lib/site-data";
 import { topicsForCity } from "@/lib/topic-city";
+import { placesForCity } from "@/lib/places";
 import { siteConfig } from "@/lib/site-config";
 import { locationSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
 
@@ -41,6 +42,7 @@ export default async function LocationPage({
   const location = getLocation(slug);
   if (!location) notFound();
   const localTopics = topicsForCity(location.slug);
+  const localPlaces = placesForCity(location.slug);
 
   return (
     <div>
@@ -77,6 +79,19 @@ export default async function LocationPage({
               <p className="mt-4 text-lg leading-relaxed text-ink/75">{location.approvalNote}</p>
             </div>
           </div>
+          {localPlaces.length > 0 ? (
+            <div className="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <p className="eyebrow">Areas and venues</p>
+                <h2 className="display-sm mt-4">Around {location.city}</h2>
+              </div>
+              <div className="lg:col-span-8">
+                <HairlineLinks
+                  items={localPlaces.map((x) => ({ href: `/locations/${location.slug}/${x.slug}`, title: x.name, meta: x.summary }))}
+                />
+              </div>
+            </div>
+          ) : null}
         </Container>
       </section>
 
