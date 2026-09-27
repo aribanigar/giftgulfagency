@@ -53,7 +53,7 @@ export default function PortfolioPage() {
           <div className="flex flex-col gap-28">
             {sections.map((section, i) => {
               const gallery = sectionHeroGalleries[section.slug] ?? [];
-              const photo = gallery[section.slug === "signages" ? 1 : 0] ?? sectionPhotos[section.slug];
+              const photo = gallery[0] ?? sectionPhotos[section.slug];
               const flip = i % 2 === 1;
               return (
                 <Reveal key={section.slug}>

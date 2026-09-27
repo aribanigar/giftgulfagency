@@ -29,7 +29,7 @@ export default async function PrivacyPage() {
           This page explains what information {siteConfig.name} collects
           through this website, and how it&apos;s used. It applies to{" "}
           {siteConfig.url} and covers information submitted through the
-          contact form, nothing more.
+          quote form, nothing more.
         </p>
 
         <section>

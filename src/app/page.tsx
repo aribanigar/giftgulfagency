@@ -65,10 +65,6 @@ const processSteps = [
   },
 ];
 
-// The two first-slide photos composed for a wide frame crop badly in the
-// tall work cards, so those sections use their second slide instead.
-const workPhotoIndex: Record<string, number> = { signages: 1 };
-
 const latestPosts = [...blogPosts]
   .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   .slice(0, 3);
@@ -169,7 +165,7 @@ export default async function Home() {
           <div className="mt-20 grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
             {sections.map((s, i) => {
               const gallery = sectionHeroGalleries[s.slug] ?? [];
-              const photo = gallery[workPhotoIndex[s.slug] ?? 0] ?? gallery[0] ?? featurePhotos.fabrication;
+              const photo = gallery[0] ?? featurePhotos.fabrication;
               return (
                 <Reveal key={s.slug} delay={(i % 2) * 120} className={i % 2 === 1 ? "md:mt-40" : ""}>
                   <Link href={`/${s.slug}`} className="group block">

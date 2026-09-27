@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     title: blogTitle,
     description: blogDescription,
     url: `${siteConfig.url}/blog`,
-    images: [{ url: heroPhoto("signage-install"), width: 1920, height: 1080, alt: blogTitle }],
+    images: [{ url: heroPhoto("signage-3dletters"), width: 1920, height: 1080, alt: blogTitle }],
   },
   twitter: {
     card: "summary_large_image",
     title: blogTitle,
     description: blogDescription,
-    images: [heroPhoto("signage-install")],
+    images: [heroPhoto("signage-3dletters")],
   },
 };
 
