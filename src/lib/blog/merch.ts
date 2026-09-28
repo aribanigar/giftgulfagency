@@ -5,6 +5,60 @@ const D = "2026-09-26";
 
 export const merchPosts: BlogPost[] = [
   {
+    slug: "custom-coasters-printing-guide",
+    title: "Custom coasters: sizes, materials and printing options",
+    metaDescription: "Custom coaster sizes in cork, MDF, felt and rubber, and whether UV printing, sublimation or laser engraving suits a branded coaster set.",
+    category: "Gift Items",
+    excerpt: "Standard round and square coaster sizes, which base material to pick, and how a logo actually gets onto one.",
+    coverStat: "90 to 100 mm",
+    readTime: "4 min read",
+    publishedAt: "2026-09-28",
+    relatedSectionSlug: "gift-items",
+    quickAnswer: "Standard coasters are round or square, about 90 to 100 mm across, in cork, MDF, felt or rubber. A full-colour logo or photo prints cleanly by UV printing on cork and MDF, dye sublimation works on fabric-top coasters, and a single-colour logo can be laser-engraved into cork or wood for a more permanent, tone-on-tone finish.",
+    tags: ["custom coasters", "branded coasters", "corporate coaster sets", "coaster printing dubai"],
+    relatedTopics: ["custom-printed-boxes"],
+    intro: "Coasters are a small item, but they sit on a desk, meeting table or bar top where a logo gets seen every day, which is why they're a common addition to a corporate gift set rather than a stand-alone order.",
+    sections: [
+      {
+        heading: "Coaster sizes and shapes",
+        blocks: [
+          table(
+            ["Shape", "Typical size", "Use"],
+            [
+              ["Round", "90 to 100 mm diameter", "Standard desk and bar coasters"],
+              ["Square", "90 to 100 mm per side", "Sets sold in branded boxes"],
+              ["Hexagon / custom die-cut", "Around 95 mm across", "Retail and hospitality merchandise"],
+              ["Coaster + card holder combo", "100 mm coaster with a slot base", "Desk sets and executive gifts"],
+            ],
+          ),
+        ],
+      },
+      {
+        heading: "Materials and finish",
+        blocks: [
+          ul([
+            "Cork: absorbs condensation, light, and the most common base for a printed or engraved logo.",
+            "MDF (wood-fibre board): rigid and flat, takes UV printing well, often paired with a cork backing to stop scratching the table.",
+            "Felt: soft-edged, usually laser-cut into a shape, printed or left as a plain brand colour.",
+            "Rubber or silicone: durable and wipeable, common for bar and outdoor use.",
+          ]),
+          p("A cork or MDF base with a UV-printed full-colour design is the most requested combination for corporate coaster sets, since it holds detailed artwork and photos without the ink wearing off quickly."),
+        ],
+      },
+      {
+        heading: "How the logo gets printed",
+        blocks: [
+          p("UV printing sits ink directly on top of cork or MDF and cures it instantly, so full-colour logos, photos and gradients print in one pass. Dye sublimation is used on fabric-top coasters, where the ink bonds into the surface fibres rather than sitting on top. Laser engraving suits a single-colour, permanent mark burned into cork or wood, a look often chosen for a more understated, premium coaster set."),
+        ],
+      },
+    ],
+    faqs: [
+      { q: "What is the standard coaster size?", a: "Around 90 to 100 mm across, whether round or square." },
+      { q: "What's the minimum order for branded coasters?", a: "Coasters are usually ordered as part of a set (4 or 6 per box) or in bulk for corporate giveaways. Share the quantity and whether they're boxed when requesting a quote." },
+      { q: "Can a full-colour photo be printed on a coaster?", a: "Yes, on cork or MDF via UV printing, which reproduces full-colour designs and photos in a single pass." },
+    ],
+  },
+  {
     slug: "mouse-pad-printing-guide",
     title: "Custom mouse pad printing: sizes, materials and print methods",
     metaDescription: "Custom mouse pad sizes from standard 220 x 180 mm to desk mats, rubber and fabric materials, stitched edges and sublimation printing.",
