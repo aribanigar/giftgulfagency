@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  HatGlasses,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,45 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "custom-caps-hats",
+    name: "Custom Caps & Hats",
+    parentSection: "gift-items",
+    icon: HatGlasses,
+    primaryKeyword: "custom caps dubai",
+    short: "Embroidered and printed caps, trucker caps and bucket hats for staff uniforms, events and giveaways.",
+    metaDescription:
+      "Custom-embroidered and printed caps, trucker caps and bucket hats for staff uniforms, outdoor events and corporate giveaways across the UAE and Qatar.",
+    definition:
+      "Custom caps and hats cover baseball caps, trucker caps, snapbacks and bucket hats, branded with a logo via embroidery, screen printing or heat-transfer printing for staff uniforms, outdoor events, retail merchandise and giveaways.",
+    options: [
+      "Baseball caps",
+      "Trucker caps (mesh back)",
+      "Snapback caps",
+      "Bucket hats",
+      "Embroidered logo branding",
+      "Screen-printed & heat-transfer branding",
+    ],
+    quickFacts: [
+      { label: "Branding methods", value: "Embroidery, screen printing, heat-transfer printing" },
+      { label: "Best for", value: "Staff uniforms, outdoor events, retail and giveaway merchandise" },
+      { label: "Order sizes", value: "Small embroidered runs to bulk event giveaways" },
+    ],
+    faqs: [
+      {
+        q: "Is embroidery or printing better for branded caps?",
+        a: "Embroidery is the standard for staff uniform and corporate caps since the stitched logo holds up to repeated wear and washing. Screen printing or heat-transfer suits flat, larger logos or event giveaways where turnaround matters more than wash durability.",
+      },
+      {
+        q: "What's the minimum order for custom caps?",
+        a: "Both small embroidered batches and bulk event-giveaway runs are handled. Share the quantity and cap style when requesting a quote.",
+      },
+      {
+        q: "Can bucket hats and trucker caps be branded the same way as baseball caps?",
+        a: "Yes. Bucket hats, trucker caps and snapbacks all take embroidery, screen printing or heat-transfer branding, though the curved panel on a bucket hat generally suits a smaller embroidered logo better than a large printed design.",
       },
     ],
   },
