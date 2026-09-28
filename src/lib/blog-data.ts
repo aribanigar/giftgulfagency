@@ -1,8 +1,8 @@
 import type { Faq } from "@/lib/site-data";
+import type { Block } from "@/lib/content-types";
+import { guidePosts } from "@/lib/blog";
 
-export type ContentBlock =
-  | { type: "p"; text: string }
-  | { type: "ul"; items: string[] };
+export type ContentBlock = Block;
 
 export type BlogSection = {
   heading: string;
@@ -15,10 +15,18 @@ export type BlogPost = {
   metaDescription: string;
   category: string;
   excerpt: string;
-  photoId: string;
+  /** Key into blogPhotoIds. Omit when no photo matches the subject exactly: the post gets a typographic cover instead. */
+  photoId?: string;
+  /** Short figure or phrase shown large on a typographic cover, e.g. "210 x 297 mm". */
+  coverStat?: string;
   readTime: string;
   publishedAt: string;
   relatedSectionSlug?: string;
+  /** One- or two-sentence direct answer shown at the top, for readers and answer engines. */
+  quickAnswer?: string;
+  tags?: string[];
+  /** Directory topic slugs this post supports. */
+  relatedTopics?: string[];
   intro: string;
   sections: BlogSection[];
   faqs: Faq[];
@@ -32,7 +40,7 @@ function ul(items: string[]): ContentBlock {
   return { type: "ul", items };
 }
 
-export const blogPosts: BlogPost[] = [
+const corePosts: BlogPost[] = [
   {
     slug: "indoor-signage-guide",
     title: "Indoor signage: a guide to the types, materials and where each one belongs",
@@ -3833,7 +3841,1059 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "artwork-vector-file-guide",
+    title: "Preparing artwork and vector files for printing: a practical guide",
+    metaDescription:
+      "What print-ready artwork actually means: vector vs raster, CMYK vs RGB, resolution, bleed and fonts, and what happens when a logo file isn't usable.",
+    category: "Printing",
+    excerpt:
+      "Vector vs raster, CMYK vs RGB, bleed and fonts, and what to do when the only logo file on hand is a low-res JPEG.",
+    photoId: "artwork-vector-file-guide",
+    readTime: "7 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "printing",
+    intro:
+      "Quick answer: print-ready artwork means a vector file (AI, EPS or a vector-based PDF) in CMYK colour, with text outlined and 3mm of bleed added past the trim edge. A JPEG or PNG pulled off a website almost never meets that, which is the single most common reason a print proof gets delayed. The terms below explain why each requirement exists, not just that it's asked for.",
+    sections: [
+      {
+        heading: "Vector vs raster: the first thing that decides everything else",
+        blocks: [
+          p(
+            "A raster file, a JPEG, PNG or standard screenshot, is a fixed grid of pixels. Enlarge it past its native size and the pixels stretch, so edges soften and go blurry or blocky. A vector file, built in software like Adobe Illustrator and saved as AI, EPS or a vector PDF, stores a logo as mathematical paths instead of pixels, so it can be printed at the size of a business card or the size of a 6-metre banner from the same file with no loss of sharpness.",
+          ),
+          p(
+            "This is why a logo works fine on a website (raster, small, screen resolution) and then looks soft or pixelated the moment it's blown up onto a banner or signboard. The fix isn't a bigger JPEG, it's the original vector file the logo was designed in, or a professional redraw if that file no longer exists.",
+          ),
+        ],
+      },
+      {
+        heading: "CMYK vs RGB: why a printed colour never matches the screen",
+        blocks: [
+          p(
+            "Screens display colour as light, mixing Red, Green and Blue (RGB) to produce a wide, vivid range that includes colours no printer can physically reproduce, particularly bright neons and deep saturated blues. Printers build colour from ink, mixing Cyan, Magenta, Yellow and Black (CMYK), a smaller range. A file designed in RGB and sent straight to print gets converted automatically, and the result usually comes out flatter or slightly shifted from what showed on screen, especially in bright blues, purples and greens.",
+          ),
+          p(
+            "Designing directly in CMYK from the start, and checking a printed proof rather than judging colour from a screen, avoids the surprise. For an exact brand colour, a Pantone (PMS) reference number, checked against a physical swatch book, is the only reliable way to confirm a match across different print runs and materials.",
+          ),
+        ],
+      },
+      {
+        heading: "Resolution: 300 DPI at final size, not screen size",
+        blocks: [
+          p(
+            "Any raster element inside a design, like a product photo placed next to a logo, needs to be 300 DPI (dots per inch) at the final printed size, not at the size it currently sits on screen. A photo that's 300 DPI at 10cm wide is only about 100 DPI once stretched to 30cm, which reads as soft or pixelated in print even though it looked sharp in the design file. Large-format prints viewed from a distance, banners, signage panels, are more forgiving and can run lower, but anything held or viewed up close, business cards, packaging, gift item branding, needs the full 300 DPI at true size.",
+          ),
+        ],
+      },
+      {
+        heading: "Bleed, safe margin and trim marks",
+        blocks: [
+          p(
+            "Bleed is extra artwork extended past the edge where a design will be trimmed, typically 3mm on each side in the UAE and Qatar, so that any tiny shift in cutting doesn't leave a thin white sliver at the edge where colour was meant to run to the border. Safe margin works the other way: a buffer, usually 3-5mm, kept clear of important text or logos on the inside of the trim line, so nothing critical gets cut off if the trim shifts slightly. Trim marks (small lines just outside the bleed) show a printer exactly where the final cut should fall.",
+          ),
+          p(
+            "A file supplied without bleed, with a background colour that stops exactly at the trim edge, is one of the most common reasons a print job comes back with a visible white edge, and it can't always be fixed after the fact without cropping into the design.",
+          ),
+        ],
+      },
+      {
+        heading: "Fonts: outline them before sending the file",
+        blocks: [
+          p(
+            "A font used in a design file only displays correctly on a computer that has that exact font installed. Send an editable file with live text and a missing font gets silently substituted for a default one, changing spacing, size and sometimes the whole look of a logo or headline. Outlining text (converting letters into vector shapes, sometimes called 'create outlines' or 'convert to curves') locks the exact letterforms into the file permanently, so it prints exactly as designed regardless of what fonts are installed on the machine doing the printing.",
+          ),
+        ],
+      },
+      {
+        heading: "What happens when there's no usable logo file at all",
+        blocks: [
+          p(
+            "It's common for a business to only have a logo as a small JPEG pulled from an old website or a WhatsApp screenshot, with no original vector file anywhere. In that case a redraw, manually rebuilding the logo as a clean vector file by tracing the shapes, colours and proportions, is the standard fix, usually a one-time cost before the first print run rather than something needed on every order after.",
+          ),
+        ],
+      },
+      {
+        heading: "A short glossary",
+        blocks: [
+          ul([
+            "Vector — artwork built from mathematical paths, scalable to any size without quality loss (AI, EPS, vector PDF).",
+            "Raster — artwork built from a fixed grid of pixels, loses sharpness when enlarged (JPEG, PNG).",
+            "CMYK — the four-ink colour model (Cyan, Magenta, Yellow, Black) used for print.",
+            "RGB — the light-based colour model (Red, Green, Blue) used for screens.",
+            "PMS / Pantone — a standardised colour-matching system used to specify an exact brand colour.",
+            "DPI — dots per inch; print resolution measured at the artwork's final printed size.",
+            "Bleed — artwork extended past the trim edge to prevent white edges after cutting.",
+            "Safe margin — a buffer kept clear of critical text/logos, away from the trim edge.",
+            "Outline text / convert to curves — turning live, editable text into fixed vector shapes.",
+            "Dieline — the template outline showing where a packaging design folds and cuts.",
+          ]),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What file format should I send for printing?",
+        a: "A vector file (AI, EPS, or a vector-based PDF) in CMYK colour, with all text outlined. If the design includes photos, they should be at least 300 DPI at the final printed size.",
+      },
+      {
+        q: "Can you print from a JPEG or PNG logo?",
+        a: "Small, low-resolution use is fine, but a JPEG or PNG enlarged onto signage, banners or large gift items usually looks soft or pixelated. A vector version, or a redraw if none exists, gives a sharp result at any size.",
+      },
+      {
+        q: "Why does my printed colour look different from what I see on screen?",
+        a: "Screens display colour as light (RGB), which includes brighter and more saturated tones than ink (CMYK) can reproduce. Designing in CMYK from the start, and checking a Pantone reference for an exact brand colour, keeps the result predictable.",
+      },
+      {
+        q: "What is bleed and why is it needed?",
+        a: "Bleed is artwork extended past the edge that will be trimmed, usually 3mm, so a slight shift in cutting doesn't leave a white edge where the design was meant to run to the border.",
+      },
+      {
+        q: "I don't have a vector file of my logo. What now?",
+        a: "A redraw, manually rebuilt as a clean vector file from whatever logo image is available, is the standard fix. It's usually a one-time job before the first print run.",
+      },
+      {
+        q: "Do fonts need to be outlined before sending a file?",
+        a: "Yes, if the file contains live, editable text. Outlining (converting text to vector shapes) locks in the exact letterforms so the design prints correctly regardless of which fonts are installed on the printing side.",
+      },
+    ],
+  },
+
+  {
+    slug: "gitex-global-2026-exhibition-checklist",
+    title: "GITEX Global 2026: an exhibition stand and event branding checklist",
+    metaDescription:
+      "GITEX Global 2026 runs 7-11 December at Dubai Exhibition Centre. A working-backward checklist for stand design, branding, print and on-site setup.",
+    category: "Events",
+    excerpt:
+      "GITEX Global 2026 moves to a new venue for the first time in 45 years. A working-backward checklist for stand branding and on-site setup.",
+    photoId: "gitex-global-2026-exhibition-checklist",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "Quick answer: GITEX Global 2026 runs 7-11 December at Dubai Exhibition Centre, Expo City Dubai, the first time the show has left Dubai World Trade Centre in 45 years. With roughly 6,800 exhibitors and 200,000 visitors expected across 180+ countries, a stand needs its design, branding and print collateral locked well before the show floor opens, not the week of.",
+    sections: [
+      {
+        heading: "What's changing at GITEX Global 2026",
+        blocks: [
+          p(
+            "GITEX has run at Dubai World Trade Centre for over four decades. For 2026, the show moves to Dubai Exhibition Centre at Expo City Dubai, a newer, larger venue built for global-scale events. A new venue means new hall dimensions, new loading and rigging logistics, and, for exhibitors who've built stands at DWTC before, no assumption from a previous year's floor plan carries over automatically. Confirm hall, booth number and loading access directly with the organiser rather than working from memory of a past edition.",
+          ),
+        ],
+      },
+      {
+        heading: "Working backward from 7 December",
+        blocks: [
+          p(
+            "Stand size and complexity set the real timeline, but as a general shape: 3D design and concept approval first, technical build drawings next, fabrication and branding print after drawings are signed off, then load-in and installation in the days immediately before the show opens. Corporate buyers and exhibitors typically need to commit to design 6-10 weeks out for anything beyond a simple shell-scheme booth, which puts late September and October as the realistic window to start a custom stand for this year's dates.",
+          ),
+        ],
+      },
+      {
+        heading: "What a stand needs before doors open",
+        blocks: [
+          ul([
+            "3D concept design and build drawings, reviewed and approved before fabrication starts.",
+            "Branding print for the stand structure, backdrops and any meeting-pod or demo-area graphics.",
+            "Reception desk or counter branding, matched to the stand's colour and material palette.",
+            "Directional and product signage inside larger stands with multiple zones.",
+            "Printed collateral, brochures, one-pagers and business cards for the team working the floor.",
+          ]),
+        ],
+      },
+      {
+        heading: "Backup and secondary presence",
+        blocks: [
+          p(
+            "A roll-up banner stand or pop-up display, magnetic panel or tension fabric, is worth having on-site even alongside a full custom stand, for placement at a satellite meeting area, a speaking-slot backdrop, or as a fallback if a structural element runs late. These are lighter, pack down small, and don't depend on the same fabrication timeline as a full booth build.",
+          ),
+        ],
+      },
+      {
+        heading: "Giveaways and promotional merchandise",
+        blocks: [
+          p(
+            "Foot traffic through a tech and AI exhibition of GITEX's scale means giveaways get picked up in volume, so branding needs to survive being handled, thrown in a bag and carried through the rest of the show. UV-printed items on hard surfaces, pens, tech accessories, tumblers, tend to hold branding better over a multi-day show than printed paper alone.",
+          ),
+        ],
+      },
+      {
+        heading: "Breakdown and what to keep",
+        blocks: [
+          p(
+            "Modular stand components, structural frames, reusable graphic panels, are usually worth storing rather than scrapping after a single show, particularly for a business planning to exhibit again the following year or at a different trade show on the UAE and Qatar's exhibition calendar. Confirm breakdown and storage as part of the original brief rather than deciding it on the last day of the show.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is GITEX Global 2026 and where is it held?",
+        a: "GITEX Global 2026 runs from 7 to 11 December 2026 at Dubai Exhibition Centre, Expo City Dubai. This is the first year the show has moved away from Dubai World Trade Centre after more than four decades there.",
+      },
+      {
+        q: "How far in advance should a GITEX stand be planned?",
+        a: "For anything beyond a basic shell-scheme booth, 6-10 weeks is a realistic planning window: time for 3D design approval, technical drawings, fabrication and branding print before installation ahead of the show.",
+      },
+      {
+        q: "Do I need a full custom stand, or is a roll-up display enough?",
+        a: "Depends on budget and stand size. A roll-up banner or pop-up display works well for a small footprint or as a secondary presence alongside a larger stand, but doesn't replace a custom-built stand for a larger booth space.",
+      },
+      {
+        q: "What kind of giveaways hold up at a multi-day trade show like GITEX?",
+        a: "Items UV-printed directly onto a hard surface, pens, tech accessories, tumblers, tend to keep their branding legible through a multi-day show better than printed paper items alone.",
+      },
+      {
+        q: "Can exhibition stand components be reused for a future show?",
+        a: "Yes. Modular frames and reusable graphic panels are commonly stored and reused for future trade shows rather than rebuilt from scratch each time, provided that's planned for at the breakdown stage.",
+      },
+    ],
+  },
+
+  {
+    slug: "diwali-corporate-gifting-guide",
+    title: "Diwali corporate gifting for UAE and Qatar businesses",
+    metaDescription:
+      "Diwali 2026 falls on 8 November. A practical guide to Diwali corporate gifting timelines, gift formats and branding for UAE and Qatar businesses.",
+    category: "Gift Items",
+    excerpt:
+      "Diwali 2026 falls on 8 November. What a corporate Diwali gift usually includes, and when to place the order.",
+    photoId: "diwali-corporate-gifting-guide",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: Diwali 2026 falls on Sunday 8 November, with the wider festival spanning 6-10 November. Corporate Diwali gifting is a genuine seasonal peak across the UAE and Qatar given the size of the South Asian workforce and business community in both markets, and orders should be placed by mid-to-late October to allow time for sourcing, branding and delivery before the date.",
+    sections: [
+      {
+        heading: "Why Diwali matters for corporate gifting in the Gulf",
+        blocks: [
+          p(
+            "Both the UAE and Qatar have large, established South Asian communities across banking, retail, construction, healthcare and government-adjacent sectors, and Diwali gifting to staff, clients and business partners is a standard part of the corporate calendar in both markets, running alongside, not instead of, Eid and National Day gifting later in the year.",
+          ),
+        ],
+      },
+      {
+        heading: "What a Diwali corporate gift usually includes",
+        blocks: [
+          ul([
+            "Gift hampers combining sweets, dry fruits and a branded item, the most common format for both staff and client gifting.",
+            "Personalised desk or tech accessories, notebooks, tumblers, power banks, UV-printed with a company logo.",
+            "Festive-themed gift boxes, sized for bulk staff distribution or a smaller curated set for VIP clients.",
+            "Branded packaging for the gift itself, since a Diwali hamper is usually opened and shared visibly in an office setting.",
+          ]),
+        ],
+      },
+      {
+        heading: "Branding a Diwali gift without it looking like a giveaway",
+        blocks: [
+          p(
+            "A logo placed subtly, on a hamper's outer box, a ribbon tag or a single branded item inside a mixed hamper, reads as a considered corporate gift. Covering every visible surface with a logo tends to read the opposite way, closer to a promotional giveaway than a festive gift. UV printing works well for the hard items inside a hamper (a tumbler, a pen, a small tray) since it applies branding directly without a separate sticker or label.",
+          ),
+        ],
+      },
+      {
+        heading: "Employee gifts vs client and VIP gifts",
+        blocks: [
+          p(
+            "Employee Diwali gifts are usually distributed in bulk and standardised across the team, so cost-efficiency and a fast bulk-packing turnaround matter more than individual customisation. Client and VIP gifts are typically a smaller batch with a higher unit cost and more personalisation, sometimes down to an individual name on the item or the packaging, and are worth planning as a separate order from the staff batch rather than one single spec for everyone.",
+          ),
+        ],
+      },
+      {
+        heading: "Timeline: when to order",
+        blocks: [
+          p(
+            "With Diwali falling on 8 November 2026, mid-to-late October is a realistic order-by point for bulk hampers and personalised items, allowing time for sourcing, UV printing or personalisation, and delivery across multiple sites or departments before the festival week. Smaller, simpler orders can move faster, but a hamper involving sourced items, packaging and printed branding needs that lead time to avoid a rushed, visibly last-minute result.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is Diwali 2026?",
+        a: "Diwali 2026 falls on Sunday 8 November, with the broader festival period running from 6 to 10 November.",
+      },
+      {
+        q: "When should Diwali corporate gifts be ordered?",
+        a: "Mid-to-late October is a realistic order-by point for bulk hampers or personalised items, allowing time for sourcing, branding and delivery before the festival week in early November.",
+      },
+      {
+        q: "What's a typical Diwali corporate gift?",
+        a: "A hamper combining sweets, dry fruits and a branded item is the most common format, alongside personalised desk or tech accessories for a smaller, higher-value client or VIP gift.",
+      },
+      {
+        q: "Can Diwali gifts be personalised per employee or client?",
+        a: "Yes. Bulk employee gifts are usually standardised for a fast turnaround, while client and VIP gifts are more commonly personalised down to an individual name, run as a separate, smaller batch.",
+      },
+      {
+        q: "Is Diwali gifting common in Qatar as well as the UAE?",
+        a: "Yes. Both markets have large South Asian business communities, and Diwali gifting runs as a standard part of the corporate calendar in both, alongside Eid and National Day gifting later in the year.",
+      },
+    ],
+  },
+
+  {
+    slug: "vat-corporate-gifts-printing-uae",
+    title: "VAT on Corporate Gifts and Printing in the UAE",
+    metaDescription:
+      "UAE VAT on corporate gifts and printing: the 5% rate, the AED 500 gift threshold, and when a full tax invoice is required.",
+    category: "Procurement",
+    excerpt:
+      "The 5% rate, the AED 500 per-recipient gift threshold, and what has to be on the invoice for a bulk order to clear finance.",
+    photoId: "vat-corporate-gifts-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "UAE VAT on corporate gifts and printing sits at the standard 5% rate. Gifts to the same person are excluded from the deemed-supply rule only if their total value stays under AED 500 over a rolling 12 months; go over that, and output VAT is due even though no cash changed hands. Printing and signage invoices follow standard VAT rules, with a full tax invoice required once a VAT-registered customer's order exceeds AED 10,000.",
+    sections: [
+      {
+        heading: "What VAT rate applies to corporate gifts and printing in the UAE?",
+        blocks: [
+          p(
+            "The standard UAE VAT rate is 5%, confirmed for 2026 with no change to the rate itself, and it applies to almost everything a procurement or admin team buys for a gifting or print campaign: mugs, apparel, bags, banners, signage and packaging all sit under the standard rate rather than a zero-rated or exempt category.",
+          ),
+        ],
+      },
+      {
+        heading: "When do corporate gifts trigger a VAT deemed supply?",
+        blocks: [
+          p(
+            "Free gifts don't normally carry VAT, since no payment changes hands, but the Federal Tax Authority treats a gift as a \"deemed supply\" once its value crosses a threshold, and deemed supplies are taxed as if they'd been sold at market value. The exception that keeps most corporate gifting out of scope: gifts to the same recipient are excluded from deemed supply if their total value doesn't exceed AED 500 within a rolling 12-month period.",
+          ),
+          p(
+            "Example: a branded gift set worth AED 475 given to a client once in the year stays under the exemption. The same client receiving a National Day gift and a year-end gift that together total AED 620 in the same 12 months crosses it, and the business owes output VAT on the full value, not just the amount over AED 500.",
+          ),
+        ],
+      },
+      {
+        heading: "Does printing and signage work carry VAT the same way as gift items?",
+        blocks: [
+          p(
+            "Yes. Printing, signage fabrication and packaging are standard-rated supplies like any other service, with VAT charged on the invoice value and recoverable as input VAT by a VAT-registered business, provided the printed material is used for a taxable business purpose, marketing collateral, branded packaging, signage, rather than personal use.",
+          ),
+        ],
+      },
+      {
+        heading: "What has to be on the invoice for a bulk gifting or print order?",
+        blocks: [
+          p(
+            "A simplified tax invoice is enough when the recipient isn't VAT-registered, or when a VAT-registered recipient's order stays at or under AED 10,000 including VAT. Once an order to a VAT-registered business goes over AED 10,000, a full tax invoice is required, showing both parties' names and addresses, both Tax Registration Numbers where applicable, a sequential invoice number, the 5% VAT amount broken out separately from the net value, and a description specific enough to identify what was supplied.",
+          ),
+        ],
+      },
+      {
+        heading: "How should this be planned into a gifting or print campaign budget?",
+        blocks: [
+          p(
+            "Two numbers matter at the budgeting stage: the 5% VAT that sits on top of every quoted price, and whether the per-recipient gift value for the campaign stays under AED 500 across the year if National Day, Eid and year-end gifts are all going to the same client list. A campaign that spreads three separate gifts to the same contact can cross that threshold even if no single gift looks expensive on its own, so it's worth checking against what's already been sent that year, not just the current order.",
+          ),
+        ],
+      },
+      {
+        heading: "Does the same VAT treatment apply to orders in Qatar?",
+        blocks: [
+          p(
+            "No, not yet. Qatar has not implemented VAT as of late 2026, so Qatar-based orders for corporate gifts, printing and signage carry no VAT charge, and none of the AED 500 deemed-supply logic applies there. Qatar has approved draft e-invoicing legislation, generally the groundwork regional authorities put in place before a VAT launch, so this is worth rechecking before assuming it stays this way through 2027.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is VAT charged on corporate gifts in the UAE?",
+        a: "Not directly, since no payment is exchanged, but a gift can be treated as a taxable \"deemed supply\" once its value to a single recipient exceeds AED 500 within a rolling 12-month period, in which case output VAT is due on its value.",
+      },
+      {
+        q: "What is the AED 500 corporate gift threshold?",
+        a: "It's the total value of gifts one recipient can receive from the same business within 12 months before VAT applies as a deemed supply. Below AED 500 total per recipient per year, the gift is excluded from VAT; at or above it, the full value becomes taxable, not just the excess.",
+      },
+      {
+        q: "Can a business reclaim VAT paid on branded merchandise or printing?",
+        a: "Yes, provided the business is VAT-registered and the merchandise or print work is used for a genuine business purpose. VAT on the purchase can generally be recovered as input VAT against the business's own VAT return, in line with standard FTA input tax rules.",
+      },
+      {
+        q: "Do I need a full tax invoice for every printing or gift order?",
+        a: "Only once the order value to a VAT-registered customer exceeds AED 10,000 including VAT. Below that, or when the recipient isn't VAT-registered, a simplified tax invoice showing the supplier's TRN, invoice date and total VAT is sufficient.",
+      },
+      {
+        q: "Does VAT apply if corporate gifts are imported from outside the UAE?",
+        a: "Yes. Import VAT applies at the standard rate when gift items are brought into the UAE from abroad, separately from the deemed-supply rules that apply once the item is gifted domestically.",
+      },
+      {
+        q: "Is VAT charged on corporate gifts and printing orders in Qatar?",
+        a: "Not currently. Qatar has not implemented VAT as of 2026, so no VAT applies to gifts, printing or signage orders delivered there, unlike in the UAE where the 5% rate and AED 500 gift threshold apply.",
+      },
+      {
+        q: "Does Gifts Gulf provide VAT invoices for corporate orders?",
+        a: "Yes. A standard VAT invoice, itemised at the 5% rate with a full tax invoice for orders over the AED 10,000 threshold, is issued for corporate gifting, printing and signage orders.",
+      },
+    ],
+  },
+
+  {
+    slug: "national-day-decoration-signage-dubai",
+    title: "UAE National Day Decoration and Signage for Offices and Storefronts",
+    metaDescription:
+      "UAE National Day decoration and signage for 2026: flags, banners, illuminated signs and window film, and when to order for 2 December.",
+    category: "Seasonal",
+    excerpt:
+      "Flags, banners, illuminated signage and window film for 2 December, and the order-by date that keeps a storefront from scrambling in late November.",
+    photoId: "national-day-decoration-signage-dubai",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "signages",
+    intro:
+      "UAE National Day falls on Wednesday, 2 December 2026, with Qatar National Day following on 18 December. Storefront and office decoration for the day runs on printing and signage lead times, not party-supply stock, so flags, banners, illuminated signage and window film need to be briefed by early-to-mid November to avoid the capacity crunch that hits the trade in the final two weeks before the date.",
+    sections: [
+      {
+        heading: "When should National Day decoration and signage be ordered?",
+        blocks: [
+          p(
+            "UAE National Day (2 December 2026, a Wednesday) and Qatar National Day (18 December 2026, a Friday) both draw on the same printing and fabrication capacity that every other business in the market is booking at once. Corporate buyers ordering illuminated signage, large-format banners or window film should brief the job 4 to 6 weeks ahead, by early-to-mid November for the UAE date, since production and, for illuminated pieces, any approval steps need that runway.",
+          ),
+        ],
+      },
+      {
+        heading: "What decoration and signage options work for a retail storefront?",
+        blocks: [
+          ul([
+            "Illuminated signage in national colours: LED-lit acrylic or lightbox faces re-skinned for the season, visible after dark.",
+            "Large-format PVC banners across a storefront or mall unit frontage.",
+            "One-way vision window film in flag colours, printed to cover a full shopfront glass panel.",
+            "Flag bunting and hand-held flags for counters, queues and giveaways.",
+            "Static cling window stickers for a short campaign that comes down cleanly after the holiday.",
+          ]),
+        ],
+      },
+      {
+        heading: "What suits an office or corporate lobby better than a storefront treatment?",
+        blocks: [
+          p(
+            "An office doesn't need the same visibility-from-the-road treatment as a shopfront. A lobby or reception area is more commonly dressed with a printed banner or backdrop at the entrance, desk and meeting-room flag accents, and sometimes a temporary vinyl wall graphic, rather than illuminated exterior signage, since the goal is an internal, photograph-ready moment for staff and visitors rather than street-level branding.",
+          ),
+        ],
+      },
+      {
+        heading: "Does Qatar National Day need separate planning from the UAE date?",
+        blocks: [
+          p(
+            "Yes, on timing and currency, if not on the product range. Qatar National Day (18 December) lands over two weeks after the UAE's, so Doha-based orders have a slightly longer runway from today, but the same 4-to-6-week briefing rule applies, priced and invoiced in QAR rather than AED. The decoration types, flags, banners, illuminated signage and window film, carry across both markets.",
+          ),
+        ],
+      },
+      {
+        heading: "What approvals apply to temporary National Day signage?",
+        blocks: [
+          p(
+            "Temporary banners and window treatments generally still fall under the same municipal and mall-landlord sign-off that applies to permanent signage, though authorities in both the UAE and Qatar typically allow a lighter, faster process for a short, dated campaign than for a permanent installation. A mall or tower landlord's own rules on size and takedown date are worth confirming before production starts, since they vary by property.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is UAE National Day in 2026?",
+        a: "Wednesday, 2 December 2026, marking the UAE's 55th National Day, with 2-3 December observed as the public holiday.",
+      },
+      {
+        q: "When is Qatar National Day in 2026?",
+        a: "Friday, 18 December 2026, marking Qatar's national unification day.",
+      },
+      {
+        q: "How far ahead should storefront decoration be ordered for National Day?",
+        a: "4 to 6 weeks ahead is a safe margin, which for the UAE's 2 December date means briefing by early-to-mid November, since signage and large-format print capacity across the market tightens sharply in the final two weeks before the holiday.",
+      },
+      {
+        q: "Can illuminated signage be temporarily re-skinned for National Day, or does it need a new sign?",
+        a: "An existing illuminated sign can often be re-faced or overlaid for the season rather than rebuilt, which is faster and cheaper than a new installation; whether that's possible depends on the existing sign's construction and is confirmed at brief stage.",
+      },
+      {
+        q: "Do National Day banners and window film need municipality approval?",
+        a: "Temporary signage generally still needs sign-off from the relevant municipality or mall landlord, though the process for a short, dated campaign is typically quicker than for a permanent sign. Confirming the specific property's rules before production avoids a late removal notice.",
+      },
+      {
+        q: "Is National Day decoration priced differently for offices versus storefronts?",
+        a: "Yes, mainly because the product mix differs: an office lobby typically needs a banner, backdrop and flag accents, while a storefront often adds illuminated signage and full window film, which carries a higher production cost than print-only decoration.",
+      },
+    ],
+  },
+  {
+    slug: "wooden-backdrops-guide",
+    title: "Wooden backdrops vs fabric and PVC: when a built structure is the right call",
+    metaDescription:
+      "Wooden event backdrops explained: how they're built, how they compare to fabric and PVC step-and-repeat walls, and when the extra weight and cost is worth it.",
+    category: "Events",
+    excerpt:
+      "A wooden backdrop costs more and weighs more than fabric. Here's what that extra weight actually buys you.",
+    photoId: "wooden-backdrops-guide",
+    readTime: "6 min read",
+    publishedAt: "2027-01-25",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "Most event backdrops are fabric or PVC because they pack flat, ship light and go up fast. A wooden backdrop trades all three of those advantages for something fabric can't do: a genuinely rigid, dimensional structure that reads as permanent rather than printed. That trade-off only makes sense for specific briefs, and knowing which ones separates a backdrop that looks like an investment from one that just cost more than it needed to.",
+    sections: [
+      {
+        heading: "How a wooden backdrop is actually built",
+        blocks: [
+          p(
+            "A wooden backdrop starts as a structural frame, typically timber battens or a plywood substrate, built to the panel sizes the design calls for. Detailing, cut-out logos, shaped edges, raised lettering or panel joints, is CNC-routed or laser-cut into MDF or plywood sheet rather than hand-cut, which is what makes clean, repeatable detail possible across a wide backdrop built from multiple panels.",
+          ),
+          p(
+            "The finish goes on after assembly: painted MDF for a flat, matte brand colour, laminate or veneer for a wood-grain or textured look, or a printed vinyl wrap over the timber substrate when the design needs full-colour graphics rather than a solid finish. That last option, a vinyl-wrapped wooden structure, is the middle ground between a flat printed backdrop and a fully painted one, printed graphics on a rigid, dimensional base.",
+          ),
+        ],
+      },
+      {
+        heading: "What it buys you over fabric or PVC",
+        blocks: [
+          ul([
+            "Genuine rigidity: no ripples, sag or fabric tension issues under event lighting",
+            "Real depth: raised lettering, shaped panels and layered elements a flat print can't produce",
+            "A permanent-feel finish, suited to a flagship launch rather than a one-off activation",
+            "Reusability across multiple events, if storage and transport are planned for",
+          ]),
+          p(
+            "The cost of that: a wooden backdrop is heavier, needs a van rather than a car to move, doesn't pack flat like a tension-fabric system, and takes longer to build and install. It also has a longer lead time, since CNC-routing and painting or laminating takes real production time that a next-day fabric print doesn't.",
+          ),
+        ],
+      },
+      {
+        heading: "Where a wooden backdrop is the right call",
+        blocks: [
+          p(
+            "Photo-op walls for a retail or product launch, where the backdrop itself is part of the brand experience rather than just a logo wall behind a speaker, are the most common use case. Press conference and dais backdrops for a flagship announcement are another, where the brief calls for a built, permanent-feeling stage rather than a printed panel. For a standard conference logo wall or a multi-city roadshow where the backdrop needs to travel light, fabric or PVC step-and-repeat is still the better, and cheaper, choice.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is a wooden backdrop reusable across multiple events?",
+        a: "Yes, more so than fabric or PVC, provided it's stored and transported carefully. That reusability is one of the main reasons to choose wood over a single-use printed backdrop.",
+      },
+      {
+        q: "Can a wooden backdrop carry full-colour branding, or only a painted finish?",
+        a: "Both. A painted or laminate finish suits a solid brand colour or wood-grain look; a printed vinyl wrap over the timber structure carries full-colour graphics on the same rigid base.",
+      },
+      {
+        q: "How much longer does a wooden backdrop take to produce than a fabric one?",
+        a: "Lead time depends on size and detail, but CNC-routing, assembly and finishing take meaningfully longer than a fabric print run. Share the event date when requesting a quote so the build schedule can be confirmed.",
+      },
+      {
+        q: "Is a wooden backdrop worth it for a single one-off event?",
+        a: "Usually only if the design calls for raised or shaped detail a flat print can't produce. For a single standard logo wall, fabric or PVC is more cost-effective and just as effective on camera.",
+      },
+    ],
+  },
+  {
+    slug: "restaurant-mall-kiosk-guide",
+    title: "Restaurant kiosks vs mall kiosks: what actually differs in the build",
+    metaDescription:
+      "Restaurant (F&B) kiosks vs retail mall kiosks: the plumbing, electrical, ventilation and approval differences that actually drive the build and cost.",
+    category: "Events",
+    excerpt:
+      "A food kiosk and a retail kiosk look similar on a floor plan. What's behind the counter is a different build entirely.",
+    photoId: "restaurant-mall-kiosk-guide",
+    readTime: "6 min read",
+    publishedAt: "2027-02-01",
+    relatedSectionSlug: "events-exhibitions",
+    intro:
+      "\"Kiosk\" covers two genuinely different builds that happen to look similar from the mall walkway. A retail kiosk selling phone accessories or cosmetics and a food kiosk selling coffee or snacks both fit inside a similar footprint, but one needs plumbing and ventilation and the other doesn't, and that difference shapes the design, the approval process and the cost long before either one gets built.",
+    sections: [
+      {
+        heading: "What a retail mall kiosk actually needs",
+        blocks: [
+          p(
+            "A standard retail kiosk is largely a display and merchandising problem: shelving, counter space, lighting and branding within a footprint and height set by the mall's own kiosk design guide. Most malls issue this guide to every kiosk tenant, covering maximum footprint, height restrictions (often lower than a full store unit so sightlines across the walkway stay open), permitted signage size, and sometimes a required material or colour palette to keep the mall's common areas visually consistent.",
+          ),
+          p(
+            "Electrical needs are usually light: power for lighting, a POS system and maybe a phone charging display. No plumbing, no ventilation and no grease trap requirement, which keeps both the build and the approval process considerably simpler than a food kiosk in the same square footage.",
+          ),
+        ],
+      },
+      {
+        heading: "What a restaurant or F&B kiosk needs on top of that",
+        blocks: [
+          ul([
+            "Plumbing for a wash basin and, depending on the menu, a prep sink",
+            "Ventilation and extraction for cooking equipment, even light equipment like espresso machines or panini presses",
+            "Higher electrical load for kitchen equipment (blenders, ovens, refrigeration)",
+            "Food-grade, water-resistant countertop and wall surfaces",
+            "Food safety and municipal health authority approval, in addition to the mall's own design and construction sign-off",
+          ]),
+          p(
+            "That last point is the real cost and timeline driver: a food kiosk needs sign-off from the relevant food safety or health authority on top of the standard mall landlord approval, and that inspection covers surfaces, waste handling and ventilation, not just the visual design. Skipping ahead on construction before that approval is confirmed is the most common way a food kiosk opening date slips.",
+          ),
+        ],
+      },
+      {
+        heading: "What this means for planning either one",
+        blocks: [
+          p(
+            "A retail kiosk brief can usually move straight from mall design approval to fabrication. A food kiosk brief needs the health authority requirements confirmed alongside the mall's design guide before the build starts, since plumbing and ventilation routing has to be designed in from the start rather than retrofitted once a shell is already built.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Does a coffee or snack kiosk need the same approval as a full restaurant?",
+        a: "It needs food safety and health authority sign-off covering surfaces, waste handling and ventilation, on top of the mall's standard design approval, even for a small kiosk footprint. The scope is smaller than a full restaurant, but the approval category is the same.",
+      },
+      {
+        q: "Can an existing retail kiosk be converted into a food kiosk?",
+        a: "Usually not without significant rework, since plumbing, ventilation and food-grade surfaces need to be designed into the structure rather than added afterward. It's typically more practical to build a new food kiosk than retrofit a retail one.",
+      },
+      {
+        q: "What's the biggest cause of delay in opening a mall food kiosk?",
+        a: "Starting construction before health authority requirements are confirmed alongside the mall's design guide. Plumbing and ventilation routing needs to be locked in before the build starts, not adjusted after.",
+      },
+      {
+        q: "Do retail kiosks have the same height and footprint restrictions across all malls?",
+        a: "No. Each mall issues its own kiosk design guide with its own footprint, height and signage limits, so a kiosk design approved for one mall doesn't automatically transfer to another.",
+      },
+    ],
+  },
+  {
+    slug: "acrylic-display-stands-guide",
+    title: "Acrylic display stands: tabletop, literature and product stands explained",
+    metaDescription:
+      "Acrylic display stands explained: how tabletop, literature and product stands are fabricated, material thickness by use case, and where each type is used.",
+    category: "Signage",
+    excerpt:
+      "The same acrylic fabrication process behind signage also builds the display stands sitting on the counter next to it.",
+    photoId: "acrylic-display-stands-guide",
+    readTime: "6 min read",
+    publishedAt: "2027-02-08",
+    relatedSectionSlug: "signages",
+    intro:
+      "Acrylic display stands sit in the same fabrication category as acrylic signage, laser-cut, precision-finished plastic, but solve a different problem: holding, presenting or organising something on a counter or table rather than identifying a building or storefront. The types look simple, but material thickness and fabrication method both change depending on what the stand needs to hold and how much handling it'll see.",
+    sections: [
+      {
+        heading: "How acrylic stands are made",
+        blocks: [
+          p(
+            "Flat-panel stands, sign holders, brochure racks, tiered risers, are laser-cut from a single sheet and assembled with acrylic cement (a solvent that chemically welds the pieces at the seam, rather than glue sitting on top of the joint) for a clean, near-invisible bond. Curved or bent stands, rounded tabletop stands or wrap-around risers, are heat-formed: the acrylic is warmed until pliable and bent over a jig, which avoids a visible seam entirely for a smoother, more premium finish.",
+          ),
+        ],
+      },
+      {
+        heading: "Material thickness by use case",
+        blocks: [
+          ul([
+            "3mm: light signage holders, small brochure stands, low-handling display cards",
+            "5mm: standard tabletop menu and price stands, moderate daily handling",
+            "8mm-10mm: product risers and stands under repeated handling or heavier product weight",
+          ]),
+          p(
+            "Clear acrylic is the default for a stand that shouldn't visually compete with what's displayed on or in it. Frosted acrylic diffuses light and hides fingerprints better on a high-touch stand like a menu holder. Coloured acrylic is used when the stand itself is a branding element rather than a neutral support.",
+          ),
+        ],
+      },
+      {
+        heading: "Where each type is used",
+        blocks: [
+          p(
+            "Tabletop menu and price stands are the most common restaurant and retail application. Literature and brochure holders sit at reception desks and trade show tables. Product riser stands raise a hero item above the rest of a retail display or a cosmetics counter. Phone and tablet stands and sign holders round out the smaller, high-volume end of the category, often ordered alongside a retail or exhibition fit-out rather than as a standalone item.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between laser-cut and heat-formed acrylic stands?",
+        a: "Laser-cut stands are flat panels cemented together at the seams, suited to angular designs. Heat-formed stands are bent over a jig for curved shapes with no visible seam, giving a smoother, more premium finish at a higher production cost.",
+      },
+      {
+        q: "What acrylic thickness should a tabletop menu stand use?",
+        a: "5mm is the standard choice for a tabletop menu or price stand under normal daily handling. Thinner 3mm suits lighter, lower-handling signage holders; thicker 8-10mm suits stands carrying heavier products.",
+      },
+      {
+        q: "Should a display stand be clear, frosted or coloured?",
+        a: "Clear is the default when the stand shouldn't visually compete with what it's displaying. Frosted suits high-touch items like menu holders, since it hides fingerprints better. Coloured acrylic is used when the stand itself is meant to carry brand colour.",
+      },
+      {
+        q: "Can display stands be branded with a logo?",
+        a: "Yes. A logo or design can be UV-printed directly onto the acrylic or cut into the panel itself, depending on the look required.",
+      },
+    ],
+  },
+  {
+    slug: "painting-carpentry-fitout-guide",
+    title: "Painting and carpentry in a fit-out: what's actually included",
+    metaDescription:
+      "What painting and carpentry actually cover in an office or retail fit-out: wall finishes, fire-rated paint, custom joinery, and workshop vs on-site fabrication.",
+    category: "Fit-Out",
+    excerpt:
+      "Two line items on almost every fit-out quote that are easy to underscope: painting and carpentry.",
+    photoId: "painting-carpentry-fitout-guide",
+    readTime: "7 min read",
+    publishedAt: "2027-02-15",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "Painting and carpentry show up as short line items on a fit-out quote, but each covers more ground than the name suggests, and both are common places for a quote to under-scope what a project actually needs. Knowing what's typically included, and what usually needs to be specified separately, avoids finding out mid-project that a feature wall or a reception desk was never actually priced in.",
+    sections: [
+      {
+        heading: "What painting covers",
+        blocks: [
+          p(
+            "Standard wall painting is usually specified as emulsion (matte or low-sheen) for most office and retail walls, with eggshell or satin finishes reserved for higher-traffic areas like corridors and washrooms, where a slightly more washable surface holds up better. Two coats over a primed surface is standard practice for even coverage and colour consistency; a single coat over a colour change (dark to light, or vice versa) usually shows through and needs a third.",
+          ),
+          p(
+            "Feature walls, an accent colour, a textured finish, or a branded mural, are priced separately from the general painting scope, since they use different materials and take more time per square metre. In corridors, stairwells and other paths of escape, civil defence requirements in most UAE emirates and in Qatar call for fire-rated paint, which behaves differently under application and costs more per litre than standard emulsion, so it needs to be specified in the brief rather than assumed as part of a general paint allowance.",
+          ),
+        ],
+      },
+      {
+        heading: "What carpentry and joinery covers",
+        blocks: [
+          ul([
+            "Custom reception desks and counters",
+            "Built-in cabinetry and storage",
+            "Partition framing and door casings",
+            "Feature joinery: slatted wood panelling, ceiling features, custom shelving",
+          ]),
+          p(
+            "Material choice drives both look and cost: MDF with a laminate or veneer finish is the standard, cost-effective choice for most built-in joinery; solid wood or a higher-grade veneer is reserved for a reception desk or feature piece meant to read as premium. Workshop-fabricated joinery, built off-site to exact drawings and delivered for installation, gives a cleaner finish and better dust control than building on-site, but it depends on accurate site measurements being taken before fabrication starts, since a workshop piece built to the wrong dimension can't be adjusted the way an on-site build can.",
+          ),
+        ],
+      },
+      {
+        heading: "Why these two get under-scoped",
+        blocks: [
+          p(
+            "Both painting and carpentry are easy to quote as a generic allowance rather than against the actual brief, standard paint and standard MDF joinery, without accounting for a feature wall, fire-rated corridor paint, or a solid-wood reception desk that the brief actually calls for. Confirming exactly which walls get a feature finish and which joinery pieces are meant to be premium, rather than leaving it to a general allowance, is what keeps a fit-out quote accurate against what actually gets built.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Does a fit-out paint allowance usually include feature walls?",
+        a: "Not by default. A feature wall, accent colour or textured or branded finish is typically priced separately from the general painting scope, since it uses different materials and takes longer per square metre.",
+      },
+      {
+        q: "Is fire-rated paint required everywhere in a fit-out?",
+        a: "It's typically required in corridors, stairwells and other paths of escape under civil defence requirements, not across every wall in the space. It needs to be specified in the brief since it costs more than standard emulsion.",
+      },
+      {
+        q: "What's the difference between MDF and solid wood joinery?",
+        a: "MDF with a laminate or veneer finish is the standard, cost-effective choice for most built-in cabinetry and joinery. Solid wood or a higher-grade veneer is reserved for a reception desk or feature piece meant to read as more premium.",
+      },
+      {
+        q: "Should joinery be built on-site or in a workshop?",
+        a: "Workshop fabrication gives a cleaner finish and better dust control, and is the standard approach once accurate site measurements are taken. On-site building suits pieces that need adjustment during installation or can't be pre-measured accurately.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-write-rfq-corporate-gifts-printing-uae",
+    title: "How to Write an RFQ for Corporate Gifts and Printing in the UAE",
+    metaDescription:
+      "How to write an RFQ for corporate gifts and printing in the UAE: what to include, the LPO and proof-approval steps, and realistic lead times.",
+    category: "Procurement",
+    excerpt:
+      "What actually belongs in the RFQ, the LPO step that follows it, and the proof-approval stage most delivery-date slippage traces back to.",
+    photoId: "how-to-write-rfq-corporate-gifts-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "printing",
+    intro:
+      "A usable RFQ for corporate gifts or printing in the UAE states the item or job, exact quantity, branding method and placement, artwork status, and the delivery date, not just \"need a quote for mugs.\" That's the difference between a quote turned around the same day and a back-and-forth that costs a week. The LPO that follows confirms the price and terms in writing before production starts, and a proof-approval step sits between the LPO and the production run so nothing goes to press unapproved.",
+    sections: [
+      {
+        heading: "What has to be in an RFQ for it to get a fast, accurate quote?",
+        blocks: [
+          ul([
+            "Item or job description: the product, printing method, or signage/fit-out scope.",
+            "Exact quantity, or a realistic range if it isn't finalised yet.",
+            "Branding method and placement, if known: logo position, number of colours, engraving vs print.",
+            "Artwork status: vector file ready, needs a redraw, or design not started.",
+            "Delivery date and delivery address or site.",
+            "Budget range, if there is one, so options can be matched to it rather than quoted blind.",
+          ]),
+        ],
+      },
+      {
+        heading: "What is an LPO and why does production wait for it?",
+        blocks: [
+          p(
+            "A Local Purchase Order (LPO) is the buyer's written confirmation of the agreed price, quantity and terms, issued after a quote is accepted. Production on a bulk order doesn't start against a verbal or emailed \"go ahead\" alone, since materials and, for personalised or engraved items, production capacity are committed against a confirmed order. An LPO also becomes the paper trail an internal finance or audit process typically asks for, alongside the VAT invoice that follows.",
+          ),
+        ],
+      },
+      {
+        heading: "What happens at the proof-approval stage?",
+        blocks: [
+          p(
+            "Before a bulk run starts, a proof, a physical sample for items like mugs, apparel or engraved pieces, or a digital print-ready layout for banners, packaging and stationery, is sent for sign-off. This is the point to catch a wrong Pantone shade, a misspelled name on an award, or a logo sized wrong for the print area, before it's repeated across the full quantity rather than after. A signed-off proof is also what a supplier works from if a dispute comes up later about what was actually agreed.",
+          ),
+        ],
+      },
+      {
+        heading: "How does artwork readiness affect the quoted lead time?",
+        blocks: [
+          p(
+            "A lead time quoted against \"artwork ready\" assumes a usable vector file arrives on day one. If the only logo on hand is a low-resolution JPEG, a redraw gets added before production can start, which pushes the delivery date back by however long that redraw and its own approval round take. Flagging artwork status honestly in the RFQ, rather than assuming a logo file will simply work, is the single biggest lever on whether a quoted date holds.",
+          ),
+        ],
+      },
+      {
+        heading: "How far ahead should an RFQ be sent for a bulk or personalised order?",
+        blocks: [
+          p(
+            "For standard bulk items with straightforward branding, sending the RFQ 2 to 3 weeks ahead of the need date leaves room for a quote, an LPO, a proof round and production. Personalised, per-recipient items (engraved awards, individually named gifts) and peak periods (National Day, Ramadan, Eid, year-end) both compress available capacity, so those briefs are better sent 4 to 6 weeks out rather than 2 to 3.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the minimum information needed to get an accurate quote?",
+        a: "The item or job, exact or realistic quantity, and delivery date are the minimum. Branding method, placement and artwork status can follow, but leaving them out is the most common reason an initial quote comes back as a wide range rather than a firm number.",
+      },
+      {
+        q: "Is an LPO required for a small or one-off order?",
+        a: "It's less common to require one for a small, low-value order, but it's still good practice, since it gives both sides the same written record of what was agreed. Bulk and corporate orders generally do require one before production starts.",
+      },
+      {
+        q: "Who approves the proof before production starts?",
+        a: "Whoever briefed the order, or a designated approver on their team, since the proof is the last point to catch an error before it's repeated across the full quantity. Sign-off is best given by one named person rather than left open to a group with no clear final say.",
+      },
+      {
+        q: "Can an RFQ be sent without final artwork?",
+        a: "Yes. Flagging that artwork isn't ready yet, rather than leaving it out of the RFQ entirely, lets the quote and lead time account for a redraw or design step upfront instead of surfacing it as a delay later.",
+      },
+      {
+        q: "Does a signed proof delay the overall timeline?",
+        a: "It adds a short, planned step, not an open-ended delay, provided the approver reviews and signs off promptly. Most delays at this stage come from the proof sitting unreviewed rather than from the proof process itself.",
+      },
+      {
+        q: "What happens if the quantity in the RFQ changes after the quote is issued?",
+        a: "A revised quantity generally needs a revised quote and LPO, since unit pricing and lead time both scale with volume. Flagging a likely quantity range in the original RFQ reduces how often this happens.",
+      },
+    ],
+  },
+
+  {
+    slug: "corporate-gifts-banks-financial-institutions-uae",
+    title: "Corporate Gifting for Banks and Financial Institutions in the UAE",
+    metaDescription:
+      "Corporate gifting for UAE banks and financial institutions: staying inside internal gift policies, the AED 500 symbolic-gift line, and safe item choices.",
+    category: "Industry",
+    excerpt:
+      "Why banks and financial institutions gift differently, the AED 500 symbolic-gift line internal policies lean on, and item choices that stay inside it.",
+    photoId: "corporate-gifts-banks-financial-institutions-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Banks and financial institutions gift under tighter internal rules than most other industries, since gifts to or from a regulated entity sit under anti-bribery and conflict-of-interest policies as well as ordinary budget limits. Most internal gift policies in the UAE lean on the same AED 500 line the Federal Tax Authority treats as a symbolic, non-cash gift, so a corporate gifting brief for a bank client or a bank's own staff usually starts from that ceiling rather than from a fixed budget.",
+    sections: [
+      {
+        heading: "Why do banks and financial institutions have stricter gifting rules?",
+        blocks: [
+          p(
+            "Anti-bribery and conflict-of-interest policies apply to regulated financial institutions more directly than to most other industries, since a gift to a decision-maker at a bank can be read as an attempt to influence a lending, procurement or account decision. Internal compliance policies typically require gifts to be non-cash, given openly rather than privately, tied to a recognised occasion, and reported once they cross a set value, rather than left to individual discretion.",
+          ),
+        ],
+      },
+      {
+        heading: "What is the AED 500 line internal gift policies work from?",
+        blocks: [
+          p(
+            "AED 500 is the threshold UAE tax rules already use to define a \"symbolic\" business gift, below which it isn't treated as a taxable deemed supply (covered in the guide to VAT on corporate gifts and printing). Many internal corporate gift policies, banks included, lean on the same figure as their own reporting or approval threshold, so a gift built to stay under it usually clears both the tax treatment and the internal compliance check at once.",
+          ),
+        ],
+      },
+      {
+        heading: "What kinds of gifts suit a bank or financial institution?",
+        blocks: [
+          ul([
+            "Branded desk items and stationery: pens, notebooks and diaries, practical, low-key and easy to keep under a compliance threshold.",
+            "Drinkware: mugs, bottles and tumblers, a safe, visible everyday item.",
+            "Seasonal hampers timed to a recognised occasion, National Day, Ramadan or year-end, rather than an ordinary business day.",
+            "Branded tech accessories at the lower end of the category, USB drives or basic power banks, rather than premium electronics.",
+          ]),
+          p(
+            "What's generally avoided: cash or cash-equivalent vouchers, high-value personal items, and anything sized to a specific individual's known preferences rather than a standard gift line, since all three read as closer to an inducement than a courtesy.",
+          ),
+        ],
+      },
+      {
+        heading: "Does this apply to gifts between banks and their own staff, or only external clients?",
+        blocks: [
+          p(
+            "Both, though the sensitivity is usually higher for anything moving between a bank and an external party, a client, a vendor, a regulator-adjacent contact, than for internal staff recognition, which typically follows a standard HR gifting policy rather than a conflict-of-interest one. Either way, the same non-cash, openly-given, occasion-tied approach applies.",
+          ),
+        ],
+      },
+      {
+        heading: "How does this change the corporate gifting brief?",
+        blocks: [
+          p(
+            "A gifting brief for a bank or financial institution is usually worth flagging as compliance-sensitive at the outset. Per-recipient value and occasion matter more here than for a typical retail or hospitality client, and personalisation is best kept to the name-or-initials level rather than anything that reads as tailored to an individual's personal taste.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can a bank give cash or vouchers as a corporate gift in the UAE?",
+        a: "It's generally avoided under standard internal gift policies, since cash and cash-equivalent vouchers read closer to an inducement than a courtesy and are harder to justify against anti-bribery rules than a branded, non-cash item.",
+      },
+      {
+        q: "What's the safest gift value for a bank client relationship gift?",
+        a: "Staying under AED 500 per recipient keeps a gift under the same symbolic-gift line UAE tax rules use, which most internal bank compliance policies also lean on for their own approval or reporting threshold.",
+      },
+      {
+        q: "Do bank staff need to report gifts they receive?",
+        a: "Under most internal gift policies, yes, once a gift's value crosses a set threshold, staff are expected to declare it to the appropriate department rather than leaving it undisclosed.",
+      },
+      {
+        q: "Are gifts to a bank's own employees treated the same as gifts to external clients?",
+        a: "Not usually. Internal staff recognition typically follows a standard HR gifting policy, while gifts involving an external party, a client, vendor or regulator-adjacent contact, sit under the stricter conflict-of-interest rules.",
+      },
+      {
+        q: "Can a bank gift be personalised with a client's name?",
+        a: "Yes. Name-or-initials personalisation is standard and low-risk. Personalisation that reflects a specific individual's personal taste or lifestyle is generally avoided, since it reads as more targeted than a standard relationship gift.",
+      },
+      {
+        q: "Is a VAT invoice still needed for a compliance-conscious bank gift order?",
+        a: "Yes. The same 5% VAT rate and AED 500 deemed-supply threshold apply regardless of the recipient's industry, so a proper invoice is issued the same way as for any other corporate gifting order.",
+      },
+    ],
+  },
+
+  {
+    slug: "corporate-gifts-budget-guide-uae",
+    title: "Corporate gifts by budget: what fits AED 25, 50, 100 and 250 per person",
+    metaDescription:
+      "Corporate gift budgets in the UAE by tier — AED 25, 50, 100 and 250 per person — what each realistically buys and what pushes cost up within a tier.",
+    category: "Procurement",
+    excerpt:
+      "What AED 25, 50, 100 and 250 per person realistically buys, and the four things that push cost up or down within any tier.",
+    photoId: "corporate-gifts-budget-guide-uae",
+    readTime: "7 min read",
+    publishedAt: "2026-09-26",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "A per-person budget is usually set before the product is picked, not after, so the real question isn't \"what's a good corporate gift\" but \"what does AED 50 or AED 250 actually buy once branding and quantity are factored in.\" UAE promotional pricing generally falls into three market bands: roughly AED 10-50 for mass giveaways, AED 50-150 for mid-range gifts, and AED 150-500+ for luxury or executive gifts, with the branding method and order quantity moving a product up or down within its band. Exact pricing always depends on quantity and branding method, so treat the ranges below as planning guidance, not a quote.",
+    sections: [
+      {
+        heading: "What fits an AED 25 per-person budget?",
+        blocks: [
+          p(
+            "AED 25 sits at the mass-giveaway end of the market, roughly AED 10-50 for this category, and covers single-colour branded basics: keychains, pens, notebooks, lanyards and simple tote bags. At this budget, the branding is usually one colour, one location, since multi-colour or full-wrap branding pushes a AED 15 item toward AED 30-40 once print costs are added.",
+          ),
+          p(
+            "This tier works for mass distribution, staff onboarding batches, trade show giveaways, conference attendee gifts, where volume matters more than any single item feeling premium.",
+          ),
+        ],
+      },
+      {
+        heading: "What fits an AED 50 per-person budget?",
+        blocks: [
+          p(
+            "AED 50 sits at the upper end of the mass-giveaway band and the entry point of mid-range gifts (roughly AED 50-150). It typically buys a decent notebook and diary set, a printed mug, a basic water bottle, or a two-item bundle like a pen-and-notebook combo. Full-colour DTF branding becomes realistic at this budget for smaller runs, where a single-colour screen print was the more common route at AED 25.",
+          ),
+          p(
+            "This is a common range for internal recognition gifts, client thank-yous after a small order, and event attendee gifts where the brand wants the item to feel like more than a giveaway.",
+          ),
+        ],
+      },
+      {
+        heading: "What fits an AED 100 per-person budget?",
+        blocks: [
+          p(
+            "AED 100 lands mid-way through the mid-range band and typically buys a quality insulated water bottle, a branded cap-and-bag set, a basic power bank, or a mid-tier notebook and pen gift set. This is usually the first budget tier where a genuine tech item, a small power bank or a USB drive with decent storage, fits without cutting into branding quality elsewhere in the order.",
+          ),
+          p(
+            "Client gifting for an active account, new-hire welcome kits, and National Day or Eid gifting for a mid-size client list commonly sit in this range.",
+          ),
+        ],
+      },
+      {
+        heading: "What fits an AED 250 per-person budget?",
+        blocks: [
+          p(
+            "AED 250 sits inside the luxury band (roughly AED 150-500+) and typically buys a branded gift box or set: a premium notebook, a metal pen and a drinkware item packaged together, a leather-finish gift set, or a higher-capacity power bank paired with a second item. Packaging becomes part of the gift itself at this tier, a printed or rigid gift box, not a poly bag, since unboxing is part of what the budget is paying for.",
+          ),
+          p(
+            "This range is typical for VIP client gifting, senior leadership or board gifts, and year-end or National Day gifts for a business's top-tier accounts.",
+          ),
+        ],
+      },
+      {
+        heading: "What actually moves a gift's cost within its budget tier?",
+        blocks: [
+          ul([
+            "Branding method: single-colour screen printing costs less per unit than full-colour DTF, UV printing or embroidery, especially at lower quantities where set-up costs aren't spread across many units.",
+            "Order quantity: unit cost drops as quantity rises, so the same AED 50 item at 50 pieces and at 500 pieces can land at meaningfully different per-unit rates once quoted.",
+            "Local stock vs import: items held in local UAE stock generally quote faster and can cost less than an item that has to be imported and branded to order.",
+            "Packaging: a rigid or printed gift box adds cost on top of the product itself, which is usually the difference between a AED 100 item feeling like a AED 100 gift and feeling like a AED 150 one.",
+          ]),
+        ],
+      },
+      {
+        heading: "Does the AED 500 VAT gift threshold affect which tier to choose?",
+        blocks: [
+          p(
+            "It can, for repeat gifting to the same person. UAE VAT treats gifts to one recipient as a taxable \"deemed supply\" once their combined value passes AED 500 within a rolling 12 months, so a business giving the same client a National Day gift and a year-end gift both from the AED 250-300 tier can cross that threshold across the year even though neither gift looks expensive on its own. Budgeting each occasion against what's already been sent to that recipient that year avoids an unplanned VAT liability landing on finance later.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What's the minimum order quantity for a budget-tier corporate gift?",
+        a: "It depends on the product and branding method. Simpler single-colour items generally accept lower minimums than a multi-item gift set, and exact minimums are confirmed against the specific product once a quote is requested.",
+      },
+      {
+        q: "How does lead time change between budget tiers?",
+        a: "Simpler, locally stocked single-item gifts in the AED 25-50 range generally quote faster than a multi-item AED 250 gift set that needs assembly and box packaging, since the set has more components to source and brand before it can ship.",
+      },
+      {
+        q: "Which branding methods are available at the lower budget tiers?",
+        a: "Single-colour screen printing and basic pad printing are the most cost-effective at the AED 25-50 tier. Full-colour DTF, UV printing and embroidery are all available at every tier, but their per-unit set-up cost is easier to justify once the budget or the quantity is higher.",
+      },
+      {
+        q: "What's the single biggest driver of price within a budget tier?",
+        a: "Order quantity, followed by branding method. The same product briefed at a higher quantity or with a simpler one-colour branding method routinely comes in well under the same item briefed as a small, full-colour run.",
+      },
+      {
+        q: "Do you deliver budget-tier corporate gifts across the whole UAE and Qatar?",
+        a: "Yes. Delivery is arranged across the UAE and Qatar for any budget tier, and delivery to a specific site or multiple branch locations can be scoped at quote stage.",
+      },
+      {
+        q: "What artwork is needed to quote a budget-tier gift order?",
+        a: "A vector logo file (AI, EPS or high-resolution PDF) and the target quantity and budget per person are enough to get an accurate quote. A raster logo (JPEG or PNG) can usually be redrawn, though this can add a small design step before production.",
+      },
+      {
+        q: "Can different budget tiers be mixed in the same order, for example VIP clients at AED 250 and general staff at AED 50?",
+        a: "Yes. Tiered gifting, a higher-value gift for VIP clients or leadership and a lower-value item for general staff or attendees, is a common way to brief a single order and is handled as one project with separate line items.",
+      },
+    ],
+  },
 ];
+
+export const blogPosts: BlogPost[] = [...corePosts, ...guidePosts];
+
+// Duplicate slugs would silently shadow a post; fail the build instead.
+{
+  const seen = new Set<string>();
+  for (const post of blogPosts) {
+    if (seen.has(post.slug)) throw new Error(`Duplicate blog slug: ${post.slug}`);
+    seen.add(post.slug);
+  }
+}
+
+export const blogCategories = Array.from(new Set(blogPosts.map((post) => post.category))).sort();
 
 export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);

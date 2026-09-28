@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/json-ld";
@@ -9,10 +9,15 @@ import { siteConfig } from "@/lib/site-config";
 import { featurePhotos } from "@/lib/photos";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -65,9 +70,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900">
+      <body className="min-h-full flex flex-col bg-white text-ink">
         <JsonLd data={organizationSchema(settings)} />
         <JsonLd data={websiteSchema()} />
         <Header />

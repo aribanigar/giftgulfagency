@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { blockText } from "@/lib/content-types";
 import { sections, type Faq, type Section } from "@/lib/site-data";
 import type { BlogPost, BlogSection } from "@/lib/blog-data";
 import type { SiteSettings } from "@/lib/settings";
@@ -195,7 +196,7 @@ function articleWordCount(post: BlogPost) {
   const blockWords = (blocks: BlogSection["blocks"]) =>
     blocks.reduce(
       (sum, block) =>
-        sum + wordsIn(block.type === "p" ? block.text : block.items.join(" ")),
+        sum + wordsIn(blockText(block)),
       0,
     );
   const sectionWords = post.sections.reduce(
@@ -207,7 +208,7 @@ function articleWordCount(post: BlogPost) {
 }
 
 export function articleSchema(post: BlogPost) {
-  const photoId = blogPhotoIds[post.photoId];
+  const photoId = post.photoId ? blogPhotoIds[post.photoId] : undefined;
   const pageUrl = `${siteConfig.url}/blog/${post.slug}`;
   return {
     "@context": "https://schema.org",
@@ -218,7 +219,7 @@ export function articleSchema(post: BlogPost) {
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     articleSection: post.category,
-    keywords: post.category,
+    keywords: [post.category, ...(post.tags ?? [])].join(", "),
     wordCount: articleWordCount(post),
     inLanguage: "en",
     ...(photoId ? { image: heroPhoto(photoId) } : {}),

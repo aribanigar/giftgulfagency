@@ -22,14 +22,14 @@ export const locations: Location[] = [
     country: "United Arab Emirates",
     blurb: "Printing, signage, exhibitions, packaging, gifting and social media for Dubai brands, from Deira to Dubai Marina.",
     definition:
-      "Dubai is our home market: production, fabrication and the team that handles a Dubai brief day to day are all based in the UAE, so turnaround for signage installs, print runs and exhibition builds across the city doesn't depend on shipping work in from elsewhere.",
+      "Dubai is the busiest market we serve: shopfront signage in its malls, exhibition stands at DWTC and Expo City Dubai, print runs for events and launches, and corporate gifting for year-end and National Day. We deliver and install across the city, from Deira to Dubai Marina.",
     keyAreas: ["Deira", "Al Quoz", "Business Bay", "Sheikh Zayed Road", "Jumeirah Lake Towers (JLT)", "Dubai Marina", "Downtown Dubai"],
     approvalNote:
       "Signage, fit-out and outdoor branding in Dubai typically need sign-off from the relevant municipal or free-zone authority, and malls and business towers usually add their own approval process on top. That sequencing is factored into the project timeline from the brief stage, not discovered midway through.",
     faqs: [
       {
-        q: "Do you have a production team based in Dubai, or is work shipped in?",
-        a: "Production and fabrication are based in the UAE, so Dubai signage, printing and exhibition work is handled locally rather than shipped in from another country.",
+        q: "Do you deliver and install across all of Dubai?",
+        a: "Yes. We deliver and install signage, printing, exhibition stands, packaging and gifts across Dubai, including free zones, malls and business towers.",
       },
       {
         q: "Can you handle a signage install in a specific Dubai free zone or mall?",
@@ -139,14 +139,26 @@ export const locations: Location[] = [
     country: "Saudi Arabia",
     blurb: "Printing, signage and packaging support for Jeddah's retail and trade businesses.",
     definition:
-      "Jeddah's retail corridors and trade links make signage, packaging and printing a constant need for the city's businesses, and that work is delivered under the same brief-to-installation process used across our other GCC markets.",
-    keyAreas: ["Al Hamra", "Tahlia Street", "King Abdulaziz Road", "Jeddah Industrial City"],
+      "Jeddah's retail corridors and trade links make signage, packaging and printing a constant need for the city's businesses, and that work is delivered under the same brief-to-installation process used across our other GCC markets. Quotes for Jeddah are priced in Saudi Riyals (SAR) at the Kingdom's standard 15% VAT rate, not simply converted from an AED quote, since Saudi VAT sits well above the UAE's 5% and needs to be budgeted for separately.",
+    keyAreas: ["Al Hamra", "Tahlia Street", "King Abdulaziz Road", "Jeddah Industrial City", "Jeddah Islamic Port"],
     approvalNote:
       "Signage and outdoor branding approvals in Jeddah run through the city's municipal authority, with retail landlords along corridors like Tahlia Street adding their own sign-off.",
     faqs: [
       {
         q: "Do you produce retail signage for businesses on Jeddah's main retail streets?",
         a: "Yes. Storefront and retail signage is designed, fabricated and installed for Jeddah businesses, including along corridors such as Tahlia Street, following the city's municipal approval process.",
+      },
+      {
+        q: "What currency and VAT rate applies to a Jeddah order?",
+        a: "Jeddah quotes are issued in Saudi Riyals (SAR) at Saudi Arabia's standard 15% VAT rate, which has applied since July 2020 and is materially higher than the UAE's 5% rate, so a Jeddah budget shouldn't be planned as a straight AED-to-SAR conversion of a UAE quote.",
+      },
+      {
+        q: "How does material or stock coming through Jeddah Islamic Port affect lead time?",
+        a: "Jeddah Islamic Port is Saudi Arabia's busiest container port, and imported material or products cleared through it typically need a valid SABER certificate; clearance with complete documentation generally runs a few business days, longer if a shipment is selected for physical inspection. That's factored into the project timeline at brief stage for any Jeddah order that relies on imported stock rather than locally held material.",
+      },
+      {
+        q: "Can corporate gifting and signage orders for Jeddah be combined with a Riyadh order?",
+        a: "Yes. Businesses with locations in both Jeddah and Riyadh commonly brief both cities as one order, with delivery split by site, so branding and invoicing stay consistent across the Kingdom rather than run as two separate jobs.",
       },
     ],
   },

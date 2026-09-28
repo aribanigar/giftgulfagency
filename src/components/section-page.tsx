@@ -1,93 +1,30 @@
 import Link from "next/link";
-import {
-  Award,
-  ArrowRight,
-  BarChart3,
-  Boxes,
-  Calendar,
-  Check,
-  Coffee,
-  Compass,
-  Gift,
-  Handshake,
-  ImagePlay,
-  Layers,
-  Lightbulb,
-  MapPin,
-  MessageCircle,
-  Package,
-  Palette,
-  PenTool,
-  Presentation,
-  Printer,
-  Search,
-  ShoppingBag,
-  Sparkles,
-  Target,
-  Truck,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 import { FaqAccordion } from "@/components/faq-accordion";
-import { SectionVisual } from "@/components/section-visual";
 import { JsonLd } from "@/components/json-ld";
+import {
+  ArrowLink,
+  Container,
+  FactGrid,
+  HairlineLinks,
+  PageHero,
+  SectionIntro,
+} from "@/components/editorial";
 import { sections, capabilityBlogSlug, type Section } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { sectionHeroGalleries } from "@/lib/photos";
 import { productsForSection } from "@/lib/products";
-
-const capabilityIconRules: [RegExp, LucideIcon][] = [
-  // Specific multi-word phrases first, so a generic word (like "design" or
-  // "bulk") appearing inside a more specific phrase elsewhere in the list
-  // can't steal the match before the specific rule gets a chance to run.
-  [/website|\bseo\b/i, Search],
-  [/exhibition|kiosk|\bstand\b/i, Presentation],
-  [/wayfinding/i, Compass],
-  [/laser-cut|acrylic lettering/i, Sparkles],
-  [/led|illuminated/i, Lightbulb],
-  [/award|trophies/i, Award],
-  [/storefront|retail branding/i, ShoppingBag],
-  [/signboard|signage/i, MapPin],
-  [/carry bag|kraft/i, ShoppingBag],
-  [/corporate orders|partner/i, Handshake],
-  [/hamper|gift set/i, Gift],
-  [/personalisation|personalization/i, PenTool],
-  [/sample/i, Sparkles],
-  [/hardboard/i, Boxes],
-  [/uv printing|dtf|printing/i, Printer],
-  [/sticker|decal/i, Layers],
-  [/vehicle/i, Truck],
-  [/cup/i, Coffee],
-  [/box/i, Package],
-  [/production support/i, Truck],
-  [/trade show|activation/i, Users],
-  [/strategy|pillar/i, Lightbulb],
-  [/photography|video|reels/i, ImagePlay],
-  [/paid|advertising|\bads\b/i, Target],
-  [/community|review/i, MessageCircle],
-  [/influencer|ugc/i, Users],
-  [/commerce|shop/i, ShoppingBag],
-  [/analytics|reporting/i, BarChart3],
-  [/ramadan|national day|campaign planning/i, Calendar],
-  [/backdrop/i, Palette],
-  // Generic catch-alls last: "design" and "branding" appear inside many
-  // more specific phrases above, so this only fires when nothing else did.
-  [/graphic|copywriting|design|branding/i, Palette],
-];
-
-function capabilityIcon(text: string): LucideIcon {
-  for (const [pattern, icon] of capabilityIconRules) {
-    if (pattern.test(text)) return icon;
-  }
-  return Check;
-}
+import { serviceGuides } from "@/lib/service-guides";
+import { GuideContent } from "@/components/guide-content";
+import { topicsForSection } from "@/lib/topics";
 
 export function SectionPage({ section }: { section: Section }) {
-  const Icon = section.icon;
   const related = sections.filter((s) => s.slug !== section.slug);
   const products = productsForSection(section.slug);
+  const lower = section.name.toLowerCase();
+  const guide = serviceGuides[section.slug];
+  const sectionTopics = topicsForSection(section.slug);
 
   return (
     <div>
@@ -100,188 +37,197 @@ export function SectionPage({ section }: { section: Section }) {
         ])}
       />
 
-      <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-zinc-950">
-        <SectionVisual photos={sectionHeroGalleries[section.slug] ?? []} />
-        <div className="section-hero-shade absolute inset-0" />
-
-        <div className="hero-text-shadow relative mx-auto w-full max-w-6xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16">
-          <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-300">
-            <Link href="/" className="hover:text-green-400">
-              Home
-            </Link>
-            <span className="mx-2 text-zinc-500">/</span>
-            <span className="text-white">{section.name}</span>
-          </nav>
-
-          <div className="mt-6 flex items-start gap-5">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-lg)] border border-white/20 bg-white/10 text-white backdrop-blur-sm">
-              <Icon className="h-7 w-7" strokeWidth={1.75} />
-            </div>
-            <div>
-              <h1 className="max-w-2xl font-heading text-3xl font-bold tracking-tight text-white sm:text-5xl">
-                {section.name} in the UAE &amp; Qatar
-              </h1>
-            </div>
-          </div>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
-            {section.description}
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Get a Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          What is {section.name.toLowerCase()}?
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600">
-          {section.definition}
-        </p>
-
-        <dl className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-lg)] border border-zinc-200 bg-zinc-200 sm:grid-cols-2">
-          {section.quickFacts.map((fact) => (
-            <div key={fact.label} className="bg-white p-4">
-              <dt className="font-mono text-[11px] tracking-wide text-zinc-400">
-                {fact.label}
-              </dt>
-              <dd className="mt-1 text-sm text-zinc-800">{fact.value}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          What&apos;s included
-        </h2>
-        <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {section.capabilities.map((c) => {
-            const CapIcon = capabilityIcon(c);
-            const slug = capabilityBlogSlug[c];
-            return (
-              <li key={c}>
-                <Link
-                  href={slug ? `/blog/${slug}` : "/blog"}
-                  className="group flex h-full items-start gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-4 text-sm text-zinc-700 transition-colors hover:border-green-600 hover:bg-green-50/40"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
-                    <CapIcon className="h-4 w-4" strokeWidth={1.75} />
-                  </span>
-                  <span className="flex flex-1 items-start justify-between gap-2 pt-1">
-                    <span>{c}</span>
-                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-zinc-300 transition-colors group-hover:text-green-600" />
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
-        <div className="mt-6 rounded-[var(--radius-lg)] border border-green-200 bg-green-50 p-5 text-sm leading-relaxed text-zinc-700">
-          <span className="font-semibold text-green-800">
-            Pairs with everything else a brand needs.
-          </span>{" "}
-          Gifts Gulf Advertising pairs {section.name.toLowerCase()} with the
-          other five sections a brand needs under the same brief, printing,
-          signage, events, packaging, gifting and social media, all handled
-          by one team.
-        </div>
-
-        <h3 className="mt-12 font-heading text-lg font-semibold text-zinc-900">
-          Serving Dubai, Abu Dhabi, Sharjah &amp; Doha
-        </h3>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">
-          {section.regionalNote}
-        </p>
-
-        {products.length > 0 ? (
+      <PageHero
+        photos={sectionHeroGalleries[section.slug] ?? []}
+        crumbs={[{ name: "Home", href: "/" }, { name: section.name }]}
+        eyebrow="Services"
+        title={
           <>
-            <h2 className="mt-14 font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-              Popular {section.name.toLowerCase()} products
-            </h2>
-            <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => {
-                const ProductIcon = product.icon;
-                return (
-                  <li key={product.slug}>
-                    <Link
-                      href={`/${product.slug}`}
-                      className="group flex h-full flex-col gap-3 rounded-[var(--radius-lg)] border border-zinc-200 p-5 transition-colors hover:border-green-600 hover:bg-green-50/40"
-                    >
-                      <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-md)] bg-green-50 text-green-700">
-                        <ProductIcon className="h-4 w-4" strokeWidth={1.75} />
-                      </span>
-                      <span>
-                        <span className="font-heading text-base font-semibold text-zinc-900">
-                          {product.name}
-                        </span>
-                        <span className="mt-1 block text-sm text-zinc-600">{product.short}</span>
-                      </span>
-                      <span className="mt-auto flex items-center gap-1 text-sm font-medium text-green-700">
-                        View {product.name.toLowerCase()}{" "}
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            {section.name}
+            <br />
+            <span className="text-brand-bright">in the UAE &amp; Qatar</span>
           </>
-        ) : null}
+        }
+        intro={<p>{section.description}</p>}
+        cta={{ href: "/contact", label: `Get a quote for ${lower}` }}
+      />
+
+      {/* Buyer's guide (unique per service), falling back to the definition */}
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          {guide ? (
+            <>
+              <SectionIntro
+                eyebrow="Buyer's guide"
+                title={guide.title}
+                size="md"
+              >
+                <p>{guide.lead}</p>
+              </SectionIntro>
+              <div className="mt-16">
+                <GuideContent sections={guide.sections} />
+              </div>
+            </>
+          ) : (
+            <>
+              <SectionIntro
+                eyebrow="Overview"
+                title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`}
+                size="md"
+              >
+                <p>{section.definition}</p>
+              </SectionIntro>
+              <div className="mt-16">
+                <FactGrid facts={section.quickFacts} />
+              </div>
+            </>
+          )}
+        </Container>
       </section>
 
-      <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-            Frequently asked questions
-          </h2>
-          <div className="mt-8">
-            <FaqAccordion faqs={section.faqs} />
+      {/* Capabilities */}
+      <section className="on-dark bg-night py-24 text-white sm:py-32">
+        <Container>
+          <SectionIntro
+            eyebrow="What's included"
+            title="Capabilities"
+            size="md"
+          >
+            <p>
+              Each line links to a practical guide on how that part of the job
+              works.
+            </p>
+          </SectionIntro>
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 lg:col-start-5">
+              <HairlineLinks
+                items={section.capabilities.map((c) => {
+                  const slug = capabilityBlogSlug[c];
+                  return { href: slug ? `/blog/${slug}` : "/blog", title: c };
+                })}
+              />
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 sm:text-3xl">
-          Other sections
-        </h2>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {related.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/${s.slug}`}
-              className="group rounded-[var(--radius-lg)] border border-zinc-200 p-5 transition-colors hover:border-green-600"
-            >
-              <h3 className="font-heading text-base font-semibold text-zinc-900">
-                {s.name}
-              </h3>
-              <p className="mt-1 text-sm text-zinc-600">{s.short}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
-          <h2 className="font-heading text-2xl font-bold text-zinc-900 sm:text-3xl">
-            Ready to brief {section.name.toLowerCase()}?
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-zinc-600">
-            Tell us the scope and timeline in Dubai, Abu Dhabi, Sharjah or
-            Doha, and we&apos;ll follow up with next steps.
-          </p>
-          <div className="mt-7">
-            <Button asChild size="lg">
-              <Link href="/contact">
-                Get a Quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+      {/* Regional note */}
+      <section className="bg-[#f3f4f2] py-24 sm:py-32">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="eyebrow mb-5">Where we deliver</p>
+              <h2 className="display-sm">
+                Across the UAE, Qatar and the wider GCC
+              </h2>
+            </div>
+            <p className="text-lg leading-relaxed text-ink/75 lg:col-span-6 lg:col-start-7">
+              {section.regionalNote}
+            </p>
           </div>
-        </div>
+        </Container>
+      </section>
+
+      {products.length > 0 || sectionTopics.length > 0 ? (
+        <section className="bg-white py-24 sm:py-32">
+          <Container>
+            {products.length > 0 ? (
+              <>
+                <SectionIntro
+                  eyebrow="Products"
+                  title={`Popular ${lower} products`}
+                  size="md"
+                />
+                <ul className="hairline mt-14 grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-3">
+                  {products.map((product) => (
+                    <li
+                      key={product.slug}
+                      className="hairline border-b sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0"
+                    >
+                      <Link
+                        href={`/${product.slug}`}
+                        className="group flex h-full flex-col gap-4 p-8 transition-colors hover:bg-white"
+                      >
+                        <span className="flex items-start justify-between gap-4">
+                          <span className="text-xl font-semibold tracking-tight">
+                            {product.name}
+                          </span>
+                          <ArrowUpRight
+                            className="h-5 w-5 shrink-0 opacity-40 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand group-hover:opacity-100"
+                            strokeWidth={1.5}
+                          />
+                        </span>
+                        <span className="text-[15px] leading-relaxed text-ink/65">
+                          {product.short}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+            {sectionTopics.length > 0 ? (
+              <div className={products.length > 0 ? "mt-24" : undefined}>
+                <SectionIntro
+                  eyebrow="Directory"
+                  title={`${section.name} guides`}
+                  size="md"
+                >
+                  <p>
+                    Sizes, materials and options for each product, written to
+                    help you brief with confidence.
+                  </p>
+                </SectionIntro>
+                <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+                  <div className="lg:col-span-8 lg:col-start-5">
+                    <HairlineLinks
+                      items={sectionTopics.map((t) => ({
+                        href: `/${t.slug}`,
+                        title: t.name,
+                        meta: t.category,
+                      }))}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </Container>
+        </section>
+      ) : null}
+
+      {/* FAQ */}
+      <section className="bg-[#f3f4f2] py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="FAQ" title="Questions, answered" size="md" />
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 lg:col-start-5">
+              <FaqAccordion faqs={section.faqs} />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Other services */}
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="Explore" title="Other services" size="md" />
+          <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-3">
+              <ArrowLink href="/contact" className="text-lg">
+                Brief several at once
+              </ArrowLink>
+            </div>
+            <div className="lg:col-span-8 lg:col-start-5">
+              <HairlineLinks
+                items={related.map((s) => ({
+                  href: `/${s.slug}`,
+                  title: s.name,
+                  meta: s.short,
+                }))}
+              />
+            </div>
+          </div>
+        </Container>
       </section>
     </div>
   );
@@ -299,7 +245,9 @@ export function sectionMetadata(section: Section) {
       title,
       description,
       url: `${siteConfig.url}/${section.slug}`,
-      images: image ? [{ url: image, width: 1920, height: 1080, alt: title }] : undefined,
+      images: image
+        ? [{ url: image, width: 1920, height: 1080, alt: title }]
+        : undefined,
     },
     twitter: {
       card: "summary_large_image",

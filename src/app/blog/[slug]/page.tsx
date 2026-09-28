@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/reveal";
+import { ArrowLink, Container, PageHero, SectionIntro } from "@/components/editorial";
 import { blogPosts, getBlogPost } from "@/lib/blog-data";
-import { blogPhotoIds, heroPhoto, wide } from "@/lib/photos";
+import { heroPhoto } from "@/lib/photos";
+import { BlogCover, blogPhotoId } from "@/components/blog-cover";
+import { BlockView } from "@/components/guide-content";
+import { getTopic, type Topic } from "@/lib/topics";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { cityLinksForTopic, guideLinks, serviceLinks, topicLinks } from "@/lib/related-links";
 import { siteConfig } from "@/lib/site-config";
 import { getSection } from "@/lib/site-data";
 import { articleSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
@@ -25,7 +28,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
-  const image = heroPhoto(blogPhotoIds[post.photoId]);
+  const id = blogPhotoId(post);
+  const image = id ? heroPhoto(id) : undefined;
   return {
     title: `${post.title} | Gifts Gulf Advertising`,
     description: post.metaDescription,
@@ -36,13 +40,13 @@ export async function generateMetadata({
       url: `${siteConfig.url}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt,
-      images: [{ url: image, width: 1920, height: 1080, alt: post.title }],
+      ...(image ? { images: [{ url: image, width: 1920, height: 1080, alt: post.title }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.metaDescription,
-      images: [image],
+      ...(image ? { images: [image] } : {}),
     },
   };
 }
@@ -65,13 +69,19 @@ export default async function BlogPostPage({
   const relatedService = post.relatedSectionSlug
     ? getSection(post.relatedSectionSlug)
     : undefined;
-  const sameCategory = blogPosts.filter(
-    (p) => p.slug !== post.slug && p.category === post.category,
-  );
-  const otherPosts = blogPosts.filter(
-    (p) => p.slug !== post.slug && p.category !== post.category,
-  );
-  const fallbackRelated = [...sameCategory, ...otherPosts].slice(0, 3);
+  const photo = blogPhotoId(post);
+  const topics = (post.relatedTopics ?? []).map(getTopic).filter((t): t is Topic => Boolean(t));
+  // Closest reads first: shared directory topics or tags, then same category.
+  const score = (p: typeof post) =>
+    (p.relatedTopics ?? []).filter((t) => post.relatedTopics?.includes(t)).length * 3 +
+    (p.tags ?? []).filter((t) => post.tags?.includes(t)).length * 2 +
+    (p.category === post.category ? 1 : 0);
+  const fallbackRelated = blogPosts
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => ({ p, s: score(p) }))
+    .sort((a, b) => b.s - a.s)
+    .slice(0, 3)
+    .map(({ p }) => p);
 
   return (
     <div>
@@ -85,147 +95,142 @@ export default async function BlogPostPage({
         ])}
       />
 
-      <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-zinc-950">
-        <Image
-          src={heroPhoto(blogPhotoIds[post.photoId])}
-          alt={post.title}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center opacity-70"
-        />
-        <div className="section-hero-shade absolute inset-0" />
-        <div className="hero-text-shadow relative mx-auto w-full max-w-3xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16">
-          <nav aria-label="Breadcrumb" className="font-mono text-xs text-zinc-300">
-            <Link href="/" className="hover:text-green-400">
-              Home
-            </Link>
-            <span className="mx-2 text-zinc-500">/</span>
-            <Link href="/blog" className="hover:text-green-400">
-              Blog
-            </Link>
-            <span className="mx-2 text-zinc-500">/</span>
-            <span className="text-white">{post.category}</span>
-          </nav>
-          <h1 className="mt-5 max-w-2xl text-balance font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            {post.title}
-          </h1>
-          <div className="mt-5 flex items-center gap-4 text-sm text-zinc-300">
-            <span>{dateFormatter.format(new Date(post.publishedAt))}</span>
-            <span className="flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5" />
-              {post.readTime}
-            </span>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        size="md"
+        photos={photo ? [heroPhoto(photo)] : undefined}
+        crumbs={[{ name: "Home", href: "/" }, { name: "Insights", href: "/blog" }, { name: post.category }]}
+        eyebrow={post.category}
+        title={post.title}
+      >
+        <p className="mt-8 text-sm text-white/70">
+          {dateFormatter.format(new Date(post.publishedAt))} · {post.readTime} · By Gifts Gulf Advertising
+        </p>
+      </PageHero>
 
-      <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16">
-        <p className="text-lg leading-relaxed text-zinc-700">{post.intro}</p>
+      <article className="bg-white py-20 sm:py-28">
+        <Container>
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
+              {post.quickAnswer ? (
+                <aside className="mb-12 border-l-4 border-brand bg-[#f3f4f2] p-6 sm:p-8">
+                  <p className="eyebrow">Quick answer</p>
+                  <p className="mt-3 text-lg leading-relaxed text-ink/85">{post.quickAnswer}</p>
+                </aside>
+              ) : null}
 
-        {post.sections.map((contentSection) => (
-          <Reveal key={contentSection.heading} className="mt-10">
-            <h2 className="font-heading text-xl font-semibold text-zinc-900 sm:text-2xl">
-              {contentSection.heading}
-            </h2>
-            <div className="mt-4 space-y-4">
-              {contentSection.blocks.map((block, i) =>
-                block.type === "p" ? (
-                  <p key={i} className="leading-relaxed text-zinc-600">
-                    {block.text}
-                  </p>
-                ) : (
-                  <ul key={i} className="space-y-2.5">
-                    {block.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2.5 leading-relaxed text-zinc-600"
-                      >
-                        <span
-                          aria-hidden
-                          className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600"
-                        />
-                        {item}
+              <p className="text-xl leading-relaxed text-ink/80 sm:text-2xl sm:leading-relaxed">{post.intro}</p>
+
+              {post.sections.map((contentSection) => (
+                <Reveal key={contentSection.heading} className="mt-14">
+                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                    {contentSection.heading}
+                  </h2>
+                  <div className="mt-5 space-y-5 text-ink">
+                    {contentSection.blocks.map((block, i) => (
+                      <BlockView key={i} block={block} />
+                    ))}
+                  </div>
+                </Reveal>
+              ))}
+
+              {topics.length > 0 ? (
+                <div className="mt-16">
+                  <p className="eyebrow mb-4">In the directory</p>
+                  <ul className="hairline border-t">
+                    {topics.map((t) => (
+                      <li key={t.slug} className="hairline border-b">
+                        <Link href={`/${t.slug}`} className="group flex items-center justify-between gap-6 py-5">
+                          <span>
+                            <span className="block text-lg font-semibold tracking-tight transition-colors group-hover:text-brand">{t.name}</span>
+                            <span className="mt-1 block text-sm text-ink/55">{t.category} guide</span>
+                          </span>
+                          <span aria-hidden className="text-ink/40 transition-colors group-hover:text-brand">&rarr;</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>
-                ),
-              )}
+                </div>
+              ) : null}
+
+              {post.tags && post.tags.length > 0 ? (
+                <ul className="mt-10 flex flex-wrap gap-2" aria-label="Tags">
+                  {post.tags.map((tag) => (
+                    <li key={tag} className="border border-ink/15 px-3 py-1 text-sm text-ink/65">{tag}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
-          </Reveal>
-        ))}
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{
+                  service: relatedService?.name,
+                  source: `/blog/${post.slug}`,
+                }}
+                groups={[
+                  { title: "Related guides", links: guideLinks(post.relatedTopics ?? [], { exclude: post.slug, limit: 5 }) },
+                  { title: "In the directory", links: topicLinks(post.relatedTopics ?? [], 5) },
+                  { title: topics[0] ? `${topics[0].name} by city` : "Locations", links: cityLinksForTopic(topics[0]?.slug).slice(0, 9) },
+                  { title: "Services", links: serviceLinks() },
+                ]}
+              />
+            </div>
+          </div>
+        </Container>
       </article>
 
-      <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16">
-          <h2 className="font-heading text-2xl font-semibold text-zinc-900">
-            Frequently asked questions
-          </h2>
-          <div className="mt-8">
-            <FaqAccordion faqs={post.faqs} />
+      <section className="bg-[#f3f4f2] py-24 sm:py-32">
+        <Container>
+          <SectionIntro eyebrow="FAQ" title="Questions, answered" size="md" />
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-8 lg:col-start-5">
+              <FaqAccordion faqs={post.faqs} />
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {relatedService ? (
-        <section className="border-t border-zinc-200 bg-white">
-          <div className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6 sm:py-16">
-            <h2 className="font-heading text-2xl font-bold text-zinc-900">
-              Need this for your brand?
-            </h2>
-            <p className="mx-auto mt-3 max-w-md text-zinc-600">
-              {relatedService.name} is handled by one team, start to finish,
-              across the UAE and Qatar.
-            </p>
-            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Get a Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href={`/${relatedService.slug}`}>
-                  View {relatedService.name}
-                </Link>
-              </Button>
+        <section className="on-dark bg-night py-24 text-white sm:py-28">
+          <Container>
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+              <div className="lg:col-span-7">
+                <p className="eyebrow mb-5">Need this for your brand?</p>
+                <h2 className="display-md">{relatedService.name}, handled start to finish.</h2>
+              </div>
+              <div className="flex flex-col gap-6 lg:col-span-4 lg:col-start-9">
+                <p className="text-lg leading-relaxed text-white/70">
+                  Designed, produced and delivered by one team across the UAE and Qatar.
+                </p>
+                <div className="flex flex-wrap gap-8">
+                  <ArrowLink href="/contact" className="text-lg">Get a quote</ArrowLink>
+                  <ArrowLink href={`/${relatedService.slug}`} className="text-lg text-white/70">
+                    View {relatedService.name}
+                  </ArrowLink>
+                </div>
+              </div>
             </div>
-          </div>
+          </Container>
         </section>
       ) : null}
 
-      <section className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-          <h2 className="font-heading text-xl font-semibold text-zinc-900">
-            More guides
-          </h2>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {fallbackRelated.map((p) => {
-              const photo = wide(blogPhotoIds[p.photoId]);
-              return (
-                <Link
-                  key={p.slug}
-                  href={`/blog/${p.slug}`}
-                  className="group overflow-hidden rounded-[var(--radius-lg)] border border-zinc-200 bg-white transition-colors hover:border-green-600"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
-                    <Image
-                      src={photo}
-                      alt={p.title}
-                      fill
-                      sizes="(min-width:1024px) 25vw, 90vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-heading text-sm font-semibold text-zinc-900">
-                      {p.title}
-                    </h3>
-                  </div>
-                </Link>
-              );
-            })}
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <SectionIntro eyebrow="Keep reading" title="More guides" size="md" />
+            <ArrowLink href="/blog" className="shrink-0 text-lg">All insights</ArrowLink>
           </div>
-        </div>
+          <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3">
+            {fallbackRelated.map((p) => (
+              <Link key={p.slug} href={`/blog/${p.slug}`} className="group block">
+                <BlogCover post={p} sizes="(min-width:640px) 33vw, 100vw" className="aspect-[4/3]" />
+                <p className="eyebrow mt-6">{p.category}</p>
+                <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-brand">
+                  {p.title}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </Container>
       </section>
     </div>
   );

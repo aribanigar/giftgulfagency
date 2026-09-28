@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
-import { blogPosts } from "@/lib/blog-data";
-import { blogPhotoIds, heroPhoto, wide } from "@/lib/photos";
+import { ArrowRight } from "lucide-react";
+import { blogCategories, blogPosts } from "@/lib/blog-data";
+import { BlogCover, blogPhotoId } from "@/components/blog-cover";
+import { BlogBrowser, type BlogCard } from "./blog-browser";
+import { heroPhoto, wide } from "@/lib/photos";
 import { siteConfig } from "@/lib/site-config";
-import { Reveal } from "@/components/reveal";
+import { Container, PageHero } from "@/components/editorial";
 
 const blogTitle = "Blog | Signage, Printing, Packaging & Digital Guides | Gifts Gulf Advertising";
 const blogDescription =
@@ -19,101 +20,77 @@ export const metadata: Metadata = {
     title: blogTitle,
     description: blogDescription,
     url: `${siteConfig.url}/blog`,
-    images: [{ url: heroPhoto("signage-install"), width: 1920, height: 1080, alt: blogTitle }],
+    images: [{ url: heroPhoto("signage-3dletters"), width: 1920, height: 1080, alt: blogTitle }],
   },
   twitter: {
     card: "summary_large_image",
     title: blogTitle,
     description: blogDescription,
-    images: [heroPhoto("signage-install")],
+    images: [heroPhoto("signage-3dletters")],
   },
-};
-
-const categoryStyles: Record<string, string> = {
-  Signage: "bg-green-50 text-green-700",
-  Printing: "bg-amber-50 text-amber-700",
-  Packaging: "bg-sky-50 text-sky-700",
-  "Gift Items": "bg-rose-50 text-rose-700",
-  "Social Media": "bg-fuchsia-50 text-fuchsia-700",
-  Digital: "bg-indigo-50 text-indigo-700",
-  Events: "bg-orange-50 text-orange-700",
-  "Fit-Out": "bg-teal-50 text-teal-700",
 };
 
 export default function BlogIndexPage() {
   const posts = [...blogPosts].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
+  const [featured, ...rest] = posts;
+  const cards: BlogCard[] = rest.map((p) => {
+    const id = blogPhotoId(p);
+    return {
+      slug: p.slug,
+      title: p.title,
+      excerpt: p.excerpt,
+      category: p.category,
+      readTime: p.readTime,
+      image: id ? wide(id) : undefined,
+      coverStat: p.coverStat,
+      tags: p.tags ?? [],
+    };
+  });
 
   return (
     <div>
-      <section className="border-b border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <p className="font-mono text-xs tracking-[0.2em] text-green-700">
-            Resources
+      <PageHero
+        crumbs={[{ name: "Home", href: "/" }, { name: "Insights" }]}
+        eyebrow="Insights"
+        title={<>Guides that help<br /><span className="text-brand-bright">you buy right.</span></>}
+        intro={
+          <p>
+            {blogPosts.length} practical guides to the questions that come up
+            before a brief: sizes, materials, formats, approvals and costs, for
+            businesses across the UAE, Qatar and the GCC.
           </p>
-          <h1 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
-            Guides on signage, print, packaging and digital.
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600">
-            Practical, factual answers to the questions that come up before a
-            brief: which material, which platform, which format, written for
-            businesses in Dubai, Abu Dhabi, Sharjah and Doha.
-          </p>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => {
-            const photo = wide(blogPhotoIds[post.photoId]);
-            const badge = categoryStyles[post.category] ?? "bg-zinc-100 text-zinc-700";
-            return (
-              <Reveal
-                key={post.slug}
-                delay={(i % 3) * 90}
-                className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-xl)] border border-zinc-200 bg-white transition-all hover:-translate-y-1 hover:border-green-600 hover:shadow-lg"
-              >
-                <Link href={`/blog/${post.slug}`} className="flex h-full flex-col">
-                  <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
-                    <Image
-                      src={photo}
-                      alt={post.title}
-                      fill
-                      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col justify-between p-5">
-                    <div>
-                      <div className="flex items-center justify-between gap-3">
-                        <span
-                          className={`rounded-full px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wide ${badge}`}
-                        >
-                          {post.category}
-                        </span>
-                        <span className="flex items-center gap-1 text-xs text-zinc-400">
-                          <Clock className="h-3 w-3" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                      <h2 className="mt-3 font-heading text-lg font-semibold text-zinc-900">
-                        {post.title}
-                      </h2>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                        {post.excerpt}
-                      </p>
-                    </div>
-                    <div className="mt-5 flex items-center gap-1.5 border-t border-zinc-100 pt-4 text-sm font-medium text-green-700">
-                      Read the guide
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </div>
-                </Link>
-              </Reveal>
-            );
-          })}
-        </div>
+      {featured ? (
+        <section className="bg-white pt-24 sm:pt-32">
+          <Container>
+            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 gap-10 lg:grid-cols-12">
+              <BlogCover
+                post={featured}
+                priority
+                sizes="(min-width:1024px) 58vw, 100vw"
+                className="aspect-[16/10] lg:col-span-7"
+              />
+              <div className="flex flex-col justify-end lg:col-span-5">
+                <p className="eyebrow">Latest · {featured.category}</p>
+                <h2 className="display-sm mt-5 transition-colors group-hover:text-brand">{featured.title}</h2>
+                <p className="mt-5 text-lg leading-relaxed text-ink/70">{featured.excerpt}</p>
+                <span className="link-arrow mt-8 self-start text-base">
+                  Read the guide <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
+          </Container>
+        </section>
+      ) : null}
+
+      <section className="bg-white py-24 sm:py-32">
+        <Container>
+          <BlogBrowser posts={cards} categories={blogCategories} />
+        </Container>
       </section>
     </div>
   );

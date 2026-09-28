@@ -23,6 +23,11 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Car,
+  Camera,
+  UtensilsCrossed,
+  Type,
+  Stethoscope,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +954,238 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "vehicle-branding",
+    name: "Vehicle Branding",
+    parentSection: "printing",
+    icon: Car,
+    primaryKeyword: "vehicle branding dubai",
+    short: "Full wraps, partial decals and fleet branding, fitted in-house for cars, vans and trucks.",
+    metaDescription:
+      "Full and partial vehicle wraps, decals and fleet branding, printed and fitted in-house across the UAE and Qatar.",
+    definition:
+      "Vehicle branding covers full-body wraps, partial decals and fleet-wide branding for cars, vans and trucks, using vinyl rated for outdoor conditions, printed and fitted by the same team rather than outsourced to a separate wrap installer.",
+    options: [
+      "Full vehicle wraps",
+      "Partial wraps & door decals",
+      "Fleet branding across multiple vehicles",
+      "Window & rear-glass graphics",
+      "Vinyl rated for outdoor heat and UV exposure",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Full wraps, partial decals, fleet branding" },
+      { label: "Materials", value: "Cast or calendered vinyl, rated for UAE and Qatar outdoor conditions" },
+      { label: "Best for", value: "Single vehicles to full delivery or sales fleets" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between a full wrap and a partial wrap?",
+        a: "A full wrap covers the entire vehicle body for maximum brand visibility. A partial wrap covers specific panels, such as doors and the rear, at a lower cost, and suits a lighter branding need or a tighter budget.",
+      },
+      {
+        q: "Do you brand a full fleet of vehicles, or only single cars?",
+        a: "Both. Single-vehicle branding and full fleet branding across delivery vans, sales cars or trucks are handled by the same team, with consistent placement and colours across every vehicle.",
+      },
+      {
+        q: "Is vehicle wrap vinyl durable enough for daily use in the Gulf?",
+        a: "Vinyl is selected for outdoor heat and UV exposure, which is a standard consideration for wraps that stay on a vehicle daily rather than for a single event.",
+      },
+    ],
+  },
+  {
+    slug: "photo-booths-digital-kiosks",
+    name: "Photo Booths & Digital Kiosks",
+    parentSection: "events-exhibitions",
+    icon: Camera,
+    primaryKeyword: "photo booths for rent",
+    short: "Photo booth rental and touch-screen digital kiosks for events, activations and malls.",
+    metaDescription:
+      "Photo booth rental and touch-screen digital kiosk supply for events, activations and malls across the UAE and Qatar.",
+    definition:
+      "Photo booths and digital kiosks cover standalone photo booth rental (including Instagram-style social booths) and touch-screen digital kiosks, supplied either for a single event or as part of a shell scheme exhibition booth.",
+    options: [
+      "Photo booth rental",
+      "Instagram-style social photo booths",
+      "Touch-screen digital kiosks",
+      "Shell scheme booth add-ons",
+      "Branded photo booth frames & backdrops",
+    ],
+    quickFacts: [
+      { label: "Typical output", value: "Photo booth rental, touch-screen kiosks, shell scheme add-ons" },
+      { label: "Best for", value: "Malls, activations, product launches, exhibition booths" },
+      { label: "Service", value: "Delivery, setup and on-site operation available" },
+    ],
+    faqs: [
+      {
+        q: "Can a photo booth be rented for a single-day event?",
+        a: "Yes. Photo booth rental is available for single-day events as well as multi-day activations and mall installations.",
+      },
+      {
+        q: "Do you supply touch-screen kiosks for exhibition booths?",
+        a: "Yes. Touch-screen digital kiosks are supplied as standalone units or built into a shell scheme or custom exhibition booth.",
+      },
+      {
+        q: "Can the photo booth frame or backdrop be branded?",
+        a: "Yes. Photo booth frames and backdrops are branded with a logo or campaign design, consistent with the rest of an event's branding.",
+      },
+    ],
+  },
+  {
+    slug: "restaurant-fit-out-dubai",
+    name: "Restaurant Fit-Out",
+    parentSection: "fit-out",
+    icon: UtensilsCrossed,
+    primaryKeyword: "restaurant fit out dubai",
+    short: "Turnkey café and restaurant fit-out across the UAE, from kitchen MEP and joinery to Food Control-ready handover.",
+    metaDescription:
+      "Restaurant and café fit-out in the UAE: kitchen MEP, joinery and Food Control approvals, delivered as one turnkey contract.",
+    definition:
+      "Restaurant fit-out covers the build-out of a café, casual-dining or fine-dining unit from shell-and-core handover to a trading-ready space: kitchen extraction, gas and drainage coordinated with the equipment supplier, front-of-house joinery and counters, flooring, ceiling and lighting, and the Food Control and civil defence documentation a restaurant needs before it can open. Cost and timeline both scale with concept, since a quick-service café is a different build to a full exhaust-hooded kitchen for fine dining, and the fit-out plan is priced and sequenced around which one is being built.",
+    options: [
+      "Kitchen MEP: extraction, gas & drainage coordination",
+      "Front-of-house design & joinery",
+      "Bar, counter & display build",
+      "Flooring, ceiling & lighting",
+      "Furniture, fixtures & branding (FF&E)",
+      "Food Control & civil defence documentation support",
+    ],
+    quickFacts: [
+      { label: "Project types", value: "Café/QSR, casual dining, fine dining" },
+      { label: "Typical cost", value: "AED 400-1,800+ per sq ft, by concept" },
+      { label: "Typical timeline", value: "3-5 weeks (café) to 12-16+ weeks (fine dining)" },
+      { label: "Service", value: "Design, contracting, MEP and handover as one contract" },
+    ],
+    faqs: [
+      {
+        q: "How much does a restaurant fit-out cost in Dubai?",
+        a: "Cost typically runs from around AED 400-700 per sq ft for a café or quick-service unit, AED 700-1,200 per sq ft for casual dining, and AED 1,200-1,800 or more per sq ft for fine dining, driven mainly by kitchen equipment scope, extraction and joinery finish level. A 3,000 sq ft restaurant commonly lands between AED 2-4.5 million depending on finishes and imported materials.",
+      },
+      {
+        q: "How long does a restaurant fit-out take?",
+        a: "A small café or coffee kiosk can be ready in 3-5 weeks. A full casual-dining or fine-dining fit-out with a commercial kitchen typically runs 12-16 weeks or more, largely set by how quickly Food Control, civil defence and landlord approvals clear rather than by the construction itself.",
+      },
+      {
+        q: "Do you handle the kitchen and MEP work, or only the interior finish?",
+        a: "Kitchen extraction, gas and drainage are coordinated directly with the kitchen equipment supplier as part of the fit-out, alongside the interior finish, joinery and FF&E, so the two aren't planned as separate projects that clash on-site.",
+      },
+      {
+        q: "What approvals does a restaurant need before opening in the UAE?",
+        a: "Food Control or health authority approval, civil defence sign-off and a municipality building permit are the standard approvals, on top of the trade licence, and the exact route and sequence vary by emirate and by mall or landlord. These are confirmed at brief stage for the specific site.",
+      },
+      {
+        q: "Can restaurant fit-out be combined with exterior signage and branding?",
+        a: "Yes. Storefront signage and interior fit-out are commonly briefed together so a restaurant's exterior sign and its interior finish are designed and installed as one project rather than two.",
+      },
+      {
+        q: "Do you fit out cafés as well as full-service restaurants?",
+        a: "Yes. Café and quick-service fit-outs are handled alongside full casual-dining and fine-dining projects, each scoped to its own kitchen and seating requirements.",
+      },
+    ],
+  },
+  {
+    slug: "channel-letters-dubai",
+    name: "3D Channel Letters",
+    parentSection: "signages",
+    icon: Type,
+    primaryKeyword: "channel letters dubai",
+    short: "Illuminated 3D channel letters, fabricated in aluminium and acrylic and installed on storefronts across the UAE and Qatar.",
+    metaDescription:
+      "3D channel letters in Dubai and the UAE: aluminium and acrylic fabrication, front-lit or halo-lit, designed, built and installed as one project.",
+    definition:
+      "Channel letters are individually fabricated 3D letters built from aluminium returns with an acrylic face, the standard signage for retail and F&B storefronts and mall units because they read clearly day and night and can be cut to almost any typeface or logo shape. Front-lit letters carry LED modules inside the letter body so light shines through the face; halo-lit letters stay dark on the face while light spills out from behind onto the wall. UV-stabilised acrylic and an adequately IP-rated LED driver are what decide whether a set of letters holds its colour through Gulf summers or yellows and fails within a couple of years.",
+    options: [
+      "Front-lit channel letters (LED-illuminated face)",
+      "Halo-lit (back-lit) channel letters",
+      "Non-illuminated dimensional letters",
+      "Aluminium return & acrylic face fabrication",
+      "UV-stabilised acrylic for outdoor durability",
+      "Municipality & mall approval documentation support",
+    ],
+    quickFacts: [
+      { label: "Construction", value: "Aluminium returns with an acrylic face, LED-illuminated" },
+      { label: "Illumination options", value: "Front-lit, halo-lit, or non-illuminated" },
+      { label: "Best for", value: "Storefronts, mall units, building-top signage" },
+      { label: "Service", value: "Design, fabrication, approval support and installation" },
+    ],
+    faqs: [
+      {
+        q: "What's the difference between front-lit and halo-lit channel letters?",
+        a: "Front-lit letters have LEDs inside the letter body so light shines through the face, giving a bright, even glow, and are the more common, cost-effective option. Halo-lit letters stay dark on the face while light spills out from behind onto the wall, creating a soft glow around the letter shape, a look usually chosen for hotel and flagship retail frontages.",
+      },
+      {
+        q: "How long do channel letters last in UAE and Qatar heat?",
+        a: "A set built with UV-stabilised acrylic and a properly IP-rated LED driver typically holds its colour and function for 5 to 8 years or more, while lower-grade acrylic and unsealed electronics can visibly yellow or fail within 2 years of constant summer sun.",
+      },
+      {
+        q: "Do channel letters need municipality or mall approval?",
+        a: "Generally yes, for anything visible from a public road or a mall frontage. Requirements on size, brightness and setback vary by emirate and by mall or landlord, and are confirmed at brief stage for the specific site.",
+      },
+      {
+        q: "Can channel letters be produced non-illuminated?",
+        a: "Yes. Non-illuminated dimensional letters use the same aluminium-and-acrylic or solid metal fabrication without LED modules, suited to daytime-only businesses or locations with strong ambient lighting already.",
+      },
+      {
+        q: "How are channel letters sized for a specific storefront?",
+        a: "Letters are sized to the available fascia width and viewing distance from the road, then cut to a brand's exact typeface or logo shape rather than picked from a stock font set.",
+      },
+      {
+        q: "Can channel letters be installed alongside other signage on the same building?",
+        a: "Yes. Channel letters are commonly briefed together with wayfinding, window graphics or a monument sign at the same site so the full signage package is designed and installed as one project.",
+      },
+    ],
+  },
+  {
+    slug: "clinic-fit-out-dubai",
+    name: "Clinic & Medical Centre Fit-Out",
+    parentSection: "fit-out",
+    icon: Stethoscope,
+    primaryKeyword: "clinic fit out dubai",
+    short: "DHA-compliant fit-out for clinics, polyclinics and medical centres in Dubai, sequenced around the DM permit, DHA licence and DED trade licence.",
+    metaDescription:
+      "Clinic fit-out in Dubai: DHA-compliant design, the DM-to-DHA-to-DED approval sequence, and 2026 minimum space standards for GP and specialist clinics.",
+    definition:
+      "Clinic fit-out is the build-out of a medical facility's interior, reception, waiting area, consultation and treatment rooms, sterilisation and clinical waste storage, to a layout a DHA-approved engineering firm has designed and the Dubai Health Authority has reviewed before construction starts. It differs from a standard commercial fit-out in one key way: the sequence of approvals is fixed. The Dubai Municipality or Trakhees fit-out permit has to be issued before the DHA Healthcare Facility Licence application can go in through the Sheryan portal, and the DED medical trade licence can't be issued until the DHA licence clears, so a clinic can't open on a build-first, licence-later timeline the way a retail unit sometimes can.",
+    options: [
+      "DHA-compliant architectural layout & submission",
+      "Reception, waiting area & consultation room build-out",
+      "Treatment room, sterilisation & clinical waste zoning",
+      "Medical gas & specialist MEP coordination",
+      "Civil Defence (DCD) fire safety compliance",
+      "DM/Trakhees permit and DHA Sheryan submission support",
+    ],
+    quickFacts: [
+      { label: "Approval sequence", value: "DM/Trakhees permit → DCD NOC → DHA licence (Sheryan) → DED trade licence" },
+      { label: "Facility types", value: "GP clinics, specialist clinics, polyclinics, dental clinics" },
+      { label: "2026 minimum area", value: "GP clinic 50 sq m · specialist clinic 70 sq m (applications from 1 Mar 2026)" },
+      { label: "Design requirement", value: "Layout must be prepared by a DHA-approved engineering firm" },
+    ],
+    faqs: [
+      {
+        q: "What approvals does a clinic fit-out need in Dubai?",
+        a: "Four in sequence: a Dubai Municipality or Trakhees fit-out permit for the construction itself, a Dubai Civil Defence fire safety NOC, a DHA Healthcare Facility Licence applied for through the Sheryan portal, and a DED medical trade licence, which can't be issued until the DHA licence is in hand.",
+      },
+      {
+        q: "Can construction start before DHA approves the layout?",
+        a: "No. The architectural layout has to be prepared by a DHA-approved engineering firm and submitted for DHA review, covering reception, consultation rooms, treatment areas, sterilisation and clinical waste storage, before construction begins.",
+      },
+      {
+        q: "What's the minimum clinic size under DHA's 2026 standards?",
+        a: "DHA raised its minimum space standards for applications submitted from 1 March 2026: a GP clinic now needs at least 50 sq m (up from 40 sq m) and a specialist clinic at least 70 sq m (up from 60 sq m). An existing licence isn't affected until it's renewed or the layout changes.",
+      },
+      {
+        q: "How much does a clinic fit-out cost in Dubai?",
+        a: "Cost depends mainly on the number of consultation and treatment rooms, whether medical gas or specialist equipment MEP is required, and the finish level DHA's infection-control standards call for in sterilisation and clinical areas. Share the facility category and room count when requesting a quote for an accurate figure.",
+      },
+      {
+        q: "How long does a DHA-compliant clinic fit-out take?",
+        a: "Construction timeline depends on scope, but the approval sequence itself, DM permit, then DHA licence, then DED licence, is usually the longer lead item, since each step waits on the one before it rather than running in parallel.",
+      },
+      {
+        q: "Can a clinic fit-out be combined with exterior signage?",
+        a: "Yes. Storefront and reception signage is commonly briefed alongside the interior fit-out so both are designed and installed as one project, though signage content still needs to meet DHA's rules on medical advertising where applicable.",
       },
     ],
   },
