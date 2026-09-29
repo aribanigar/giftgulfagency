@@ -18,6 +18,8 @@ import { productsForSection } from "@/lib/products";
 import { serviceGuides } from "@/lib/service-guides";
 import { GuideContent } from "@/components/guide-content";
 import { topicsForSection } from "@/lib/topics";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { serviceLinks } from "@/lib/related-links";
 
 export function SectionPage({ section }: { section: Section }) {
   const related = sections.filter((s) => s.slug !== section.slug);
@@ -55,33 +57,55 @@ export function SectionPage({ section }: { section: Section }) {
       {/* Buyer's guide (unique per service), falling back to the definition */}
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          {guide ? (
-            <>
-              <SectionIntro
-                eyebrow="Buyer's guide"
-                title={guide.title}
-                size="md"
-              >
-                <p>{guide.lead}</p>
-              </SectionIntro>
-              <div className="mt-16">
-                <GuideContent sections={guide.sections} />
-              </div>
-            </>
-          ) : (
-            <>
-              <SectionIntro
-                eyebrow="Overview"
-                title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`}
-                size="md"
-              >
-                <p>{section.definition}</p>
-              </SectionIntro>
-              <div className="mt-16">
-                <FactGrid facts={section.quickFacts} />
-              </div>
-            </>
-          )}
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
+              {guide ? (
+                <>
+                  <SectionIntro
+                    eyebrow="Buyer's guide"
+                    title={guide.title}
+                    size="md"
+                  >
+                    <p>{guide.lead}</p>
+                  </SectionIntro>
+                  <div className="mt-16">
+                    <GuideContent sections={guide.sections} stacked />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <SectionIntro
+                    eyebrow="Overview"
+                    title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`}
+                    size="md"
+                  >
+                    <p>{section.definition}</p>
+                  </SectionIntro>
+                  <div className="mt-16">
+                    <FactGrid facts={section.quickFacts} />
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{ service: section.name, source: `/${section.slug}` }}
+                groups={[
+                  {
+                    title: "Guides",
+                    links: sectionTopics
+                      .slice(0, 6)
+                      .map((t) => ({ href: `/${t.slug}`, title: t.name, meta: t.category })),
+                  },
+                  {
+                    title: "Products",
+                    links: products.slice(0, 8).map((p) => ({ href: `/${p.slug}`, title: p.name })),
+                  },
+                  { title: "Other services", links: serviceLinks(section.slug) },
+                ]}
+              />
+            </div>
+          </div>
         </Container>
       </section>
 

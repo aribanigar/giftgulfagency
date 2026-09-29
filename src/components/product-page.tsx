@@ -6,6 +6,9 @@ import { getSection } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { faqPageSchema, productSchema, breadcrumbSchema } from "@/lib/schema";
 import { productsForSection, type Product } from "@/lib/products";
+import { topicsForSection } from "@/lib/topics";
+import { PageSidebar } from "@/components/sidebar/page-sidebar";
+import { serviceLinks } from "@/lib/related-links";
 
 export function ProductPage({ product }: { product: Product }) {
   const section = getSection(product.parentSection);
@@ -13,6 +16,7 @@ export function ProductPage({ product }: { product: Product }) {
     (p) => p.slug !== product.slug,
   );
   const lower = product.name.toLowerCase();
+  const sectionTopics = topicsForSection(product.parentSection);
 
   return (
     <div>
@@ -42,11 +46,33 @@ export function ProductPage({ product }: { product: Product }) {
 
       <section className="bg-white py-24 sm:py-32">
         <Container>
-          <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
-            <p>{product.definition}</p>
-          </SectionIntro>
-          <div className="mt-16">
-            <FactGrid facts={product.quickFacts} />
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-8">
+              <SectionIntro eyebrow="Overview" title={`What ${/s$/.test(lower) ? "are" : "is"} ${lower}?`} size="md">
+                <p>{product.definition}</p>
+              </SectionIntro>
+              <div className="mt-16">
+                <FactGrid facts={product.quickFacts} />
+              </div>
+            </div>
+            <div className="lg:col-span-4">
+              <PageSidebar
+                quote={{ item: product.name, service: section?.name, source: `/${product.slug}` }}
+                groups={[
+                  {
+                    title: section ? `${section.name} guides` : "Guides",
+                    links: sectionTopics
+                      .slice(0, 6)
+                      .map((t) => ({ href: `/${t.slug}`, title: t.name, meta: t.category })),
+                  },
+                  {
+                    title: section ? `More ${section.name.toLowerCase()}` : "More products",
+                    links: related.slice(0, 6).map((p) => ({ href: `/${p.slug}`, title: p.name })),
+                  },
+                  { title: "Services", links: serviceLinks(section?.slug) },
+                ]}
+              />
+            </div>
           </div>
         </Container>
       </section>

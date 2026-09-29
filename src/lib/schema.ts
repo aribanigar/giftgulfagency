@@ -127,12 +127,9 @@ export function serviceSchema(section: Section) {
             "@type": "OfferCatalog",
             name: `${section.name} products`,
             itemListElement: products.map((product) => ({
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Product",
-                name: product.name,
-                url: `${siteConfig.url}/${product.slug}`,
-              },
+              "@type": "Service",
+              name: product.name,
+              url: `${siteConfig.url}/${product.slug}`,
             })),
           },
         }
@@ -140,6 +137,14 @@ export function serviceSchema(section: Section) {
   };
 }
 
+/**
+ * Individual product/directory-topic pages: custom, quote-based work with
+ * no fixed catalogue price, so this deliberately uses Service rather than
+ * Product. A bare Product entity with no offers/review/aggregateRating is
+ * invalid for Google's Product rich results, and fabricating a price or
+ * rating just to satisfy that would be exactly the kind of fake trust
+ * signal organizationSchema() above already avoids.
+ */
 export function productSchema(product: {
   slug: string;
   name: string;
@@ -151,11 +156,13 @@ export function productSchema(product: {
     : undefined;
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${siteConfig.url}/${product.slug}#product`,
+    "@type": "Service",
+    "@id": `${siteConfig.url}/${product.slug}#service`,
+    serviceType: product.name,
     name: product.name,
     description: product.metaDescription,
-    brand: organizationRef(),
+    provider: organizationRef(),
+    areaServed: areaServed(),
     ...(category ? { category } : {}),
     url: `${siteConfig.url}/${product.slug}`,
   };
