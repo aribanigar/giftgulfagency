@@ -952,6 +952,58 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    slug: "custom-printed-boxes",
+    name: "Custom Printed Boxes",
+    parentSection: "packaging",
+    icon: Package,
+    primaryKeyword: "custom printed boxes uae",
+    short: "Folding cartons, corrugated mailers and rigid boxes printed with your logo and colours, for retail, F&B and gifting.",
+    metaDescription:
+      "Custom printed boxes in the UAE and Qatar: folding cartons, mailers and rigid gift boxes with logo printing, proofs and VAT invoices. Get a quote.",
+    definition:
+      "Custom printed boxes are made to your dimensions and printed with your logo, colours and finish. The three main builds are folding cartons (printed paperboard, shipped flat) for retail and takeaway, corrugated mailers for e-commerce and delivery, and rigid boxes (wrapped greyboard) for premium gifting. Gifts Gulf confirms the box style, dieline and a proof before production starts.",
+    options: [
+      "Folding cartons for retail, cosmetics and takeaway",
+      "Corrugated mailer boxes for e-commerce and delivery",
+      "Rigid gift boxes with lid, magnetic or drawer closure",
+      "Custom sizes cut to a supplied dieline",
+      "Matt or gloss lamination, spot UV, foil and embossing",
+      "Inserts, dividers and ribbon or foam fitments",
+    ],
+    quickFacts: [
+      { label: "Box styles", value: "Folding carton, corrugated mailer, rigid gift box" },
+      { label: "Finishes", value: "Matt/gloss lamination, spot UV, foil, emboss/deboss" },
+      { label: "Before production", value: "Dieline check and proof approval; sample run on request" },
+      { label: "MOQ and lead time", value: "Depend on box style and finish. Send quantity and size for a confirmed figure" },
+    ],
+    faqs: [
+      {
+        q: "What is the minimum order for custom printed boxes in the UAE?",
+        a: "It depends on the box style and finish. Folding cartons and corrugated mailers usually need a higher run than rigid boxes with complex finishes, because of tooling and set-up. Send the size, quantity and finish and we will confirm the minimum on the quote.",
+      },
+      {
+        q: "How long do custom boxes take to produce?",
+        a: "Lead time depends on the box style, finish and whether the dieline is new. Rigid boxes and foil or emboss finishes take longer than plain printed cartons. The confirmed date is stated on the quote and starts after proof approval.",
+      },
+      {
+        q: "Can you print on boxes in my exact brand colours?",
+        a: "Yes. Send Pantone references or a brand guideline and we match against them. Colours shift slightly between coated and uncoated board, so ask for a proof on the actual stock.",
+      },
+      {
+        q: "What artwork do I need to supply?",
+        a: "A vector logo (AI, EPS or PDF) and, if you have one, your own dieline. If not, we supply the dieline for the chosen box size, and you place your artwork on it. Bleed and safe zones are marked on the template.",
+      },
+      {
+        q: "Do you deliver boxes to Doha as well as the UAE?",
+        a: "Yes. Boxes are delivered across the UAE and to Qatar. Transit time for Qatar orders is confirmed on the quote.",
+      },
+      {
+        q: "Will I get a VAT invoice?",
+        a: "Yes. UAE VAT is 5%, and invoices show it as a separate line so a VAT-registered buyer can process it through accounts.",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

@@ -3833,6 +3833,225 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "vat-on-corporate-gifts-printing-uae",
+    title: "VAT on corporate gifts and printing in the UAE: what buyers need to know",
+    metaDescription:
+      "UAE VAT is 5% on printing and branded gifts. What a valid tax invoice shows, when input tax can be reclaimed, and what to check before you pay.",
+    category: "Printing",
+    excerpt:
+      "How 5% VAT applies to printing and branded merchandise, what a valid tax invoice shows, and the questions to ask your accountant.",
+    photoId: "vat-on-corporate-gifts-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-09-30",
+    relatedSectionSlug: "printing",
+    intro:
+      "Procurement teams ask the same thing before signing off a print or gifting order: is VAT added, and can we claim it back? This guide covers how UAE VAT applies to printing and branded merchandise, what to look for on the invoice, and where to get a firm answer for your own company. It is general information, not tax advice.",
+    sections: [
+      {
+        heading: "What VAT rate applies to printing and branded gifts in the UAE?",
+        blocks: [
+          p(
+            "The UAE standard VAT rate is 5%. Printed materials, branded merchandise and packaging supplied inside the UAE by a VAT-registered supplier are normally charged at that rate, added on top of the quoted price. Quote comparisons should therefore always state whether figures are before or after VAT.",
+          ),
+          p(
+            "A quote from Gifts Gulf shows the VAT amount as a separate line, so the ex-VAT price can be compared like for like with other suppliers.",
+          ),
+        ],
+      },
+      {
+        heading: "What must a valid VAT invoice show?",
+        blocks: [
+          p(
+            "A tax invoice is the document your accounts team needs to process the payment and, if you are VAT-registered, to support an input tax claim. Check that it carries the following before you release payment:",
+          ),
+          ul([
+            "The words \"Tax Invoice\" and a unique invoice number.",
+            "The supplier's name, address and Tax Registration Number (TRN).",
+            "Your company name, address and, if registered, your TRN.",
+            "The invoice date and the date of supply.",
+            "A description, quantity and unit price for each item.",
+            "The VAT rate and the VAT amount in AED, and the total payable.",
+          ]),
+          p(
+            "Supplier TRNs can be checked on the Federal Tax Authority website. If a quote or invoice has no TRN, ask for a corrected version before paying.",
+          ),
+        ],
+      },
+      {
+        heading: "Can a company reclaim VAT paid on corporate gifts and printing?",
+        blocks: [
+          p(
+            "A VAT-registered business can generally recover input tax on purchases used for its taxable business activity, subject to the Federal Tax Authority's rules and its own records. Whether a particular gift qualifies, for example gifts to clients versus items for staff, can depend on the circumstances and value.",
+          ),
+          p(
+            "Treat that as a question for your accountant or tax adviser rather than something the print supplier decides. What we can do is issue a compliant tax invoice with the right details, which is the document that claim rests on.",
+          ),
+        ],
+      },
+      {
+        heading: "Who has to be VAT-registered?",
+        blocks: [
+          p(
+            "Businesses whose taxable supplies and imports exceed AED 375,000 a year must register, and those above AED 187,500 can register voluntarily. If your company is below the threshold and unregistered, it cannot reclaim VAT, so the 5% is a real cost to budget for.",
+          ),
+        ],
+      },
+      {
+        heading: "How does VAT work for orders delivered to Qatar or other GCC countries?",
+        blocks: [
+          p(
+            "Rules for goods sent outside the UAE differ from a domestic sale, and Qatar has its own tax and customs position. Do not assume the UAE 5% treatment carries over. State the delivery country on the RFQ and we will confirm how the order is invoiced before you approve it.",
+          ),
+        ],
+      },
+      {
+        heading: "What should go on an RFQ so the VAT side is clear?",
+        blocks: [
+          ul([
+            "Your company's registered name and TRN, if any.",
+            "Delivery address and country.",
+            "Whether you need the price shown ex-VAT, inc-VAT, or both.",
+            "Your LPO or PO number, so it appears on the invoice.",
+            "Payment terms you need.",
+          ]),
+          p(
+            "Sending these up front avoids a re-issued invoice later, which is the most common cause of delayed payment on gifting orders.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the VAT rate on printing in the UAE?",
+        a: "The standard rate is 5%. Printing and branded merchandise supplied within the UAE by a VAT-registered supplier are normally charged at that rate.",
+      },
+      {
+        q: "Is VAT included in your quotes?",
+        a: "Quotes show VAT as a separate line, so you can see the ex-VAT price and the 5% amount clearly.",
+      },
+      {
+        q: "Can I reclaim VAT on corporate gifts?",
+        a: "A VAT-registered business can generally reclaim input tax on business purchases, subject to FTA rules. Confirm the treatment of gifts with your accountant.",
+      },
+      {
+        q: "What is a TRN?",
+        a: "A Tax Registration Number is the identifier the Federal Tax Authority issues to VAT-registered businesses. It must appear on a valid tax invoice.",
+      },
+      {
+        q: "How do I check a supplier's TRN?",
+        a: "Use the Federal Tax Authority's online TRN verification. If an invoice shows no TRN, ask the supplier to reissue it.",
+      },
+      {
+        q: "Does VAT change for Qatar deliveries?",
+        a: "It can. Exports and cross-border deliveries are treated differently from a domestic UAE sale, so state the delivery country on your RFQ and confirm the invoicing before approving.",
+      },
+    ],
+  },
+
+  {
+    slug: "folding-carton-vs-rigid-box",
+    title: "Folding carton vs rigid box: which packaging suits your product?",
+    metaDescription:
+      "Folding carton vs rigid box compared on cost, strength, look, storage and lead time, with a rule for choosing between them for UAE and Qatar orders.",
+    category: "Packaging",
+    excerpt:
+      "Cost, strength, storage and finish compared, and a simple rule for choosing between a folding carton and a rigid box.",
+    photoId: "folding-carton-vs-rigid-box",
+    readTime: "6 min read",
+    publishedAt: "2026-09-30",
+    relatedSectionSlug: "packaging",
+    intro:
+      "A folding carton and a rigid box can both carry your logo, but they are different products. One ships flat and costs less per unit. The other arrives already formed and feels like a gift. Choosing the wrong one means paying for finish nobody sees, or handing over a premium product in a box that looks like takeaway packaging.",
+    sections: [
+      {
+        heading: "What is the difference between a folding carton and a rigid box?",
+        blocks: [
+          p(
+            "A folding carton is printed paperboard, die-cut and creased, and delivered flat to be assembled by the packer. A rigid box is greyboard wrapped in printed paper, built at the factory and delivered fully formed. Rigid boxes do not fold flat, so they take more storage and freight space.",
+          ),
+          p(
+            "Custom printed boxes of both types are available from Gifts Gulf, on the Custom Printed Boxes page under Packaging.",
+          ),
+        ],
+      },
+      {
+        heading: "Folding carton vs rigid box: how do they compare?",
+        blocks: [
+          ul([
+            "Cost per unit: folding cartons are lower, and the gap widens on higher volumes.",
+            "Storage: cartons ship flat and take a fraction of the space; rigid boxes are shipped and stored assembled.",
+            "Strength: rigid boxes resist crushing and keep their shape; cartons are adequate for light products.",
+            "Look and feel: rigid boxes suit premium gifting, cartons suit retail shelves, cosmetics and takeaway.",
+            "Set-up: cartons need to be folded and glued by hand or machine at your end; rigid boxes are ready to fill.",
+            "Lead time: rigid boxes and foil or emboss finishes typically take longer than plain printed cartons.",
+          ]),
+        ],
+      },
+      {
+        heading: "When should you choose a folding carton?",
+        blocks: [
+          p(
+            "Choose a carton for high volumes, price-sensitive products, retail shelves, cosmetics, supplements and food items. It prints well on all sides, takes matt or gloss lamination and spot UV, and can be sized to the product to cut void fill.",
+          ),
+        ],
+      },
+      {
+        heading: "When should you choose a rigid box?",
+        blocks: [
+          p(
+            "Choose a rigid box where the box is part of the gift: executive gift sets, Eid and National Day hampers, watches, awards, and client welcome kits. Magnetic-closure and lid-and-base styles are the common builds, often with a foam or card insert to hold the items in position.",
+          ),
+          p(
+            "For staff gift sets, see corporate gift boxes and sets.",
+          ),
+        ],
+      },
+      {
+        heading: "What about e-commerce and delivery?",
+        blocks: [
+          p(
+            "Neither is designed for parcel shipping on its own. Corrugated mailers are the usual choice for courier delivery, and a carton or rigid box goes inside if the unboxing matters. See our e-commerce packaging guide.",
+          ),
+        ],
+      },
+      {
+        heading: "A simple rule of thumb",
+        blocks: [
+          p(
+            "If the customer keeps the box, use a rigid box. If they throw it away, use a folding carton.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is a rigid box more expensive than a folding carton?",
+        a: "Usually yes, per unit, because it involves more materials and hand assembly. The exact difference depends on size, finish and quantity, so get both priced on the same spec.",
+      },
+      {
+        q: "Can both be printed with a logo?",
+        a: "Yes. Both take full-colour printing, and finishes such as lamination, spot UV, foil and embossing are available on each.",
+      },
+      {
+        q: "Which is better for Eid or National Day hampers?",
+        a: "A rigid box, generally, because the box is part of the presentation. Order early, as finishes add to lead time.",
+      },
+      {
+        q: "Which stores flat?",
+        a: "Only the folding carton. Rigid boxes arrive assembled, so allow storage space for them.",
+      },
+      {
+        q: "What dieline do I need?",
+        a: "We supply a dieline for the chosen size. Place your vector artwork on it, keeping text inside the safe zone.",
+      },
+      {
+        q: "What is the minimum order?",
+        a: "It depends on style and finish. Send the box size and quantity and we will confirm the minimum on the quote.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
