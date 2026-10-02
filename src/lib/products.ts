@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Lightbulb,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,58 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "illuminated-signage",
+    name: "Illuminated Signage",
+    parentSection: "signages",
+    icon: Lightbulb,
+    primaryKeyword: "illuminated signage Dubai",
+    short: "LED lightboxes, backlit and halo-lit letters, and neon-style signs for shopfronts, offices and venues.",
+    metaDescription:
+      "Illuminated signage in Dubai and Qatar: LED lightboxes, backlit channel letters and neon-style signs, made, installed and approved-ready. Get a quote.",
+    definition:
+      "Illuminated signage is any sign lit from within or behind: LED lightboxes, front-lit and halo-lit channel letters, and flexible LED neon. It is chosen where a sign must be read at night or compete with shopfront lighting, and it needs an electrical supply point and, for external signs, landlord and municipal approval before installation.",
+    options: [
+      "LED lightboxes (single or double-sided)",
+      "Front-lit 3D channel letters",
+      "Halo-lit (back-lit) letters",
+      "Flexible LED neon signs",
+      "Illuminated logo panels and fascia signs",
+      "Projecting and hanging illuminated signs",
+    ],
+    quickFacts: [
+      { label: "Types", value: "Lightbox, front-lit, halo-lit, LED neon" },
+      { label: "Best for", value: "Shopfronts, F&B, clinics, showrooms, venue entrances" },
+      { label: "Needs", value: "Power point, approved drawings, landlord/municipal permission for external signs" },
+      { label: "Price", value: "Depends on size, type and site. Get a quote" },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between a lightbox and illuminated channel letters?",
+        a: "A lightbox is a lit panel with the logo printed or cut into the face. Channel letters are individually fabricated letters, each lit separately, so the sign reads as the shape of the logo with no panel behind it. Letters cost more to make and install, but suit a premium shopfront; lightboxes suit menus, projecting signs and logo panels.",
+      },
+      {
+        q: "Do illuminated signs need approval in the UAE?",
+        a: "External signs generally need landlord or mall approval and municipal or authority permission before installation, and the process differs between Dubai, Abu Dhabi and Sharjah. Share your location and we'll confirm what the submission needs. See our shop signage approvals guide for the usual steps.",
+      },
+      {
+        q: "Does an illuminated sign need an electrical connection?",
+        a: "Yes. LED signs run through a transformer or driver, which needs a supply point near the sign. Confirm where the supply will come from before the sign is made, as relocating a supply after fabrication adds cost and delay.",
+      },
+      {
+        q: "Is LED neon a replacement for glass neon?",
+        a: "For most commercial uses, yes. LED neon is flexible silicone with LEDs inside, so it is lighter, safer to handle and cheaper to run than glass neon. Glass neon is still chosen where its specific look is part of the brief.",
+      },
+      {
+        q: "How long does an illuminated sign take to produce?",
+        a: "It depends on the type, size and approvals. Fabrication is only part of the timeline, because landlord and authority approvals often take longer than production. Send the location, size and artwork and we'll confirm the schedule in the quote.",
+      },
+      {
+        q: "What do you need to quote an illuminated sign?",
+        a: "The logo as a vector file, the wall or fascia size, the location (emirate or city, and mall or street frontage), and a photo of the site. With those, the sign type, power requirement and approval route can be specified.",
       },
     ],
   },

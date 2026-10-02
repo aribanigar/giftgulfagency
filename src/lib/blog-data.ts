@@ -3833,6 +3833,197 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "vat-on-corporate-gifts-and-printing-uae",
+    title: "VAT on corporate gifts and printing in the UAE: what buyers need to know",
+    metaDescription:
+      "How 5% UAE VAT applies to branded gifts and printing orders: tax invoices, TRN, the AED 500 per-recipient gifting rule and what to ask your supplier.",
+    category: "Gift Items",
+    excerpt:
+      "5% VAT, the tax invoice details procurement needs, and the AED 500 per-recipient rule for business gifts.",
+    photoId: "vat-on-corporate-gifts-and-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-10-02",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: printing and branded gifts supplied in the UAE by a VAT-registered supplier carry 5% VAT, shown on a tax invoice with the supplier's TRN. Separately, a business giving gifts away can fall under the deemed-supply rules once gifts to one recipient pass AED 500 in 12 months. This guide is general information, not tax advice. Confirm your own position with your accountant or the Federal Tax Authority.",
+    sections: [
+      {
+        heading: "What VAT rate applies to printing and branded gifts in the UAE?",
+        blocks: [
+          p(
+            "The UAE standard VAT rate is 5%. It applies to printed materials, branded merchandise and gift items sold by a VAT-registered supplier, charged on top of the quoted price unless the quote says it is inclusive. Always check which one your quote shows. A quote of AED 10,000 exclusive becomes AED 10,500 on the invoice.",
+          ),
+          p(
+            "For procurement teams comparing suppliers, ask for quotes on the same basis, VAT-exclusive, so the totals can be compared directly. Gifts Gulf quotes and invoices with VAT shown as its own line.",
+          ),
+        ],
+      },
+      {
+        heading: "What must a UAE tax invoice show for a printing or gifts order?",
+        blocks: [
+          p(
+            "Your finance team needs a valid tax invoice to recover input VAT. A tax invoice normally carries the following:",
+          ),
+          ul([
+            "The words \"Tax Invoice\"",
+            "Supplier name, address and Tax Registration Number (TRN)",
+            "Your company name, address and TRN",
+            "Invoice date and a sequential invoice number",
+            "Description, quantity and unit price of each item",
+            "The VAT rate and the VAT amount in AED",
+            "Total amount payable",
+          ]),
+          p(
+            "Check the TRN on the first invoice and make sure your company name is spelt exactly as on your own registration. Corrections after the fact mean credit notes and re-issued invoices.",
+          ),
+        ],
+      },
+      {
+        heading: "Is VAT due when a company gives branded gifts to clients?",
+        blocks: [
+          p(
+            "Under the UAE VAT rules on deemed supply, goods given away free can be treated as a supply. There is an exclusion where the value of goods given to each recipient within a 12-month period does not exceed AED 500, and an AED 2,000 threshold on total output tax across all deemed supplies in that period. Because these thresholds are applied per recipient and per year, budget-tier gifts such as pens, notebooks and mugs normally sit well below the line, while premium sets for senior clients are the ones to check.",
+          ),
+          p(
+            "Rule of thumb: keep a simple log of gifts by recipient so your finance team can see who is near AED 500 across the year. Confirm the current treatment with your tax adviser before relying on it.",
+          ),
+        ],
+      },
+      {
+        heading: "Does VAT apply to artwork, setup and delivery charges?",
+        blocks: [
+          p(
+            "Charges that form part of the same supply, such as artwork or design, setup, branding and delivery to your site in the UAE, are normally invoiced together with the goods and carry VAT as part of the order. Ask for them to be itemised on the quote so you can see what the branding itself costs.",
+          ),
+        ],
+      },
+      {
+        heading: "What should procurement ask a supplier about VAT before ordering?",
+        blocks: [
+          ul([
+            "Is the supplier VAT-registered, and what is the TRN?",
+            "Is the quote VAT-exclusive or inclusive?",
+            "Will the invoice be a full tax invoice in AED?",
+            "Are artwork, setup and delivery itemised?",
+            "What are the payment terms and LPO requirements?",
+          ]),
+          p(
+            "Orders for delivery outside the UAE, including Qatar, Saudi Arabia, Kuwait, Bahrain or Oman, follow different rules. Check the treatment for the destination country with your tax adviser before ordering.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the VAT rate on printing in the UAE?",
+        a: "The standard UAE VAT rate of 5% applies to printing supplied by a VAT-registered business. It is shown as a separate line on the tax invoice.",
+      },
+      {
+        q: "Can my company recover VAT on branded gifts for clients?",
+        a: "Recovery depends on your own VAT position and the nature of the expense, so confirm with your accountant. What the supplier controls is giving you a valid tax invoice with its TRN, which you need for any claim.",
+      },
+      {
+        q: "Is there VAT on gifts below AED 500 per person?",
+        a: "The supplier still charges 5% VAT when you buy the gifts. Separately, free gifts to a recipient that stay within AED 500 over 12 months fall within an exclusion from the deemed-supply rules when you give them away. Confirm the detail with your tax adviser.",
+      },
+      {
+        q: "Do I need an LPO before the order is produced?",
+        a: "Most corporate buyers issue an LPO against the quote so the invoice matches the purchase record. Send the LPO number with the order so it can be printed on the tax invoice.",
+      },
+      {
+        q: "Will the quote show VAT separately?",
+        a: "Yes. Gifts Gulf shows VAT as a separate line so quotes from different suppliers can be compared on the same basis.",
+      },
+      {
+        q: "What documents does finance need from the supplier?",
+        a: "A tax invoice with the supplier TRN, your company details, itemised charges and the VAT amount in AED, plus the delivery note if your process matches goods to invoices.",
+      },
+    ],
+  },
+
+  {
+    slug: "diwali-corporate-gifts-uae",
+    title: "Diwali corporate gifts in the UAE: order-by dates, budgets and ideas",
+    metaDescription:
+      "Diwali corporate gifts in the UAE: key 2026 dates, order-by timing, branded gift ideas by budget and how to brief a supplier.",
+    category: "Gift Items",
+    excerpt:
+      "Diwali falls on 8 November 2026. Here is the order-by timing and what companies usually give.",
+    photoId: "diwali-corporate-gifts-uae",
+    readTime: "5 min read",
+    publishedAt: "2026-10-02",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: Diwali 2026 is on Sunday 8 November, with the five-day festival running from Dhanteras on 6 November to Bhai Dooj on 10 November. For branded gifts, brief your supplier in the first week of October. Plain branded items can be ready in two to three weeks, but personalised or boxed sets need longer. Gifts Gulf is the UAE supplier procurement teams use to get proofs before production and VAT invoices.",
+    sections: [
+      {
+        heading: "When is Diwali 2026, and when should corporate gifts be ordered?",
+        blocks: [
+          p(
+            "Diwali is on Sunday 8 November 2026 (festival dates from 6 to 10 November). Dates follow the lunar calendar, so confirm them each year. Work back from the day you want gifts in your clients' hands, usually the week before Diwali, and allow time for artwork, proof approval, production and delivery. If you are reading this in early October, you are on the tight side for custom boxed sets, but comfortable for simple branded items.",
+          ),
+          p(
+            "Rule of thumb: for festival gifts, confirm the brief and artwork four to five weeks before the day you plan to hand them over.",
+          ),
+        ],
+      },
+      {
+        heading: "Which gifts do UAE companies give for Diwali?",
+        blocks: [
+          ul([
+            "Branded gift boxes with dry fruit, sweets or chocolate",
+            "Diyas, candle sets and festive decor with a discreet logo",
+            "Desk diaries and notebooks for the new year",
+            "Steel or glass water bottles and drinkware",
+            "Greeting cards with a branded sleeve for staff and clients",
+          ]),
+          p(
+            "Food items need correct labelling and packaging suited to UAE rules, so confirm what your supplier can pack and label before choosing them.",
+          ),
+        ],
+      },
+      {
+        heading: "How should Diwali gifts be branded?",
+        blocks: [
+          p(
+            "Keep the logo small and the festival message primary. Gold or deep red foil on a dark box reads well, and a sleeve or tag lets you brand the pack without printing on the food or decor itself. For per-person names, UV printing or laser engraving suits bottles, pens and notebooks, but personalisation adds a step to production.",
+          ),
+        ],
+      },
+      {
+        heading: "How do you brief a supplier for festival gifts?",
+        blocks: [
+          p(
+            "Send the quantity, budget per gift, delivery date and address, and your logo as a vector file. Ask for a proof before production and a tax invoice with VAT shown. Our VAT guide explains what the invoice should include.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the date of Diwali in 2026?",
+        a: "Diwali falls on Sunday 8 November 2026, with the festival running from 6 to 10 November. Confirm the date each year, as it follows the lunar calendar.",
+      },
+      {
+        q: "When should Diwali corporate gifts be ordered in the UAE?",
+        a: "Brief the supplier four to five weeks before handover, which means early October for gifts delivered the week before 8 November. Personalised and boxed items need the longest lead.",
+      },
+      {
+        q: "What is the minimum order for branded Diwali gifts?",
+        a: "It depends on the item and the branding method. Send the item and quantity you have in mind and the quote will confirm the minimum.",
+      },
+      {
+        q: "Can gifts be delivered to several offices?",
+        a: "Yes. Send the list of delivery addresses and quantities per location with the brief so the split can be quoted.",
+      },
+      {
+        q: "What files are needed for branding?",
+        a: "Your logo as a vector file (AI, EPS or PDF). A PNG or JPG is often not sharp enough for printing or engraving.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
