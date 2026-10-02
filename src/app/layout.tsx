@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Montserrat } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -73,6 +74,11 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="0qOwcB159YH5QwCwk7F5rg"
+          strategy="afterInteractive"
+        />
         <JsonLd data={organizationSchema(settings)} />
         <JsonLd data={websiteSchema()} />
         <Header />
