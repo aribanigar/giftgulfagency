@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Lightbulb,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,62 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "illuminated-signage",
+    name: "Illuminated Signage",
+    parentSection: "signages",
+    icon: Lightbulb,
+    primaryKeyword: "illuminated signage Dubai",
+    short: "LED lightboxes, front-lit and halo-lit channel letters and neon-effect signs for shopfronts and lobbies.",
+    metaDescription:
+      "Illuminated signage in Dubai and Doha: LED lightboxes, front-lit and halo-lit letters and neon-effect signs, fabricated and installed.",
+    definition:
+      "Illuminated signage is any sign lit from inside or behind so it stays readable after dark: LED lightboxes, front-lit channel letters, halo-lit (back-lit) letters and neon-effect LED strip signs. Each is fabricated to the shopfront or lobby it will sit on, then installed with its power feed and driver.",
+    options: [
+      "LED lightboxes (single or double-sided)",
+      "Front-lit channel letters",
+      "Halo-lit (back-lit) letters",
+      "Neon-effect LED flex signs",
+      "Illuminated logo boards and fascia signs",
+      "Indoor reception and lobby logo signs",
+    ],
+    quickFacts: [
+      { label: "Lighting types", value: "Front-lit, halo-lit, lightbox, LED neon-effect" },
+      { label: "Typical faces", value: "Acrylic, aluminium composite, stainless steel, PVC foam" },
+      { label: "Approvals", value: "Municipality and mall or landlord sign-off, varies by emirate and city" },
+      { label: "Price", value: "Depends on size, letter count, lighting type and installation access. Get a quote" },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between front-lit and halo-lit letters?",
+        a: "Front-lit letters have LED modules inside the letter body and the light comes out through the face, so the letter itself glows. Halo-lit letters have a solid face and the light is cast backwards onto the wall behind, which outlines the letter with a glow. Front-lit reads better from a distance. Halo-lit is usually chosen for a more refined lobby or flagship look.",
+      },
+      {
+        q: "What is the minimum order for an illuminated sign?",
+        a: "Illuminated signs are made to order, usually one sign per location, so there is no pack-size minimum. Cost follows the size, the number of letters and the lighting type. Share your logo and wall or fascia dimensions to get a quote.",
+      },
+      {
+        q: "How long does illuminated signage take?",
+        a: "Timeline depends on size, lighting type and how long landlord or municipality approval takes, which varies by emirate and by mall. Share the opening or handover date with your brief and we confirm what is achievable.",
+      },
+      {
+        q: "Do you need approval before installing an illuminated sign?",
+        a: "In most cases yes. Approval comes from the municipality, and mall or building landlords add their own sign-off. Requirements differ between Dubai, Abu Dhabi, Sharjah and Doha, so we confirm them at brief stage and design to them.",
+      },
+      {
+        q: "What artwork do you need for illuminated letters or a lightbox?",
+        a: "A vector logo (AI, EPS or PDF) and the exact fascia or wall dimensions, ideally with a photo of the location. A raster logo can be redrawn as vector before production. We send a proof for approval before anything is cut.",
+      },
+      {
+        q: "Do you install in Doha as well as Dubai?",
+        a: "Yes. Illuminated signs are fabricated and installed across the UAE and Qatar, with approvals handled according to the local authority and landlord.",
+      },
+      {
+        q: "Can an existing sign be re-lit or have its face replaced?",
+        a: "Often yes. A lightbox face can be replaced with a new print or acrylic, and LED modules or drivers can be swapped on an existing sign. Send a photo of the sign and we advise whether repair or a new build makes more sense.",
       },
     ],
   },
