@@ -3833,6 +3833,211 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "fit-out-handover-snagging-checklist",
+    title: "Fit-out handover and snagging: the checklist to run before you sign off",
+    metaDescription:
+      "Fit-out handover and snagging checklist for UAE and Qatar offices and stores: what to inspect, which documents to collect and when to release retention.",
+    category: "Fit-Out",
+    excerpt:
+      "Handover is the last point where the contractor has to fix things at their cost and your leverage is highest. Here is what to check before signing.",
+    photoId: "fit-out-handover-snagging-checklist",
+    readTime: "7 min read",
+    publishedAt: "2026-10-10",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "Handover day feels like the finish line, but it is the last moment you hold real leverage. Once you sign the completion certificate, the conversation about a scratched joinery panel or an AC grille that sits crooked stops being a snag and starts being a maintenance request. A structured snagging walkthrough, and a clear list of documents to collect before sign-off, protects the money you have already spent.",
+    sections: [
+      {
+        heading: "What is snagging in a fit-out project?",
+        blocks: [
+          p(
+            "Snagging is the walkthrough where the client, or their representative, inspects the finished space and lists every defect and unfinished item for the contractor to correct. Typical snags are paint touch-ups, misaligned joinery doors, missing sockets plates, uneven flooring joints, ceiling tiles that do not sit flush and light fittings that do not work. The output is a written snag list with a location and photo for each item.",
+          ),
+          p(
+            "Run it before practical completion is certified, not after. In most contracts, practical completion is also the trigger for releasing part of the payment, so the list needs to exist before that point. The exact payment terms depend on your contract, so check yours rather than assuming a standard split.",
+          ),
+        ],
+      },
+      {
+        heading: "What should you inspect room by room?",
+        blocks: [
+          p(
+            "Walk the space in a fixed order so nothing is missed: entrance and reception, open-plan floor, meeting rooms, pantry, restrooms, server or storage rooms, then the ceiling void access points. Switch things on, open them, run them and stand where a user would stand.",
+          ),
+          ul([
+            "Joinery: doors close flat, drawers run smoothly, hinges are even, edges are sealed",
+            "Walls and paint: no roller marks, uniform colour in daylight, clean edges at skirting and ceiling",
+            "Flooring: no lifted edges, consistent joints, transitions between materials are flush",
+            "Ceiling and lighting: every fitting works, colour temperature matches across the room, no gaps at tile edges",
+            "MEP: AC cools every zone, thermostats respond, every power and data point is live and labelled, water runs and drains in the pantry and restrooms",
+            "Fire and life safety: exit signs lit, detectors and sprinklers in place and unobstructed, extinguishers fitted",
+            "Signage and branding: reception sign, door plates and wayfinding match the approved drawings and are fixed level",
+          ]),
+        ],
+      },
+      {
+        heading: "Which documents should you collect at handover?",
+        blocks: [
+          p(
+            "The physical space is only half of the handover. The other half is paperwork you will need for the first maintenance call, the next landlord inspection and any future renovation. Ask for the list in the contract stage so it is a deliverable, not a favour.",
+          ),
+          ul([
+            "As-built drawings for architecture, MEP and fire systems",
+            "Operation and maintenance manuals for installed equipment",
+            "Warranty documents with start dates and contact details",
+            "Approvals and completion certificates issued by the relevant authority or building management",
+            "Test and commissioning reports for electrical, AC and fire systems",
+            "Keys, access cards and the final material schedule, including paint codes and flooring batch references",
+          ]),
+          p(
+            "Paint codes and flooring batch numbers sound minor. They are the reason a repair patch matches the wall two years from now.",
+          ),
+        ],
+      },
+      {
+        heading: "How do you handle the defects liability period and retention?",
+        blocks: [
+          p(
+            "Most fit-out contracts keep a portion of the contract value as retention and define a defects liability period after handover, during which the contractor must correct defects that appear. The percentage and the length of that period are set in your contract, so read those clauses before handover, not after a problem appears.",
+          ),
+          p(
+            "Do not release retention until the snag list is closed in writing and the document pack is complete. Record the closure date and keep photos of corrected items. If a defect appears during the liability period, report it in writing with photos and date, and reference the contract clause.",
+          ),
+        ],
+      },
+      {
+        heading: "What is the difference between a snag and a variation?",
+        blocks: [
+          p(
+            "A snag is work that does not meet the approved drawings and specification. A variation is a change to the approved scope, and it normally carries a cost and a signed instruction. Disputes at handover often come from mixing the two up: a client asks for a different door handle and calls it a snag. Keep a clean record of approved drawings, material samples and signed variations so each item can be sorted into the right category quickly.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When should the snagging inspection happen?",
+        a: "Before practical completion is certified, while the contractor is still on site and still has the crew to fix items quickly. Walking the space after sign-off weakens your position.",
+      },
+      {
+        q: "Who should attend the snagging walkthrough?",
+        a: "The client or their representative, the contractor's site manager and, ideally, the designer or project manager who knows the approved drawings. Bring the drawings, the material schedule and a camera.",
+      },
+      {
+        q: "How long does snagging take?",
+        a: "It depends on the size of the space. A small office can be walked in a few hours; a multi-floor floor plate or a retail store with extensive MEP may need a second pass after the first list is closed.",
+      },
+      {
+        q: "What documents do I need before I release the final payment?",
+        a: "As-built drawings, O&M manuals, warranties, test reports and authority or building-management completion certificates, plus a closed snag list. Your contract defines the exact deliverables, so check it first.",
+      },
+      {
+        q: "Does the contractor have to fix defects after handover?",
+        a: "During the defects liability period set in your contract, yes. The length and conditions are contract-specific, which is why those clauses should be agreed before the project starts.",
+      },
+    ],
+  },
+  {
+    slug: "clinic-fit-out-dubai-guide",
+    title: "Clinic fit-out in Dubai: what to settle before the contractor starts",
+    metaDescription:
+      "Clinic fit-out in Dubai: the DHA or DHCC approval route, layout rules that affect cost, and what to confirm before a contractor starts work.",
+    category: "Fit-Out",
+    excerpt:
+      "A clinic fit-out follows the health regulator's approvals as well as the building's. Here is the order of work and where projects lose time.",
+    photoId: "clinic-fit-out-dubai-guide",
+    readTime: "7 min read",
+    publishedAt: "2026-10-10",
+    relatedSectionSlug: "fit-out",
+    intro:
+      "A clinic is not an office with treatment rooms. The layout, ventilation, hand-hygiene points and waste handling are reviewed by a health regulator, and in Dubai that usually means the Dubai Health Authority (DHA) or, inside Dubai Healthcare City, the DHCC Authority. Getting the sequence wrong is the most common reason clinic projects slip: the contractor starts on a layout the regulator has not yet cleared.",
+    sections: [
+      {
+        heading: "Which authority approves a clinic fit-out in Dubai?",
+        blocks: [
+          p(
+            "It depends on where the clinic sits. A clinic on the mainland is licensed through the DHA, with facility applications handled through its Sheryan portal. A clinic inside Dubai Healthcare City follows the DHCC Authority's own fit-out guidelines and online system. The building's landlord or management also has a fit-out approval process on top of either.",
+          ),
+          p(
+            "Requirements change. Confirm the current steps on the DHA or DHCC website, or ask your licensing consultant, before you fix a programme.",
+          ),
+        ],
+      },
+      {
+        heading: "What is the usual order of work?",
+        blocks: [
+          p(
+            "Published guidance from licensing consultants describes the same broad sequence: confirm the location with the regulator before signing the tenancy, prepare a layout and submit it for review, build once the layout is cleared, then pass the final inspection before the clinic is activated. Practitioner licences run alongside and are separate from the fit-out.",
+          ),
+          ul([
+            "Location check with the regulator before the lease is signed",
+            "Layout and design prepared, usually by a regulator-approved engineering firm, and submitted for review",
+            "Landlord or building-management fit-out approval",
+            "Construction and MEP works against the cleared layout",
+            "Final inspection by the regulator and building management",
+            "Clinic activation and signage installation",
+          ]),
+          p(
+            "Treat the regulator's layout approval as a gate. No joinery or partition work should start on rooms that have not cleared it.",
+          ),
+        ],
+      },
+      {
+        heading: "Which layout and MEP decisions drive cost in a clinic?",
+        blocks: [
+          p(
+            "Consultancy guidance commonly points to the same inspection themes: separation of sterile and non-sterile areas with a clear patient flow, hand-hygiene stations at room entry and exit, clinical waste segregation, and ventilation. These are not finishes you can value-engineer away late. They shape wall positions, plumbing runs and AC design, which is where the real cost sits.",
+          ),
+          ul([
+            "Plumbing: sinks in every treatment room add drainage and water-supply runs",
+            "AC and ventilation: air-change and pressure needs differ by room type",
+            "Flooring and wall finishes: seamless, cleanable surfaces for clinical rooms",
+            "Electrical: dedicated circuits and backup for equipment, plus data for records and imaging",
+            "Joinery: sealed edges and cleanable surfaces for reception, nurse stations and storage",
+          ]),
+        ],
+      },
+      {
+        heading: "How should you brief a contractor for a clinic?",
+        blocks: [
+          p(
+            "Ask for a contractor who has handled health-sector approvals before and can show the process, not just finished rooms. Give them the regulator's cleared layout, the equipment list with weights and power requirements, and the landlord's fit-out guide. Ask for a line-item quote, with approvals and authority fees shown separately, so you can compare bids on the same scope.",
+          ),
+        ],
+      },
+      {
+        heading: "Where does signage and branding fit in?",
+        blocks: [
+          p(
+            "Exterior and building-directory signage normally needs landlord and municipal sign-off in addition to the clinic's own approvals, and the sign has to carry the name that matches the facility licence. Brief signage while the fit-out is in design so the sign, reception wall and wayfinding match and are installed before opening. Gifts Gulf coordinates fit-out with signage and branding as one project across the UAE and Qatar.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Do I need approval before I start building a clinic in Dubai?",
+        a: "Yes. The layout normally has to be reviewed by the relevant health authority, DHA on the mainland or DHCC inside Healthcare City, and by the landlord, before construction starts. Confirm current requirements with the authority.",
+      },
+      {
+        q: "Is a clinic fit-out more expensive than an office fit-out?",
+        a: "Usually, per square foot, because of plumbing in treatment rooms, tighter ventilation needs, cleanable finishes and equipment power. Actual cost depends on the site and layout, so a line-item quote after a site survey is the reliable way to know.",
+      },
+      {
+        q: "Does the same process apply in Abu Dhabi or Sharjah?",
+        a: "No. Abu Dhabi and Sharjah each have their own health regulator and municipal route. Check the regulator for the emirate where the clinic will operate.",
+      },
+      {
+        q: "Can the contractor handle the regulator submission?",
+        a: "Often the design is prepared by a regulator-approved engineering firm and submitted through the licensing route; confirm who owns each submission in writing before you appoint anyone.",
+      },
+      {
+        q: "Can signage be installed before final inspection?",
+        a: "Check with your landlord and regulator. Many projects install and test signage in the closing weeks so it is ready for opening, but the approval rules differ by building.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {

@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Building2,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,55 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "office-fit-out-dubai",
+    name: "Office Fit-Out",
+    parentSection: "fit-out",
+    icon: Building2,
+    primaryKeyword: "office fit-out dubai",
+    short: "Office fit-out in Dubai, Abu Dhabi, Sharjah and Doha, from partitions and joinery to MEP and handover.",
+    metaDescription:
+      "Office fit-out in Dubai and across the UAE and Qatar: partitions, ceilings, joinery, MEP and handover delivered as one turnkey contract.",
+    definition:
+      "Office fit-out is the build-out of a leased office once the shell and core are complete: partitions, ceilings, flooring, joinery, lighting, MEP and finishes, delivered after the layout and authority and building-management approvals are cleared. Gifts Gulf runs it as one contract, with reception signage and branding briefed alongside.",
+    options: [
+      "Open-plan and cellular office layouts",
+      "Reception, meeting rooms and pantry",
+      "Partitions, ceilings and flooring",
+      "Custom joinery and reception desks",
+      "MEP coordination: AC, power, data, lighting",
+      "Reception signage and wayfinding",
+      "Handover, snagging and as-built documents",
+    ],
+    quickFacts: [
+      { label: "Typical scope", value: "Partitions, ceilings, flooring, joinery, MEP, finishes" },
+      { label: "Starting point", value: "Shell and core, or a previously fitted space" },
+      { label: "Approvals", value: "Landlord or building management, plus the relevant authority" },
+      { label: "Pricing", value: "Quoted line by line after a site survey" },
+    ],
+    faqs: [
+      {
+        q: "How much does an office fit-out cost in Dubai?",
+        a: "It depends on shell condition, MEP scope and finish tier, so a fair figure needs a site survey. Request a line-item quote and compare scope, not just the total.",
+      },
+      {
+        q: "How long does an office fit-out take?",
+        a: "Programme depends on size, scope and approval time. Share the unit, area and target move-in date when requesting a quote and the timeline is confirmed against the building's approval process.",
+      },
+      {
+        q: "Do I need landlord approval before starting?",
+        a: "Yes. Landlords and building managements normally require drawings and a contractor submission before work starts, and authority approvals can apply on top.",
+      },
+      {
+        q: "Can reception signage be included in the fit-out?",
+        a: "Yes. Reception signs, door plates and wayfinding can be briefed and installed with the fit-out so the interior reads as one brand.",
+      },
+      {
+        q: "What documents do I get at handover?",
+        a: "As-built drawings, O&M manuals, warranties and test reports, subject to your contract. See our handover and snagging checklist for what to collect.",
       },
     ],
   },
