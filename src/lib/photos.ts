@@ -174,4 +174,5 @@ export const blogPhotoIds: Record<string, string> = {
   "retail-fit-out-timeline-guide": "sheikh-zayed-road",
   "dubai-fit-out-approval-process": "sheikh-zayed-road",
   "google-ads-ppc-guide-uae": "blog-web-development",
+  "vat-on-corporate-gifts-uae": "gift-hamper",
 };

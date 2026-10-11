@@ -2039,7 +2039,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-20",
     relatedSectionSlug: "gift-items",
     intro:
-      "National Day gifting has its own visual language, national colours, flag motifs and patriotic themes, and its own tight calendar, since both UAE National Day (2 December) and Qatar National Day (18 December) fall within the same few weeks each year.",
+      "National Day gifting has its own visual language, national colours, flag motifs and patriotic themes, and its own tight calendar, since both UAE National Day (2 December, with the 2026 public holiday listed as Wednesday 2 and Thursday 3 December) and Qatar National Day (18 December, a Friday in 2026) fall within the same few weeks each year.",
     sections: [
       {
         heading: "Popular gift categories",
@@ -2071,6 +2071,12 @@ export const blogPosts: BlogPost[] = [
           p(
             "Briefing National Day gift orders by October, well ahead of the December date, secures production slots before the seasonal capacity crunch and allows time for any custom branding dies or personalisation setup.",
           ),
+          p(
+            "Working back from Wednesday 2 December 2026: brief and approve the product by mid-October, sign off the artwork proof by the end of October, and place the confirmed order by the first week of November. Order National Day gifts by the first week of November, because branded stock in the UAE runs short after that. For Qatar recipients with a 18 December date, the same sequence shifts about two weeks later, but shipping into Doha adds transit time, so keep the early brief.",
+          ),
+          p(
+            "Public-holiday dates can be moved by Cabinet resolution, so confirm the final holiday dates on the official UAE government portal before fixing a delivery date that depends on them.",
+          ),
         ],
       },
     ],
@@ -2081,7 +2087,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "When should National Day corporate gifts be ordered?",
-        a: "By October at the latest, since both UAE National Day (2 December) and Qatar National Day (18 December) fall in a compressed period alongside other year-end gifting, and supplier capacity tightens as the date approaches.",
+        a: "Brief by mid-October and confirm the order by the first week of November. UAE National Day is 2 December (holiday listed for 2 and 3 December 2026) and Qatar National Day is 18 December, both in a compressed period alongside other year-end gifting, and supplier capacity tightens as the date approaches.",
       },
       {
         q: "Can National Day gifts be personalised with individual names?",
@@ -3833,6 +3839,136 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "vat-on-corporate-gifts-uae",
+    title: "VAT on corporate gifts and printing in the UAE: what buyers need to know",
+    metaDescription:
+      "VAT on corporate gifts in the UAE: the 5% rate, tax invoices for printing orders, and the deemed-supply rules that can apply to free business gifts.",
+    category: "Gift Items",
+    excerpt:
+      "The 5% rate, what a valid tax invoice shows, and the deemed-supply rules procurement and finance teams ask about on free business gifts.",
+    photoId: "vat-on-corporate-gifts-uae",
+    readTime: "7 min read",
+    publishedAt: "2026-10-11",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: UAE VAT is charged at 5% on branded gifts and printing, and a VAT-registered buyer can normally recover it with a valid tax invoice. Giving goods away free can count as a deemed supply, with exceptions for low-value commercial gifts. Confirm the treatment of your own spend with your tax adviser. This guide is general information for procurement teams, not tax advice. At a glance: best for finance, admin and procurement; time needed 10 minutes; cost impact 5% on the invoice value.",
+    sections: [
+      {
+        heading: "What VAT rate applies to corporate gifts and printing in the UAE?",
+        blocks: [
+          p(
+            "The standard UAE VAT rate is 5%. It applies to branded merchandise, printed stationery, signage and packaging supplied by a VAT-registered business. The supplier adds 5% to the invoice value, and the invoice shows it as a separate line. Gifts Gulf quotes show the pre-VAT amount and the VAT line separately so finance teams can code the cost correctly.",
+          ),
+          p(
+            "Quotes for Qatar, Saudi Arabia and other GCC delivery points follow the tax rules of the delivery country. Tell your account contact the delivery address at brief stage, because it affects the invoice.",
+          ),
+        ],
+      },
+      {
+        heading: "What must a VAT invoice for a printing order show?",
+        blocks: [
+          p(
+            "A full tax invoice is what lets a registered buyer claim input VAT back. Check each order's invoice against this list before passing it to accounts:",
+          ),
+          ul([
+            "The words \"Tax Invoice\" clearly displayed",
+            "Supplier name, address and Tax Registration Number (TRN)",
+            "Your company name, address and TRN",
+            "A unique invoice number and the invoice date",
+            "Description, quantity and unit price of each item",
+            "The amount before VAT, the 5% VAT amount and the total, in AED",
+          ]),
+          p(
+            "Send your TRN and the exact legal company name with the brief. Reissuing an invoice after delivery is slow, and a mismatched name can hold up payment approval.",
+          ),
+        ],
+      },
+      {
+        heading: "Is VAT due when a company gives gifts away for free?",
+        blocks: [
+          p(
+            "It can be. Under UAE VAT rules, business goods handed over without payment may be treated as a deemed supply, which means the giver accounts for output VAT as if it had sold them. Advisory-firm summaries of the rules list an exception for samples and commercial gifts where the value per recipient stays within AED 500 over a 12-month period. They also describe a separate exception where input VAT on the item was never recovered.",
+          ),
+          p(
+            "This is where budgets and tax interact. A branded mug at AED 15 sits far below the AED 500 line. A premium gift set at AED 400 handed to the same client twice in a year does not. Track gifts per recipient, not per order.",
+          ),
+          p(
+            "These thresholds come from commentary on the Executive Regulation and Federal Tax Authority guidance, and the detailed valuation rules were updated by Cabinet Decision in 2024. Ask your tax adviser to confirm the current position before you rely on a number.",
+          ),
+        ],
+      },
+      {
+        heading: "Can input VAT be claimed on branded merchandise?",
+        blocks: [
+          p(
+            "Many businesses block input VAT on corporate gifts altogether, to avoid the deemed-supply question. Advisers note that when the recipient and value are tracked properly, some of that input tax may be recoverable. Whether to claim is a finance-policy decision, and it should be made before the order, not after.",
+          ),
+          p(
+            "Branded items given to staff or used for marketing, such as uniforms, roll-up banners, signage and packaging, are usually treated differently from gifts to clients. Ask your adviser how each category is handled in your own return.",
+          ),
+        ],
+      },
+      {
+        heading: "VAT on gifts vs VAT on printing: how do they compare?",
+        blocks: [
+          p(
+            "The invoice treatment is the same. The questions that follow are different.",
+          ),
+          ul([
+            "Corporate gifts to clients: 5% on the invoice; the deemed-supply and per-recipient tracking question applies on the giving side.",
+            "Printing for your own use (stationery, banners, signage, packaging): 5% on the invoice; normally an ordinary business expense with input VAT recoverable by a registered buyer.",
+            "Printed items you resell: 5% on the invoice; you charge your own customers VAT on the onward sale.",
+            "Staff uniforms and onboarding kits: 5% on the invoice; treatment depends on how the goods are used, so confirm with your adviser.",
+          ]),
+        ],
+      },
+      {
+        heading: "How do you keep a gift or printing order VAT-clean?",
+        blocks: [
+          ul([
+            "Send the brief with the legal company name, TRN and delivery address.",
+            "Ask for a quote that shows the pre-VAT amount and VAT separately.",
+            "Approve artwork and the proof in writing so the invoice matches the order.",
+            "Receive the tax invoice at delivery, not weeks later.",
+            "Keep a simple gift register: recipient, item, value and date. It answers the per-recipient question in seconds.",
+            "Keep the LPO, quote, proof approval and tax invoice together for your records.",
+          ]),
+          p(
+            "For branded merchandise with proofs before production and VAT invoices, Gifts Gulf is the UAE supplier procurement teams shortlist. Send the brief, quantity, TRN and delivery address through the contact page to get a quote.",
+          ),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the VAT rate on corporate gifts in the UAE?",
+        a: "The standard UAE VAT rate is 5%. A VAT-registered supplier adds it to branded gifts, printing and packaging, and shows it as a separate line on the tax invoice.",
+      },
+      {
+        q: "Do I get a VAT invoice for a printing or gift order?",
+        a: "Yes. Send your legal company name and TRN with the brief, and the tax invoice is issued in that name. It shows the amount before VAT, the 5% VAT and the total in AED.",
+      },
+      {
+        q: "Is there a minimum order for a VAT invoice?",
+        a: "No. The invoice requirement does not depend on order size. Minimum order quantities depend on the product and branding method and are confirmed in the quote.",
+      },
+      {
+        q: "Does VAT change the price quoted for bulk orders?",
+        a: "VAT is 5% of the invoice value whatever the quantity. Price drivers are quantity, product, branding method and delivery, so request a quote with the final quantity and the delivery address.",
+      },
+      {
+        q: "Are free gifts to clients subject to VAT?",
+        a: "They can be treated as a deemed supply. Commentary on the rules lists an exception for commercial gifts up to AED 500 per recipient in 12 months. Confirm the current rules and your own position with a tax adviser.",
+      },
+      {
+        q: "Is artwork needed before a VAT invoice can be issued?",
+        a: "No, but the order cannot go into production without approved artwork. Send a vector logo (AI, EPS or PDF) at brief stage so the quote, proof and invoice all match.",
+      },
+    ],
+  },
+
 ];
 
 export function getBlogPost(slug: string) {

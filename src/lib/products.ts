@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Lightbulb,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -644,6 +645,58 @@ export const products: Product[] = [
       {
         q: "What's the minimum order for branded tech gifts?",
         a: "Both smaller executive-gift batches and bulk corporate orders are handled. Share the quantity when requesting a quote.",
+      },
+    ],
+  },
+  {
+    slug: "illuminated-signage-dubai",
+    name: "Illuminated Signage",
+    parentSection: "signages",
+    icon: Lightbulb,
+    primaryKeyword: "illuminated signage dubai",
+    short: "LED lightboxes, front-lit and halo-lit letters and neon-style signs for shopfronts, offices and malls.",
+    metaDescription:
+      "Illuminated signage in Dubai and Qatar: LED lightboxes, front-lit and halo-lit channel letters and neon-style signs, made and installed.",
+    definition:
+      "Illuminated signage is any sign lit from within or behind: LED lightboxes, front-lit channel letters, halo-lit (back-lit) letters and flexible LED neon-style signs. Gifts Gulf designs, fabricates and installs them as one project, including the lighting spec the approving authority or mall landlord asks for.",
+    options: [
+      "LED lightboxes (single and double sided)",
+      "Front-lit channel letters",
+      "Halo-lit (back-lit) letters",
+      "Flexible LED neon-style signs",
+      "Illuminated fascia and projecting signs",
+      "Indoor reception and feature-wall logos",
+    ],
+    quickFacts: [
+      { label: "Lighting", value: "LED modules; lighting type and brightness are part of the permit review" },
+      { label: "Best for", value: "Shopfronts, mall units, clinics, restaurants, reception walls" },
+      { label: "Approvals", value: "Municipality or free-zone authority and mall landlord, varies by emirate and city" },
+      { label: "Service", value: "Design, fabrication, installation and electrical hook-up as one project" },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between front-lit and halo-lit letters?",
+        a: "Front-lit letters glow through the face of each letter, so the logo itself is bright. Halo-lit letters have an opaque face and light spills from behind onto the wall, giving a softer, more premium outline. Front-lit reads better from a distance on a busy road; halo-lit suits lobbies and feature walls.",
+      },
+      {
+        q: "Do illuminated signs need approval in Dubai?",
+        a: "Yes. Outdoor signs generally need a permit that covers location, structure and content, and lighting and brightness are part of that review. The authority differs by area (mainland, free zone or mall), so the route is confirmed at brief stage.",
+      },
+      {
+        q: "What is the minimum order and lead time?",
+        a: "Signs are made to order, usually one at a time, so there is no fixed minimum. Lead time depends on size, lighting type and approvals, and is confirmed in the quote once the artwork and site details are in.",
+      },
+      {
+        q: "What affects the price of an illuminated sign?",
+        a: "Size, letter depth, lighting type, material (acrylic, stainless steel or aluminium), single or double sided, and installation height and access. Share a site photo, dimensions and your logo to get an accurate quote.",
+      },
+      {
+        q: "What artwork do you need?",
+        a: "A vector logo (AI, EPS or PDF) and the exact sign size. For outdoor signs, a photo of the fascia and the landlord's signage guidelines help.",
+      },
+      {
+        q: "Do you install in Doha as well as the UAE?",
+        a: "Yes. Signage is delivered across the UAE and Qatar, and the approval route follows the local municipality and landlord.",
       },
     ],
   },
