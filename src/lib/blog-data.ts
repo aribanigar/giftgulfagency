@@ -3833,6 +3833,201 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: "vat-on-corporate-gifts-printing-uae",
+    title: "VAT on corporate gifts and printing in the UAE: what buyers should check",
+    metaDescription:
+      "UAE VAT on corporate gifts and printing: the 5% rate, what a valid tax invoice shows, and when to ask your accountant about input tax recovery.",
+    category: "Gift Items",
+    excerpt:
+      "The 5% rate, what a tax invoice must show, and the questions to settle with your finance team before you place a gift order.",
+    photoId: "vat-on-corporate-gifts-printing-uae",
+    readTime: "6 min read",
+    publishedAt: "2026-10-16",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: Corporate gifts and printing in the UAE are charged at the standard 5% VAT rate. Ask your supplier for a tax invoice showing their TRN, and check with your finance team whether the VAT can be recovered, because that depends on how the gifts are used. This is general guidance, not tax advice.",
+    sections: [
+      {
+        heading: "What VAT rate applies to corporate gifts and printing in the UAE?",
+        blocks: [
+          p(
+            "The UAE standard VAT rate is 5%, and it applies to most goods and services, including printed items, branded merchandise and signage. Quotes should state clearly whether the price is before or after VAT. Comparing one supplier's pre-VAT figure with another's VAT-inclusive figure is the most common way buyers misread a quote.",
+          ),
+          ul([
+            "Standard rate: 5% on the supply of branded goods and printing",
+            "Ask every supplier to quote ex-VAT and show VAT as a separate line",
+            "Delivery and installation charges are normally part of the invoiced total",
+          ]),
+        ],
+      },
+      {
+        heading: "What should a valid VAT invoice for a gift order show?",
+        blocks: [
+          p(
+            "Your finance team will need a proper tax invoice, not just a quote or delivery note. At a minimum, check that the document carries the supplier's name, address and Tax Registration Number (TRN), your company name and TRN, an invoice date and number, a description of the goods, quantity and unit price, the VAT amount and the total. If a line is missing, ask for a corrected invoice before payment. It is far easier than fixing it at quarter end.",
+          ),
+          p(
+            "Gifts Gulf issues VAT invoices against each order so procurement teams can match the invoice to the LPO. If you work with LPOs, quote the LPO number on the order so it appears on the invoice.",
+          ),
+        ],
+      },
+      {
+        heading: "Can a company recover VAT paid on client and staff gifts?",
+        blocks: [
+          p(
+            "This is a question for your accountant or the Federal Tax Authority (FTA), not your gift supplier. The treatment depends on who receives the gift and why: a promotional item, a client gift, a staff gift and a free sample can each be treated differently. FTA guidance has stated that VAT on certain staff entertainment costs is not recoverable, so do not assume that input tax on every gift can be claimed.",
+          ),
+          p(
+            "Settle the treatment before you place the order, and keep the invoice, the recipient list and the approval for the campaign on file.",
+          ),
+        ],
+      },
+      {
+        heading: "How does VAT affect the budget for a gift or print run?",
+        blocks: [
+          p(
+            "Budget on the VAT-inclusive figure if your company cannot recover the tax, and on the ex-VAT figure if it can. A AED 50 per-person budget is a very different gift depending on which one you mean. Agree the basis with finance first, then brief the supplier with the exact figure and say which basis it is.",
+          ),
+        ],
+      },
+      {
+        heading: "How do I order gifts or printing with the paperwork in order?",
+        blocks: [
+          ul([
+            "Confirm with finance whether the budget is VAT-inclusive or ex-VAT",
+            "Request a written quote that shows quantity, unit price, VAT and delivery",
+            "Issue an LPO to the supplier using the exact company name and TRN",
+            "Approve the artwork proof in writing before production starts",
+            "Check the invoice TRN, amounts and LPO number on delivery",
+            "File the invoice with the recipient list and campaign approval",
+          ]),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the VAT rate on printing in the UAE?",
+        a: "The standard UAE VAT rate of 5% applies to most printing and branded merchandise. Your quote should show VAT as a separate line so you can compare suppliers on the same basis.",
+      },
+      {
+        q: "Do I get a VAT invoice for a gift order?",
+        a: "Yes, you should receive a tax invoice showing the supplier TRN, your details, the items and the VAT amount. Give your company name and TRN with the LPO so the invoice is correct the first time.",
+      },
+      {
+        q: "Can we claim back VAT on corporate gifts?",
+        a: "It depends on the purpose and the recipient, so check with your accountant or the FTA. Staff gifts and client gifts can be treated differently, and some entertainment-type costs are not recoverable.",
+      },
+      {
+        q: "Are quotes shown with or without VAT?",
+        a: "Ask for this to be stated on the quote. Gifts Gulf quotes show the VAT line separately so the total is easy to compare.",
+      },
+      {
+        q: "What artwork is needed before an order can be invoiced?",
+        a: "Invoicing follows the order, not the artwork, but production cannot start until you approve the proof. Send your logo as a vector file (AI, EPS or PDF) to avoid delays.",
+      },
+    ],
+  },
+
+  {
+    slug: "qatar-national-day-corporate-gifts",
+    title: "Qatar National Day corporate gifts 2026: order-by dates for Doha buyers",
+    metaDescription:
+      "Qatar National Day corporate gifts for Doha: 18 December 2026 timeline, gift ideas in maroon and white, and when to brief your supplier.",
+    category: "Gift Items",
+    excerpt:
+      "Qatar National Day falls on 18 December. Here is what to order, which finishes suit it, and when to brief.",
+    photoId: "qatar-national-day-corporate-gifts",
+    readTime: "6 min read",
+    publishedAt: "2026-10-16",
+    relatedSectionSlug: "gift-items",
+    intro:
+      "Quick answer: Qatar National Day is on 18 December 2026, so Doha corporate gift orders should be briefed by early November. Maroon-and-white drinkware, notebooks and desk items are the most common choices. Confirm the holiday dates before you fix delivery.",
+    sections: [
+      {
+        heading: "When is Qatar National Day 2026, and when should gifts be ordered?",
+        blocks: [
+          p(
+            "Qatar National Day is observed on 18 December, which falls on a Friday in 2026. Published calendars list it as a public holiday, but an official announcement from the authorities decides any extra days off, so check for it before you fix delivery dates. Corporate buyers usually order four to eight weeks ahead, which puts the briefing window in late October to early November.",
+          ),
+          p(
+            "A rule of thumb from Gifts Gulf: brief your Qatar National Day order by the first week of November, then leave the final two weeks of the calendar for delivery and distribution, not production.",
+          ),
+          ul([
+            "National Day: 18 December 2026 (Friday)",
+            "Brief and quote: by early November",
+            "Proof approval: mid-November",
+            "Delivery to your Doha office: confirmed in the quote",
+          ]),
+        ],
+      },
+      {
+        heading: "Which gifts suit Qatar National Day?",
+        blocks: [
+          p(
+            "Drinkware, notebooks and diaries, pens, power banks, tote bags and apparel are the usual categories. For senior clients, leather-trimmed notebooks, engraved metal items and rigid gift boxes read as more considered than a single loose item. Staff gifts tend to be simpler and ordered at higher volume.",
+          ),
+        ],
+      },
+      {
+        heading: "What colours and design details work for Qatar National Day?",
+        blocks: [
+          p(
+            "Maroon and white are the national colours. Apply them to the product itself or the packaging, rather than adding a flag graphic to a standard item. Keep your logo clear of the national colours so it stays legible, and check any official emblem or imagery rules before you use national symbols in artwork.",
+          ),
+        ],
+      },
+      {
+        heading: "Which branding methods work for National Day gifts?",
+        blocks: [
+          ul([
+            "UV printing: full-colour logos and maroon fills on mugs, bottles and hard items",
+            "Laser engraving: metal and wood items for senior clients",
+            "Debossing: leather notebooks and card holders",
+            "Screen printing or DTF: tote bags and staff apparel",
+          ]),
+          p(
+            "Personalised names add a production step, so brief them earlier than a plain logo order.",
+          ),
+        ],
+      },
+      {
+        heading: "How do I place a Qatar National Day gift order?",
+        blocks: [
+          ul([
+            "Send the headcount, budget and delivery date for Doha",
+            "Receive a written quote with the VAT and delivery position stated",
+            "Share your logo as a vector file",
+            "Approve the proof",
+            "Production, then delivery to your Doha office",
+          ]),
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is Qatar National Day in 2026?",
+        a: "18 December 2026, a Friday. Check for an official holiday announcement before fixing delivery dates, since extra days off can change your distribution plan.",
+      },
+      {
+        q: "When should Qatar National Day gifts be ordered?",
+        a: "Brief by the first week of November. That leaves time for the quote, proof approval, production and delivery before the date.",
+      },
+      {
+        q: "What is the minimum order for National Day gifts?",
+        a: "It depends on the item and the branding method. Tell us the quantity you need and we will confirm the minimum in your quote.",
+      },
+      {
+        q: "Can gifts be personalised with names?",
+        a: "Yes, with UV printing or laser engraving. Personalised orders need to be briefed earlier because each name adds a production step.",
+      },
+      {
+        q: "Do you deliver to Doha?",
+        a: "Gifts Gulf serves Qatar as well as the UAE. Confirm the delivery date and any customs steps for your order in the quote.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {

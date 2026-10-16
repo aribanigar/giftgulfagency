@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Signpost,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,54 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "monument-pylon-signs",
+    name: "Monument & Pylon Signs",
+    parentSection: "signages",
+    icon: Signpost,
+    primaryKeyword: "pylon signs dubai",
+    short: "Freestanding monument, pylon and totem signs for compounds, showrooms, clinics and retail frontages.",
+    metaDescription:
+      "Monument, pylon and totem signs in the UAE and Qatar: structure, lighting, materials and the permit steps to plan before fabrication starts.",
+    definition:
+      "Monument, pylon and totem signs are freestanding structures that identify a site from the road. A monument sign sits low and wide, often on a masonry or ACP-clad base. A pylon or totem is a tall, narrow structure, usually steel-framed, visible from a distance. Both are typically fabricated from steel, aluminium composite panel (ACP) and acrylic, with LED lighting built into the face or letters.",
+    options: [
+      "Low monument signs for compound and building entrances",
+      "Tall pylon and totem signs for road-facing sites",
+      "Multi-tenant panels with replaceable tenant faces",
+      "Internally lit (LED) faces and halo-lit letters",
+      "Non-illuminated ACP and routed-panel signs",
+      "Foundation, installation and power connection coordination",
+    ],
+    quickFacts: [
+      { label: "Typical build", value: "Steel frame, ACP cladding, acrylic faces, LED lighting" },
+      { label: "Best for", value: "Compounds, showrooms, clinics, schools, petrol and retail sites" },
+      { label: "Permit", value: "Outdoor signs need municipal approval before fabrication" },
+      { label: "Price", value: "Depends on height, lighting and foundation. Get a quote." },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between a monument sign and a pylon sign?",
+        a: "A monument sign is low and wide, usually on a solid base at a site entrance. A pylon or totem sign is tall and narrow, built to be read from passing traffic. The right one depends on the road speed, the setback and what the local authority allows on your plot.",
+      },
+      {
+        q: "Do pylon and monument signs need approval in the UAE?",
+        a: "Yes. Outdoor signs generally need a permit from the local municipality or advertising authority before they are fabricated or installed, and landlord or master-developer approval is often required as well. Requirements differ by emirate and by plot, so confirm them for your site first.",
+      },
+      {
+        q: "Why do pylon sign designs get rejected?",
+        a: "The usual causes are height, illumination level and setback from the road. Checking the design against the rules before fabrication avoids rebuilding a sign that has already been made.",
+      },
+      {
+        q: "Can the sign be lit?",
+        a: "Yes. Internally lit faces and halo-lit letters both use LED modules. Lighting adds a power supply requirement on site, so confirm the connection point early.",
+      },
+      {
+        q: "What do you need to quote a monument or pylon sign?",
+        a: "Site photos, approximate height and width, the logo in vector format, whether it needs lighting, and whether the foundation and installation are included. Send these with your brief for a written quote.",
       },
     ],
   },
