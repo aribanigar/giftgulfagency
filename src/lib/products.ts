@@ -23,6 +23,7 @@ import {
   FileText,
   Stamp,
   Megaphone,
+  Lightbulb,
   type LucideIcon,
 } from "lucide-react";
 import type { Faq, QuickFact } from "@/lib/site-data";
@@ -949,6 +950,49 @@ export const products: Product[] = [
       {
         q: "How far ahead should activation branding be briefed?",
         a: "Lead time depends on scope and venue access. Share the event date, venue and brief when requesting a quote and we'll confirm what's achievable.",
+      },
+    ],
+  },
+  {
+    slug: "illuminated-signage",
+    name: "Illuminated Signage",
+    parentSection: "signages",
+    icon: Lightbulb,
+    primaryKeyword: "led signage dubai",
+    short: "LED lightboxes, front-lit and halo-lit letters and neon-style signs for shopfronts, lobbies and offices.",
+    metaDescription:
+      "LED signage in Dubai and Qatar: lightboxes, front-lit and halo-lit channel letters and LED neon signs, made, installed and approved for shopfronts and offices.",
+    definition:
+      "Illuminated signage is any sign lit from within or behind: LED lightboxes with a printed or cut-out face, front-lit and halo-lit channel letters, and flexible LED neon. It is chosen where a sign has to read at night or against busy shopfront lighting, and it usually needs a power point, a transformer and landlord or municipality approval before installation.",
+    options: [
+      "LED lightboxes (single and double-sided)",
+      "Front-lit 3D channel letters",
+      "Halo-lit (back-lit) letters",
+      "LED neon-style signs",
+      "Projecting and blade signs",
+      "Indoor illuminated logo walls",
+    ],
+    quickFacts: [
+      { label: "Light source", value: "LED modules and LED neon strip" },
+      { label: "Best for", value: "Shopfronts, restaurants, clinics, reception walls" },
+      { label: "Needs", value: "Power supply point, approved artwork, landlord or authority sign-off" },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between front-lit and halo-lit letters?",
+        a: "Front-lit letters shine through an acrylic face, so the letter itself glows. Halo-lit letters keep an opaque face and throw light backwards onto the wall, creating a glowing outline. Halo-lit suits lobbies and premium retail; front-lit reads better from a distance.",
+      },
+      {
+        q: "Does an illuminated sign need approval before installation?",
+        a: "Usually yes. Shopfront signs typically need landlord or mall approval and municipality or free zone permission, and artwork is normally submitted before fabrication starts. Requirements differ by emirate and building, so confirm the route before production.",
+      },
+      {
+        q: "What information is needed to quote an LED sign?",
+        a: "Send the logo as a vector file, the wall or fascia dimensions, whether it is indoor or outdoor, and where the power point is. A site photo helps us confirm mounting and cabling.",
+      },
+      {
+        q: "Can you supply and install, or only make the sign?",
+        a: "Gifts Gulf handles fabrication and installation together, including coordination of the artwork submission your landlord or authority asks for.",
       },
     ],
   },
