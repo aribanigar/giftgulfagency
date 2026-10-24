@@ -61,7 +61,7 @@ export function BlogBrowser({ posts, categories }: { posts: BlogCard[]; categori
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search, e.g. A4 size, roll-up, frosted"
-            className="w-full border border-ink/20 bg-white px-4 py-3 text-[15px] outline-none transition-colors focus:border-brand"
+            className="w-full border border-ink/20 bg-white px-4 py-3 text-base outline-none lg:text-[15px] transition-colors focus:border-brand"
           />
         </label>
       </div>

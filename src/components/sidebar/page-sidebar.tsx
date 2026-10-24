@@ -18,7 +18,7 @@ export function PageSidebar({
   const visible = groups.filter((g) => g.links.length > 0);
   return (
     <aside className="flex flex-col gap-8 lg:sticky lg:top-28" aria-label="Get a quote and related pages">
-      <div className="on-dark bg-night p-6 text-white sm:p-7">
+      <div data-enquiry-anchor className="on-dark bg-night p-6 text-white sm:p-7">
         <p className="eyebrow">Get a quote</p>
         <p className="mt-3 text-xl font-semibold leading-snug tracking-tight">
           {quote.heading ?? "Tell us what you need"}

@@ -9,6 +9,7 @@ import { getSettings } from "@/lib/settings";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos } from "@/lib/photos";
 import "./globals.css";
+import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -84,6 +85,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <MobileActionBar telHref={`tel:${settings.contactPhone.replace(/[^\d+]/g, "")}`} />
       </body>
     </html>
   );

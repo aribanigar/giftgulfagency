@@ -75,7 +75,7 @@ export async function Footer() {
   const socials = [...alwaysShownSocials, ...optionalSocials];
 
   const colHead = "eyebrow eyebrow-bright mb-4";
-  const subLink = "inline-block py-1 text-sm text-white/55 transition-colors hover:text-white";
+  const subLink = "inline-block py-2 text-sm lg:py-1 text-white/55 transition-colors hover:text-white";
 
   return (
     <footer className="on-dark bg-night text-white">
@@ -100,7 +100,8 @@ export async function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-8">
+        {/* Extra bottom space on phones so the fixed MobileActionBar never covers the last row. */}
+        <div className="mx-auto w-full max-w-7xl px-5 pt-16 pb-36 sm:px-8 lg:pb-16">
           <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
             <div className="col-span-2">
               <Link href="/" className="inline-flex items-center" aria-label="Gifts Gulf Advertising, home">
@@ -114,10 +115,10 @@ export async function Footer() {
                 {markets.join(" · ")}
               </p>
               <div className="mt-4 flex flex-col text-sm">
-                <a href={`mailto:${settings.contactEmail}`} className="py-1 text-white/80 hover:text-white">
+                <a href={`mailto:${settings.contactEmail}`} className="py-2.5 text-white/80 hover:text-white lg:py-1">
                   {settings.contactEmail}
                 </a>
-                <a href={telHref} className="py-1 text-white/80 hover:text-white">
+                <a href={telHref} className="py-2.5 text-white/80 hover:text-white lg:py-1">
                   {settings.contactPhone}
                 </a>
               </div>
@@ -150,7 +151,7 @@ export async function Footer() {
               <ul className="flex flex-col">
                 {sections.map((s) => (
                   <li key={s.slug}>
-                    <Link href={`/${s.slug}`} className="inline-block py-1.5 text-[15px] text-white/80 hover:text-white">
+                    <Link href={`/${s.slug}`} className="inline-block py-2.5 text-[15px] text-white/80 hover:text-white lg:py-1.5">
                       {s.name}
                     </Link>
                   </li>
@@ -163,7 +164,7 @@ export async function Footer() {
               <ul className="flex flex-col">
                 {companyLinks.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="inline-block py-1.5 text-[15px] text-white/80 hover:text-white">
+                    <Link href={l.href} className="inline-block py-2.5 text-[15px] text-white/80 hover:text-white lg:py-1.5">
                       {l.label}
                     </Link>
                   </li>
@@ -220,9 +221,9 @@ export async function Footer() {
           <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
             <p>&copy; {year} Gifts Gulf Advertising. All rights reserved.</p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white">Terms</Link>
-              <a href="/sitemap.xml" className="hover:text-white">Sitemap</a>
+              <Link href="/privacy" className="py-2 hover:text-white lg:py-0">Privacy Policy</Link>
+              <Link href="/terms" className="py-2 hover:text-white lg:py-0">Terms</Link>
+              <a href="/sitemap.xml" className="py-2 hover:text-white lg:py-0">Sitemap</a>
             </div>
           </div>
         </div>

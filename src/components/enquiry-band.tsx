@@ -19,7 +19,7 @@ export function EnquiryBand({
   item?: string;
 }) {
   return (
-    <section id="enquiry" className="on-dark scroll-mt-20 bg-night py-24 text-white sm:py-32">
+    <section id="enquiry" data-enquiry-anchor className="on-dark scroll-mt-20 bg-night py-24 text-white sm:py-32">
       <Container>
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">

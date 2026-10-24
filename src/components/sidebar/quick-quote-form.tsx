@@ -6,7 +6,7 @@ import { submitQuickQuoteAction, type ContactResult } from "@/app/contact/action
 import { QUICK_QUOTE_CITIES } from "@/lib/quick-quote";
 
 const input =
-  "h-11 w-full border border-white/20 bg-white/5 px-3 text-[15px] text-white placeholder:text-white/40 outline-none transition-colors focus:border-brand-bright";
+  "h-11 w-full border border-white/20 bg-white/5 px-3 text-base text-white lg:text-[15px] placeholder:text-white/40 outline-none transition-colors focus:border-brand-bright";
 
 export function QuickQuoteForm({
   item,
@@ -36,7 +36,7 @@ export function QuickQuoteForm({
   }
 
   return (
-    <form action={action} className="flex flex-col gap-3">
+    <form action={action} data-enquiry-form className="flex flex-col gap-3">
       <input type="hidden" name="service" value={service ?? ""} />
       <input type="hidden" name="source" value={source} />
       <div aria-hidden className="hidden">

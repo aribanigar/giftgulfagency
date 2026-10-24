@@ -59,9 +59,9 @@ export default function DirectoryPage() {
           </p>
         }
       >
-        <nav aria-label="Directory categories" className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/70">
+        <nav aria-label="Directory categories" className="mt-10 flex flex-wrap gap-x-6 text-sm text-white/70">
           {groups.map((g) => (
-            <a key={g.category} href={`#${anchor(g.category)}`} className="hover:text-white">
+            <a key={g.category} href={`#${anchor(g.category)}`} className="py-2.5 hover:text-white">
               {g.category}
             </a>
           ))}

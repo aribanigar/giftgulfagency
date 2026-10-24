@@ -8,7 +8,7 @@ import { submitContactAction, type ContactResult } from "./actions";
 const initialState: ContactResult | null = null;
 
 const inputClass =
-  "h-12 w-full border border-ink/20 bg-white px-4 text-[15px] text-ink outline-none transition-colors focus:border-brand focus:ring-1 focus:ring-brand";
+  "h-12 w-full border border-ink/20 bg-white px-4 text-base text-ink lg:text-[15px] outline-none transition-colors focus:border-brand focus:ring-1 focus:ring-brand";
 
 const cities = [
   "Dubai",
@@ -104,7 +104,7 @@ export function ContactForm() {
   const today = new Date().toISOString().slice(0, 10);
 
   return (
-    <form action={formAction} className="flex flex-col gap-8">
+    <form action={formAction} data-enquiry-form className="flex flex-col gap-8">
       <Group title="About you">
         <Field id="name" label="Full name" required>
           <input id="name" name="name" type="text" required autoComplete="name" className={inputClass} />
@@ -190,7 +190,7 @@ export function ContactForm() {
           rows={5}
           required
           minLength={10}
-          className="resize-none border border-ink/20 bg-white px-4 py-3 text-[15px] text-ink outline-none transition-colors focus:border-brand focus:ring-1 focus:ring-brand"
+          className="resize-none border border-ink/20 bg-white px-4 py-3 text-base text-ink lg:text-[15px] outline-none transition-colors focus:border-brand focus:ring-1 focus:ring-brand"
         />
       </Field>
 

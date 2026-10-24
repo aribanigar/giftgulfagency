@@ -54,13 +54,13 @@ export default async function ContactPage() {
               <ul className="hairline border-t">
                 <li className="hairline border-b py-6">
                   <p className="text-sm text-ink/55">Email</p>
-                  <a href={`mailto:${settings.contactEmail}`} className="mt-1 block text-xl font-semibold tracking-tight hover:text-brand">
+                  <a href={`mailto:${settings.contactEmail}`} className="block py-2 text-xl font-semibold tracking-tight hover:text-brand">
                     {settings.contactEmail}
                   </a>
                 </li>
                 <li className="hairline border-b py-6">
                   <p className="text-sm text-ink/55">Phone / WhatsApp</p>
-                  <a href={telHref} className="mt-1 block text-xl font-semibold tracking-tight hover:text-brand">
+                  <a href={telHref} className="block py-2 text-xl font-semibold tracking-tight hover:text-brand">
                     {settings.contactPhone}
                   </a>
                 </li>
