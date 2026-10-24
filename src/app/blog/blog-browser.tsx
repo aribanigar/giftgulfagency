@@ -35,8 +35,27 @@ export function BlogBrowser({ posts, categories }: { posts: BlogCard[]; categori
 
   return (
     <div>
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div role="tablist" aria-label="Filter by category" className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-3 sm:gap-6 lg:flex-row lg:items-center lg:justify-between">
+        {/* Phones: one compact dropdown instead of a tall block of chips. */}
+        <label className="block sm:hidden">
+          <span className="sr-only">Filter by category</span>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="h-12 w-full appearance-none border border-ink/20 bg-white bg-[length:16px] bg-[right_1rem_center] bg-no-repeat px-4 pr-10 text-base text-ink outline-none focus:border-brand"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111312' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")",
+            }}
+          >
+            {["All", ...categories].map((c) => (
+              <option key={c} value={c}>
+                {c === "All" ? "All categories" : c} ({c === "All" ? posts.length : counts[c]})
+              </option>
+            ))}
+          </select>
+        </label>
+        <div role="tablist" aria-label="Filter by category" className="hidden flex-wrap gap-2 sm:flex">
           {["All", ...categories].map((c) => (
             <button
               key={c}

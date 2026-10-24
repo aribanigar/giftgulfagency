@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Inter, Montserrat } from "next/font/google";
 import { Header } from "@/components/layout/header";
@@ -22,7 +22,16 @@ const montserrat = Montserrat({
   weight: ["600", "700", "800"],
 });
 
+// Browser toolbar colour on phones, matching the dark hero every page opens with.
+export const viewport: Viewport = {
+  themeColor: "#111312",
+};
+
 export const metadata: Metadata = {
+  appleWebApp: {
+    capable: true,
+    title: "Gifts Gulf",
+  },
   metadataBase: new URL(siteConfig.url),
   title: {
     default: "Gifts Gulf Advertising | Signage & Printing in UAE & Qatar",

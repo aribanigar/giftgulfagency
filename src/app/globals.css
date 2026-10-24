@@ -91,6 +91,9 @@
   }
   html {
     @apply font-sans scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   body {
     background: var(--background);
@@ -345,3 +348,51 @@
   background:
     linear-gradient(180deg, rgb(10 11 11 / 0.55) 0%, rgb(10 11 11 / 0.1) 22%, rgb(10 11 11 / 0.35) 55%, rgb(10 11 11 / 0.9) 100%);
 }
+
+/* Guide tables on phones: each row becomes a card, each cell a
+   "label / value" line, instead of a table wider than the screen. */
+@media (max-width: 639px) {
+  .guide-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .guide-table,
+  .guide-table tbody,
+  .guide-table tr,
+  .guide-table td {
+    display: block;
+    width: 100%;
+  }
+  .guide-table tr {
+    margin-bottom: 0.75rem;
+    border: 1px solid rgb(15 15 15 / 0.12);
+    padding: 0.25rem 1rem;
+  }
+  .on-dark .guide-table tr { border-color: rgb(255 255 255 / 0.16); }
+  .guide-table td {
+    display: grid;
+    grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    overflow-wrap: anywhere;
+    opacity: 1;
+  }
+  .guide-table td:last-child { border-bottom: 0; }
+  .guide-table td::before {
+    content: attr(data-label);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    opacity: 0.55;
+  }
+  /* First cell is the row's name: show it as the card title. */
+  .guide-table td:first-child {
+    display: block;
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+  .guide-table td:first-child::before { content: none; }
+}
+

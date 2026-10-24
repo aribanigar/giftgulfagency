@@ -16,9 +16,12 @@ export function BlockView({ block }: { block: Block }) {
       </ul>
     );
   }
+  // One table in the markup (kept for search engines and screen readers);
+  // below sm, CSS in globals.css (.guide-table) restyles each row as a card
+  // with the column name next to each value, so nothing runs off the screen.
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full min-w-[520px] border-collapse text-left text-[15px]">
+    <div className="sm:overflow-x-auto">
+      <table className="guide-table w-full border-collapse text-left text-[15px] sm:min-w-[520px]">
         {block.caption ? <caption className="mb-3 text-left text-sm opacity-60">{block.caption}</caption> : null}
         <thead>
           <tr>
@@ -33,7 +36,11 @@ export function BlockView({ block }: { block: Block }) {
           {block.rows.map((row, i) => (
             <tr key={i}>
               {row.map((cell, j) => (
-                <td key={j} className={`hairline border-b py-3 pr-6 align-top ${j === 0 ? "font-medium" : "opacity-80"}`}>
+                <td
+                  key={j}
+                  data-label={block.head[j]}
+                  className={`hairline border-b py-3 pr-6 align-top ${j === 0 ? "font-medium" : "opacity-80"}`}
+                >
                   {cell}
                 </td>
               ))}
