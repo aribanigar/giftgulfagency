@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container, HairlineLinks, PageHero } from "@/components/editorial";
 import { locations } from "@/lib/locations";
 import { siteConfig } from "@/lib/site-config";
+import { EnquiryBand } from "@/components/enquiry-band";
 
 const title = "Locations We Serve Across the GCC | Gifts Gulf Advertising";
 const description =
@@ -53,6 +54,12 @@ export default function LocationsPage() {
           </div>
         </Container>
       </section>
+
+      <EnquiryBand
+        source="/locations"
+        title={<>A project in<br />your city?</>}
+        intro={<p>Choose the city, say what you need, and our team will plan production, delivery and installation around it.</p>}
+      />
     </div>
   );
 }

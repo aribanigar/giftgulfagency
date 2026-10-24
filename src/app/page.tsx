@@ -17,6 +17,7 @@ import { blogPosts } from "@/lib/blog-data";
 import { faqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos, homeHeroGallery, sectionHeroGalleries } from "@/lib/photos";
+import { EnquiryBand } from "@/components/enquiry-band";
 
 const homeTitle =
   "Advertising Agency & Signage Company in UAE & Qatar | Gifts Gulf Advertising";
@@ -297,6 +298,12 @@ export default async function Home() {
           </div>
         </Container>
       </section>
+
+      <EnquiryBand
+        source="/"
+        title={<>Tell us<br />what you need</>}
+        intro={<p>Printing, signage, a stand, packaging or gifts: describe the job and the city, and our team replies with questions or a quote.</p>}
+      />
     </div>
   );
 }

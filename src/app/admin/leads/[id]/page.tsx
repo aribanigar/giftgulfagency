@@ -45,6 +45,7 @@ export default async function LeadPage({ params }: { params: Promise<{ id: strin
     ["Installation", lead.installation],
     ["Artwork", lead.artwork],
     ["Budget", lead.budget],
+    ["Sent from page", lead.source ?? ""],
   ];
   const q = lead.quote;
   const currency = lead.city.includes("Doha") || lead.city.includes("Qatar") ? "QAR" : "AED";

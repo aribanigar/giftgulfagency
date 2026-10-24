@@ -7,6 +7,7 @@ import { BlogBrowser, type BlogCard } from "./blog-browser";
 import { heroPhoto, wide } from "@/lib/photos";
 import { siteConfig } from "@/lib/site-config";
 import { Container, PageHero } from "@/components/editorial";
+import { EnquiryBand } from "@/components/enquiry-band";
 
 const blogTitle = "Blog | Signage, Printing, Packaging & Digital Guides | Gifts Gulf Advertising";
 const blogDescription =
@@ -92,6 +93,12 @@ export default function BlogIndexPage() {
           <BlogBrowser posts={cards} categories={blogCategories} />
         </Container>
       </section>
+
+      <EnquiryBand
+        source="/blog"
+        title={<>Ready to<br />brief us?</>}
+        intro={<p>If a guide answered your question, send the job details here and we will quote it.</p>}
+      />
     </div>
   );
 }

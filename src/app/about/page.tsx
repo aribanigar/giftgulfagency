@@ -7,6 +7,7 @@ import { ArrowLink, Container, PageHero, SectionIntro } from "@/components/edito
 import { markets, sections } from "@/lib/site-data";
 import { siteConfig } from "@/lib/site-config";
 import { featurePhotos, sectionHeroGalleries } from "@/lib/photos";
+import { EnquiryBand } from "@/components/enquiry-band";
 
 const aboutTitle = "About Gifts Gulf Advertising | Printing, Signage & Events Partner";
 const aboutDescription =
@@ -163,6 +164,12 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <EnquiryBand
+        source="/about"
+        title={<>Work<br />with us</>}
+        intro={<p>Send a short brief and the city it is for. One point of contact handles it from quote to delivery.</p>}
+      />
     </div>
   );
 }

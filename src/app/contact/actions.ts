@@ -10,6 +10,11 @@ export type ContactResult =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/** Only same-site paths are kept as a lead's source page. */
+function sourcePath(raw: string) {
+  return raw.startsWith("/") && !raw.startsWith("//") ? raw : "";
+}
+
 const CITIES = [
   "Dubai",
   "Abu Dhabi",
@@ -47,6 +52,7 @@ export async function submitContactAction(
     artwork: f("artwork", 60),
     contactMethod: f("contactMethod", 30),
     message: f("message", 3000),
+    source: sourcePath(f("source", 200)) || "/contact",
   };
 
   if (!data.name) return { ok: false, error: "Please enter your name." };
@@ -127,7 +133,7 @@ export async function submitQuickQuoteAction(
   const city = f("city", 60);
   const item = f("item", 160);
   const details = f("message", 2000);
-  const source = f("source", 200);
+  const source = sourcePath(f("source", 200));
 
   if (!name) return { ok: false, error: "Please enter your name." };
   if (!EMAIL_RE.test(email)) return { ok: false, error: "Please enter a valid email address." };
@@ -152,6 +158,7 @@ export async function submitQuickQuoteAction(
     installation: "",
     artwork: "",
     contactMethod: "",
-    message: [details, source ? `Sent from: ${source}` : ""].filter(Boolean).join("\n\n"),
+    message: details,
+    source,
   });
 }

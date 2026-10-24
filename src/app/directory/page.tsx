@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import { breadcrumbSchema } from "@/lib/schema";
 import { topics, topicsByCategory } from "@/lib/topics";
+import { EnquiryBand } from "@/components/enquiry-band";
 
 const title = "Advertising & Printing Directory | Gifts Gulf Advertising";
 const description =
@@ -83,6 +84,12 @@ export default function DirectoryPage() {
           </div>
         </Container>
       </section>
+
+      <EnquiryBand
+        source="/directory"
+        title={<>Not sure what<br />you need?</>}
+        intro={<p>Describe the job in your own words and we will suggest the right product, material and size.</p>}
+      />
     </div>
   );
 }

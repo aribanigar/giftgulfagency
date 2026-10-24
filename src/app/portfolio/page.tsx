@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 import { sectionHeroGalleries, sectionPhotos, heroPhoto } from "@/lib/photos";
 import { Reveal } from "@/components/reveal";
 import { Container, PageHero } from "@/components/editorial";
+import { EnquiryBand } from "@/components/enquiry-band";
 
 const portfolioTitle = "Portfolio | Gifts Gulf Advertising";
 const portfolioDescription =
@@ -84,6 +85,12 @@ export default function PortfolioPage() {
           </div>
         </Container>
       </section>
+
+      <EnquiryBand
+        source="/portfolio"
+        title={<>Want something<br />like this?</>}
+        intro={<p>Tell us which kind of work you have in mind, the quantity and the city, and we will come back with options and a quote.</p>}
+      />
     </div>
   );
 }

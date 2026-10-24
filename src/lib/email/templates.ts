@@ -131,6 +131,7 @@ export function newEnquiryAdmin(lead: Lead) {
           ["Email", lead.email],
           ["Phone", lead.phone],
           ["Preferred contact", lead.contactMethod],
+          ["Sent from page", lead.source ? `${siteConfig.url}${lead.source}` : undefined],
         ]) +
         rows(requestRows(lead)) +
         button(link, "Open in admin and send quote") +

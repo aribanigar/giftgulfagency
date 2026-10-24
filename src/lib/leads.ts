@@ -43,6 +43,8 @@ export type Lead = {
   artwork: string;
   contactMethod: string;
   message: string;
+  /** Path of the page the enquiry was sent from. Missing on older leads. */
+  source?: string;
   status: LeadStatus;
   quote?: Quote;
   notes: { at: string; text: string }[];

@@ -121,7 +121,10 @@ export default async function AdminPage({
               <p className="mt-1 text-sm text-zinc-600">
                 {serviceLabel(lead.service)} · {lead.item} · qty {lead.quantity} · {lead.city}
               </p>
-              <p className="mt-1 font-mono text-xs text-zinc-400">{lead.ref}</p>
+              <p className="mt-1 font-mono text-xs text-zinc-400">
+                {lead.ref}
+                {lead.source ? <span> · {lead.source}</span> : null}
+              </p>
             </Link>
           ))}
         </div>
